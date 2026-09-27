@@ -1,0 +1,346 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME: VEGA — Aurora Borealis Luxury
+   Background: Deep Indigo + Animated Aurora (Green/Teal/Purple)
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+.vega-root {
+  --navy:        #060f22;
+  --indigo:      #0b1a3d;
+  --gold:        #38bdf8;
+  --gold-light:  #60a5fa;
+  --gold-pale:   #e0f2fe;
+  --ivory:       #ffffff;
+  --cream:       #dbeafe;
+
+  --ff-serif:    'Playfair Display', Georgia, serif;
+  --ff-script:   'Cormorant Garamond', serif;
+  --ff-sans:     'Montserrat', sans-serif;
+  --page-width:  680px;
+}
+
+/* ── Base ─────────────────────────────────────────────── */
+.vega-root {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Aurora Background Layer ──────────────────────────── */
+.vega-aurora-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.vega-aurora-band {
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  height: 55%;
+  border-radius: 50%;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: aurora-drift linear infinite;
+}
+
+.vega-aurora-band:nth-child(1) {
+  top: -15%;
+  background: radial-gradient(ellipse, rgba(32,178,100,0.55) 0%, rgba(0,100,60,0.2) 50%, transparent 75%);
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+.vega-aurora-band:nth-child(2) {
+  top: -10%;
+  background: radial-gradient(ellipse, rgba(0,200,220,0.4) 0%, rgba(0,80,160,0.15) 55%, transparent 75%);
+  animation-duration: 22s;
+  animation-delay: -6s;
+  left: 10%;
+}
+.vega-aurora-band:nth-child(3) {
+  top: -5%;
+  background: radial-gradient(ellipse, rgba(100,50,200,0.35) 0%, rgba(50,0,100,0.1) 55%, transparent 75%);
+  animation-duration: 26s;
+  animation-delay: -12s;
+  left: -10%;
+}
+
+@keyframes aurora-drift {
+  0%   { opacity: 0; transform: translateX(-8%) scaleY(0.9) rotate(-2deg); }
+  15%  { opacity: 1; }
+  50%  { transform: translateX(8%) scaleY(1.1) rotate(2deg); }
+  85%  { opacity: 0.8; }
+  100% { opacity: 0; transform: translateX(-8%) scaleY(0.9) rotate(-2deg); }
+}
+
+/* ── Starfield Canvas ─────────────────────────────────── */
+.vega-starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Page Container ───────────────────────────────────── */
+.vega-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  background: rgba(10, 18, 45, 0.75);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.3),
+    0 0 80px rgba(32, 178, 100, 0.08),
+    0 40px 100px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Gold Frame ───────────────────────────────────────── */
+.vega-frame {
+  position: relative;
+  padding: 56px 64px;
+}
+
+.vega-frame::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  pointer-events: none;
+}
+.vega-frame::after {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  pointer-events: none;
+}
+
+/* ── Corner Ornaments ─────────────────────────────────── */
+.vega-corner { position: absolute; width: 48px; height: 48px; }
+.vega-corner--tl { top: 10px; left: 10px; }
+.vega-corner--tr { top: 10px; right: 10px; transform: scaleX(-1); }
+.vega-corner--bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+.vega-corner--br { bottom: 10px; right: 10px; transform: scale(-1); }
+
+/* ── Header ───────────────────────────────────────────── */
+.vega-header { text-align: center; padding-top: 8px; }
+.vega-label-top {
+  font-family: var(--ff-sans);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.35em; color: var(--gold-light);
+  text-transform: uppercase;
+  display: block; margin-bottom: 20px;
+}
+
+/* ── Bismillah ────────────────────────────────────────── */
+.vega-bismillah {
+  font-family: var(--ff-script);
+  font-size: 28px; font-style: italic;
+  color: var(--gold-pale); text-align: center;
+  margin-bottom: 8px; letter-spacing: 0.05em; line-height: 1.4;
+}
+
+/* ── Divider ──────────────────────────────────────────── */
+.vega-divider-ornament {
+  display: flex; align-items: center;
+  justify-content: center; gap: 12px;
+  margin: 20px auto; color: var(--gold); opacity: 0.9;
+}
+.vega-divider-ornament::before, .vega-divider-ornament::after {
+  content: ''; flex: 1; max-width: 80px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold) 60%, transparent);
+}
+
+/* ── Greeting ─────────────────────────────────────────── */
+.vega-greeting { text-align: center; margin: 24px 0; }
+.vega-greeting p {
+  font-family: var(--ff-script); font-size: 16px; font-weight: 300;
+  color: var(--gold-pale); letter-spacing: 0.03em; line-height: 1.7; margin: 0;
+}
+
+/* ── Names ────────────────────────────────────────────── */
+.vega-names { text-align: center; margin: 32px 0; }
+.vega-groom-name, .vega-bride-name {
+  font-family: var(--ff-serif); font-size: 48px; font-weight: 700;
+  letter-spacing: 0.02em; line-height: 1.1; display: block;
+  background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold) 50%, var(--gold-pale) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.vega-groom-full, .vega-bride-full {
+  font-family: var(--ff-script); font-size: 15px; font-weight: 300;
+  font-style: italic; color: var(--gold-light);
+  letter-spacing: 0.12em; display: block; margin-top: 4px;
+}
+.vega-ampersand {
+  font-family: var(--ff-serif); font-size: 36px; font-style: italic;
+  color: var(--gold); opacity: 0.85; margin: 8px 0; display: block;
+}
+
+/* ── Section Divider ──────────────────────────────────── */
+.vega-section-divider {
+  display: flex; align-items: center; gap: 16px; margin: 36px 0;
+}
+.vega-section-divider::before, .vega-section-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.6));
+}
+.vega-section-divider::after { background: linear-gradient(to left, transparent, rgba(201,168,76,0.6)); }
+.vega-section-divider svg { color: var(--gold); opacity: 0.85; flex-shrink: 0; }
+
+/* ── Family ───────────────────────────────────────────── */
+.vega-family { text-align: center; margin: 28px 0; }
+.vega-family-intro {
+  font-family: var(--ff-sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase;
+  margin-bottom: 20px; display: block;
+}
+.vega-family-block { margin-bottom: 20px; }
+.vega-family-label {
+  font-family: var(--ff-script); font-size: 13.5px; font-style: italic;
+  color: var(--gold-pale); display: block; margin-bottom: 6px;
+}
+.vega-family-name {
+  font-family: var(--ff-serif); font-size: 17.5px; font-weight: 600;
+  color: #ffffff; display: block; letter-spacing: 0.04em;
+}
+
+/* ── Event Cards ──────────────────────────────────────── */
+.vega-events { display: flex; flex-direction: column; gap: 28px; margin: 28px 0; }
+
+.vega-event-card {
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 28px 32px; text-align: center; position: relative;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.vega-event-card:hover {
+  border-color: rgba(201, 168, 76, 0.55);
+  background: rgba(201, 168, 76, 0.1);
+}
+.vega-event-tag {
+  font-family: var(--ff-sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.4em; color: var(--gold-light); text-transform: uppercase;
+  display: block; margin-bottom: 14px;
+}
+.vega-event-name {
+  font-family: var(--ff-serif); font-size: 24px; font-weight: 700;
+  color: #ffffff; display: block; margin-bottom: 16px;
+}
+.vega-event-datetime {
+  font-family: var(--ff-script); font-size: 18px; font-weight: 500;
+  color: var(--gold-pale); display: block; margin-bottom: 6px; letter-spacing: 0.04em;
+}
+.vega-event-time {
+  font-family: var(--ff-sans); font-size: 13px; font-weight: 400;
+  color: #f1f5f9; display: block; letter-spacing: 0.15em;
+}
+.vega-event-location { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(201,168,76,0.25); }
+.vega-event-venue {
+  font-family: var(--ff-serif); font-size: 15.5px; font-weight: 600;
+  color: #ffffff; display: block; margin-bottom: 4px;
+}
+.vega-event-address {
+  font-family: var(--ff-sans); font-size: 12px; font-weight: 400;
+  color: #e2e8f0; letter-spacing: 0.06em; line-height: 1.6; display: block;
+}
+
+/* ── Maps Button ──────────────────────────────────────── */
+.vega-btn-maps {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 16px; padding: 10px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light); font-family: var(--ff-sans);
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.25em;
+  text-transform: uppercase; text-decoration: none; background: rgba(201,168,76,0.08);
+  transition: all 0.3s ease; cursor: pointer;
+}
+.vega-btn-maps:hover { background: rgba(201,168,76,0.2); border-color: var(--gold-light); color: #ffffff; }
+
+/* ── Countdown ────────────────────────────────────────── */
+.vega-countdown { text-align: center; margin: 20px 0; }
+.vega-countdown-label {
+  font-family: var(--ff-sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.35em; color: var(--gold-light); text-transform: uppercase;
+  margin-bottom: 16px; display: block;
+}
+.vega-countdown-digits { display: flex; justify-content: center; gap: 20px; }
+.vega-digit-block { display: flex; flex-direction: column; align-items: center; min-width: 56px; }
+.vega-digit {
+  font-family: var(--ff-serif); font-size: 36px; font-weight: 700; line-height: 1;
+  background: linear-gradient(135deg, var(--gold-pale), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.vega-digit-unit {
+  font-family: var(--ff-sans); font-size: 9.5px; font-weight: 500;
+  letter-spacing: 0.3em; color: var(--gold-pale);
+  text-transform: uppercase; margin-top: 4px;
+}
+.vega-digit-sep {
+  font-family: var(--ff-serif); font-size: 32px; font-weight: 300;
+  color: rgba(201,168,76,0.5); line-height: 1; padding-top: 2px;
+}
+
+/* ── Closing ──────────────────────────────────────────── */
+.vega-closing { text-align: center; margin: 16px 0 8px; }
+.vega-closing p {
+  font-family: var(--ff-script); font-size: 15px; font-weight: 400;
+  font-style: italic; color: #f1f5f9; line-height: 1.8;
+  letter-spacing: 0.03em; white-space: pre-line;
+}
+
+/* ── RSVP ─────────────────────────────────────────────── */
+.vega-btn-rsvp {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; padding: 16px 48px;
+  background: linear-gradient(135deg, #c9a84c, #e2c97e, #c9a84c);
+  background-size: 200% auto;
+  color: #050d1f; font-family: var(--ff-sans);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; text-decoration: none;
+  border: none; cursor: pointer;
+  transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(201,168,76,0.4);
+}
+.vega-btn-rsvp:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(201,168,76,0.6);
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.vega-footer { text-align: center; padding: 20px 0 8px; }
+.vega-footer-brand {
+  font-family: var(--ff-sans); font-size: 9.5px; font-weight: 500;
+  letter-spacing: 0.4em; color: var(--gold-light); text-transform: uppercase;
+}
+
+/* ── Animations (framer-motion handles enter) ─────────── */
+
+/* ── Ornament Positioning ─────────────────────────────── */
+.vega-ornament-section {
+  position: relative;
+  overflow: visible;
+}
+
+@media (max-width: 600px) {
+  .vega-frame { padding: 48px 32px; }
+  .vega-frame::before { inset: 12px; }
+  .vega-groom-name, .vega-bride-name { font-size: 38px; }
+  .vega-ornament-section > [style*="absolute"] { display: none; }
+}
+@media (max-width: 420px) {
+  .vega-frame { padding: 40px 20px; }
+  .vega-groom-name, .vega-bride-name { font-size: 32px; }
+}

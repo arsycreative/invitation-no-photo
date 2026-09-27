@@ -1,0 +1,101 @@
+@import './components/common.css';
+
+/* ── Global Reset & Base ─────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #08102a;
+  color: #faf6ec;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Error / Not Found Screen ────────────────────────── */
+.error-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #08102a;
+  color: #c9a84c;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-screen h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #e2c97e;
+}
+
+.error-screen p {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+}
+
+/* ── Loading Spinner ─────────────────────────────────── */
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #08102a;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(201, 168, 76, 0.15);
+  border-top-color: #c9a84c;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loading-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(201, 168, 76, 0.5);
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Fresh Invitation Entrance Reveal ─────────────────── */
+@keyframes invitationContentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.invitation-reveal-enter {
+  animation: invitationContentReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

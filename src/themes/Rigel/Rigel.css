@@ -1,0 +1,383 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME: RIGEL
+   Category: Baby Shower & Welcoming the Little One
+   Palette:  Warm Butter Cream × Soft Apricot × Honey Gold
+   Style:    Hangat, manis, ceria, estetik, berkelas & anggun
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sacramento&display=swap');
+
+.rigel-root {
+  --cream-bg:     #f0f9ff;
+  --cream-card:   #ffffff;
+  --apricot-dark: #0284c7;
+  --apricot-pri:  #0ea5e9;
+  --apricot-soft: #e0f2fe;
+  --honey-gold:   #eab308;
+  --text-dark:    #0f172a;
+  --text-body:    #334155;
+  --text-muted:   #64748b;
+
+  --ff-title:  'Fraunces', serif;
+  --ff-script: 'Sacramento', cursive;
+  --ff-body:   'Plus Jakarta Sans', sans-serif;
+}
+
+.rigel-root {
+  min-height: 100vh;
+  background-color: #f0f9ff;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(234, 179, 8, 0.15) 0%, transparent 45%),
+    linear-gradient(180deg, #f8fafc 0%, #f0f9ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  color: var(--text-dark);
+  font-family: var(--ff-body);
+}
+
+.rigel-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 2px rgba(217, 93, 57, 0.25),
+    0 0 0 6px rgba(253, 232, 224, 0.8),
+    0 24px 70px rgba(74, 60, 49, 0.15);
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.rigel-header {
+  text-align: center;
+  padding: 48px 36px 36px;
+  background: linear-gradient(180deg, #fff9f5 0%, #fdf0e9 100%);
+  border-bottom: 2px solid var(--apricot-soft);
+  position: relative;
+}
+
+.rigel-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--apricot-pri);
+  color: var(--apricot-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(217, 93, 57, 0.12);
+}
+
+.rigel-title {
+  font-family: var(--ff-title);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+.rigel-parents-names {
+  font-family: var(--ff-script);
+  font-size: 42px;
+  color: var(--apricot-dark);
+  display: block;
+  margin: 4px 0 8px 0;
+  line-height: 1.1;
+}
+
+.rigel-arrival-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--honey-gold);
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.rigel-body {
+  padding: 38px 44px 50px;
+  background: #ffffff;
+}
+
+/* ── Baby Quote ────────────────────────────────────────── */
+.rigel-quote-box {
+  background: #fffaf7;
+  border: 1.5px dashed rgba(217, 93, 57, 0.35);
+  border-radius: 16px;
+  padding: 22px 26px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.rigel-quote-text {
+  font-family: var(--ff-title);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin: 0 0 6px 0;
+}
+.rigel-quote-author {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--apricot-dark);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Activities / Rundown ─────────────────────────────── */
+.rigel-activities {
+  margin-bottom: 32px;
+}
+.rigel-activities-title {
+  text-align: center;
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 6px 0;
+}
+.rigel-activities-sub {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--apricot-dark);
+  margin: 0 0 20px 0;
+  display: block;
+}
+.rigel-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.rigel-activity-card {
+  background: #fff8f5;
+  border: 1px solid rgba(217, 93, 57, 0.2);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: center;
+}
+.rigel-activity-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  display: block;
+}
+.rigel-activity-name {
+  font-family: var(--ff-title);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 4px 0;
+}
+.rigel-activity-desc {
+  font-size: 12.5px;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Events ───────────────────────────────────────────── */
+.rigel-events {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.rigel-event-card {
+  background: #fffaf7;
+  border: 1.5px solid rgba(217, 93, 57, 0.25);
+  border-radius: 16px;
+  padding: 26px 28px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(217, 93, 57, 0.05);
+}
+
+.rigel-event-tag {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--apricot-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rigel-event-name {
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rigel-event-date {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--apricot-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.rigel-event-time {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-body);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.rigel-event-venue {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: block;
+}
+
+.rigel-event-address {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: block;
+  margin-top: 4px;
+}
+
+.rigel-btn-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 9px 22px;
+  border: 1.5px solid var(--apricot-pri);
+  border-radius: 8px;
+  color: var(--apricot-dark);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  transition: all 0.25s;
+}
+.rigel-btn-maps:hover {
+  background: var(--apricot-pri);
+  color: #ffffff;
+}
+
+/* ── Countdown ────────────────────────────────────────── */
+.rigel-countdown {
+  text-align: center;
+  padding: 26px 20px;
+  background: linear-gradient(135deg, #fff7f2, #ffede5);
+  border: 1.5px solid rgba(217, 93, 57, 0.3);
+  border-radius: 16px;
+  margin-bottom: 34px;
+}
+
+.rigel-countdown-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--apricot-dark);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.rigel-countdown-digits {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.rigel-digit-block {
+  text-align: center;
+  min-width: 52px;
+  background: #ffffff;
+  padding: 10px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(217, 93, 57, 0.1);
+}
+
+.rigel-digit {
+  font-family: var(--ff-title);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--apricot-dark);
+  display: block;
+  line-height: 1;
+}
+
+.rigel-digit-unit {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Closing & RSVP ───────────────────────────────────── */
+.rigel-closing {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.rigel-closing p {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.rigel-btn-rsvp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 40px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, var(--apricot-pri), #e76f51);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(217, 93, 57, 0.35);
+  transition: all 0.25s;
+}
+.rigel-btn-rsvp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 93, 57, 0.5);
+}
+
+.rigel-footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--apricot-soft);
+  background: #fff9f5;
+}
+.rigel-footer-brand {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--apricot-dark);
+}
+
+@media (max-width: 600px) {
+  .rigel-body { padding: 30px 20px; }
+  .rigel-title { font-size: 28px; }
+  .rigel-parents-names { font-size: 34px; }
+}

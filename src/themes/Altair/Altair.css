@@ -1,0 +1,419 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME: ALTAIR
+   Category: Modern Architectural Minimalist / Haute Couture
+   Palette:  Chalk White × Deep Charcoal Ink × Minimalist Emerald
+   Style:    Editorial, Asymmetrical Magazine Spread, Monolithic
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+.altair-root {
+  --ink-black:   #09090b;
+  --ink-dark:    #18181b;
+  --ink-muted:   #52525b;
+  --chalk-white: #ffffff;
+  --chalk-light: #f8fafc;
+  --hairline:    #e2e8f0;
+  --emerald-acc: #059669;
+
+  --ff-editorial: 'Playfair Display', serif;
+  --ff-sans:      'Plus Jakarta Sans', sans-serif;
+  --ff-mono:      'Space Mono', monospace;
+}
+
+.altair-root {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  background-image:
+    linear-gradient(#e2e8f0 1px, transparent 1px),
+    linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+  background-size: 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  font-family: var(--ff-sans);
+  color: var(--ink-black);
+}
+
+.altair-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 32px auto;
+  background: var(--chalk-white);
+  border: 2px solid var(--ink-black);
+  box-shadow: 16px 16px 0px var(--ink-black);
+}
+
+/* ── Top Bar / Editorial Masthead ─────────────────────── */
+.altair-masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--ink-black);
+  color: #ffffff;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ── Asymmetrical Hero ────────────────────────────────── */
+.altair-hero-split {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  border-bottom: 2px solid var(--ink-black);
+}
+
+.altair-hero-date-col {
+  background: var(--chalk-light);
+  border-right: 2px solid var(--ink-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  text-align: center;
+}
+.altair-hero-big-day {
+  font-family: var(--ff-mono);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink-black);
+}
+.altair-hero-month-year {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 6px;
+  color: var(--emerald-acc);
+}
+
+.altair-hero-title-col {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.altair-issue-tag {
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--emerald-acc);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.altair-couple-headline {
+  font-family: var(--ff-editorial);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--ink-black);
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+.altair-sub-statement {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Marquee Ribbon ───────────────────────────────────── */
+.altair-ticker-strip {
+  background: var(--ink-black);
+  color: #ffffff;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── Split Couple Profile Columns ─────────────────────── */
+.altair-body {
+  padding: 40px 36px;
+}
+
+.altair-couple-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.altair-person-card {
+  border: 1.5px solid var(--ink-black);
+  padding: 24px;
+  background: var(--chalk-light);
+  position: relative;
+}
+.altair-person-role {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--emerald-acc);
+  display: block;
+  margin-bottom: 8px;
+}
+.altair-person-name {
+  font-family: var(--ff-editorial);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin: 0 0 4px 0;
+}
+.altair-person-full {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-dark);
+  margin-bottom: 8px;
+  display: block;
+}
+.altair-person-parents {
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Holy Verse Editorial Quote ───────────────────────── */
+.altair-quote-block {
+  border-left: 3px solid var(--ink-black);
+  padding: 18px 24px;
+  margin-bottom: 36px;
+  background: #fbfcfe;
+}
+.altair-quote-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 20px;
+  line-height: 1.9;
+  color: var(--ink-black);
+  direction: rtl;
+  margin-bottom: 8px;
+}
+.altair-quote-trans {
+  font-family: var(--ff-editorial);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-dark);
+  margin: 0 0 6px 0;
+}
+.altair-quote-ref {
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--emerald-acc);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* ── Tabular Events Schedule ──────────────────────────── */
+.altair-schedule-title {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.altair-schedule-title::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: var(--ink-black);
+}
+
+.altair-events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.altair-event-box {
+  border: 1.5px solid var(--ink-black);
+  padding: 24px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.altair-event-tag {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--emerald-acc);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.altair-event-name {
+  font-family: var(--ff-editorial);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin-bottom: 8px;
+}
+.altair-event-time {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin-bottom: 4px;
+}
+.altair-event-venue {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink-dark);
+}
+.altair-event-address {
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin: 4px 0 14px 0;
+  flex-grow: 1;
+}
+.altair-event-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.altair-btn-minimal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--ink-black);
+  color: var(--ink-black);
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s;
+}
+.altair-btn-minimal:hover {
+  background: var(--ink-black);
+  color: #ffffff;
+}
+
+/* ── Monospace Countdown ──────────────────────────────── */
+.altair-countdown {
+  border: 1.5px solid var(--ink-black);
+  background: var(--chalk-light);
+  padding: 22px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+.altair-countdown-label {
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--emerald-acc);
+  margin-bottom: 12px;
+  display: block;
+}
+.altair-countdown-digits {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.altair-digit-block {
+  text-align: center;
+  min-width: 55px;
+}
+.altair-digit {
+  font-family: var(--ff-mono);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ink-black);
+  display: block;
+  line-height: 1;
+}
+.altair-digit-unit {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Closing & RSVP ───────────────────────────────────── */
+.altair-closing {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.altair-closing p {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.altair-btn-rsvp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: var(--ink-black);
+  color: #ffffff;
+  border: 2px solid var(--ink-black);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 6px 6px 0px var(--emerald-acc);
+  transition: all 0.2s;
+}
+.altair-btn-rsvp:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--emerald-acc);
+}
+
+.altair-footer {
+  border-top: 2px solid var(--ink-black);
+  padding: 20px;
+  text-align: center;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  background: var(--chalk-light);
+}
+
+@media (max-width: 600px) {
+  .altair-page { margin: 0; box-shadow: none; border-left: none; border-right: none; }
+  .altair-hero-split { grid-template-columns: 1fr; }
+  .altair-hero-date-col { border-right: none; border-bottom: 2px solid var(--ink-black); padding: 18px; flex-direction: row; gap: 12px; }
+  .altair-couple-split { grid-template-columns: 1fr; }
+  .altair-events-grid { grid-template-columns: 1fr; }
+  .altair-body { padding: 28px 20px; }
+  .altair-couple-headline { font-size: 30px; }
+}

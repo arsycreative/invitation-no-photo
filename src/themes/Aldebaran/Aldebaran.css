@@ -1,0 +1,432 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME: ALDEBARAN
+   Category: Pengajian, Tahlilan, & Doa Bersama
+   Palette:  Warm Desert Sandstone Parchment × Sacred Lapis Lazuli × Moroccan Brass
+   Style:    Sacred Illuminated Islamic Naskah & Mihrab Arch Architecture
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+.aldebaran-root {
+  --bg-deep:       #0a192c;
+  --bg-lapis:      #102a45;
+  --sandstone:     #fcf8f0;
+  --sandstone-mid: #f5ede0;
+  --sandstone-deep:#e8dcbe;
+  --brass-gold:    #b88a2e;
+  --brass-light:   #dfb356;
+  --lapis-dark:    #0c233c;
+  --text-dark:     #1a2433;
+  --text-muted:    #4a5568;
+
+  --ff-title:  'Cinzel', serif;
+  --ff-arabic: 'Amiri', serif;
+  --ff-body:   'Outfit', sans-serif;
+}
+
+.aldebaran-root {
+  min-height: 100vh;
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(184, 138, 46, 0.28) 0%, transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(16, 42, 69, 0.9) 0%, transparent 60%),
+    linear-gradient(180deg, #06101e 0%, #0a192c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  font-family: var(--ff-body);
+  color: var(--text-dark);
+}
+
+/* ── Page: Illuminated Islamic Naskah ──────────────────── */
+.aldebaran-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 32px auto;
+  background: var(--sandstone);
+  border-radius: 36px 36px 16px 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 2px rgba(184, 138, 46, 0.45),
+    0 0 0 8px rgba(12, 35, 60, 0.4),
+    0 28px 80px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Mihrab Arch Header ───────────────────────────────── */
+.aldebaran-header {
+  text-align: center;
+  padding: 56px 40px 36px;
+  background: linear-gradient(180deg, #f7efe2 0%, var(--sandstone) 100%);
+  border-bottom: 2px solid rgba(184, 138, 46, 0.3);
+  position: relative;
+}
+
+.aldebaran-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  background: rgba(184, 138, 46, 0.1);
+  border: 1px solid var(--brass-gold);
+  border-radius: 99px;
+  color: var(--lapis-dark);
+  font-family: var(--ff-title);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.aldebaran-title {
+  font-family: var(--ff-title);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+}
+
+.aldebaran-honoree {
+  font-family: var(--ff-arabic);
+  font-size: 34px;
+  font-weight: 700;
+  color: #855f18;
+  display: block;
+  margin: 12px 0 4px 0;
+  line-height: 1.2;
+}
+
+.aldebaran-honoree-sub {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: block;
+}
+
+.aldebaran-body {
+  padding: 38px 44px 50px;
+}
+
+.aldebaran-bismillah {
+  font-family: var(--ff-arabic);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* ── Illuminated Ayat Suci Box ────────────────────────── */
+.aldebaran-verse-box {
+  background: var(--sandstone-mid);
+  border: 1.5px solid rgba(184, 138, 46, 0.35);
+  border-radius: 16px;
+  padding: 24px 26px;
+  text-align: center;
+  margin-bottom: 34px;
+  box-shadow: inset 0 0 20px rgba(184, 138, 46, 0.06);
+}
+
+.aldebaran-verse-arabic {
+  font-family: var(--ff-arabic);
+  font-size: 22px;
+  line-height: 1.85;
+  color: var(--lapis-dark);
+  margin-bottom: 12px;
+}
+
+.aldebaran-verse-trans {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.aldebaran-verse-ref {
+  font-family: var(--ff-title);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--brass-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Agenda / Tertib Amaliyah ─────────────────────────── */
+.aldebaran-agenda {
+  margin-bottom: 36px;
+}
+.aldebaran-agenda-title {
+  text-align: center;
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  margin: 0 0 4px 0;
+}
+.aldebaran-agenda-sub {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--brass-gold);
+  margin: 0 0 22px 0;
+  display: block;
+}
+
+.aldebaran-agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aldebaran-agenda-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(184, 138, 46, 0.25);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.aldebaran-agenda-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brass-gold), var(--brass-light));
+  color: #ffffff;
+  font-family: var(--ff-title);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(184, 138, 46, 0.35);
+}
+
+.aldebaran-agenda-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  margin: 0 0 4px 0;
+}
+.aldebaran-agenda-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Events ───────────────────────────────────────────── */
+.aldebaran-events {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.aldebaran-event-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(184, 138, 46, 0.3);
+  border-radius: 16px;
+  padding: 26px 28px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.aldebaran-event-tag {
+  font-family: var(--ff-title);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brass-gold);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.aldebaran-event-name {
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.aldebaran-event-date {
+  font-size: 15px;
+  font-weight: 700;
+  color: #855f18;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.aldebaran-event-time {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.aldebaran-event-venue {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  display: block;
+}
+
+.aldebaran-event-address {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: block;
+  margin-top: 4px;
+}
+
+.aldebaran-btn-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 9px 22px;
+  border: 1.5px solid var(--brass-gold);
+  border-radius: 50px;
+  color: var(--brass-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--sandstone-mid);
+  transition: all 0.25s;
+}
+.aldebaran-btn-maps:hover {
+  background: var(--brass-gold);
+  color: #ffffff;
+}
+
+/* ── Countdown ────────────────────────────────────────── */
+.aldebaran-countdown {
+  text-align: center;
+  padding: 26px 20px;
+  background: var(--sandstone-mid);
+  border: 1.5px solid rgba(184, 138, 46, 0.35);
+  border-radius: 16px;
+  margin-bottom: 34px;
+}
+
+.aldebaran-countdown-label {
+  font-family: var(--ff-title);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--lapis-dark);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.aldebaran-countdown-digits {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.aldebaran-digit-block {
+  text-align: center;
+  min-width: 52px;
+  background: #ffffff;
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(184, 138, 46, 0.25);
+}
+
+.aldebaran-digit {
+  font-family: var(--ff-title);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--lapis-dark);
+  display: block;
+  line-height: 1;
+}
+
+.aldebaran-digit-unit {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brass-gold);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Closing & RSVP ───────────────────────────────────── */
+.aldebaran-closing {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.aldebaran-closing p {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.aldebaran-btn-rsvp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 42px;
+  border-radius: 50px;
+  background: var(--lapis-dark);
+  color: #ffffff;
+  font-family: var(--ff-title);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(12, 35, 60, 0.35);
+  transition: all 0.25s;
+}
+.aldebaran-btn-rsvp:hover {
+  background: #091728;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(12, 35, 60, 0.5);
+}
+
+.aldebaran-footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid rgba(184, 138, 46, 0.25);
+  background: var(--sandstone-mid);
+}
+.aldebaran-footer-brand {
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brass-gold);
+}
+
+@media (max-width: 600px) {
+  .aldebaran-page { margin: 12px; }
+  .aldebaran-body { padding: 28px 18px 36px; }
+  .aldebaran-title { font-size: 24px; }
+  .aldebaran-honoree { font-size: 28px; }
+  .aldebaran-countdown-digits { gap: 8px; }
+  .aldebaran-digit-block { min-width: 44px; }
+  .aldebaran-digit { font-size: 26px; }
+}

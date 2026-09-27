@@ -1,0 +1,378 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME: ANTARES
+   Category: Wedding Anniversary (Ulang Tahun Pernikahan)
+   Palette:  Velvet Wine × Rose Gold × Champagne Light
+   Style:    Mewah abadi, penuh kenangan, hangat, romantis
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+.antares-root {
+  --wine-dark:   #1e0840;
+  --wine-mid:    #3b0764;
+  --wine-l:      #581c87;
+  --rose-gold:   #c084fc;
+  --gold-pale:   #f3e8ff;
+  --white:       #ffffff;
+
+  --ff-title:  'Playfair Display', serif;
+  --ff-script: 'Great Vibes', cursive;
+  --ff-body:   'Montserrat', sans-serif;
+}
+
+.antares-root {
+  min-height: 100vh;
+  background-color: #170433;
+  background-image:
+    radial-gradient(circle at 50% 10%, rgba(126, 34, 206, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 100% 80%, rgba(192, 132, 252, 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, #100224 0%, #1e0840 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.antares-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  background: #25084f;
+  box-shadow:
+    0 0 0 2px var(--rose-gold),
+    0 0 0 5px rgba(192, 132, 252, 0.35),
+    0 24px 80px rgba(0, 0, 0, 0.85);
+}
+
+.antares-header {
+  text-align: center;
+  padding: 48px 36px 32px;
+  background: linear-gradient(180deg, #15020a 0%, #2b0616 100%);
+  border-bottom: 2px solid var(--rose-gold);
+}
+
+.antares-years-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 99px;
+  background: rgba(216, 140, 157, 0.18);
+  border: 1px solid var(--rose-gold);
+  color: var(--rose-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.antares-title {
+  font-family: var(--ff-title);
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.antares-couple-names {
+  font-family: var(--ff-script);
+  font-size: 44px;
+  color: var(--rose-gold);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.antares-body {
+  padding: 36px 48px 48px;
+}
+
+/* ── Anniversary Quote ────────────────────────────────── */
+.antares-quote-box {
+  background: rgba(216, 140, 157, 0.08);
+  border: 1px solid rgba(216, 140, 157, 0.3);
+  border-radius: 14px;
+  padding: 22px 26px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.antares-quote-text {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-style: italic;
+  color: #fcecef;
+  line-height: 1.7;
+  margin: 0 0 8px 0;
+}
+.antares-quote-author {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--rose-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Milestones Timeline ──────────────────────────────── */
+.antares-milestones {
+  margin-bottom: 34px;
+}
+.antares-milestones-title {
+  text-align: center;
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+.antares-milestones-subtitle {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--rose-gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+  display: block;
+}
+.antares-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid rgba(216, 140, 157, 0.35);
+  margin-left: 12px;
+}
+.antares-timeline-item {
+  position: relative;
+  background: rgba(43, 6, 22, 0.65);
+  border: 1px solid rgba(216, 140, 157, 0.25);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+.antares-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rose-gold);
+  box-shadow: 0 0 10px rgba(216, 140, 157, 0.8);
+}
+.antares-timeline-year {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--rose-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.antares-timeline-heading {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+.antares-timeline-text {
+  font-size: 13px;
+  color: #e2cbd2;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Events ───────────────────────────────────────────── */
+.antares-events {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.antares-event-card {
+  background: rgba(43, 6, 22, 0.7);
+  border: 1px solid rgba(216, 140, 157, 0.3);
+  border-radius: 14px;
+  padding: 26px 28px;
+  text-align: center;
+}
+
+.antares-event-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.antares-event-name {
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.antares-event-date {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fcecef;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.antares-event-time {
+  font-size: 13px;
+  color: var(--rose-gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.antares-event-venue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+}
+
+.antares-event-address {
+  font-size: 12.5px;
+  color: #e2cbd2;
+  line-height: 1.5;
+  display: block;
+  margin-top: 4px;
+}
+
+.antares-btn-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 9px 20px;
+  border: 1.5px solid var(--rose-gold);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(216, 140, 157, 0.15);
+  transition: all 0.25s;
+}
+.antares-btn-maps:hover {
+  background: var(--rose-gold);
+  color: #19030c;
+}
+
+/* ── Countdown ────────────────────────────────────────── */
+.antares-countdown {
+  text-align: center;
+  padding: 26px 20px;
+  background: rgba(14, 1, 6, 0.7);
+  border: 1px solid rgba(216, 140, 157, 0.3);
+  border-radius: 14px;
+  margin-bottom: 32px;
+}
+
+.antares-countdown-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.antares-countdown-digits {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.antares-digit-block {
+  text-align: center;
+  min-width: 50px;
+}
+
+.antares-digit {
+  font-family: var(--ff-title);
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+  line-height: 1;
+}
+
+.antares-digit-unit {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Closing & Footer ─────────────────────────────────── */
+.antares-closing {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.antares-closing p {
+  font-size: 14px;
+  color: #e2cbd2;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.antares-btn-rsvp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 40px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, var(--rose-gold), #f7e8ec);
+  color: #19030c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(216, 140, 157, 0.35);
+  transition: all 0.25s;
+}
+.antares-btn-rsvp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(216, 140, 157, 0.5);
+}
+
+.antares-footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid rgba(216, 140, 157, 0.2);
+}
+.antares-footer-brand {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+}
+
+@media (max-width: 600px) {
+  .antares-body { padding: 32px 24px; }
+  .antares-title { font-size: 30px; }
+  .antares-couple-names { font-size: 34px; }
+}

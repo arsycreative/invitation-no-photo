@@ -1,0 +1,822 @@
+/* ═══════════════════════════════════════════════════════════
+   INVITATION COVER THEME STYLES
+   Bespoke, distinctive, and luxurious cover designs for all 13 themes.
+   Zero generic duplication — each theme has its own identity!
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Base Overlay ─────────────────────────────────────── */
+.invitation-cover-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Ambient glow orb behind card */
+.cover-ambient-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+  animation: coverPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes coverPulse {
+  0% { transform: scale(0.9) translate(-10px, -10px); opacity: 0.35; }
+  100% { transform: scale(1.1) translate(10px, 10px); opacity: 0.55; }
+}
+
+/* ── Common Card Base ─────────────────────────────────── */
+.cover-card-base {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  padding: 42px 28px 36px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Shimmer button animation */
+.cover-btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.cover-btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  animation: coverBtnShine 3.5s infinite;
+}
+
+@keyframes coverBtnShine {
+  0% { transform: translateX(-150%) rotate(25deg); }
+  35%, 100% { transform: translateX(150%) rotate(25deg); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   1. VEGA — Celestial Sapphire (Deep Sapphire × Ice Diamond)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-vega {
+  background: radial-gradient(circle at 50% 20%, #0c204d 0%, #051026 70%, #020713 100%);
+}
+.cover-overlay-vega .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.45) 0%, transparent 70%);
+}
+.cover-card-vega {
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(11, 26, 61, 0.9) 0%, rgba(6, 15, 34, 0.96) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.55);
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, 0.18),
+    0 24px 60px rgba(0, 0, 0, 0.85);
+}
+.cover-card-vega::before {
+  content: '✦';
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  color: #38bdf8;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.cover-card-vega::after {
+  content: '✦';
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  color: #38bdf8;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.cover-card-vega .cover-badge {
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  color: #bae6fd;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+.cover-card-vega .cover-names {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(56, 189, 248, 0.5);
+}
+.cover-card-vega .cover-date {
+  color: #7dd3fc;
+  font-family: 'Montserrat', sans-serif;
+}
+.cover-card-vega .cover-guest-box {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  border-radius: 14px;
+}
+.cover-card-vega .cover-guest-name {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+}
+.cover-card-vega .cover-open-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   2. LYRA — Soft Botanical Romance (Blush Rose × Rose Gold)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-lyra {
+  background: radial-gradient(circle at 50% 30%, #fdf0f4 0%, #fae2eb 60%, #eed0dc 100%);
+}
+.cover-overlay-lyra .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(196, 116, 140, 0.35) 0%, transparent 70%);
+}
+.cover-card-lyra {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(196, 116, 140, 0.35);
+  box-shadow:
+    0 10px 40px rgba(196, 116, 140, 0.18),
+    0 0 0 6px rgba(253, 240, 244, 0.8);
+}
+.cover-card-lyra .cover-badge {
+  background: #fdf2f6;
+  border: 1px solid #c4748c;
+  color: #a44863;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+}
+.cover-card-lyra .cover-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 44px;
+  color: #8c324c;
+  font-weight: normal;
+  text-shadow: 0 2px 8px rgba(196, 116, 140, 0.15);
+}
+.cover-card-lyra .cover-date {
+  color: #7d5964;
+  font-weight: 600;
+}
+.cover-card-lyra .cover-guest-box {
+  background: #fff8fa;
+  border: 1.5px dashed rgba(196, 116, 140, 0.35);
+  border-radius: 16px;
+}
+.cover-card-lyra .cover-guest-to { color: #8e6874; }
+.cover-card-lyra .cover-guest-name { color: #8c324c; font-family: 'Playfair Display', serif; }
+.cover-card-lyra .cover-guest-note { color: #6b4d57; }
+.cover-card-lyra .cover-open-btn {
+  background: linear-gradient(135deg, #c4748c 0%, #e298ad 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(196, 116, 140, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   3. ORION — Galaxy Hero / Cyber (Deep Space × Laser Cyan)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-orion {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 51, 51, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(0, 200, 255, 0.25) 0%, transparent 45%),
+    #03060f;
+}
+.cover-overlay-orion .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.45) 0%, transparent 70%);
+}
+.cover-card-orion {
+  border-radius: 12px;
+  background: rgba(6, 14, 28, 0.94);
+  border: 2px solid #00c8ff;
+  box-shadow:
+    0 0 25px rgba(0, 200, 255, 0.35),
+    inset 0 0 15px rgba(0, 200, 255, 0.15);
+  clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+}
+.cover-card-orion .cover-badge {
+  background: rgba(255, 51, 51, 0.2);
+  border: 1px solid #ff3333;
+  color: #ff6666;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.cover-card-orion .cover-names {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 16px #00c8ff;
+}
+.cover-card-orion .cover-date {
+  color: #00c8ff;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.cover-card-orion .cover-guest-box {
+  background: rgba(0, 200, 255, 0.08);
+  border: 1px solid #00c8ff;
+  border-radius: 8px;
+}
+.cover-card-orion .cover-guest-to { color: #88c0d0; }
+.cover-card-orion .cover-guest-name { color: #ffffff; font-weight: 800; letter-spacing: 0.08em; }
+.cover-card-orion .cover-guest-note { color: #a4c2db; }
+.cover-card-orion .cover-open-btn {
+  background: linear-gradient(135deg, #ff3333 0%, #ff6b3d 100%);
+  color: #ffffff;
+  border: 1px solid #ffd0c0;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   4. DENEB — Pastel Party (Marshmallow Pink × Lilac Dream)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-deneb {
+  background: radial-gradient(circle at 50% 30%, #fff2f6 0%, #f2ebfc 60%, #e6f6f3 100%);
+}
+.cover-overlay-deneb .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(255, 143, 171, 0.35) 0%, transparent 70%);
+}
+.cover-card-deneb {
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2.5px solid #ff8fab;
+  box-shadow:
+    0 16px 45px rgba(255, 143, 171, 0.25),
+    0 0 0 8px rgba(255, 240, 245, 0.85);
+}
+.cover-card-deneb .cover-badge {
+  background: #ffeef3;
+  border: 1.5px solid #ff8fab;
+  color: #d84570;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+.cover-card-deneb .cover-names {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: #7b4f8d;
+}
+.cover-card-deneb .cover-date {
+  color: #557870;
+  font-weight: 700;
+}
+.cover-card-deneb .cover-guest-box {
+  background: #fbf7ff;
+  border: 2px dashed #b8b5e0;
+  border-radius: 20px;
+}
+.cover-card-deneb .cover-guest-to { color: #826c96; }
+.cover-card-deneb .cover-guest-name { color: #d84570; font-weight: 800; }
+.cover-card-deneb .cover-guest-note { color: #6d5b77; }
+.cover-card-deneb .cover-open-btn {
+  background: linear-gradient(135deg, #ff8fab 0%, #ffb3c6 100%);
+  color: #4a192c;
+  font-weight: 800;
+  border-radius: 99px;
+  box-shadow: 0 8px 24px rgba(255, 143, 171, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   5. CASTOR — Royal Burgundy (Velvet Wine × Antique Gold)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-castor {
+  background: radial-gradient(circle at 50% 20%, #3d0d19 0%, #1e050b 70%, #0d0104 100%);
+}
+.cover-overlay-castor .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.4) 0%, transparent 70%);
+}
+.cover-card-castor {
+  border-radius: 16px;
+  background: #25070f;
+  border: 2px solid #c9a84c;
+  box-shadow:
+    0 0 0 5px rgba(201, 168, 76, 0.25),
+    0 24px 70px rgba(0, 0, 0, 0.85);
+}
+.cover-card-castor .cover-badge {
+  background: rgba(201, 168, 76, 0.18);
+  border: 1px solid #ffd778;
+  color: #ffd778;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+.cover-card-castor .cover-names {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(201, 168, 76, 0.5);
+}
+.cover-card-castor .cover-date {
+  color: #f7e6c4;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.2em;
+}
+.cover-card-castor .cover-guest-box {
+  background: rgba(13, 1, 4, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  border-radius: 12px;
+}
+.cover-card-castor .cover-guest-to { color: #d6b879; }
+.cover-card-castor .cover-guest-name { color: #ffffff; font-family: 'Cinzel', serif; }
+.cover-card-castor .cover-guest-note { color: #e2cfa7; }
+.cover-card-castor .cover-open-btn {
+  background: linear-gradient(135deg, #c9a84c 0%, #ffd778 100%);
+  color: #1e050b;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   6. ALTAIR — Modern Editorial Minimalist (Chalk × Ink)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-altair {
+  background: #f7f7f7;
+}
+.cover-overlay-altair .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.18) 0%, transparent 70%);
+}
+.cover-card-altair {
+  border-radius: 0;
+  background: #ffffff;
+  border: 2px solid #111111;
+  box-shadow: 12px 12px 0px #111111;
+}
+.cover-card-altair .cover-badge {
+  background: #111111;
+  border: none;
+  color: #ffffff;
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+}
+.cover-card-altair .cover-names {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: #111111;
+  letter-spacing: -0.01em;
+}
+.cover-card-altair .cover-date {
+  color: #555555;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+.cover-card-altair .cover-guest-box {
+  background: #fafafa;
+  border: 1px solid #111111;
+  border-radius: 0;
+}
+.cover-card-altair .cover-guest-to { color: #777777; }
+.cover-card-altair .cover-guest-name { color: #111111; font-weight: 800; }
+.cover-card-altair .cover-guest-note { color: #444444; }
+.cover-card-altair .cover-open-btn {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  box-shadow: 4px 4px 0 #c9a84c;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   7. SIRIUS — Walimatul Khitan (Emerald × Mosque Gold)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-sirius {
+  background: radial-gradient(circle at 50% 25%, #053322 0%, #021c13 70%, #010e09 100%);
+}
+.cover-overlay-sirius .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(255, 215, 120, 0.35) 0%, transparent 70%);
+}
+.cover-card-sirius {
+  border-radius: 24px;
+  background: rgba(3, 31, 21, 0.95);
+  border: 1.5px solid #c9a84c;
+  box-shadow:
+    0 0 0 5px rgba(201, 168, 76, 0.2),
+    0 24px 70px rgba(0, 0, 0, 0.85);
+}
+.cover-card-sirius .cover-badge {
+  background: rgba(201, 168, 76, 0.18);
+  border: 1px solid #ffd778;
+  color: #ffd778;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.25em;
+}
+.cover-card-sirius .cover-names {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(201, 168, 76, 0.4);
+}
+.cover-card-sirius .cover-date {
+  color: #c9e2d7;
+  font-weight: 600;
+}
+.cover-card-sirius .cover-guest-box {
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px dashed rgba(201, 168, 76, 0.4);
+  border-radius: 14px;
+}
+.cover-card-sirius .cover-guest-to { color: #a3cbb8; }
+.cover-card-sirius .cover-guest-name { color: #ffd778; font-family: 'Playfair Display', serif; }
+.cover-card-sirius .cover-guest-note { color: #bde0cf; }
+.cover-card-sirius .cover-open-btn {
+  background: linear-gradient(135deg, #c9a84c 0%, #ffd778 100%);
+  color: #021c13;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   8. POLLUX — Aqiqah & Kelahiran (Sage Green × Honey Cream)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-pollux {
+  background: radial-gradient(circle at 50% 25%, #f4f7f2 0%, #e6eee3 60%, #d8e3d4 100%);
+}
+.cover-overlay-pollux .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.25) 0%, transparent 70%);
+}
+.cover-card-pollux {
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid rgba(65, 90, 68, 0.35);
+  box-shadow:
+    0 16px 45px rgba(65, 90, 68, 0.15),
+    0 0 0 6px rgba(244, 247, 242, 0.9);
+}
+.cover-card-pollux .cover-badge {
+  background: #f1f6ef;
+  border: 1px solid #415a44;
+  color: #314a34;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+.cover-card-pollux .cover-names {
+  font-family: 'Playfair Display', serif;
+  color: #263828;
+  font-size: 32px;
+}
+.cover-card-pollux .cover-date {
+  color: #b8860b;
+  font-weight: 700;
+}
+.cover-card-pollux .cover-guest-box {
+  background: #f7faf5;
+  border: 1.5px dashed rgba(65, 90, 68, 0.35);
+  border-radius: 16px;
+}
+.cover-card-pollux .cover-guest-to { color: #5f7a62; }
+.cover-card-pollux .cover-guest-name { color: #263828; font-weight: 800; }
+.cover-card-pollux .cover-guest-note { color: #415a44; }
+.cover-card-pollux .cover-open-btn {
+  background: linear-gradient(135deg, #415a44 0%, #5a7d5e 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(65, 90, 68, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   9. SPICA — Tunangan / Lamaran (Terracotta × Champagne Silk)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-spica {
+  background: radial-gradient(circle at 50% 25%, #fcf5ee 0%, #f4e8dc 60%, #e8d5c4 100%);
+}
+.cover-overlay-spica .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(140, 67, 45, 0.28) 0%, transparent 70%);
+}
+.cover-card-spica {
+  border-radius: 22px;
+  background: #ffffff;
+  border: 2px solid rgba(140, 67, 45, 0.4);
+  box-shadow:
+    0 16px 50px rgba(140, 67, 45, 0.16),
+    0 0 0 6px rgba(252, 245, 238, 0.9);
+}
+.cover-card-spica .cover-badge {
+  background: #fbf0e8;
+  border: 1px solid #8c432d;
+  color: #7a3520;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+.cover-card-spica .cover-names {
+  font-family: 'Playfair Display', serif;
+  color: #7a3520;
+  font-size: 33px;
+}
+.cover-card-spica .cover-date {
+  color: #a46d3b;
+  font-weight: 700;
+}
+.cover-card-spica .cover-guest-box {
+  background: #fcf7f2;
+  border: 1.5px dashed rgba(140, 67, 45, 0.35);
+  border-radius: 14px;
+}
+.cover-card-spica .cover-guest-to { color: #8c5d4b; }
+.cover-card-spica .cover-guest-name { color: #7a3520; font-family: 'Playfair Display', serif; }
+.cover-card-spica .cover-guest-note { color: #6b4334; }
+.cover-card-spica .cover-open-btn {
+  background: linear-gradient(135deg, #8c432d 0%, #b2583d 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(140, 67, 45, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   10. ANTARES — Anniversary (Royal Amethyst × Orchid Rose)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-antares {
+  background: radial-gradient(circle at 50% 25%, #3b0764 0%, #1a0333 70%, #0c011a 100%);
+}
+.cover-overlay-antares .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.45) 0%, transparent 70%);
+}
+.cover-card-antares {
+  border-radius: 20px;
+  background: rgba(37, 8, 79, 0.95);
+  border: 1.5px solid #c084fc;
+  box-shadow:
+    0 0 0 5px rgba(192, 132, 252, 0.3),
+    0 24px 70px rgba(0, 0, 0, 0.85);
+}
+.cover-card-antares .cover-badge {
+  background: rgba(192, 132, 252, 0.18);
+  border: 1px solid #c084fc;
+  color: #f3e8ff;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+.cover-card-antares .cover-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 46px;
+  color: #f3e8ff;
+  text-shadow: 0 2px 14px rgba(192, 132, 252, 0.4);
+}
+.cover-card-antares .cover-date {
+  color: #e9d5ff;
+  font-weight: 600;
+}
+.cover-card-antares .cover-guest-box {
+  background: rgba(192, 132, 252, 0.08);
+  border: 1px dashed rgba(192, 132, 252, 0.4);
+  border-radius: 14px;
+}
+.cover-card-antares .cover-guest-to { color: #d8b4fe; }
+.cover-card-antares .cover-guest-name { color: #ffffff; font-family: 'Playfair Display', serif; }
+.cover-card-antares .cover-guest-note { color: #f3e8ff; }
+.cover-card-antares .cover-open-btn {
+  background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   11. CAPELLA — Wisuda & Graduation (Oxford Navy × Gold Leaf)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-capella {
+  background: radial-gradient(circle at 50% 25%, #0d2247 0%, #061022 70%, #020610 100%);
+}
+.cover-overlay-capella .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+}
+.cover-card-capella {
+  border-radius: 14px;
+  background: rgba(10, 24, 51, 0.95);
+  border: 2px solid #d4af37;
+  box-shadow:
+    0 0 0 5px rgba(212, 175, 55, 0.2),
+    0 24px 70px rgba(0, 0, 0, 0.85);
+}
+.cover-card-capella .cover-badge {
+  background: rgba(212, 175, 55, 0.16);
+  border: 1px solid #ffd966;
+  color: #ffd966;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+.cover-card-capella .cover-names {
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(212, 175, 55, 0.4);
+}
+.cover-card-capella .cover-date {
+  color: #ffd966;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+.cover-card-capella .cover-guest-box {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+}
+.cover-card-capella .cover-guest-to { color: #adc9eb; }
+.cover-card-capella .cover-guest-name { color: #ffd966; font-family: 'Cinzel', serif; }
+.cover-card-capella .cover-guest-note { color: #c2d4ec; }
+.cover-card-capella .cover-open-btn {
+  background: linear-gradient(135deg, #d4af37 0%, #ffd966 100%);
+  color: #061022;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   12. RIGEL — Baby Shower (Powder Sky Blue × Sunny Yellow)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-rigel {
+  background: radial-gradient(circle at 50% 25%, #f0f9ff 0%, #e0f2fe 60%, #bae6fd 100%);
+}
+.cover-overlay-rigel .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.35) 0%, transparent 70%);
+}
+.cover-card-rigel {
+  border-radius: 32px;
+  background: #ffffff;
+  border: 2.5px solid #0284c7;
+  box-shadow:
+    0 16px 45px rgba(2, 132, 199, 0.16),
+    0 0 0 8px rgba(224, 242, 254, 0.95);
+}
+.cover-card-rigel .cover-badge {
+  background: #fefce8;
+  border: 1.5px solid #eab308;
+  color: #854d0e;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.cover-card-rigel .cover-names {
+  font-family: 'Sacramento', cursive;
+  font-size: 46px;
+  color: #0284c7;
+}
+.cover-card-rigel .cover-date {
+  color: #b45309;
+  font-weight: 700;
+}
+.cover-card-rigel .cover-guest-box {
+  background: #f0f9ff;
+  border: 1.5px dashed #38bdf8;
+  border-radius: 18px;
+}
+.cover-card-rigel .cover-guest-to { color: #0369a1; }
+.cover-card-rigel .cover-guest-name { color: #0f172a; font-weight: 800; }
+.cover-card-rigel .cover-guest-note { color: #334155; }
+.cover-card-rigel .cover-open-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 99px;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   13. ALDEBARAN — Pengajian & Doa Bersama (Moroccan Midnight)
+   ═══════════════════════════════════════════════════════════ */
+.cover-overlay-aldebaran {
+  background: radial-gradient(circle at 50% 25%, #0d223d 0%, #05111e 70%, #02070e 100%);
+}
+.cover-overlay-aldebaran .cover-ambient-glow {
+  background: radial-gradient(circle, rgba(201, 162, 77, 0.35) 0%, transparent 70%);
+}
+.cover-card-aldebaran {
+  border-radius: 20px;
+  background: rgba(9, 27, 49, 0.95);
+  border: 1.5px solid #c9a24d;
+  box-shadow:
+    0 0 0 5px rgba(201, 162, 77, 0.2),
+    0 24px 70px rgba(0, 0, 0, 0.85);
+}
+.cover-card-aldebaran .cover-badge {
+  background: rgba(201, 162, 77, 0.16);
+  border: 1px solid #ffd56b;
+  color: #ffd56b;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+.cover-card-aldebaran .cover-names {
+  font-family: 'Amiri', serif;
+  font-size: 34px;
+  color: #ffd56b;
+  text-shadow: 0 2px 14px rgba(201, 162, 77, 0.4);
+}
+.cover-card-aldebaran .cover-date {
+  color: #d2e4f7;
+  font-weight: 600;
+}
+.cover-card-aldebaran .cover-guest-box {
+  background: rgba(201, 162, 77, 0.08);
+  border: 1px dashed rgba(201, 162, 77, 0.4);
+  border-radius: 12px;
+}
+.cover-card-aldebaran .cover-guest-to { color: #a4c4e8; }
+.cover-card-aldebaran .cover-guest-name { color: #ffffff; font-family: 'Amiri', serif; font-size: 22px; }
+.cover-card-aldebaran .cover-guest-note { color: #bcd0e8; }
+.cover-card-aldebaran .cover-open-btn {
+  background: linear-gradient(135deg, #c9a24d 0%, #ffd56b 100%);
+  color: #05111e;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  box-shadow: 0 8px 24px rgba(201, 162, 77, 0.35);
+}
+
+
+/* ── Mobile Tweaks ────────────────────────────────────── */
+@media (max-width: 480px) {
+  .cover-card-base {
+    padding: 34px 20px 28px;
+  }
+  .cover-card-base .cover-names {
+    font-size: 26px !important;
+  }
+}
+
+/* ── Floating Return to Cover Button ─────────────────── */
+.cover-reopen-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s ease;
+}
+.cover-reopen-float-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(15, 23, 42, 0.98);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 600px) {
+  .cover-reopen-float-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 10px;
+  }
+}

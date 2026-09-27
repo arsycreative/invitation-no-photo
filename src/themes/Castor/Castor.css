@@ -1,0 +1,465 @@
+/* ═══════════════════════════════════════════════════════════
+   THEME: CASTOR
+   Palette: Deep Burgundy × Gold Leaf × Parchment
+   Style:   Royal, regal, opulent — formal wedding
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+.castor-root {
+  --burgundy:     #2d0a12;
+  --burgundy-mid: #4a1020;
+  --burgundy-l:   #6b1a30;
+  --wine:         #8b1a3c;
+  --gold:         #c9a84c;
+  --gold-light:   #e8d08a;
+  --gold-pale:    #f5e8bc;
+  --parchment:    #f8f0e0;
+  --ivory:        #fdf8f0;
+  --text-dark:    #2d0a12;
+  --text-mid:     #5a1c28;
+  --text-light:   #7a2838;
+
+  --ff-roman:  'Cinzel', serif;
+  --ff-serif:  'EB Garamond', serif;
+}
+
+/* ── Base — Gothic Damask ──────────────────────────── */
+.castor-root {
+  min-height: 100vh;
+  background-color: #0e0004;
+  background-image:
+    radial-gradient(ellipse at 50% 0%,   rgba(100,0,20,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 100%,  rgba(80,0,15,0.8) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 50%, rgba(60,0,10,0.6) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='rgba(180,130,40,0.06)' fill-rule='evenodd'%3E%3Cellipse cx='40' cy='10' rx='6' ry='8'/%3E%3Cellipse cx='40' cy='70' rx='6' ry='8'/%3E%3Cellipse cx='10' cy='40' rx='8' ry='6'/%3E%3Cellipse cx='70' cy='40' rx='8' ry='6'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='40' cy='40' r='1.5' fill='rgba(200,160,60,0.1)'/%3E%3Cpath d='M34 10 Q40 14 46 10 Q40 18 34 10z' fill='rgba(180,130,40,0.08)'/%3E%3Cpath d='M34 70 Q40 66 46 70 Q40 62 34 70z' fill='rgba(180,130,40,0.08)'/%3E%3C/g%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Vignette overlay ───────────────────────────────── */
+.castor-root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Page ─────────────────────────────────────────────── */
+.castor-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--parchment);
+  box-shadow:
+    0 0 0 3px var(--gold),
+    0 0 0 6px rgba(100,20,30,0.6),
+    0 0 0 9px rgba(201,168,76,0.2),
+    0 0 60px rgba(201,168,76,0.12),
+    0 40px 100px rgba(0,0,0,0.85);
+}
+
+/* ── Top Crest Bar ────────────────────────────────────── */
+.castor-crest-bar {
+  background: linear-gradient(135deg, var(--burgundy-mid), var(--burgundy), var(--burgundy-mid));
+  padding: 32px 48px 24px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+  position: relative;
+}
+.castor-crest-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 0; right: 0;
+  height: 2px;
+  background: rgba(201,168,76,0.3);
+}
+
+.castor-crest-emblem {
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.castor-crest-tag {
+  font-family: var(--ff-roman);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.55em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  opacity: 0.85;
+}
+
+/* ── Frame / Body ─────────────────────────────────────── */
+.castor-frame {
+  padding: 52px 64px;
+  position: relative;
+  background: var(--ivory);
+}
+
+.castor-frame::before {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(201,168,76,0.3);
+  pointer-events: none;
+}
+.castor-frame::after {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(201,168,76,0.12);
+  pointer-events: none;
+}
+
+/* ── Corner Ornament ──────────────────────────────────── */
+.castor-corner {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+}
+.castor-corner--tl { top: 8px; left: 8px; }
+.castor-corner--tr { top: 8px; right: 8px; transform: scaleX(-1); }
+.castor-corner--bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+.castor-corner--br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+/* ── Bismillah ────────────────────────────────────────── */
+.castor-bismillah {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.castor-bismillah span {
+  font-family: var(--ff-serif);
+  font-size: 26px;
+  font-style: italic;
+  color: var(--wine);
+  letter-spacing: 0.04em;
+}
+
+/* ── Divider ──────────────────────────────────────────── */
+.castor-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+.castor-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+  opacity: 0.45;
+}
+.castor-divider-line.right {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+
+/* ── Greeting ─────────────────────────────────────────── */
+.castor-greeting {
+  text-align: center;
+  margin: 24px 0;
+}
+.castor-greeting p {
+  font-family: var(--ff-serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+
+/* ── Names ────────────────────────────────────────────── */
+.castor-names { text-align: center; margin: 32px 0; }
+
+.castor-name-main {
+  font-family: var(--ff-roman);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--burgundy);
+  display: block;
+  text-shadow: 1px 1px 0 rgba(201,168,76,0.2);
+}
+.castor-name-full {
+  font-family: var(--ff-serif);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-mid);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 6px;
+}
+.castor-and {
+  font-family: var(--ff-serif);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+  margin: 10px 0;
+  opacity: 0.85;
+}
+
+/* ── Family ───────────────────────────────────────────── */
+.castor-family {
+  text-align: center;
+  margin: 24px 0;
+  padding: 24px;
+  background: rgba(45,10,18,0.03);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.castor-family-intro {
+  font-family: var(--ff-roman);
+  font-size: 9px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 16px;
+}
+.castor-family-label {
+  font-family: var(--ff-serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 4px;
+}
+.castor-family-name {
+  font-family: var(--ff-roman);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: block;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+/* ── Event Cards ──────────────────────────────────────── */
+.castor-events { display: flex; flex-direction: column; gap: 20px; margin: 28px 0; }
+
+.castor-event-card {
+  padding: 28px 32px;
+  border: 1px solid rgba(201,168,76,0.25);
+  text-align: center;
+  position: relative;
+  background: white;
+  transition: border-color 0.3s;
+}
+.castor-event-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.castor-event-card:hover { border-color: rgba(201,168,76,0.5); }
+
+.castor-event-tag {
+  font-family: var(--ff-roman);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--wine);
+  display: block;
+  margin-bottom: 12px;
+}
+.castor-event-name {
+  font-family: var(--ff-roman);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--burgundy);
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 14px;
+}
+.castor-event-date {
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+.castor-event-time {
+  font-family: var(--ff-roman);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 14px;
+}
+.castor-event-sep {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.25), transparent);
+  margin: 12px 0;
+}
+.castor-event-venue {
+  font-family: var(--ff-roman);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.04em;
+  display: block;
+}
+.castor-event-address {
+  font-family: var(--ff-serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-mid);
+  display: block;
+  margin-top: 4px;
+  line-height: 1.65;
+}
+
+.castor-btn-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 9px 20px;
+  border: 1.5px solid #9c7a28;
+  color: #7a2838;
+  font-family: var(--ff-roman);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(201,168,76,0.08);
+  transition: all 0.3s;
+}
+.castor-btn-maps:hover {
+  background: rgba(201,168,76,0.18);
+  border-color: #8b1a3c;
+}
+
+/* ── Countdown ────────────────────────────────────────── */
+.castor-countdown {
+  text-align: center;
+  margin: 24px 0;
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(45,10,18,0.03), rgba(201,168,76,0.04));
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 12px;
+}
+.castor-countdown-label {
+  font-family: var(--ff-roman);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #7a2838;
+  display: block;
+  margin-bottom: 16px;
+}
+.castor-countdown-digits {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+.castor-digit-block { text-align: center; min-width: 52px; }
+.castor-digit {
+  font-family: var(--ff-roman);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--burgundy);
+  display: block;
+  line-height: 1;
+}
+.castor-digit-unit {
+  font-family: var(--ff-roman);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #5a1c28;
+  margin-top: 4px;
+  display: block;
+}
+.castor-digit-sep {
+  font-family: var(--ff-serif);
+  font-size: 32px;
+  font-style: italic;
+  color: rgba(201,168,76,0.6);
+  line-height: 1;
+  padding-top: 4px;
+}
+
+/* ── Closing ──────────────────────────────────────────── */
+.castor-closing {
+  text-align: center;
+  margin: 24px 0;
+}
+.castor-closing p {
+  font-family: var(--ff-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  font-style: italic;
+  color: #2d0a12;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.castor-btn-rsvp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 44px;
+  background: linear-gradient(135deg, var(--wine), var(--burgundy));
+  color: var(--gold-pale);
+  font-family: var(--ff-roman);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(201,168,76,0.3);
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(45,10,18,0.3);
+}
+.castor-btn-rsvp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(45,10,18,0.4);
+  border-color: var(--gold);
+}
+
+/* ── Bottom Bar ───────────────────────────────────────── */
+.castor-bottom-bar {
+  background: linear-gradient(135deg, var(--burgundy-mid), var(--burgundy), var(--burgundy-mid));
+  border-top: 3px solid var(--gold);
+  padding: 20px 48px;
+  text-align: center;
+}
+.castor-footer-brand {
+  font-family: var(--ff-roman);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  color: #ffd778;
+  text-transform: uppercase;
+}
+
+/* ── Ornament Positioning ─────────────────────────────── */
+.castor-ornament-section {
+  position: relative;
+  overflow: visible;
+}
+
+@media (max-width: 600px) {
+  .castor-frame { padding: 44px 28px; }
+  .castor-name-main { font-size: 30px; }
+  .castor-crest-bar { padding: 24px 24px 18px; }
+  .castor-ornament-section > [style*="absolute"] { display: none; }
+}
