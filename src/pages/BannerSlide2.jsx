@@ -1,6 +1,7 @@
 import { useMemo, Suspense } from 'react'
 import { THEMES } from '../themes'
 import { CLIENTS } from '../clients'
+import './CatalogPage.css'
 import './BannerSlide2.css'
 
 /* ── Top-Left Luxury Double-Ring Seal with Laurel Wreath ── */
@@ -91,7 +92,7 @@ function TiltedPhone({
     return {
       ...raw,
       guestName: 'Tamu Undangan',
-      initialOpen: false,
+      initialOpen: true,
       lockBodyScroll: false,
       hideFloatingButton: true,
     }
@@ -225,8 +226,8 @@ export default function BannerSlide2() {
             clientKey="demo-castor"
             className="phone-castor"
             style={{
-              left: '630px',
-              top: '910px',
+              left: '640px',
+              top: '930px',
               zIndex: 7,
             }}
             scalerStyle={{ transform: 'scale(0.6667)', height: '802px' }}
