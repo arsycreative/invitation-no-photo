@@ -128,18 +128,32 @@
   font-family: 'Montserrat', sans-serif;
 }
 .cover-card-vega .cover-guest-box {
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px dashed rgba(255, 215, 120, 0.4);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px dashed rgba(255, 215, 120, 0.5);
   border-radius: 14px;
 }
-.cover-card-vega .cover-guest-name {
+.cover-card-vega .cover-guest-to {
   color: #ffd778;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.cover-card-vega .cover-guest-name {
+  color: #ffffff;
   font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+.cover-card-vega .cover-guest-note {
+  color: #f1f5f9;
+  font-size: 13px;
+  line-height: 1.5;
 }
 .cover-card-vega .cover-open-btn {
   background: linear-gradient(135deg, #c9a84c 0%, #ffd778 50%, #c9a84c 100%);
   color: #070f29;
-  font-weight: 700;
+  font-weight: 800;
   box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
 }
 
@@ -195,9 +209,20 @@
   border: 1.5px dashed rgba(196, 116, 140, 0.35);
   border-radius: 16px;
 }
-.cover-card-lyra .cover-guest-to { color: #8e6874; }
+.cover-card-lyra .cover-guest-to {
+  color: #70263c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 .cover-card-lyra .cover-guest-name { color: #8c324c; font-family: 'Playfair Display', serif; }
-.cover-card-lyra .cover-guest-note { color: #6b4d57; }
+.cover-card-lyra .cover-guest-note {
+  color: #3d1421;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+}
 .cover-card-lyra .cover-open-btn {
   background: linear-gradient(135deg, #c4748c 0%, #e298ad 100%);
   color: #ffffff;
@@ -504,19 +529,39 @@
   color: #c9e2d7;
   font-weight: 600;
 }
+.cover-card-sirius .cover-date {
+  color: #ffd778;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
 .cover-card-sirius .cover-guest-box {
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px dashed rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px dashed rgba(255, 215, 120, 0.5);
   border-radius: 14px;
 }
-.cover-card-sirius .cover-guest-to { color: #a3cbb8; }
-.cover-card-sirius .cover-guest-name { color: #ffd778; font-family: 'Playfair Display', serif; }
-.cover-card-sirius .cover-guest-note { color: #bde0cf; }
+.cover-card-sirius .cover-guest-to {
+  color: #ffd778;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.cover-card-sirius .cover-guest-name {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+.cover-card-sirius .cover-guest-note {
+  color: #f1f5f9;
+  font-size: 13px;
+  line-height: 1.5;
+}
 .cover-card-sirius .cover-open-btn {
   background: linear-gradient(135deg, #c9a84c 0%, #ffd778 100%);
   color: #021c13;
   font-weight: 800;
-  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
 }
 
 
@@ -607,9 +652,20 @@
   border: 1.5px dashed rgba(140, 67, 45, 0.35);
   border-radius: 14px;
 }
-.cover-card-spica .cover-guest-to { color: #8c5d4b; }
+.cover-card-spica .cover-guest-to {
+  color: #6b2612;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 .cover-card-spica .cover-guest-name { color: #7a3520; font-family: 'Playfair Display', serif; }
-.cover-card-spica .cover-guest-note { color: #6b4334; }
+.cover-card-spica .cover-guest-note {
+  color: #3a150a;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+}
 .cover-card-spica .cover-open-btn {
   background: linear-gradient(135deg, #8c432d 0%, #b2583d 100%);
   color: #ffffff;
