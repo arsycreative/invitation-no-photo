@@ -3,6 +3,7 @@ import { THEMES, DEFAULT_THEME } from './themes'
 import { CLIENTS, DEMO_CLIENT } from './clients'
 import CatalogPage from './pages/CatalogPage'
 import BannerPage from './pages/BannerPage'
+import BannerSlide2 from './pages/BannerSlide2'
 import './index.css'
 
 /* ── URL param helpers ────────────────────────────────── */
@@ -12,7 +13,7 @@ function getParams() {
     clientSlug: params.get('client'),
     themeKey:   params.get('theme'),
     catalogKey: params.get('catalog'),
-    bannerKey:  params.get('banner'),
+    bannerKey:  params.get('banner') || params.get('slide'),
     guestName:  params.get('to') || params.get('u') || 'Tamu Undangan',
     initialOpen: params.get('open') === 'true' || params.get('open') === '1',
   }
@@ -45,6 +46,8 @@ function NotFound({ message }) {
    ──────────────────────────────────────────────────────────
    Routing logic (no library needed — just URL params):
 
+   • ?banner=1           → load Slide 1 Hero Banner
+   • ?banner=2           → load Slide 2 Diagonal Showcase
    • ?catalog=vega       → load 2-view catalog presentation
    • ?client=demo        → load client's theme + their data
    • ?theme=vega         → load theme with its specific demo data
@@ -52,6 +55,10 @@ function NotFound({ message }) {
    ═══════════════════════════════════════════════════════════ */
 export default function App() {
   const { clientSlug, themeKey, catalogKey, bannerKey, guestName, initialOpen } = getParams()
+
+  if (bannerKey === '2' || bannerKey === 'slide2') {
+    return <BannerSlide2 />
+  }
 
   if (bannerKey) {
     return <BannerPage />
