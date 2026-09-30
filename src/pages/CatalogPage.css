@@ -1,0 +1,558 @@
+/* ═══════════════════════════════════════════════════════════
+   CATALOG SHOWCASE: CLEAN MINIMALIST (1080x1080)
+   Pure White Background (#ffffff), Zero External Text,
+   Two Realistic Smartphone Mockups (Cover & Main Page)
+   ═══════════════════════════════════════════════════════════ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.catalog-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── 1080x1080 Canvas ─────────────────────────────────── */
+.catalog-canvas {
+  width: 1080px;
+  height: 1080px;
+  min-width: 1080px;
+  min-height: 1080px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ── Smartphone Device Mockup (iPhone Pro Titanium) ───── */
+.catalog-device-mockup {
+  position: relative;
+  width: 420px;
+  height: 880px;
+  background: #0d0f14;
+  border-radius: 52px;
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 35px 70px -15px rgba(0, 0, 0, 0.22),
+    0 15px 30px -10px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Subtle outer frame rim shine */
+.catalog-device-mockup::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 53px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+/* Dynamic Island */
+.mockup-island {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 26px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 14px;
+  box-sizing: border-box;
+  pointer-events: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.mockup-camera {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #0b1220;
+  border: 1.5px solid #16243a;
+  display: block;
+}
+
+/* Screen area */
+.mockup-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 41px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: #060f22;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* Bottom Home Bar */
+.mockup-home-bar {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 125px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 500;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOCKUP FRAME COMPONENT SCOPING
+   Converts full-window fixed overlays to phone-viewport absolute
+   ═══════════════════════════════════════════════════════════ */
+
+.is-mockup-frame {
+  height: 100% !important;
+  max-height: 100% !important;
+}
+
+.is-mockup-frame .invitation-cover-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 41px !important;
+  z-index: 200 !important;
+  padding: 24px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.is-mockup-frame .cover-card-base {
+  padding: 26px 20px 24px !important;
+  max-width: 325px !important;
+  border-radius: 22px !important;
+  margin: 0 auto !important;
+}
+
+.is-mockup-frame .cover-badge {
+  font-size: 9.5px !important;
+  padding: 4px 11px !important;
+  margin-bottom: 9px !important;
+}
+
+.is-mockup-frame .cover-names {
+  font-size: 23px !important;
+  margin: 10px 0 8px !important;
+  line-height: 1.25 !important;
+}
+
+.is-mockup-frame .cover-date {
+  font-size: 11px !important;
+  margin: 0 0 16px !important;
+  letter-spacing: 0.12em !important;
+}
+
+.is-mockup-frame .cover-guest-box {
+  padding: 8px 12px !important;
+  margin: 9px 0 16px !important;
+}
+
+.is-mockup-frame .cover-guest-to {
+  font-size: 9px !important;
+}
+
+.is-mockup-frame .cover-guest-name {
+  font-size: 13.5px !important;
+}
+
+.is-mockup-frame .cover-guest-note {
+  font-size: 9.5px !important;
+  line-height: 1.3 !important;
+  margin-top: 4px !important;
+}
+
+.is-mockup-frame .cover-open-btn {
+  padding: 10px 24px !important;
+  font-size: 12.5px !important;
+  border-radius: 50px !important;
+}
+
+/* ── Multi-Theme Page Scoping Inside Mockup ── */
+.is-mockup-frame [class*="-root"] {
+  min-height: 100% !important;
+  padding: 0 !important;
+}
+
+.is-mockup-frame [class*="-page"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.is-mockup-frame [class*="-page"] [style*="opacity"] {
+  opacity: 1 !important;
+}
+
+.is-mockup-frame [class*="-ornament-section"] {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.is-mockup-frame [class*="-ornament-section"] > [style*="absolute"],
+.is-mockup-frame .vega-floating-ornament {
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.is-mockup-frame .vega-floating-ornament.vega-ornament-left,
+.is-mockup-frame [class*="-ornament-section"] > [style*="left:"] {
+  left: 4px !important;
+}
+
+.is-mockup-frame .vega-floating-ornament.vega-ornament-right,
+.is-mockup-frame [class*="-ornament-section"] > [style*="right:"] {
+  right: 4px !important;
+}
+
+.is-mockup-frame .vega-floating-ornament svg,
+.is-mockup-frame [class*="-ornament-section"] svg {
+  filter: drop-shadow(0 2px 10px rgba(201, 168, 76, 0.6)) drop-shadow(0 0 14px rgba(255, 215, 120, 0.4)) !important;
+  opacity: 0.95 !important;
+  max-width: 85px !important;
+  height: auto !important;
+}
+
+/* ── Specific Theme Fine-Tuning ── */
+.is-mockup-frame .vega-inner {
+  padding: 34px 18px 24px !important;
+  max-width: 100% !important;
+}
+
+.is-mockup-frame .vega-frame {
+  padding: 44px 24px 30px !important;
+  border-radius: 22px !important;
+}
+
+.is-mockup-frame .lyra-frame {
+  padding: 44px 24px 30px !important;
+}
+
+/* ── Castor Imperial Prestige in Mockup ── */
+.is-mockup-frame .castor-root {
+  min-height: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  background-color: #140207 !important;
+}
+
+.is-mockup-frame .castor-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.is-mockup-frame .castor-page::before {
+  inset: 8px !important;
+  border-radius: 34px !important;
+  border-color: rgba(201, 168, 76, 0.45) !important;
+}
+
+.is-mockup-frame .castor-page::after {
+  inset: 12px !important;
+  border-radius: 30px !important;
+  border-color: rgba(201, 168, 76, 0.22) !important;
+}
+
+.is-mockup-frame .castor-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.is-mockup-frame .castor-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 44px 22px 30px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: linear-gradient(180deg, #330814 0%, #24050d 60%, #190309 100%) !important;
+  border-bottom: none !important;
+}
+
+.is-mockup-frame .castor-corner--tl {
+  top: 14px !important;
+  left: 14px !important;
+}
+.is-mockup-frame .castor-corner--tr {
+  top: 14px !important;
+  right: 14px !important;
+}
+.is-mockup-frame .castor-corner--bl {
+  bottom: 14px !important;
+  left: 14px !important;
+}
+.is-mockup-frame .castor-corner--br {
+  bottom: 14px !important;
+  right: 14px !important;
+}
+
+.is-mockup-frame .castor-royal-corner {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.is-mockup-frame .castor-hero-crown {
+  margin-bottom: 8px !important;
+}
+.is-mockup-frame .castor-hero-crown svg {
+  width: 62px !important;
+  height: auto !important;
+}
+
+.is-mockup-frame .castor-royal-tag {
+  font-size: 8.5px !important;
+  letter-spacing: 0.3em !important;
+  padding: 3px 12px !important;
+  margin-bottom: 8px !important;
+}
+
+.is-mockup-frame .castor-hero-eyebrow {
+  font-size: 13px !important;
+  margin-bottom: 6px !important;
+}
+
+.is-mockup-frame .castor-hero-name-primary {
+  font-size: 34px !important;
+  line-height: 1.1 !important;
+}
+
+.is-mockup-frame .castor-hero-ampersand {
+  font-size: 20px !important;
+}
+.is-mockup-frame .castor-hero-ampersand-wrap {
+  margin: 2px 0 !important;
+}
+
+.is-mockup-frame .castor-hero-titles {
+  font-size: 11px !important;
+  margin: 6px 0 16px !important;
+}
+
+.is-mockup-frame .castor-hero-date-badge {
+  font-size: 10px !important;
+  padding: 5px 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.is-mockup-frame .castor-scroll-hint {
+  font-size: 8.5px !important;
+}
+
+.is-mockup-frame [class*="-page"] .castor-heraldic-watermark,
+.is-mockup-frame [class*="-page"] .castor-heraldic-watermark[style],
+.is-mockup-frame .castor-page .castor-heraldic-watermark,
+.is-mockup-frame .castor-page .castor-heraldic-watermark[style] {
+  width: 440px !important;
+  height: 440px !important;
+  opacity: 0.07 !important;
+}
+
+.is-mockup-frame .cover-card-castor {
+  border-radius: 18px !important;
+}
+
+/* ── Deneb Pastel Festival in Mockup ── */
+.is-mockup-frame .deneb-root {
+  min-height: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  background-color: #fff2f6 !important;
+}
+
+.is-mockup-frame .deneb-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.is-mockup-frame .deneb-page::before {
+  inset: 8px !important;
+  border-radius: 34px !important;
+}
+
+.is-mockup-frame .deneb-page::after {
+  inset: 12px !important;
+  border-radius: 30px !important;
+}
+
+.is-mockup-frame .deneb-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.is-mockup-frame .deneb-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 44px 22px 28px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: linear-gradient(180deg, #fff2f6 0%, #fef5f9 55%, #ffffff 100%) !important;
+}
+
+.is-mockup-frame .deneb-ribbon-garland {
+  position: relative !important;
+  z-index: 15 !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+  padding: 8px 0 10px !important;
+  background: linear-gradient(90deg, #ffd0db 0%, #ffcdd8 35%, #fde2cd 75%, #fcdab8 100%) !important;
+}
+
+.is-mockup-frame .deneb-corner--tl { top: 14px !important; left: 14px !important; }
+.is-mockup-frame .deneb-corner--tr { top: 14px !important; right: 14px !important; }
+.is-mockup-frame .deneb-corner--bl { bottom: 14px !important; left: 14px !important; }
+.is-mockup-frame .deneb-corner--br { bottom: 14px !important; right: 14px !important; }
+
+.is-mockup-frame .deneb-corner-flourish {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.is-mockup-frame .deneb-hero-balloons {
+  margin-bottom: 8px !important;
+}
+.is-mockup-frame .deneb-hero-balloons svg {
+  width: 90px !important;
+  height: auto !important;
+}
+
+.is-mockup-frame .deneb-festival-tag {
+  font-size: 8.5px !important;
+  letter-spacing: 0.25em !important;
+  padding: 3px 12px !important;
+  margin-bottom: 6px !important;
+}
+
+.is-mockup-frame .deneb-hero-eyebrow {
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+}
+
+.is-mockup-frame .deneb-hero-name {
+  font-size: 44px !important;
+  margin: 2px 0 8px !important;
+}
+
+.is-mockup-frame .deneb-hero-age-pill {
+  padding: 5px 16px !important;
+  margin-bottom: 12px !important;
+}
+.is-mockup-frame .deneb-age-text {
+  font-size: 12px !important;
+}
+.is-mockup-frame .deneb-age-num {
+  font-size: 16px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.is-mockup-frame .deneb-hero-date-badge {
+  font-size: 10px !important;
+  padding: 5px 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.is-mockup-frame .deneb-scroll-hint {
+  font-size: 8.5px !important;
+}
+
+.is-mockup-frame [class*="-page"] .deneb-fairytale-watermark,
+.is-mockup-frame [class*="-page"] .deneb-fairytale-watermark[style],
+.is-mockup-frame .deneb-page .deneb-fairytale-watermark,
+.is-mockup-frame .deneb-page .deneb-fairytale-watermark[style] {
+  width: 420px !important;
+  height: 420px !important;
+  opacity: 0.065 !important;
+}
+
+.is-mockup-frame .cover-card-deneb {
+  border-radius: 28px !important;
+}
+
+.is-mockup-frame .altair-page {
+  padding-top: 28px !important;
+}
+
+.is-mockup-frame .orion-hud-box,
+.is-mockup-frame .deneb-ticket-wrap,
+.is-mockup-frame .sirius-crest-bar,
+.is-mockup-frame .pollux-passport-grid,
+.is-mockup-frame .spica-arch-frame,
+.is-mockup-frame .antares-milestone-frame,
+.is-mockup-frame .capella-diploma-border,
+.is-mockup-frame .rigel-nursery-wrap,
+.is-mockup-frame .aldebaran-mihrab-wrap {
+  margin-top: 14px !important;
+}

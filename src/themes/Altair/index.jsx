@@ -69,9 +69,12 @@ export default function Altair({ data = {} }) {
     rsvpLink = 'https://wa.me/628123456789',
     brandName = 'ALTAIR EDITORIAL WEDDING // VOL. 2026',
     guestName = 'Tamu Undangan',
+    initialOpen = false,
+    lockBodyScroll = true,
+    hideFloatingButton = false,
   } = data
 
-  const [isCoverOpen, setIsCoverOpen] = useState(false)
+  const [isCoverOpen, setIsCoverOpen] = useState(initialOpen)
 
   return (
     <div className="altair-root">
@@ -86,6 +89,8 @@ export default function Altair({ data = {} }) {
         coupleOrKidName={`${groomName} & ${brideName}`}
         date={resepsi.date || akad.date || '5 Juli 2026'}
         guestName={guestName}
+        lockBodyScroll={lockBodyScroll}
+        hideFloatingButton={hideFloatingButton}
       />
 
       {isCoverOpen && (

@@ -10,11 +10,13 @@ import { motion } from 'framer-motion'
  */
 
 const pastelEase = [0.22, 1, 0.36, 1]
+const standardViewport = { once: true, margin: '200px 0px 200px 0px', amount: 0 }
 
 /** Gentle pastel scroll reveal */
 export function DenebJellyDrop({
   children,
   delay = 0,
+  duration = 0.8,
   className = '',
   style = {},
   ...rest
@@ -25,8 +27,8 @@ export function DenebJellyDrop({
       style={style}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: pastelEase, delay }}
+      viewport={standardViewport}
+      transition={{ duration, ease: pastelEase, delay }}
       {...rest}
     >
       {children}
@@ -47,10 +49,10 @@ export function DenebBubblePop({
       style={style}
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.75, ease: pastelEase, delay }}
       whileHover={{
-        scale: 1.05,
+        scale: 1.03,
         transition: { duration: 0.25 },
       }}
     >
@@ -74,14 +76,14 @@ export function DenebWobbleBalloon({
       className={className}
       style={{ display: 'inline-block', ...style }}
       animate={{
-        y: [-2, 3, -2],
+        y: [-3, 4, -3],
       }}
       transition={{
         duration: dur,
         repeat: Infinity,
         ease: 'easeInOut',
       }}
-      whileHover={{ scale: 1.15 }}
+      whileHover={{ scale: 1.1 }}
     >
       {children}
     </motion.span>
@@ -110,13 +112,13 @@ export function DenebPartyStreamer({
         opacity: 1,
         x: 0,
       }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.8, ease: pastelEase, delay }}
     >
       {/* Calm sweet ambient drift */}
       <motion.div
         animate={{
-          y: [-1, 2, -1],
+          y: [-2, 3, -2],
         }}
         transition={{
           duration: 7,
@@ -143,7 +145,7 @@ export function DenebSquishyCard({
       style={style}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.8, ease: pastelEase, delay }}
       whileHover={{ y: -3, transition: { duration: 0.25 } }}
     >

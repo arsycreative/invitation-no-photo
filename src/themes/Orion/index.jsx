@@ -135,9 +135,12 @@ export default function Orion({ data = {} }) {
     wishes = [],
     brandName,
     guestName = 'Tamu Undangan',
+    initialOpen = false,
+    lockBodyScroll = true,
+    hideFloatingButton = false,
   } = data
 
-  const [isCoverOpen, setIsCoverOpen] = useState(false)
+  const [isCoverOpen, setIsCoverOpen] = useState(initialOpen)
 
   return (
     <div className="orion-root">
@@ -152,6 +155,8 @@ export default function Orion({ data = {} }) {
         coupleOrKidName={kidName}
         date={`${day}, ${date}`}
         guestName={guestName}
+        lockBodyScroll={lockBodyScroll}
+        hideFloatingButton={hideFloatingButton}
       />
 
       {isCoverOpen && (

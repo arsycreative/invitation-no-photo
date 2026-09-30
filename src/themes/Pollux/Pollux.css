@@ -5,199 +5,431 @@
    Style:    Newborn Botanical Birth Passport & Holy Blessings
    ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
 
 .pollux-root {
-  --sage-dark:   #1b3223;
-  --sage-mid:    #2d4a37;
-  --sage-soft:   #496d55;
-  --sage-light:  #eef5ee;
-  --cream:       #fcfbf7;
-  --cream-soft:  #f4efe4;
-  --gold-olive:  #b5934e;
-  --gold-light:  #d9be7f;
-  --text-dark:   #1b3223;
-  --text-mid:    #3c5444;
-  --text-soft:   #5b7263;
+  --sage-deep:    #162a1d;
+  --sage-dark:    #1f3626;
+  --sage-mid:     #2e4d37;
+  --sage-soft:    #4a7256;
+  --sage-light:   #eef5ee;
+  --cream:        #faf7f0;
+  --cream-pure:   #ffffff;
+  --cream-soft:   #f4efe4;
+  --gold-olive:   #b5934e;
+  --gold-bright:  #d8b775;
+  --gold-pale:    #fef3c7;
+  --gold-deep:    #8f7033;
+  --text-dark:    #16261b;
+  --text-mid:     #38503f;
+  --text-soft:    #5c7564;
+  --text-muted:   #758d7c;
 
   --ff-title:  'Cormorant Garamond', serif;
   --ff-serif:  'Playfair Display', serif;
+  --ff-arabic: 'Amiri', serif;
   --ff-body:   'Outfit', sans-serif;
-}
 
-.pollux-root {
   min-height: 100vh;
-  background-color: #16261b;
+  background-color: var(--sage-deep);
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(73, 109, 85, 0.45) 0%, transparent 45%),
-    radial-gradient(circle at 90% 80%, rgba(181, 147, 78, 0.3) 0%, transparent 45%),
-    linear-gradient(180deg, #122016 0%, #1b3223 100%);
+    radial-gradient(circle at 15% 20%, rgba(74, 114, 86, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(181, 147, 78, 0.28) 0%, transparent 45%),
+    linear-gradient(180deg, #132418 0%, #1a2f22 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
   position: relative;
   font-family: var(--ff-body);
+  color: var(--text-dark);
 }
 
+/* ── Page Container ───────────────────────────────────── */
 .pollux-page {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 680px;
-  margin: 28px auto;
-  background: var(--cream);
-  border-radius: 20px;
-  overflow: hidden;
+  max-width: 580px;
+  margin: 0 auto;
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(181, 147, 78, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(73, 109, 85, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 0% 80%, rgba(73, 109, 85, 0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b5934e' stroke-width='0.7' stroke-opacity='0.08'%3E%3Cpath d='M30 5 Q38 18 30 30 Q22 18 30 5 Z'/%3E%3Cpath d='M30 55 Q38 42 30 30 Q22 42 30 55 Z'/%3E%3Cpath d='M5 30 Q18 38 30 30 Q18 22 5 30 Z'/%3E%3Cpath d='M55 30 Q42 38 30 30 Q42 22 55 30 Z'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
   box-shadow:
-    0 0 0 2px rgba(181, 147, 78, 0.45),
-    0 0 0 7px rgba(45, 74, 55, 0.35),
-    0 24px 80px rgba(0, 0, 0, 0.7);
+    0 0 0 1px rgba(181, 147, 78, 0.35),
+    0 0 0 4px rgba(26, 47, 34, 0.8),
+    0 0 0 5px rgba(181, 147, 78, 0.25),
+    0 24px 80px rgba(0, 0, 0, 0.65);
 }
 
-.pollux-header {
+/* ── Fullscreen Section Layout ────────────────────────── */
+.pollux-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 48px 36px 32px;
-  background: linear-gradient(180deg, var(--cream-soft) 0%, var(--cream) 100%);
-  border-bottom: 1.5px solid rgba(181, 147, 78, 0.3);
+  padding: 68px 26px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(181, 147, 78, 0.22);
 }
 
-.pollux-tag {
+.pollux-section-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Corner Flourishes ────────────────────────────────── */
+.pollux-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+.pollux-corner--tl {
+  top: 18px;
+  left: 18px;
+}
+.pollux-corner--tr {
+  top: 18px;
+  right: 18px;
+  transform: scaleX(-1);
+}
+.pollux-corner--bl {
+  bottom: 18px;
+  left: 18px;
+  transform: scaleY(-1);
+}
+.pollux-corner--br {
+  bottom: 18px;
+  right: 18px;
+  transform: scale(-1);
+}
+
+/* ── Reusable Badges & Titles ─────────────────────────── */
+.pollux-badge-capsule {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 99px;
+  background: rgba(181, 147, 78, 0.12);
+  border: 1px solid rgba(181, 147, 78, 0.45);
+  color: var(--gold-deep);
   font-family: var(--ff-body);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold-olive);
-  display: block;
   margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(181, 147, 78, 0.12);
 }
 
-.pollux-title {
+.pollux-section-title {
   font-family: var(--ff-title);
-  font-size: 38px;
+  font-size: 27px;
   font-weight: 700;
   color: var(--sage-dark);
-  line-height: 1.15;
-  margin: 0;
-}
-
-.pollux-bismillah {
-  font-family: 'Amiri', serif;
-  font-size: 28px;
-  color: var(--sage-mid);
-  margin-bottom: 14px;
-  font-weight: 700;
-}
-
-.pollux-body {
-  padding: 36px 44px 48px;
-}
-
-/* ── Ayat Suci Hadits ─────────────────────────────────── */
-.holy-verse-box {
-  background: var(--cream-soft);
-  border: 1px solid rgba(181, 147, 78, 0.3);
-  border-radius: 14px;
-  padding: 22px 26px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.holy-verse-arabic {
-  font-family: 'Amiri', serif;
-  font-size: 20px;
-  line-height: 1.8;
-  color: var(--sage-dark);
-  margin-bottom: 10px;
-}
-.holy-verse-trans {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--text-mid);
-  font-style: italic;
-  margin-bottom: 8px;
-}
-.holy-verse-ref {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--gold-olive);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 20px 0;
 }
 
 /* ═══════════════════════════════════════════════════════════
-   NEWBORN BOTANICAL BIRTH PASSPORT CERTIFICATE
+   SECTION 1: HERO / PROKLAMASI WALIMATUL AQIQAH
    ═══════════════════════════════════════════════════════════ */
+.pollux-hero-section {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.7) 0%, rgba(244, 239, 228, 0.4) 100%);
+  padding: 60px 24px 44px;
+}
+
+.pollux-hero-subtitle {
+  font-family: var(--ff-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.pollux-hero-baby-wrap {
+  margin: 14px 0 16px;
+}
+
+.pollux-hero-lead-pill {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 99px;
+  background: rgba(46, 77, 55, 0.08);
+  border: 1px solid rgba(46, 77, 55, 0.22);
+  color: var(--sage-mid);
+  font-family: var(--ff-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pollux-hero-baby-name {
+  font-family: var(--ff-title);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  line-height: 1.18;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.pollux-hero-baby-callout {
+  font-family: var(--ff-serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--gold-deep);
+  display: block;
+  margin-top: 6px;
+}
+
+.pollux-hero-parents-box {
+  margin: 14px 0;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(181, 147, 78, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(46, 77, 55, 0.06);
+}
+
+.pollux-hero-parents-label {
+  font-family: var(--ff-body);
+  font-size: 10.5px;
+  color: var(--text-soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pollux-hero-parents-names {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--sage-dark);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pollux-hero-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 99px;
+  background: #ffffff;
+  border: 1px solid rgba(181, 147, 78, 0.35);
+  font-family: var(--ff-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-mid);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.pollux-dot-sep {
+  color: var(--gold-olive);
+  font-size: 10px;
+}
+
+.pollux-scroll-indicator {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pollux-scroll-text {
+  font-family: var(--ff-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gold-deep);
+  opacity: 0.85;
+}
+
+.pollux-scroll-arrow {
+  font-size: 15px;
+  color: var(--gold-olive);
+  animation: polluxBounce 2s infinite ease-in-out;
+}
+
+@keyframes polluxBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes polluxTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.85); }
+  50% { opacity: 0.7; transform: scale(1.15); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 2: MUKADDIMAH & HADITS WALIMATUL AQIQAH
+   ═══════════════════════════════════════════════════════════ */
+.pollux-hadits-section {
+  background: linear-gradient(180deg, rgba(250, 247, 240, 0.95) 0%, rgba(244, 239, 228, 0.4) 50%, rgba(250, 247, 240, 0.95) 100%);
+}
+
+.pollux-bismillah {
+  font-family: var(--ff-arabic);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.pollux-salam-title {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  letter-spacing: 0.05em;
+  margin: 0 0 10px 0;
+}
+
+.pollux-salam-text {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 440px;
+  margin: 0 auto 28px;
+}
+
+.pollux-verse-illuminated {
+  background: #ffffff;
+  border: 1.5px solid rgba(181, 147, 78, 0.38);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(46, 77, 55, 0.07);
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pollux-verse-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pollux-verse-header-star {
+  color: var(--gold-olive);
+  font-size: 10px;
+}
+
+.pollux-verse-card-tag {
+  font-family: var(--ff-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.pollux-verse-arabic {
+  font-family: var(--ff-arabic);
+  font-size: 21px;
+  line-height: 2.3;
+  color: var(--sage-dark);
+  margin: 0 0 14px 0;
+  text-align: center;
+}
+
+.pollux-verse-trans {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin: 12px 0 0 0;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 3: SERTIFIKAT KELAHIRAN & MAKNA DOA NAMA
+   ═══════════════════════════════════════════════════════════ */
+.pollux-passport-section {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 239, 228, 0.5) 0%, rgba(250, 247, 240, 0.95) 100%);
+}
+
 .pollux-passport-card {
   text-align: center;
-  padding: 36px 30px;
+  padding: 30px 24px;
   background: #ffffff;
-  border: 2px solid rgba(181, 147, 78, 0.35);
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(27, 50, 35, 0.08);
-  margin-bottom: 32px;
-  position: relative;
+  border: 1.5px solid rgba(181, 147, 78, 0.38);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(46, 77, 55, 0.08);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .pollux-passport-header {
-  border-bottom: 1px dashed rgba(181, 147, 78, 0.4);
+  border-bottom: 1px dashed rgba(181, 147, 78, 0.35);
   padding-bottom: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
+
 .pollux-passport-stamp {
   font-family: var(--ff-body);
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--gold-olive);
-  display: block;
-  margin-bottom: 2px;
-}
-.pollux-passport-cert {
-  font-family: var(--ff-title);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--sage-dark);
-}
-
-.pollux-baby-icon {
-  margin-bottom: 12px;
-  display: inline-block;
-}
-
-.pollux-baby-name {
-  font-family: var(--ff-title);
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--sage-dark);
+  color: var(--gold-deep);
   display: block;
   margin-bottom: 4px;
-  line-height: 1.15;
 }
 
-.pollux-baby-nick {
+.pollux-passport-baby-name {
+  font-family: var(--ff-title);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  margin: 0 0 2px 0;
+}
+
+.pollux-passport-nick {
   font-family: var(--ff-serif);
-  font-size: 17px;
+  font-size: 14px;
   font-style: italic;
-  color: var(--gold-olive);
-  display: block;
-  margin-bottom: 16px;
+  color: var(--gold-deep);
 }
 
 .pollux-baby-meaning-box {
   background: var(--cream-soft);
   border-left: 3px solid var(--gold-olive);
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-radius: 0 10px 10px 0;
   margin: 16px 0;
   text-align: left;
 }
 
 .pollux-meaning-label {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
-  color: var(--gold-olive);
+  color: var(--gold-deep);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: block;
@@ -205,263 +437,616 @@
 }
 
 .pollux-meaning-text {
-  font-size: 13.5px;
-  color: var(--sage-dark);
+  font-size: 13px;
+  color: var(--text-mid);
   line-height: 1.55;
   margin: 0;
   font-style: italic;
 }
 
-.pollux-parents-credit {
-  margin: 16px 0 20px;
-  font-size: 13.5px;
-  color: var(--text-mid);
-  line-height: 1.6;
-}
-.pollux-parents-highlight {
-  color: var(--sage-dark);
-  font-size: 15px;
-}
-
-/* ── 4-Quadrant Birth Registry Matrix ─────────────────── */
 .pollux-passport-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  padding-top: 18px;
-  border-top: 1.5px solid rgba(181, 147, 78, 0.25);
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(181, 147, 78, 0.25);
 }
 
 .pollux-grid-quad {
-  background: var(--cream-soft);
-  border: 1px solid rgba(181, 147, 78, 0.2);
+  background: var(--cream);
+  border: 1px solid rgba(181, 147, 78, 0.22);
   border-radius: 12px;
-  padding: 14px 12px;
+  padding: 10px 8px;
   text-align: center;
 }
+
 .pollux-quad-icon {
-  font-size: 20px;
+  font-size: 18px;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
+
 .pollux-quad-lbl {
-  font-size: 9.5px;
+  font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--text-soft);
+  color: var(--text-muted);
   text-transform: uppercase;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
+
 .pollux-quad-val {
   font-family: var(--ff-title);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--sage-dark);
   display: block;
 }
 
-/* ── Events ───────────────────────────────────────────── */
-.pollux-events {
+/* ═══════════════════════════════════════════════════════════
+   SECTION 4: WAKTU & TEMPAT SYUKURAN & COUNTDOWN
+   ═══════════════════════════════════════════════════════════ */
+.pollux-agenda-section {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 239, 228, 0.45) 0%, rgba(250, 247, 240, 0.95) 100%);
+  padding: 44px 20px 32px;
+}
+
+.pollux-events-stack {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 34px;
-}
-
-.pollux-event-card {
-  background: #ffffff;
-  border: 1px solid rgba(181, 147, 78, 0.25);
-  border-radius: 16px;
-  padding: 26px 28px;
-  text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-}
-
-.pollux-event-tag {
-  font-family: var(--ff-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold-olive);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.pollux-event-name {
-  font-family: var(--ff-title);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--sage-dark);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.pollux-event-date {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-mid);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.pollux-event-time {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--gold-olive);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.pollux-event-venue {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--sage-dark);
-  display: block;
-}
-
-.pollux-event-address {
-  font-size: 13px;
-  color: var(--text-mid);
-  line-height: 1.5;
-  display: block;
+  gap: 10px;
+  width: 100%;
   margin-top: 4px;
 }
 
-.pollux-btn-maps {
+.pollux-event-card-wrapper {
+  width: 100%;
+}
+
+.pollux-event-botanical-pass {
+  background: #ffffff;
+  border: 1.5px solid rgba(181, 147, 78, 0.35);
+  border-radius: 14px;
+  padding: 13px 16px;
+  box-shadow: 0 4px 16px rgba(46, 77, 55, 0.05);
+  text-align: left;
+}
+
+.pollux-event-pass-header {
+  border-bottom: 1px dashed rgba(181, 147, 78, 0.3);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.pollux-event-tag {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 2px;
+}
+
+.pollux-event-title {
+  font-family: var(--ff-title);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  margin: 0;
+}
+
+.pollux-event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.pollux-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--ff-body);
+  font-size: 12px;
+}
+
+.pollux-detail-icon {
+  font-size: 12.5px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pollux-detail-highlight {
+  color: var(--sage-dark);
+  font-weight: 700;
+}
+
+.pollux-detail-text {
+  color: var(--text-mid);
+}
+
+.pollux-detail-venue-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.pollux-detail-venue {
+  font-weight: 700;
+  color: var(--sage-dark);
+  display: block;
+}
+
+.pollux-detail-address {
+  font-size: 11px;
+  color: var(--text-soft);
+  line-height: 1.35;
+  display: block;
+  margin-top: 2px;
+}
+
+.pollux-event-pass-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pollux-btn-event-maps {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 9px 22px;
-  border: 1.5px solid var(--gold-olive);
-  border-radius: 50px;
-  color: var(--gold-olive);
-  font-size: 10px;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--cream-soft);
+  border: 1px solid rgba(181, 147, 78, 0.45);
+  color: var(--gold-deep);
+  font-family: var(--ff-body);
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  background: var(--cream-soft);
-  transition: all 0.25s;
+  transition: all 0.2s ease;
 }
-.pollux-btn-maps:hover {
+.pollux-btn-event-maps:hover {
   background: var(--gold-olive);
   color: #ffffff;
 }
 
-/* ── Countdown ────────────────────────────────────────── */
-.pollux-countdown {
-  text-align: center;
-  padding: 26px 20px;
-  background: var(--cream-soft);
-  border: 1px solid rgba(181, 147, 78, 0.3);
-  border-radius: 16px;
-  margin-bottom: 34px;
+.pollux-btn-event-cal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #2e4d37 0%, #446d51 100%);
+  border: 1px solid var(--sage-dark);
+  color: #ffffff;
+  font-family: var(--ff-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.pollux-btn-event-cal:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
-.pollux-countdown-label {
+/* ── Countdown Styling ────────────────────────────────── */
+.pollux-countdown-wrap {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.pollux-countdown-badge {
+  display: inline-block;
   font-family: var(--ff-body);
-  font-size: 10.5px;
+  font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold-olive);
-  display: block;
-  margin-bottom: 14px;
+  color: var(--gold-deep);
+  margin-bottom: 2px;
 }
 
-.pollux-countdown-digits {
+.pollux-countdown-headline {
+  font-family: var(--ff-title);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sage-dark);
+  letter-spacing: 0.04em;
+  margin: 0 0 10px 0;
+}
+
+.pollux-countdown-grid {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
 }
 
-.pollux-digit-block {
-  text-align: center;
-  min-width: 52px;
+.pollux-countdown-capsule {
+  flex: 1;
+  max-width: 68px;
+  padding: 8px 3px 6px;
   background: #ffffff;
-  padding: 10px 6px;
-  border-radius: 10px;
-  border: 1px solid rgba(181, 147, 78, 0.2);
+  border: 1px solid rgba(181, 147, 78, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(46, 77, 55, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.pollux-digit {
+.pollux-capsule-num {
   font-family: var(--ff-title);
-  font-size: 34px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--sage-dark);
-  display: block;
   line-height: 1;
 }
 
-.pollux-digit-unit {
-  font-size: 9px;
+.pollux-capsule-lbl {
+  font-family: var(--ff-body);
+  font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-mid);
-  margin-top: 4px;
-  display: block;
+  color: var(--gold-deep);
+  margin-top: 3px;
 }
 
-/* ── Closing & RSVP ───────────────────────────────────── */
-.pollux-closing {
-  text-align: center;
-  margin-bottom: 26px;
+/* ═══════════════════════════════════════════════════════════
+   SECTION 5: TANDA KASIH UNTUK BUAH HATI
+   ═══════════════════════════════════════════════════════════ */
+.pollux-gift-section {
+  background: linear-gradient(180deg, rgba(250, 247, 240, 0.95) 0%, rgba(244, 239, 228, 0.4) 50%, rgba(250, 247, 240, 0.95) 100%);
 }
-.pollux-closing p {
-  font-size: 14.5px;
+
+.pollux-gift-container {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 6: BUKU DOA & HARAPAN UNTUK BUAH HATI
+   ═══════════════════════════════════════════════════════════ */
+.pollux-wishes-section {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 239, 228, 0.5) 0%, rgba(250, 247, 240, 0.95) 100%);
+}
+
+.pollux-wishes-container {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 7: PENUTUP & KONFIRMASI KEHADIRAN
+   ═══════════════════════════════════════════════════════════ */
+.pollux-closing-section {
+  background: radial-gradient(circle at 50% 60%, rgba(244, 239, 228, 0.6) 0%, rgba(250, 247, 240, 0.98) 100%);
+  padding: 48px 20px 32px;
+}
+
+.pollux-closing-lead {
+  margin: 12px 0 14px;
+}
+
+.pollux-closing-msg {
+  font-family: var(--ff-body);
+  font-size: 13px;
   color: var(--text-mid);
-  line-height: 1.8;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.pollux-closing-salam {
+  font-family: var(--ff-title);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  letter-spacing: 0.04em;
   margin: 0;
 }
 
-.pollux-btn-rsvp {
+.pollux-family-signature {
+  background: #ffffff;
+  border: 1px solid rgba(181, 147, 78, 0.35);
+  border-radius: 14px;
+  padding: 14px 20px;
+  margin: 14px 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(46, 77, 55, 0.05);
+}
+
+.pollux-signature-lead {
+  font-family: var(--ff-body);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-soft);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pollux-signature-family {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  margin: 0 0 4px 0;
+}
+
+.pollux-signature-kid {
+  font-family: var(--ff-body);
+  font-size: 12.5px;
+  color: var(--text-mid);
+}
+
+.pollux-rsvp-wrap {
+  margin-top: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pollux-btn-rsvp-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 16px 42px;
-  border-radius: 50px;
-  background: var(--sage-mid);
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+  padding: 14px 26px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, #2e4d37 0%, #446d51 100%);
   color: #ffffff;
+  font-family: var(--ff-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(27, 50, 35, 0.3);
-  transition: all 0.25s;
+  box-shadow: 0 8px 24px rgba(46, 77, 55, 0.3);
+  transition: all 0.25s ease;
 }
-.pollux-btn-rsvp:hover {
-  background: var(--sage-dark);
+.pollux-btn-rsvp-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(27, 50, 35, 0.45);
+  box-shadow: 0 12px 30px rgba(46, 77, 55, 0.45);
+  filter: brightness(1.06);
 }
 
 .pollux-footer {
-  text-align: center;
-  padding: 24px;
+  margin-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid rgba(181, 147, 78, 0.25);
-  background: var(--cream-soft);
-}
-.pollux-footer-brand {
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--text-soft);
+  width: 100%;
 }
 
+.pollux-footer-brand {
+  font-family: var(--ff-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMMON COMPONENTS OVERRIDES (WEDDINGGIFT & GUESTBOOK)
+   ═══════════════════════════════════════════════════════════ */
+.pollux-root .gift-title,
+.pollux-root .guestbook-title {
+  font-family: var(--ff-title) !important;
+  color: var(--sage-dark) !important;
+}
+
+.pollux-root .gift-subtitle,
+.pollux-root .guestbook-subtitle {
+  font-family: var(--ff-body) !important;
+  color: var(--text-soft) !important;
+}
+
+.pollux-root .gift-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(181, 147, 78, 0.38) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(46, 77, 55, 0.06) !important;
+}
+
+.pollux-root .gift-bank-name {
+  font-family: var(--ff-title) !important;
+  color: var(--sage-dark) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.pollux-root .gift-acc-number {
+  color: var(--sage-dark) !important;
+  font-weight: 700 !important;
+}
+
+.pollux-root .gift-acc-holder {
+  color: var(--text-soft) !important;
+}
+
+.pollux-root .gift-copy-btn {
+  background: linear-gradient(135deg, #2e4d37, #446d51) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.pollux-root .guestbook-form {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(181, 147, 78, 0.38) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(46, 77, 55, 0.06) !important;
+}
+
+.pollux-root .guestbook-input,
+.pollux-root .guestbook-textarea {
+  background: var(--cream) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid rgba(181, 147, 78, 0.35) !important;
+  border-radius: 8px !important;
+  font-family: var(--ff-body) !important;
+}
+
+.pollux-root .guestbook-submit-btn {
+  background: linear-gradient(135deg, #2e4d37, #446d51) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.pollux-root .guestbook-item {
+  background: #ffffff !important;
+  border: 1px solid rgba(181, 147, 78, 0.28) !important;
+  border-radius: 12px !important;
+}
+
+.pollux-root .guestbook-author-name {
+  color: var(--sage-dark) !important;
+  font-family: var(--ff-title) !important;
+}
+
+.pollux-root .guestbook-item-msg {
+  color: var(--text-mid) !important;
+  font-family: var(--ff-body) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (MOBILE ADAPTATION)
+   ═══════════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-  .pollux-page { margin: 12px; }
-  .pollux-body { padding: 28px 18px 36px; }
-  .pollux-title { font-size: 30px; }
-  .pollux-baby-name { font-size: 28px; }
-  .pollux-passport-grid { grid-template-columns: 1fr; }
-  .pollux-countdown-digits { gap: 8px; }
-  .pollux-digit-block { min-width: 44px; }
-  .pollux-digit { font-size: 26px; }
+  .pollux-section {
+    padding: 60px 20px;
+  }
+  .pollux-hero-section {
+    padding: 50px 18px 36px;
+  }
+  .pollux-hero-baby-name {
+    font-size: 30px;
+  }
+  .pollux-verse-arabic {
+    font-size: 18px;
+    line-height: 2.1;
+  }
+  .pollux-passport-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pollux-countdown-grid {
+    gap: 8px;
+  }
+  .pollux-countdown-capsule {
+    max-width: 72px;
+    padding: 10px 4px 8px;
+  }
+  .pollux-capsule-num {
+    font-size: 22px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOCKUP FRAME ADAPTATIONS (CATALOG VIEW)
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .pollux-root,
+.is-mockup-frame .pollux-page,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  padding: 0 !important;
+  background-color: #faf7f0 !important;
+  box-shadow: none !important;
+}
+
+.is-mockup-frame .pollux-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.is-mockup-frame .pollux-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.is-mockup-frame .pollux-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 38px 18px 24px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(244, 239, 228, 0.6) 100%) !important;
+  border-bottom: none !important;
+}
+
+.is-mockup-frame .pollux-section-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .pollux-hero-section div,
+.is-mockup-frame .pollux-hero-section span,
+.is-mockup-frame .pollux-hero-section p,
+.is-mockup-frame .pollux-hero-section h1,
+.is-mockup-frame .pollux-hero-section svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .pollux-hero-section .pollux-botanical-watermark {
+  opacity: 0.08 !important;
+}
+
+.is-mockup-frame .pollux-hero-baby-name {
+  font-size: 28px !important;
+  line-height: 1.15 !important;
+  margin: 2px 0 !important;
+}
+
+.is-mockup-frame .pollux-hero-baby-wrap {
+  margin: 6px 0 8px !important;
+}
+
+.is-mockup-frame .pollux-hero-parents-box {
+  margin: 6px 0 !important;
+  padding: 6px 14px !important;
+}
+
+.is-mockup-frame .pollux-hero-parents-label {
+  font-size: 9px !important;
+  margin-bottom: 2px !important;
+}
+
+.is-mockup-frame .pollux-hero-parents-names {
+  font-size: 12px !important;
+}
+
+.is-mockup-frame .pollux-hero-date-badge {
+  font-size: 10px !important;
+  padding: 4px 12px !important;
+  margin-top: 4px !important;
+}
+
+.is-mockup-frame .pollux-scroll-indicator {
+  margin-top: 10px !important;
 }

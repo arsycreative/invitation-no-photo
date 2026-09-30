@@ -8,40 +8,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 .sirius-root {
-  --emerald-dark:  #03281f;
+  --emerald-dark:  #021a12;
+  --emerald-deep:  #03281f;
+  --emerald-card:  rgba(2, 28, 19, 0.78);
   --emerald-mid:   #064e3b;
-  --emerald-light: #059669;
+  --emerald-glow:  #047857;
   --gold:          #f59e0b;
   --gold-bright:   #fde68a;
   --gold-pale:     #fef3c7;
-  --ivory:         #ecfdf5;
+  --gold-deep:     #d97706;
   --white:         #ffffff;
+  --text-muted:    #cbd5e1;
 
   --ff-arabic: 'Amiri', serif;
   --ff-title:  'Cinzel', serif;
   --ff-body:   'Montserrat', sans-serif;
-}
 
-.sirius-root {
   min-height: 100vh;
-  background-color: #03281f;
+  background-color: var(--emerald-dark);
   background-image:
-    radial-gradient(circle at 50% 0%, rgba(245,158,11,0.22) 0%, transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(5,150,105,0.45) 0%, transparent 55%),
-    radial-gradient(circle at 0% 100%, rgba(5,150,105,0.45) 0%, transparent 55%);
+    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.22) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(5, 150, 105, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 0% 80%, rgba(5, 150, 105, 0.3) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-width='0.75' stroke-opacity='0.08'%3E%3Cpath d='M30 0 L40 20 L60 30 L40 40 L30 60 L20 40 L0 30 L20 20 Z'/%3E%3Crect x='15' y='15' width='30' height='30' transform='rotate(45 30 30)'/%3E%3Ccircle cx='30' cy='30' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
   position: relative;
-}
-
-/* ── Islamic Floating Stars ────────────────────────────── */
-.sirius-ambient-star {
-  position: fixed;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.25;
+  color: #ffffff;
 }
 
 /* ── Page Container ───────────────────────────────────── */
@@ -49,357 +45,878 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 680px;
+  max-width: 580px;
   margin: 0 auto;
-  background: #052c1f;
+  background: rgba(3, 40, 31, 0.88);
   box-shadow:
-    0 0 0 2px var(--gold),
-    0 0 0 5px rgba(201,168,76,0.3),
-    0 24px 80px rgba(0, 0, 0, 0.7);
+    0 0 0 1px rgba(245, 158, 11, 0.4),
+    0 0 0 4px rgba(2, 26, 18, 0.8),
+    0 0 0 5px rgba(245, 158, 11, 0.2),
+    0 24px 80px rgba(0, 0, 0, 0.85);
 }
 
-/* ── Islamic Arch Crest ───────────────────────────────── */
-.sirius-crest-bar {
+/* ── Fullscreen Section Layout ────────────────────────── */
+.sirius-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 44px 32px 30px;
-  background: linear-gradient(180deg, #021a12 0%, #063b2a 100%);
-  border-bottom: 2px solid var(--gold);
+  padding: 72px 28px;
+  box-sizing: border-box;
   position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
 }
 
-.sirius-crest-emblem {
-  margin: 0 auto 16px;
+.sirius-section-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Corner Flourishes ────────────────────────────────── */
+.sirius-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+.sirius-corner--tl {
+  top: 18px;
+  left: 18px;
+}
+.sirius-corner--tr {
+  top: 18px;
+  right: 18px;
+  transform: scaleX(-1);
+}
+.sirius-corner--bl {
+  bottom: 18px;
+  left: 18px;
+  transform: scaleY(-1);
+}
+.sirius-corner--br {
+  bottom: 18px;
+  right: 18px;
+  transform: scale(-1);
+}
+
+/* ── Reusable Badges & Titles ─────────────────────────── */
+.sirius-badge-capsule {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 99px;
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: var(--gold-bright);
+  font-family: var(--ff-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.22);
+}
+
+.sirius-section-title {
+  font-family: var(--ff-title);
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 1: HERO / WALIMATUL KHITAN PROCLAMATION
+   ═══════════════════════════════════════════════════════════ */
+.sirius-hero-section {
+  background: radial-gradient(circle at 50% 30%, rgba(6, 78, 59, 0.55) 0%, rgba(2, 26, 18, 0.96) 100%);
+  padding: 60px 24px 44px;
+}
+
+.sirius-hero-subtitle {
+  font-family: var(--ff-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-pale);
+  margin: 0;
+}
+
+.sirius-hero-boy-wrap {
+  margin: 14px 0 18px;
+}
+
+.sirius-hero-nickname-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(6, 78, 59, 0.4));
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: var(--gold-bright);
+  font-family: var(--ff-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.sirius-hero-boy-name {
+  font-family: var(--ff-title);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.25;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 45%, #f59e0b 80%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
+  margin: 0;
+}
+
+.sirius-hero-boy-callout {
+  font-family: var(--ff-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold-bright);
+  display: block;
+  margin-top: 6px;
+}
+
+.sirius-hero-parents-box {
+  margin: 14px 0;
+  padding: 12px 20px;
+  background: rgba(6, 78, 59, 0.28);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sirius-hero-parents-label {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  color: var(--gold-pale);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.sirius-hero-parents-names {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sirius-hero-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 99px;
+  background: rgba(2, 26, 18, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-family: var(--ff-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.sirius-dot-sep {
+  color: var(--gold);
+  font-size: 10px;
+}
+
+.sirius-scroll-indicator {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.sirius-scroll-text {
+  font-family: var(--ff-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gold-bright);
+  opacity: 0.85;
+}
+
+.sirius-scroll-arrow {
+  font-size: 15px;
+  color: var(--gold);
+  animation: siriusBounce 2s infinite ease-in-out;
+}
+
+@keyframes siriusBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 2: MUKADDIMAH & DOA WALIMATUL KHITAN
+   ═══════════════════════════════════════════════════════════ */
+.sirius-doa-section {
+  background: linear-gradient(180deg, rgba(2, 26, 18, 0.95) 0%, rgba(6, 78, 59, 0.25) 50%, rgba(2, 26, 18, 0.95) 100%);
+}
+
+.sirius-bismillah {
+  font-family: var(--ff-arabic);
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffd778;
+  text-shadow: 0 2px 14px rgba(245, 158, 11, 0.45);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.sirius-salam-title {
+  font-family: var(--ff-title);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 0.06em;
+  margin: 0 0 10px 0;
+}
+
+.sirius-salam-text {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  color: #e2e8f0;
+  line-height: 1.8;
+  max-width: 440px;
+  margin: 0 auto 28px;
+}
+
+.sirius-doa-illuminated {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.45) 0%, rgba(2, 28, 19, 0.88) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(254, 240, 138, 0.25);
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sirius-doa-header-bar {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-.sirius-crest-tag {
-  font-family: var(--ff-title);
-  font-size: 11px;
+.sirius-doa-header-star {
+  color: var(--gold);
+  font-size: 10px;
+}
+
+.sirius-doa-card-tag {
+  font-family: var(--ff-body);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.45em;
-  color: var(--gold-bright);
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  display: block;
-}
-
-/* ── Content Frame ────────────────────────────────────── */
-.sirius-frame {
-  padding: 44px 48px;
-  position: relative;
-}
-
-/* ── Bismillah ────────────────────────────────────────── */
-.sirius-bismillah {
-  font-family: var(--ff-arabic);
-  font-size: 28px;
-  font-weight: 700;
   color: var(--gold-bright);
-  text-align: center;
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-/* ── Doa Khitan Box ───────────────────────────────────── */
-.sirius-doa-box {
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  border-radius: 14px;
-  padding: 22px 24px;
-  text-align: center;
-  margin: 20px 0 32px;
 }
 
 .sirius-doa-arabic {
   font-family: var(--ff-arabic);
-  font-size: 19px;
+  font-size: 21px;
+  line-height: 2.3;
   color: #ffd778;
-  line-height: 2.2;
-  margin-bottom: 10px;
+  margin: 0 0 14px 0;
+  text-align: center;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 .sirius-doa-trans {
   font-family: var(--ff-body);
   font-size: 13px;
-  color: #f1f5f9;
-  line-height: 1.7;
   font-style: italic;
-  margin: 0 0 6px 0;
-}
-
-.sirius-doa-ref {
-  font-family: var(--ff-body);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* ── Greeting ─────────────────────────────────────────── */
-.sirius-greeting {
-  text-align: center;
-  margin-bottom: 28px;
-}
-.sirius-greeting p {
-  font-family: var(--ff-body);
-  font-size: 14.5px;
-  color: #f1f5f9;
   line-height: 1.8;
-  margin: 0;
-}
-
-/* ── Profile Anak Khitan ──────────────────────────────── */
-.sirius-boy-section {
+  color: #f8fafc;
+  margin: 12px 0 0 0;
   text-align: center;
-  margin-bottom: 36px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(13,92,67,0.15));
-  border: 1px solid rgba(201,168,76,0.3);
-  border-radius: 16px;
 }
 
-.sirius-boy-badge {
-  display: inline-block;
-  padding: 5px 16px;
-  border-radius: 99px;
-  background: rgba(201,168,76,0.25);
-  color: var(--gold-bright);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
+/* ═══════════════════════════════════════════════════════════
+   SECTION 3: WAKTU & TEMPAT SYUKURAN & COUNTDOWN
+   ═══════════════════════════════════════════════════════════ */
+.sirius-agenda-section {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 78, 59, 0.45) 0%, rgba(2, 26, 18, 0.95) 100%);
+  padding: 50px 20px 40px;
 }
 
-.sirius-boy-name {
-  font-family: var(--ff-title);
-  font-size: 34px;
-  font-weight: 700;
-  color: #ffffff;
-  display: block;
-  line-height: 1.2;
-  margin-bottom: 6px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.sirius-boy-nick {
-  font-family: var(--ff-body);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--gold-bright);
-  display: block;
-  margin-bottom: 14px;
-}
-
-.sirius-boy-parents {
-  font-family: var(--ff-body);
-  font-size: 13.5px;
-  color: #e2e8f0;
-  line-height: 1.6;
-}
-.sirius-boy-parents strong {
-  color: #ffffff;
-}
-
-/* ── Events ───────────────────────────────────────────── */
-.sirius-events {
+.sirius-events-stack {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 36px;
+  gap: 12px;
+  width: 100%;
+  margin-top: 6px;
 }
 
-.sirius-event-card {
-  background: rgba(2, 28, 19, 0.7);
-  border: 1px solid rgba(201, 168, 76, 0.35);
+.sirius-event-card-wrapper {
+  width: 100%;
+}
+
+.sirius-event-royal-pass {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.35) 0%, rgba(2, 28, 19, 0.85) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
   border-radius: 14px;
-  padding: 26px 28px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.sirius-event-pass-header {
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .sirius-event-tag {
+  display: inline-block;
   font-family: var(--ff-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold-bright);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.sirius-event-name {
-  font-family: var(--ff-title);
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.sirius-event-date {
-  font-family: var(--ff-body);
-  font-size: 15px;
-  font-weight: 600;
-  color: #f1f5f9;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.sirius-event-time {
-  font-family: var(--ff-body);
-  font-size: 13px;
-  color: var(--gold-pale);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.sirius-event-venue {
-  font-family: var(--ff-body);
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #ffffff;
-  display: block;
-}
-
-.sirius-event-address {
-  font-family: var(--ff-body);
-  font-size: 12.5px;
-  color: #cbd5e1;
-  line-height: 1.5;
-  display: block;
-  margin-top: 4px;
-}
-
-.sirius-btn-maps {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 9px 20px;
-  border: 1px solid var(--gold);
-  border-radius: 6px;
-  color: var(--gold-bright);
-  font-family: var(--ff-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: rgba(201, 168, 76, 0.1);
-  transition: all 0.25s;
-}
-.sirius-btn-maps:hover {
-  background: rgba(201, 168, 76, 0.25);
-  color: #ffffff;
-}
-
-/* ── Countdown ────────────────────────────────────────── */
-.sirius-countdown {
-  text-align: center;
-  padding: 26px 20px;
-  background: rgba(2, 28, 19, 0.85);
-  border: 1px solid rgba(201, 168, 76, 0.3);
-  border-radius: 14px;
-  margin-bottom: 36px;
-}
-
-.sirius-countdown-label {
-  font-family: var(--ff-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--gold-bright);
-  display: block;
-  margin-bottom: 16px;
-}
-
-.sirius-countdown-digits {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.sirius-digit-block {
-  text-align: center;
-  min-width: 52px;
-}
-
-.sirius-digit {
-  font-family: var(--ff-title);
-  font-size: 38px;
-  font-weight: 700;
-  color: #ffd778;
-  display: block;
-  line-height: 1;
-}
-
-.sirius-digit-unit {
-  font-family: var(--ff-body);
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #e2e8f0;
-  margin-top: 4px;
-  display: block;
-}
-
-/* ── Closing & RSVP ───────────────────────────────────── */
-.sirius-closing {
-  text-align: center;
-  margin-bottom: 28px;
-}
-.sirius-closing p {
-  font-family: var(--ff-body);
-  font-size: 14px;
-  color: #e2e8f0;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.sirius-btn-rsvp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 15px 40px;
-  border-radius: 99px;
-  background: linear-gradient(135deg, #c9a84c, #ffd778);
-  color: #021c13;
-  font-family: var(--ff-body);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
-  transition: all 0.25s;
+  color: var(--gold-bright);
+  margin-bottom: 2px;
 }
-.sirius-btn-rsvp:hover {
+
+.sirius-event-title {
+  font-family: var(--ff-title);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sirius-event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sirius-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--ff-body);
+  font-size: 12.5px;
+}
+
+.sirius-detail-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sirius-detail-highlight {
+  color: #ffd778;
+  font-weight: 700;
+}
+
+.sirius-detail-text {
+  color: #e2e8f0;
+}
+
+.sirius-detail-venue-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.sirius-detail-venue {
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+}
+
+.sirius-detail-address {
+  font-size: 11.5px;
+  color: #cbd5e1;
+  line-height: 1.4;
+  display: block;
+  margin-top: 2px;
+}
+
+.sirius-event-pass-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sirius-btn-event-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: var(--gold-bright);
+  font-family: var(--ff-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.sirius-btn-event-maps:hover {
+  background: rgba(245, 158, 11, 0.3);
+  color: #ffffff;
+}
+
+.sirius-btn-event-cal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #f59e0b, #ffd778);
+  border: 1px solid var(--gold-bright);
+  color: #021a12;
+  font-family: var(--ff-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.sirius-btn-event-cal:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* ── Countdown Styling ────────────────────────────────── */
+.sirius-countdown-wrap {
+  margin-top: 22px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.sirius-countdown-badge {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gold-bright);
+  margin-bottom: 4px;
+}
+
+.sirius-countdown-headline {
+  font-family: var(--ff-title);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px 0;
+}
+
+.sirius-countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sirius-countdown-capsule {
+  flex: 1;
+  max-width: 72px;
+  padding: 10px 4px 8px;
+  background: rgba(2, 28, 19, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(254, 240, 138, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sirius-capsule-num {
+  font-family: var(--ff-title);
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffd778;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+}
+
+.sirius-capsule-lbl {
+  font-family: var(--ff-body);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-pale);
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 4: TANDA KASIH & KADO KHITAN
+   ═══════════════════════════════════════════════════════════ */
+.sirius-gift-section {
+  background: linear-gradient(180deg, rgba(2, 26, 18, 0.95) 0%, rgba(6, 78, 59, 0.3) 50%, rgba(2, 26, 18, 0.95) 100%);
+}
+
+.sirius-gift-container {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 5: BUKU DOA RESTU KHITAN
+   ═══════════════════════════════════════════════════════════ */
+.sirius-wishes-section {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 78, 59, 0.4) 0%, rgba(2, 26, 18, 0.96) 100%);
+}
+
+.sirius-wishes-container {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 6: PENUTUP & KONFIRMASI KEHADIRAN
+   ═══════════════════════════════════════════════════════════ */
+.sirius-closing-section {
+  background: radial-gradient(circle at 50% 60%, rgba(6, 78, 59, 0.5) 0%, rgba(2, 26, 18, 0.98) 100%);
+  padding: 72px 24px 48px;
+}
+
+.sirius-closing-lead {
+  margin: 18px 0;
+}
+
+.sirius-closing-msg {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  color: #e2e8f0;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.sirius-closing-salam {
+  font-family: var(--ff-title);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.sirius-family-signature {
+  background: rgba(6, 78, 59, 0.32);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sirius-signature-lead {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-pale);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sirius-signature-family {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.sirius-signature-kid {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.sirius-rsvp-wrap {
+  margin-top: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sirius-btn-rsvp-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+  padding: 16px 28px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, #f59e0b 0%, #ffd778 100%);
+  color: #021a12;
+  font-family: var(--ff-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.45);
+  transition: all 0.25s ease;
+}
+.sirius-btn-rsvp-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(201, 168, 76, 0.6);
+  box-shadow: 0 12px 36px rgba(245, 158, 11, 0.6);
+  filter: brightness(1.05);
 }
 
 .sirius-footer {
-  text-align: center;
-  padding: 24px;
-  border-top: 1px solid rgba(201, 168, 76, 0.2);
-}
-.sirius-footer-brand {
-  font-family: var(--ff-body);
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold-bright);
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  width: 100%;
 }
 
+.sirius-footer-brand {
+  font-family: var(--ff-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMMON COMPONENTS OVERRIDES (WEDDINGGIFT & GUESTBOOK)
+   ═══════════════════════════════════════════════════════════ */
+.sirius-root .gift-title,
+.sirius-root .guestbook-title {
+  font-family: var(--ff-title) !important;
+  color: #ffffff !important;
+}
+
+.sirius-root .gift-subtitle,
+.sirius-root .guestbook-subtitle {
+  font-family: var(--ff-body) !important;
+  color: var(--text-muted) !important;
+}
+
+.sirius-root .gift-card {
+  background: rgba(3, 40, 31, 0.8) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.sirius-root .gift-bank-name {
+  font-family: var(--ff-title) !important;
+  color: #ffd778 !important;
+  letter-spacing: 0.1em !important;
+}
+
+.sirius-root .gift-acc-number {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.sirius-root .gift-acc-holder {
+  color: #cbd5e1 !important;
+}
+
+.sirius-root .gift-copy-btn {
+  background: linear-gradient(135deg, #f59e0b, #ffd778) !important;
+  color: #021a12 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.sirius-root .guestbook-form {
+  background: rgba(3, 40, 31, 0.8) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.sirius-root .guestbook-input,
+.sirius-root .guestbook-textarea {
+  background: rgba(2, 26, 18, 0.85) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+  border-radius: 8px !important;
+  font-family: var(--ff-body) !important;
+}
+
+.sirius-root .guestbook-submit-btn {
+  background: linear-gradient(135deg, #f59e0b, #ffd778) !important;
+  color: #021a12 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.sirius-root .guestbook-item {
+  background: rgba(3, 40, 31, 0.65) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border-radius: 12px !important;
+}
+
+.sirius-root .guestbook-author-name {
+  color: #ffd778 !important;
+  font-family: var(--ff-title) !important;
+}
+
+.sirius-root .guestbook-item-msg {
+  color: #f1f5f9 !important;
+  font-family: var(--ff-body) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (MOBILE ADAPTATION)
+   ═══════════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-  .sirius-frame { padding: 36px 24px; }
-  .sirius-boy-name { font-size: 28px; }
+  .sirius-section {
+    padding: 60px 20px;
+  }
+  .sirius-hero-section {
+    padding: 50px 18px 36px;
+  }
+  .sirius-hero-boy-name {
+    font-size: 28px;
+  }
+  .sirius-doa-arabic {
+    font-size: 18px;
+    line-height: 2.1;
+  }
+  .sirius-countdown-grid {
+    gap: 8px;
+  }
+  .sirius-countdown-capsule {
+    max-width: 72px;
+    padding: 10px 4px 8px;
+  }
+  .sirius-capsule-num {
+    font-size: 24px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOCKUP FRAME ADAPTATIONS (CATALOG VIEW)
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .sirius-root,
+.is-mockup-frame .sirius-page,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  padding: 0 !important;
+  background-color: #021a12 !important;
+  box-shadow: none !important;
+}
+
+.is-mockup-frame .sirius-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.is-mockup-frame .sirius-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.is-mockup-frame .sirius-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 40px 18px 24px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: radial-gradient(circle at 50% 30%, rgba(6, 78, 59, 0.6) 0%, rgba(2, 26, 18, 0.98) 100%) !important;
+  border-bottom: none !important;
+}
+
+.is-mockup-frame .sirius-section-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .sirius-hero-section div,
+.is-mockup-frame .sirius-hero-section span,
+.is-mockup-frame .sirius-hero-section p,
+.is-mockup-frame .sirius-hero-section h1,
+.is-mockup-frame .sirius-hero-section svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .sirius-hero-section .sirius-islamic-watermark {
+  opacity: 0.08 !important;
+}
+
+.is-mockup-frame .sirius-hero-boy-name {
+  font-size: 26px !important;
+  line-height: 1.2 !important;
+  margin: 4px 0 !important;
+}
+
+.is-mockup-frame .sirius-hero-boy-wrap {
+  margin: 8px 0 10px !important;
+}
+
+.is-mockup-frame .sirius-hero-parents-box {
+  margin: 8px 0 !important;
+  padding: 6px 14px !important;
+}
+
+.is-mockup-frame .sirius-hero-parents-label {
+  font-size: 9.5px !important;
+  margin-bottom: 2px !important;
+}
+
+.is-mockup-frame .sirius-hero-parents-names {
+  font-size: 12px !important;
+}
+
+.is-mockup-frame .sirius-hero-date-badge {
+  font-size: 10px !important;
+  padding: 4px 12px !important;
+  margin-top: 4px !important;
+}
+
+.is-mockup-frame .sirius-scroll-indicator {
+  margin-top: 12px !important;
 }

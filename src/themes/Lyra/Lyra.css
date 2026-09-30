@@ -1,42 +1,48 @@
 /* ═══════════════════════════════════════════════════════════
-   THEME: LYRA — Warm Sunset Garden
-   Background: Deep rose → peach → amber gradient + bokeh
-   Card: Warm ivory with floral corners
+   THEME: LYRA — Warm Sunset Garden (Romantic Botanical)
+   Palette:   Deep Rose × Warm Sunset Coral × Champagne Gold × Warm Ivory
+   Concept:   Hangat, romantis, lapang setinggi layar (100vh),
+              mudah dibaca, bernapas lega, tipografi berkelas
    ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
 
 .lyra-root {
-  --rose:       #c4748c;
-  --rose-dark:  #a05570;
-  --rose-light: #e2a8bb;
-  --gold:       #c9a06e;
-  --gold-light: #e8c99a;
-  --ivory:      #fdfaf6;
-  --text-dark:  #3a1d25;
-  --text-mid:   #5a2d38;
-  --text-light: #733847;
+  --rose:         #c4748c;
+  --rose-dark:    #a05570;
+  --rose-light:   #e2a8bb;
+  --rose-pale:    #fdf2f5;
+  --gold:         #c9a06e;
+  --gold-light:   #e8c99a;
+  --ivory:        #fdfaf6;
+  --text-dark:    #3a1d25;
+  --text-mid:     #5a2d38;
+  --text-light:   #733847;
 
-  --ff-script:  'Great Vibes', cursive;
-  --ff-serif:   'Cormorant Garamond', serif;
-  --ff-sans:    'Raleway', sans-serif;
+  --ff-script:    'Great Vibes', cursive;
+  --ff-serif:     'Cormorant Garamond', Georgia, serif;
+  --ff-sans:      'Montserrat', sans-serif;
+
+  --page-width:   680px;
 }
 
-/* ── Warm Sunset Background ───────────────────────────── */
+/* ── Warm Sunset Canvas ───────────────────────────────── */
 .lyra-root {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 80% 10%,  #ff6b9d 0%, transparent 40%),
-    radial-gradient(ellipse at 20% 30%,  #ff9a44 0%, transparent 45%),
-    radial-gradient(ellipse at 60% 60%,  #c9748c 0%, transparent 40%),
-    radial-gradient(ellipse at 10% 80%,  #ff7c5c 0%, transparent 40%),
-    radial-gradient(ellipse at 90% 90%,  #e8a87c 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 10%,  rgba(255, 107, 157, 0.45) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 30%,  rgba(255, 154, 68, 0.4) 0%, transparent 45%),
+    radial-gradient(ellipse at 60% 60%,  rgba(201, 116, 140, 0.4) 0%, transparent 40%),
+    radial-gradient(ellipse at 10% 80%,  rgba(255, 124, 92, 0.35) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 90%,  rgba(232, 168, 124, 0.35) 0%, transparent 40%),
     linear-gradient(135deg, #7b2d4a 0%, #c05070 25%, #e8854d 55%, #c9a070 80%, #8c4060 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
   position: relative;
+  font-family: var(--ff-sans);
+  color: var(--text-dark);
 }
 
 /* ── Bokeh Lights ─────────────────────────────────────── */
@@ -51,7 +57,7 @@
 .lyra-bokeh-dot {
   position: absolute;
   border-radius: 50%;
-  filter: blur(30px);
+  filter: blur(35px);
   opacity: 0;
   animation: lyra-bokeh-float ease-in-out infinite alternate;
 }
@@ -78,140 +84,648 @@
   100% { opacity: 0; transform: translateY(110vh) rotate(540deg); }
 }
 
-/* ── Card ─────────────────────────────────────────────── */
+/* ── Royal Damask Canvas Pattern ──────────────────────── */
+.lyra-canvas-pattern {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCIgZmlsbD0ibm9uZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImNEYW1hc2siIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuOSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZjZWNlZSIgc3RvcC1vcGFjaXR5PSIwLjc1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U4Yzk5YSIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MCw4MCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjQiIGZpbGw9InVybCgjY0RhbWFzaykiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIxOCIgc3Ryb2tlPSJ1cmwoI2NEYW1hc2spIiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIi8+CiAgICA8cGF0aCBkPSJNIDAgLTE4IEMgOSAtMzAgMTEgLTQwIDAgLTUwIEMgLTExIC00MCAtOSAtMzAgMCAtMTggWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2NEYW1hc2spIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogICAgPHBhdGggZD0iTSAwIC0yNCBDIDQgLTMyIDQgLTM4IDAgLTQ0IEMgLTQgLTM4IC00IC0zMiAwIC0yNCBaIiBmaWxsPSJ1cmwoI2NEYW1hc2spIiBmaWxsLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxwYXRoIGQ9Ik0gMCAxOCBDIDkgMzAgMTEgNDAgMCA1MCBDIC0xMSA0MCAtOSAzMCAwIDE4IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNjRGFtYXNrKSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KICAgIDxwYXRoIGQ9Ik0gMCAyNCBDIDQgMzIgNCAzOCAwIDQ0IEMgLTQgMzggLTQgMzIgMCAyNCBaIiBmaWxsPSJ1cmwoI2NEYW1hc2spIiBmaWxsLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxwYXRoIGQ9Ik0gLTE4IDAgQyAtMzAgOSAtNDAgMTEgLTUwIDAgQyAtNDAgLTExIC0zMCAtOSAtMTggMCBaIiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjY0RhbWFzaykiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgICA8cGF0aCBkPSJNIDE4IDAgQyAzMCA5IDQwIDExIDUwIDAgQyA0MCAtMTEgMzAgLTkgMTggMCBaIiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjY0RhbWFzaykiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBRIDI4IC0yOCA0OCAtMTYgUSAzMiAwIDAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2NEYW1hc2spIiBzdHJva2Utd2lkdGg9IjAuOSIgb3BhY2l0eT0iMC44Ii8+CiAgICA8cGF0aCBkPSJNIDAgMCBRIC0yOCAtMjggLTQ4IC0xNiBRIC0zMiAwIDAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2NEYW1hc2spIiBzdHJva2Utd2lkdGg9IjAuOSIgb3BhY2l0eT0iMC44Ii8+CiAgICA8cGF0aCBkPSJNIDAgMCBRIDI4IDI4IDQ4IDE2IFEgMzIgMCAwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNjRGFtYXNrKSIgc3Ryb2tlLXdpZHRoPSIwLjkiIG9wYWNpdHk9IjAuOCIvPgogICAgPHBhdGggZD0iTSAwIDAgUSAtMjggMjggLTQ4IDE2IFEgLTMyIDAgMCAwIiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjY0RhbWFzaykiIHN0cm9rZS13aWR0aD0iMC45IiBvcGFjaXR5PSIwLjgiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSItNTQiIHI9IjIuOCIgZmlsbD0idXJsKCNjRGFtYXNrKSIvPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjU0IiByPSIyLjgiIGZpbGw9InVybCgjY0RhbWFzaykiLz4KICAgIDxjaXJjbGUgY3g9Ii01NCIgY3k9IjAiIHI9IjIuOCIgZmlsbD0idXJsKCNjRGFtYXNrKSIvPgogICAgPGNpcmNsZSBjeD0iNTQiIGN5PSIwIiByPSIyLjgiIGZpbGw9InVybCgjY0RhbWFzaykiLz4KICA8L2c+CiAgPGc+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMTgiIHN0cm9rZT0idXJsKCNjRGFtYXNrKSIgc3Ryb2tlLXdpZHRoPSIwLjkiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjQuNSIgZmlsbD0idXJsKCNjRGFtYXNrKSIvPgogICAgPGNpcmNsZSBjeD0iMTYwIiBjeT0iMCIgcj0iMTgiIHN0cm9rZT0idXJsKCNjRGFtYXNrKSIgc3Ryb2tlLXdpZHRoPSIwLjkiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPgogICAgPGNpcmNsZSBjeD0iMTYwIiBjeT0iMCIgcj0iNC41IiBmaWxsPSJ1cmwoI2NEYW1hc2spIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMTYwIiByPSIxOCIgc3Ryb2tlPSJ1cmwoI2NEYW1hc2spIiBzdHJva2Utd2lkdGg9IjAuOSIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMTYwIiByPSI0LjUiIGZpbGw9InVybCgjY0RhbWFzaykiLz4KICAgIDxjaXJjbGUgY3g9IjE2MCIgY3k9IjE2MCIgcj0iMTgiIHN0cm9rZT0idXJsKCNjRGFtYXNrKSIgc3Ryb2tlLXdpZHRoPSIwLjkiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPgogICAgPGNpcmNsZSBjeD0iMTYwIiBjeT0iMTYwIiByPSI0LjUiIGZpbGw9InVybCgjY0RhbWFzaykiLz4KICA8L2c+Cjwvc3ZnPg==");
+  background-size: 160px 160px;
+  background-repeat: repeat;
+  opacity: 0.075;
+}
+
+/* ── Page Container ───────────────────────────────────── */
 .lyra-page {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 680px;
+  max-width: var(--page-width);
   margin: 0 auto;
-  background: rgba(253, 250, 246, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(253, 250, 246, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   box-shadow:
-    0 0 0 2px rgba(196, 116, 140, 0.25),
-    0 0 0 5px rgba(201, 160, 110, 0.1),
+    0 0 0 1px rgba(196, 116, 140, 0.25),
+    0 0 0 4px rgba(201, 160, 110, 0.12),
     0 32px 90px rgba(120, 40, 70, 0.35),
     0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 }
 
-/* ── Frame ────────────────────────────────────────────── */
-.lyra-frame {
-  padding: 60px 64px;
+/* ── Botanical Cotton Paper Pattern Overlay ───────────── */
+.lyra-pattern-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIiB2aWV3Qm94PSIwIDAgMTQwIDE0MCIgZmlsbD0ibm9uZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InBSb3NlR29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNjNDc0OGMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNjOWEwNmUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYTA1NTcwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KCiAgPCEtLSBEaWFtb25kIEdyaWQgTWVzaCAtLT4KICA8cGF0aCBkPSJNIDcwIDAgTCAxNDAgNzAgTCA3MCAxNDAgTCAwIDcwIFoiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjc1IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiIG9wYWNpdHk9IjAuNDUiLz4KICA8cGF0aCBkPSJNIDAgMCBMIDE0MCAxNDAgTSAxNDAgMCBMIDAgMTQwIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtZGFzaGFycmF5PSIzIDQiIG9wYWNpdHk9IjAuMyIvPgoKICA8IS0tIENlbnRlciBCb3RhbmljYWwgUm9zZXR0ZSAoNzAsIDcwKSAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MCwgNzApIj4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyOCIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyMSIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuNiIgc3Ryb2tlLWRhc2hhcnJheT0iMSAzIiBvcGFjaXR5PSIwLjY1Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iOSIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjMiIGZpbGw9IiNjOWEwNmUiLz4KCiAgICA8IS0tIDQgQ2FyZGluYWwgUGV0YWxzIC0tPgogICAgPHBhdGggZD0iTSAwIC05IEMgNSAtMTYgNyAtMjQgMCAtMzQgQyAtNyAtMjQgLTUgLTE2IDAgLTkgWiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjE4IiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPHBhdGggZD0iTSAwIC0xNCBDIDMgLTIwIDMgLTI2IDAgLTMwIEMgLTMgLTI2IC0zIC0yMCAwIC0xNCBaIiBmaWxsPSIjYzlhMDZlIiBmaWxsLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSItMzYiIHI9IjEuOCIgZmlsbD0iI2M5YTA2ZSIvPgoKICAgIDxwYXRoIGQ9Ik0gMCA5IEMgNSAxNiA3IDI0IDAgMzQgQyAtNyAyNCAtNSAxNiAwIDkgWiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjE4IiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPHBhdGggZD0iTSAwIDE0IEMgMyAyMCAzIDI2IDAgMzAgQyAtMyAyNiAtMyAyMCAwIDE0IFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIvPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjM2IiByPSIxLjgiIGZpbGw9IiNjOWEwNmUiLz4KCiAgICA8cGF0aCBkPSJNIC05IDAgQyAtMTYgNSAtMjQgNyAtMzQgMCBDIC0yNCAtNyAtMTYgLTUgLTkgMCBaIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuMTgiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8cGF0aCBkPSJNIC0xNCAwIEMgLTIwIDMgLTI2IDMgLTMwIDAgQyAtMjYgLTMgLTIwIC0zIC0xNCAwIFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIvPgogICAgPGNpcmNsZSBjeD0iLTM2IiBjeT0iMCIgcj0iMS44IiBmaWxsPSIjYzlhMDZlIi8+CgogICAgPHBhdGggZD0iTSA5IDAgQyAxNiA1IDI0IDcgMzQgMCBDIDI0IC03IDE2IC01IDkgMCBaIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuMTgiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8cGF0aCBkPSJNIDE0IDAgQyAyMCAzIDI2IDMgMzAgMCBDIDI2IC0zIDIwIC0zIDE0IDAgWiIgZmlsbD0iI2M5YTA2ZSIgZmlsbC1vcGFjaXR5PSIwLjI1Ii8+CiAgICA8Y2lyY2xlIGN4PSIzNiIgY3k9IjAiIHI9IjEuOCIgZmlsbD0iI2M5YTA2ZSIvPgoKICAgIDwhLS0gNCBEaWFnb25hbCBMZWF2ZXMgLS0+CiAgICA8cGF0aCBkPSJNIC02LjUgLTYuNSBDIC0xMyAtMTMgLTE2IC0xNyAtMjIgLTIyIEMgLTE3IC0xNiAtMTMgLTEzIC02LjUgLTYuNSBaIiBmaWxsPSIjYzlhMDZlIiBmaWxsLW9wYWNpdHk9IjAuMjgiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjkiLz4KICAgIDxwYXRoIGQ9Ik0gNi41IC02LjUgQyAxMyAtMTMgMTYgLTE3IDIyIC0yMiBDIDE3IC0xNiAxMyAtMTMgNi41IC02LjUgWiIgZmlsbD0iI2M5YTA2ZSIgZmlsbC1vcGFjaXR5PSIwLjI4IiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8cGF0aCBkPSJNIC02LjUgNi41IEMgLTEzIDEzIC0xNiAxNyAtMjIgMjIgQyAtMTcgMTYgLTEzIDEzIC02LjUgNi41IFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgogICAgPHBhdGggZD0iTSA2LjUgNi41IEMgMTMgMTMgMTYgMTcgMjIgMjIgQyAxNyAxNiAxMyAxMyA2LjUgNi41IFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgoKICAgIDwhLS0gQXJhYmVzcXVlIFZpbmVzIHdpdGggQnVkcyAtLT4KICAgIDxwYXRoIGQ9Ik0gMCAtMzQgUSAyMiAtNDQgMzggLTI4IFEgMjQgLTE0IDAgLTIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik0gMCAtMzQgUSAtMjIgLTQ0IC0zOCAtMjggUSAtMjQgLTE0IDAgLTIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik0gMCAzNCBRIDIyIDQ0IDM4IDI4IFEgMjQgMTQgMCAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNIDAgMzQgUSAtMjIgNDQgLTM4IDI4IFEgLTI0IDE0IDAgMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIwLjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPGNpcmNsZSBjeD0iMzQiIGN5PSItMjQiIHI9IjIuMiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KICAgIDxjaXJjbGUgY3g9Ii0zNCIgY3k9Ii0yNCIgcj0iMi4yIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgogICAgPGNpcmNsZSBjeD0iMzQiIGN5PSIyNCIgcj0iMi4yIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgogICAgPGNpcmNsZSBjeD0iLTM0IiBjeT0iMjQiIHI9IjIuMiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KICA8L2c+CgogIDwhLS0gNCBDb3JuZXJzIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjIwIiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC43NSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNyIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMi41IiBmaWxsPSIjYzQ3NDhjIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBDIDkgNCAxNiAxNiAyMCAyMCBDIDE2IDE2IDQgOSAwIDAgWiIgZmlsbD0iI2M5YTA2ZSIgZmlsbC1vcGFjaXR5PSIwLjI1IiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8cGF0aCBkPSJNIDAgMjQgQyAxMCAyMiAyMiAxMCAyNCAwIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC43NSIgZmlsbD0ibm9uZSIvPgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDAsMCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjIwIiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC43NSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNyIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMi41IiBmaWxsPSIjYzQ3NDhjIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBDIC05IDQgLTE2IDE2IC0yMCAyMCBDIC0xNiAxNiAtNCA5IDAgMCBaIiBmaWxsPSIjYzlhMDZlIiBmaWxsLW9wYWNpdHk9IjAuMjUiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjkiLz4KICAgIDxwYXRoIGQ9Ik0gMCAyNCBDIC0xMCAyMiAtMjIgMTAgLTI0IDAiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIwLjc1IiBmaWxsPSJub25lIi8+CiAgPC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTQwKSI+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMjAiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjc1IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI3IiBzdHJva2U9InVybCgjcFJvc2VHb2xkKSIgc3Ryb2tlLXdpZHRoPSIwLjkiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjUiIGZpbGw9IiNjNDc0OGMiLz4KICAgIDxwYXRoIGQ9Ik0gMCAwIEMgOSAtNCAxNiAtMTYgMjAgLTIwIEMgMTYgLTE2IDQgLTkgMCAwIFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgogICAgPHBhdGggZD0iTSAwIC0yNCBDIDEwIC0yMiAyMiAtMTAgMjQgMCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuNzUiIGZpbGw9Im5vbmUiLz4KICA8L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQwLDE0MCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjIwIiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC43NSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNyIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMi41IiBmaWxsPSIjYzQ3NDhjIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBDIC05IC00IC0xNiAtMTYgLTIwIC0yMCBDIC0xNiAtMTYgLTQgLTkgMCAwIFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgogICAgPHBhdGggZD0iTSAwIC0yNCBDIC0xMCAtMjIgLTIyIC0xMCAtMjQgMCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuNzUiIGZpbGw9Im5vbmUiLz4KICA8L2c+CgogIDwhLS0gQm9yZGVyIENvbm5lY3RvcnMgLS0+CiAgPGc+CiAgICA8cGF0aCBkPSJNIDYyIDAgQyA2NiA2IDc0IDYgNzggMCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iNzAiIGN5PSIwIiByPSIyLjIiIGZpbGw9IiNjOWEwNmUiLz4KICAgIDxwYXRoIGQ9Ik0gNjIgMTQwIEMgNjYgMTQ2IDc0IDE0NiA3OCAxNDAiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIwLjgiIGZpbGw9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjcwIiBjeT0iMTQwIiByPSIyLjIiIGZpbGw9IiNjOWEwNmUiLz4KICAgIDxwYXRoIGQ9Ik0gMCA2MiBDIDYgNjYgNiA3NCAwIDc4IiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC44IiBmaWxsPSJub25lIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iNzAiIHI9IjIuMiIgZmlsbD0iI2M5YTA2ZSIvPgogICAgPHBhdGggZD0iTSAxNDAgNjIgQyAxNDYgNjYgMTQ2IDc0IDE0MCA3OCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTQwIiBjeT0iNzAiIHI9IjIuMiIgZmlsbD0iI2M5YTA2ZSIvPgogIDwvZz4KPC9zdmc+");
+  background-size: 140px 140px;
+  background-repeat: repeat;
+  opacity: 0.115;
+  mix-blend-mode: multiply;
+}
+
+/* ── Luxury Inner Frame Line ──────────────────────────── */
+.lyra-inner-frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(196, 116, 140, 0.2);
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lyra-inner-frame::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 0.75px dashed rgba(201, 160, 110, 0.28);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* ── Royal Watermark Crest ────────────────────────────── */
+.lyra-watermark-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FULL-SCREEN SECTIONS (Setinggi Layar / Bebas Padat)
+   ═══════════════════════════════════════════════════════════ */
+.lyra-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 32px;
+  box-sizing: border-box;
   position: relative;
+  text-align: center;
+  overflow: hidden;
 }
-.lyra-frame::before {
-  content: '';
+
+.lyra-section-content {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Typography & Section Titles ──────────────────────── */
+.lyra-section-kicker {
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--rose-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.lyra-section-heading {
+  font-family: var(--ff-serif);
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.lyra-section-lead {
+  font-family: var(--ff-serif);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+
+/* ── Floral Corners for Hero ──────────────────────────── */
+.lyra-corner {
   position: absolute;
-  inset: 20px;
-  border: 1px solid rgba(196, 116, 140, 0.3);
+  width: 76px;
+  height: 76px;
+  opacity: 0.45;
   pointer-events: none;
+  z-index: 1;
+}
+.lyra-corner--tl { top: 16px; left: 16px; }
+.lyra-corner--tr { top: 16px; right: 16px; transform: scaleX(-1); }
+.lyra-corner--bl { bottom: 16px; left: 16px; transform: scaleY(-1); }
+.lyra-corner--br { bottom: 16px; right: 16px; transform: scale(-1); }
+
+/* ── Floral Flanks (Sisi Kiri & Kanan) ────────────────── */
+.lyra-flank-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ── Hero BG tint ─────────────────────────────────────── */
-.lyra-hero-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 200px;
-  background: linear-gradient(180deg, rgba(252,232,239,0.5) 0%, transparent 100%);
+.lyra-breeze-ornament {
   pointer-events: none;
+  z-index: 1;
 }
 
-/* ── Floral Corner ────────────────────────────────────── */
-.lyra-corner { position: absolute; width: 80px; height: 80px; opacity: 0.5; }
-.lyra-corner--tl { top: 8px; left: 8px; }
-.lyra-corner--tr { top: 8px; right: 8px; transform: scaleX(-1); }
-.lyra-corner--bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
-.lyra-corner--br { bottom: 8px; right: 8px; transform: scale(-1); }
+/* ── 1. HERO SECTION ─────────────────────────────────── */
+.lyra-hero-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(253, 237, 242, 0.6) 0%, rgba(253, 250, 246, 0.4) 60%, rgba(253, 250, 246, 0.95) 100%);
+}
 
-/* ── Top Tag ──────────────────────────────────────────── */
 .lyra-tag {
-  text-align: center; display: block;
-  font-family: var(--ff-sans); font-size: 9.5px; font-weight: 600;
-  letter-spacing: 0.4em; color: var(--rose); text-transform: uppercase; margin-bottom: 16px;
+  text-align: center;
+  display: block;
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--rose-dark);
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
-/* ── Script Title ─────────────────────────────────────── */
-.lyra-script-title {
-  font-family: var(--ff-script); font-size: 44px; color: var(--rose-dark);
-  text-align: center; display: block; line-height: 1.1; margin-bottom: 4px;
+.lyra-hero-eyebrow {
+  font-family: var(--ff-script);
+  font-size: 38px;
+  color: var(--gold);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  display: block;
 }
 
-/* ── Divider ──────────────────────────────────────────── */
-.lyra-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 20px auto; }
-.lyra-divider-line { flex: 1; max-width: 80px; height: 1px; background: linear-gradient(to right, transparent, rgba(196,116,140,0.4)); }
-.lyra-divider-line.right { background: linear-gradient(to left, transparent, rgba(196,116,140,0.4)); }
+.lyra-hero-names {
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* ── Greeting ─────────────────────────────────────────── */
-.lyra-greeting { text-align: center; margin: 24px 0; }
-.lyra-greeting p { font-family: var(--ff-serif); font-size: 16px; font-weight: 300; font-style: italic; color: var(--text-mid); line-height: 1.85; }
+.lyra-hero-name {
+  font-family: var(--ff-script);
+  font-size: 68px;
+  color: var(--rose-dark);
+  line-height: 1.05;
+  display: block;
+  text-shadow: 0 2px 10px rgba(160, 85, 112, 0.15);
+}
 
-/* ── Names ────────────────────────────────────────────── */
-.lyra-names { text-align: center; margin: 28px 0; }
-.lyra-name-main { font-family: var(--ff-script); font-size: 56px; color: var(--rose-dark); display: block; line-height: 1; }
-.lyra-name-full { font-family: var(--ff-serif); font-size: 13px; font-style: italic; color: var(--text-mid); letter-spacing: 0.12em; display: block; margin-top: 4px; }
-.lyra-and { font-family: var(--ff-script); font-size: 44px; color: var(--gold); display: block; margin: 6px 0; }
+.lyra-hero-and {
+  font-family: var(--ff-serif);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--gold);
+  margin: 4px 0;
+  display: block;
+}
 
-/* ── Family ───────────────────────────────────────────── */
-.lyra-family { text-align: center; margin: 20px 0 28px; padding: 24px 32px; background: rgba(252,232,239,0.5); border: 1px solid rgba(196,116,140,0.3); border-radius: 12px; }
-.lyra-family-intro { font-family: var(--ff-sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 14px; }
-.lyra-family-label { font-family: var(--ff-serif); font-size: 13.5px; font-weight: 600; font-style: italic; color: #8b3a52; display: block; margin-bottom: 4px; }
-.lyra-family-name { font-family: var(--ff-serif); font-size: 16.5px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 16px; }
+.lyra-hero-date-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ff-sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-mid);
+  margin-bottom: 40px;
+  padding: 8px 24px;
+  border-top: 1px solid rgba(196, 116, 140, 0.3);
+  border-bottom: 1px solid rgba(196, 116, 140, 0.3);
+  text-transform: uppercase;
+}
 
-/* ── Events ───────────────────────────────────────────── */
-.lyra-events { display: flex; flex-direction: column; gap: 20px; margin: 24px 0; }
+.lyra-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ff-sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+/* ── 2. VERSE & GREETING SECTION ─────────────────────── */
+.lyra-verse-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(196, 116, 140, 0.3);
+  border-radius: 20px;
+  padding: 38px 32px;
+  box-sizing: border-box;
+  box-shadow: 0 14px 45px rgba(160, 85, 112, 0.08);
+  margin-bottom: 32px;
+}
+
+.lyra-verse-arabic {
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  line-height: 1.85;
+  color: #4a2530;
+  margin: 0 0 16px 0;
+}
+
+.lyra-verse-trans {
+  font-family: var(--ff-serif);
+  font-size: 16px;
+  line-height: 1.75;
+  color: #68404e;
+  font-style: italic;
+  margin: 0 0 14px 0;
+}
+
+.lyra-verse-ref {
+  font-family: var(--ff-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--rose);
+  text-transform: uppercase;
+  display: block;
+}
+
+.lyra-greeting-lead {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── 3. COUPLE SECTION ────────────────────────────────── */
+.lyra-couple-profile-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.lyra-profile-card {
+  padding: 24px;
+  text-align: center;
+}
+
+.lyra-profile-name {
+  font-family: var(--ff-script);
+  font-size: 44px;
+  color: var(--rose-dark);
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.lyra-profile-fullname {
+  font-family: var(--ff-serif);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.lyra-profile-parents {
+  font-family: var(--ff-sans);
+  font-size: 12.5px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.lyra-profile-parents strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.lyra-couple-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(196, 116, 140, 0.4);
+  margin: 0 auto;
+}
+
+/* ── 4. EVENTS SECTION ────────────────────────────────── */
+.lyra-events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 520px;
+}
+
 .lyra-event-card {
-  padding: 28px; border: 1px solid rgba(196,116,140,0.25);
-  border-radius: 12px; text-align: center; background: white;
-  box-shadow: 0 2px 12px rgba(196,116,140,0.06);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #ffffff;
+  border: 1px solid rgba(196, 116, 140, 0.28);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 12px 35px rgba(160, 85, 112, 0.07);
+  text-align: center;
+  transition: all 0.3s ease;
 }
-.lyra-event-card:hover { border-color: rgba(196,116,140,0.5); box-shadow: 0 6px 24px rgba(196,116,140,0.15); }
-.lyra-event-tag { font-family: var(--ff-sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.45em; text-transform: uppercase; color: var(--rose-dark); display: block; margin-bottom: 10px; }
-.lyra-event-name { font-family: var(--ff-serif); font-size: 22px; font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 12px; }
-.lyra-event-date { font-family: var(--ff-script); font-size: 24px; color: var(--rose-dark); display: block; margin-bottom: 4px; }
-.lyra-event-time { font-family: var(--ff-sans); font-size: 12.5px; font-weight: 500; color: var(--text-mid); letter-spacing: 0.15em; display: block; margin-bottom: 14px; }
-.lyra-event-venue { font-family: var(--ff-serif); font-size: 15.5px; font-weight: 700; color: var(--text-dark); display: block; }
-.lyra-event-address { font-family: var(--ff-sans); font-size: 12px; font-weight: 400; color: var(--text-mid); line-height: 1.7; display: block; margin-top: 4px; }
-.lyra-event-sep { height: 1px; background: rgba(196,116,140,0.2); margin: 14px 0; }
 
-/* ── Maps Btn ─────────────────────────────────────────── */
-.lyra-btn-maps { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 9px 20px; border: 1.5px solid rgba(196,116,140,0.5); border-radius: 6px; color: var(--rose-dark); font-family: var(--ff-sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; background: rgba(252,232,239,0.3); }
-.lyra-btn-maps:hover { background: rgba(252,232,239,0.9); border-color: var(--rose-dark); color: #2d0a12; }
+.lyra-event-card:hover {
+  border-color: rgba(196, 116, 140, 0.55);
+  box-shadow: 0 16px 45px rgba(160, 85, 112, 0.14);
+}
 
-/* ── Countdown ────────────────────────────────────────── */
-.lyra-countdown { text-align: center; margin: 24px 0; padding: 28px; background: linear-gradient(135deg, rgba(252,232,239,0.6), rgba(248,241,232,0.6)); border: 1px solid rgba(196,116,140,0.25); border-radius: 12px; }
-.lyra-countdown-label { font-family: var(--ff-sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 16px; }
-.lyra-countdown-digits { display: flex; justify-content: center; align-items: flex-start; gap: 8px; }
-.lyra-digit-block { text-align: center; min-width: 52px; }
-.lyra-digit { font-family: var(--ff-serif); font-size: 40px; font-weight: 700; color: var(--rose-dark); display: block; line-height: 1; }
-.lyra-digit-unit { font-family: var(--ff-sans); font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-mid); margin-top: 4px; display: block; }
-.lyra-digit-sep { font-family: var(--ff-serif); font-size: 32px; color: var(--rose); line-height: 1; padding-top: 4px; }
+.lyra-event-card-title {
+  font-family: var(--ff-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 14px 0;
+}
 
-/* ── Closing ──────────────────────────────────────────── */
-.lyra-closing { text-align: center; margin: 24px 0; }
-.lyra-closing p { font-family: var(--ff-serif); font-size: 14.5px; font-weight: 400; font-style: italic; color: var(--text-dark); line-height: 1.9; white-space: pre-line; }
+.lyra-event-card-date {
+  font-family: var(--ff-script);
+  font-size: 26px;
+  color: var(--rose-dark);
+  margin: 0 0 4px 0;
+  display: block;
+}
 
-/* ── RSVP ─────────────────────────────────────────────── */
-.lyra-btn-rsvp {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 16px 44px;
+.lyra-event-card-time {
+  font-family: var(--ff-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--text-mid);
+  margin: 0 0 16px 0;
+  display: block;
+}
+
+.lyra-event-venue-block {
+  padding-top: 14px;
+  border-top: 1px solid rgba(196, 116, 140, 0.2);
+  margin-bottom: 20px;
+}
+
+.lyra-event-card-venue {
+  font-family: var(--ff-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.lyra-event-card-addr {
+  font-family: var(--ff-sans);
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lyra-event-btn-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lyra-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: 1.5px solid rgba(196, 116, 140, 0.45);
+  border-radius: 99px;
+  color: var(--rose-dark);
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(253, 242, 245, 0.6);
+  transition: all 0.25s ease;
+}
+
+.lyra-btn-outline:hover {
+  background: var(--rose);
+  color: #ffffff;
+  border-color: var(--rose);
+}
+
+.lyra-btn-filled {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 99px;
+  color: #ffffff;
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
   background: linear-gradient(135deg, var(--rose), var(--rose-dark));
-  color: white; font-family: var(--ff-sans); font-size: 10.5px; font-weight: 700;
-  letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s; box-shadow: 0 4px 20px rgba(196,116,140,0.4);
-}
-.lyra-btn-rsvp:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,116,140,0.55); }
-
-/* ── Footer ───────────────────────────────────────────── */
-.lyra-footer { text-align: center; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(196,116,140,0.2); }
-.lyra-footer-brand { font-family: var(--ff-sans); font-size: 9.5px; font-weight: 600; letter-spacing: 0.4em; color: var(--text-light); text-transform: uppercase; }
-
-/* ── Ornament Positioning ─────────────────────────────── */
-.lyra-ornament-section {
-  position: relative;
-  overflow: visible;
+  box-shadow: 0 4px 16px rgba(160, 85, 112, 0.25);
+  transition: all 0.25s ease;
 }
 
-@media (max-width: 600px) { .lyra-frame { padding: 48px 28px; } .lyra-name-main { font-size: 44px; } .lyra-ornament-section > [style*="absolute"] { display: none; } }
+.lyra-btn-filled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(160, 85, 112, 0.4);
+}
+
+/* ── 5. COUNTDOWN SECTION ─────────────────────────────── */
+.lyra-countdown-container {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(135deg, rgba(253, 242, 245, 0.8), rgba(254, 248, 242, 0.8));
+  border: 1px solid rgba(196, 116, 140, 0.3);
+  border-radius: 24px;
+  padding: 38px 28px;
+  box-sizing: border-box;
+  box-shadow: 0 14px 45px rgba(160, 85, 112, 0.08);
+}
+
+.lyra-countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.lyra-digit-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 56px;
+}
+
+.lyra-digit-num {
+  font-family: var(--ff-serif);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--rose-dark);
+  line-height: 1;
+}
+
+.lyra-digit-txt {
+  font-family: var(--ff-sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--rose);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.lyra-digit-colon {
+  font-family: var(--ff-serif);
+  font-size: 32px;
+  color: rgba(196, 116, 140, 0.5);
+  line-height: 1;
+  padding-top: 4px;
+}
+
+/* ── 6. CLOSING & RSVP ────────────────────────────────── */
+.lyra-closing-note {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+.lyra-btn-rsvp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 44px;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  color: #ffffff;
+  font-family: var(--ff-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 99px;
+  box-shadow: 0 8px 28px rgba(160, 85, 112, 0.35);
+  transition: all 0.25s ease;
+}
+
+.lyra-btn-rsvp-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(160, 85, 112, 0.5);
+  background: var(--rose-dark);
+}
+
+.lyra-footer-credits {
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-top: 36px;
+  display: block;
+}
+
+/* ── Flank responsive rules ───────────────────────────── */
+@media (max-width: 600px) {
+  .lyra-section { padding: 52px 22px; }
+  .lyra-hero-name { font-size: 46px; }
+  .lyra-section-heading { font-size: 28px; }
+  .lyra-flank-container .lyra-breeze-ornament.lyra-ornament-left {
+    left: -20px !important;
+  }
+  .lyra-flank-container .lyra-breeze-ornament.lyra-ornament-right {
+    right: -20px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOCKUP FRAME SCOPING FOR CATALOG
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .lyra-root,
+.is-mockup-frame .lyra-page,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.is-mockup-frame .lyra-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 44px 20px 24px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.is-mockup-frame .lyra-tag {
+  font-size: 9.5px !important;
+  margin-bottom: 14px !important;
+}
+
+.is-mockup-frame .lyra-hero-eyebrow {
+  font-size: 30px !important;
+  margin-bottom: 8px !important;
+}
+
+.is-mockup-frame .lyra-hero-name {
+  font-size: 52px !important;
+}
+
+.is-mockup-frame .lyra-hero-and {
+  font-size: 26px !important;
+  margin: 2px 0 !important;
+}
+
+.is-mockup-frame .lyra-hero-date-line {
+  font-size: 10.5px !important;
+  padding: 6px 20px !important;
+  margin-bottom: 28px !important;
+}
+
+.is-mockup-frame .lyra-scroll-hint {
+  font-size: 8.5px !important;
+}
+
+.is-mockup-frame .lyra-breeze-ornament svg {
+  transform: scale(0.9) !important;
+  transform-origin: center center !important;
+}
+
+.is-mockup-frame .lyra-corner {
+  width: 58px !important;
+  height: 58px !important;
+}

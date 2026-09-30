@@ -1,41 +1,45 @@
 /* ═══════════════════════════════════════════════════════════
-   THEME: DENEB
+   THEME: DENEB — Pastel Carnival & Fairytale Birthday Party
    Category: Girl's Birthday Party & Festival
    Palette:  Cotton Candy Rose × Mint Sherbet × Sunshine Lemon × Lavender
-   Style:    Carnival VIP Admission Ticket & Playful Pastel Festival
+   Style:    Full-Screen (100vh), Unboxed, Dreamy Pastel Celebration
    ═══════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Nunito:wght@400;600;700;800;900&display=swap');
 
 .deneb-root {
-  --pink-hot:     #ff477e;
-  --pink-bubble:  #ff6584;
-  --pink-soft:    #ffebf0;
-  --mint-vibrant: #10b981;
-  --mint-soft:    #e6fcf5;
-  --lavender:     #8b5cf6;
-  --lavender-soft:#f3e8ff;
-  --yellow-pop:   #f59e0b;
-  --yellow-soft:  #fef3c7;
-  --blue-sky:     #0ea5e9;
-  --text-dark:    #1e1b4b;
-  --text-mid:     #4338ca;
-  --text-soft:    #6366f1;
+  --pink-hot:       #ff477e;
+  --pink-bubble:    #ff6584;
+  --pink-soft:      #fff0f5;
+  --pink-subtle:    #fdf2f8;
+  --mint-vibrant:   #10b981;
+  --mint-soft:      #ecfdf5;
+  --lavender:       #8b5cf6;
+  --lavender-soft:  #f5f3ff;
+  --yellow-pop:     #f59e0b;
+  --yellow-soft:    #fef3c7;
+  --blue-sky:       #0ea5e9;
+  --blue-soft:      #f0f9ff;
+  --text-dark:      #1e1b4b;
+  --text-mid:       #4338ca;
+  --text-soft:      #6366f1;
+  --text-muted:     #826c96;
 
-  --ff-title:  'Pacifico', cursive;
-  --ff-fun:    'Fredoka', sans-serif;
-  --ff-body:   'Nunito', sans-serif;
-}
+  --ff-title: 'Pacifico', cursive;
+  --ff-fun:   'Fredoka', sans-serif;
+  --ff-body:  'Nunito', sans-serif;
 
-.deneb-root {
+  --page-width: 680px;
+
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 15% 15%, rgba(255, 101, 132, 0.4) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 15%, rgba(245, 158, 11, 0.35) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.25) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 85%, rgba(16, 185, 129, 0.35) 0%, transparent 45%),
-    radial-gradient(ellipse at 80% 85%, rgba(14, 165, 233, 0.3) 0%, transparent 45%),
-    linear-gradient(135deg, #fff0f5 0%, #fdf2f8 30%, #f5f3ff 60%, #ecfeff 100%);
+  background-color: #fff2f6;
+  background-image:
+    radial-gradient(ellipse at 15% 15%, rgba(255, 101, 132, 0.35) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 15%, rgba(245, 158, 11, 0.3) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 85%, rgba(16, 185, 129, 0.3) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 85%, rgba(14, 165, 233, 0.25) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ff6584' fill-opacity='0.055'%3E%3Cpath d='M40 10 L42 20 L52 22 L42 24 L40 34 L38 24 L28 22 L38 20 Z'/%3E%3Ccircle cx='40' cy='22' r='2'/%3E%3Ccircle cx='10' cy='60' r='2.5' fill='%23a855f7' fill-opacity='0.055'/%3E%3Ccircle cx='70' cy='60' r='2.5' fill='%230ea5e9' fill-opacity='0.055'/%3E%3Cpath d='M15 15 C10 10 5 15 10 20 Z' fill='%23ff6584' fill-opacity='0.04'/%3E%3Cpath d='M65 15 C70 10 75 15 70 20 Z' fill='%23ff6584' fill-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,630 +48,873 @@
   font-family: var(--ff-body);
 }
 
-/* ── Confetti ─────────────────────────────────────────── */
-.deneb-confetti-piece {
+/* ── Confetti Particle Rain ───────────────────────────── */
+.deneb-confetti-wrap {
   position: fixed;
+  inset: 0;
   pointer-events: none;
   z-index: 0;
-  animation: deneb-confetti linear infinite;
+  overflow: hidden;
 }
 
-@keyframes deneb-confetti {
+.deneb-confetti-piece {
+  position: absolute;
+  top: -20px;
+  pointer-events: none;
+  animation: deneb-confetti-fall linear infinite;
+}
+
+@keyframes deneb-confetti-fall {
   0%   { opacity: 0; transform: translateY(-20px) rotate(0deg); }
-  15%  { opacity: 0.9; }
-  85%  { opacity: 0.7; }
+  15%  { opacity: 0.85; }
+  85%  { opacity: 0.65; }
   100% { opacity: 0; transform: translateY(105vh) rotate(720deg); }
 }
 
-/* ── Page Container ───────────────────────────────────── */
+/* ── Ambient Floating Stardust ────────────────────────── */
+.deneb-stardust-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.deneb-stardust-speck {
+  position: absolute;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  opacity: 0;
+  animation: deneb-stardust-float linear infinite;
+}
+
+@keyframes deneb-stardust-float {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.6);
+  }
+  25% {
+    opacity: 0.85;
+    transform: translateY(0px) scale(1);
+  }
+  75% {
+    opacity: 0.6;
+    transform: translateY(-40px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.7);
+  }
+}
+
+/* ── Page Canvas Container ────────────────────────────── */
 .deneb-page {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 680px;
+  max-width: var(--page-width);
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 28px;
-  overflow: hidden;
+  color: var(--text-dark);
   box-shadow:
-    0 0 0 6px rgba(255, 255, 255, 0.9),
-    0 0 0 10px rgba(255, 101, 132, 0.35),
-    0 24px 60px rgba(255, 71, 126, 0.2),
-    0 8px 24px rgba(0, 0, 0, 0.08);
+    0 0 0 1px rgba(255, 101, 132, 0.4),
+    0 0 0 4px #ffffff,
+    0 0 0 7px rgba(255, 101, 132, 0.25),
+    0 0 0 10px rgba(168, 85, 247, 0.15),
+    0 28px 80px rgba(255, 71, 126, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-/* ── Rainbow Bar ──────────────────────────────────────── */
-.deneb-rainbow-bar {
-  height: 8px;
-  background: linear-gradient(90deg, #ff477e, #f59e0b, #10b981, #0ea5e9, #8b5cf6, #ff477e);
-  background-size: 200% 100%;
-  animation: deneb-rainbow-flow 3.5s linear infinite;
+.deneb-page::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(255, 101, 132, 0.35);
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 10;
 }
 
-@keyframes deneb-rainbow-flow {
-  0%   { background-position: 0% 0%; }
-  100% { background-position: 200% 0%; }
+.deneb-page::after {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 10;
 }
 
-/* ── Hero Banner ──────────────────────────────────────── */
-.deneb-hero {
-  text-align: center;
-  padding: 44px 36px 32px;
-  background: linear-gradient(180deg, #fff1f5 0%, #ffffff 100%);
-  border-bottom: 2px dashed rgba(255, 101, 132, 0.3);
+/* ── Top Hanging Bunting Ribbon Garland Header ───────── */
+.deneb-ribbon-garland {
   position: relative;
+  z-index: 15;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  padding: 8px 0 10px;
+  background: linear-gradient(90deg, #ffd0db 0%, #ffcdd8 35%, #fde2cd 75%, #fcdab8 100%);
 }
 
-.deneb-balloon-row {
+/* ═══════════════════════════════════════════════════════════
+   FULL-SCREEN SECTIONS (Setinggi Layar / 100vh)
+   ═══════════════════════════════════════════════════════════ */
+.deneb-section {
+  min-height: 100vh;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 16px;
+  align-items: center;
+  padding: 64px 32px;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.deneb-balloon {
-  font-size: 32px;
-  display: inline-block;
-  animation: deneb-sway 2s ease-in-out infinite;
-  filter: drop-shadow(0 4px 8px rgba(255, 101, 132, 0.25));
-}
-.deneb-balloon:nth-child(1) { animation-delay: 0s; }
-.deneb-balloon:nth-child(2) { animation-delay: 0.3s; }
-.deneb-balloon:nth-child(3) { animation-delay: 0.6s; }
-.deneb-balloon:nth-child(4) { animation-delay: 0.9s; }
-.deneb-balloon:nth-child(5) { animation-delay: 1.2s; }
-
-@keyframes deneb-sway {
-  0%, 100% { transform: rotate(-6deg) translateY(0); }
-  50%       { transform: rotate(6deg) translateY(-8px); }
+.deneb-section-content {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
-.deneb-invite-label {
+/* ── Section Headings ─────────────────────────────────── */
+.deneb-section-head {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.deneb-section-kicker {
+  font-family: var(--ff-fun);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--pink-hot);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.deneb-section-title {
+  font-family: var(--ff-fun);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.deneb-section-subtitle {
+  font-family: var(--ff-body);
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0 auto;
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+/* ── Corner Flourishes ────────────────────────────────── */
+.deneb-corner--tl { position: absolute; top: 12px; left: 12px; }
+.deneb-corner--tr { position: absolute; top: 12px; right: 12px; transform: scaleX(-1); }
+.deneb-corner--bl { position: absolute; bottom: 12px; left: 12px; transform: scaleY(-1); }
+.deneb-corner--br { position: absolute; bottom: 12px; right: 12px; transform: scale(-1); }
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 1: HERO BIRTHDAY PROCLAMATION (100vh)
+   ═══════════════════════════════════════════════════════════ */
+.deneb-hero-section {
+  background: linear-gradient(180deg, #fff2f6 0%, #fef5f9 55%, #ffffff 100%);
+  color: var(--text-dark);
+}
+
+.deneb-hero-balloons {
+  margin-bottom: 12px;
+  filter: drop-shadow(0 12px 24px rgba(255, 101, 132, 0.25));
+  animation: deneb-balloon-hover 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes deneb-balloon-hover {
+  0%   { transform: translateY(0px) rotate(-1deg); }
+  100% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.deneb-festival-tag {
   font-family: var(--ff-fun);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.3em;
-  text-transform: uppercase;
   color: var(--pink-hot);
-  display: block;
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 7px 22px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 71, 126, 0.4);
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(255, 71, 126, 0.16);
+  margin-bottom: 12px;
 }
 
-.deneb-kid-name {
+.deneb-hero-eyebrow {
+  font-family: var(--ff-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: #7c3aed;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.deneb-hero-name {
   font-family: var(--ff-title);
   font-size: 64px;
-  color: #d81b60;
-  display: block;
-  line-height: 1.05;
-  margin-bottom: 8px;
-  text-shadow: 3px 3px 0 rgba(255, 101, 132, 0.2);
+  line-height: 1.2;
+  margin: 4px 0 14px;
+  background: linear-gradient(135deg, #ff2a6d 0%, #ff5277 40%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 16px rgba(255, 71, 126, 0.35));
 }
 
-.deneb-age-wrap {
-  display: flex;
+.deneb-hero-age-pill {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-  margin: 12px 0 0;
+  padding: 8px 10px 8px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 2px solid #fbcfe8;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(255, 71, 126, 0.18);
+  margin-bottom: 18px;
 }
-.deneb-age-turns {
+
+.deneb-age-text {
   font-family: var(--ff-fun);
-  font-size: 16px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--text-dark);
 }
-.deneb-age-bubble {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff477e, #8b5cf6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(255, 71, 126, 0.45);
-  animation: deneb-bounce 1.6s ease-in-out infinite;
-}
-@keyframes deneb-bounce {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.1); }
-}
+
 .deneb-age-num {
   font-family: var(--ff-fun);
-  font-size: 30px;
-  font-weight: 700;
-  color: white;
-  line-height: 1;
-}
-
-/* ── Body ─────────────────────────────────────────────── */
-.deneb-body {
-  padding: 32px 36px 44px;
-}
-
-.deneb-intro {
-  text-align: center;
-  margin-bottom: 28px;
-}
-.deneb-intro p {
-  font-size: 15px;
-  font-weight: 600;
-  color: #374151;
-  line-height: 1.8;
-  white-space: pre-line;
-  background: rgba(255, 235, 240, 0.6);
-  border-radius: 16px;
-  padding: 18px 24px;
-  border: 1.5px dashed rgba(255, 101, 132, 0.35);
-}
-
-/* ═══════════════════════════════════════════════════════════
-   CARNIVAL VIP ADMISSION TICKET LAYOUT
-   ═══════════════════════════════════════════════════════════ */
-.deneb-ticket-wrapper {
-  margin: 14px 0 28px;
-  filter: drop-shadow(0 12px 28px rgba(255, 101, 132, 0.18));
-}
-
-.deneb-carnival-ticket {
-  display: flex;
-  background: linear-gradient(135deg, #ffffff 0%, #fffbf8 100%);
-  border: 2px solid #ffccd5;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* ── Ticket Stub (Left) ── */
-.deneb-ticket-stub {
-  width: 130px;
-  background: linear-gradient(180deg, #ff477e 0%, #ff6584 100%);
-  padding: 24px 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  color: white;
-  flex-shrink: 0;
-}
-
-.deneb-stub-admit {
-  font-family: var(--ff-fun);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  display: block;
-}
-
-.deneb-stub-star {
-  font-family: var(--ff-fun);
-  font-size: 10px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.25);
-  padding: 4px 8px;
-  border-radius: 6px;
-  margin: 8px 0;
-  display: inline-block;
-  letter-spacing: 0.1em;
-}
-
-.deneb-stub-code {
-  font-family: monospace;
-  font-size: 9px;
-  opacity: 0.9;
-  letter-spacing: 0.1em;
-}
-
-.deneb-ticket-barcode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  width: 100%;
-}
-
-.deneb-barcode-bars {
-  width: 80%;
+  font-size: 22px;
+  font-weight: 800;
+  width: 38px;
   height: 38px;
-  background: repeating-linear-gradient(
-    90deg,
-    white 0px,
-    white 2px,
-    transparent 2px,
-    transparent 4px,
-    white 4px,
-    white 7px,
-    transparent 7px,
-    transparent 9px
-  );
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff477e 0%, #a855f7 100%);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(255, 71, 126, 0.4);
 }
 
-.deneb-barcode-text {
-  font-family: monospace;
-  font-size: 8.5px;
-  letter-spacing: 0.15em;
+.deneb-hero-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50px;
+  font-family: var(--ff-fun);
+  font-size: 12.5px;
   font-weight: 700;
+  color: #6366f1;
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.14);
+  margin-bottom: 26px;
 }
 
-/* ── Ticket Perforation Divider ── */
-.deneb-ticket-divider {
-  position: relative;
-  width: 20px;
-  display: flex;
+.deneb-scroll-hint {
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-}
-
-.deneb-punch {
-  width: 24px;
-  height: 24px;
-  background: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  box-shadow: inset 0 0 0 2px #ffccd5;
-}
-.punch-top {
-  top: -12px;
-  background: #ffffff;
-}
-.punch-bottom {
-  bottom: -12px;
-  background: #ffffff;
-}
-
-.deneb-perforation {
-  height: 100%;
-  border-left: 2px dashed #ff8fab;
-  margin: 12px 0;
-}
-
-/* ── Ticket Main Body (Right) ── */
-.deneb-ticket-main {
-  flex: 1;
-  padding: 24px 26px;
-}
-
-.deneb-ticket-title-row {
-  border-bottom: 2px solid #fff0f3;
-  padding-bottom: 12px;
-  margin-bottom: 16px;
-}
-
-.deneb-ticket-tag {
+  gap: 6px;
+  color: var(--pink-hot);
   font-family: var(--ff-fun);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: #ff477e;
-  display: block;
-  margin-bottom: 4px;
+  text-transform: uppercase;
+  animation: deneb-bounce-gentle 2.5s ease-in-out infinite;
 }
 
-.deneb-ticket-heading {
-  font-family: var(--ff-title);
-  font-size: 26px;
-  color: #1e1b4b;
+@keyframes deneb-bounce-gentle {
+  0%, 100% { transform: translateY(0); opacity: 0.75; }
+  50%      { transform: translateY(6px); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 2: SAMBUTAN HANGAT & COUNTDOWN (100vh)
+   ═══════════════════════════════════════════════════════════ */
+.deneb-welcome-section {
+  background: #ffffff;
+}
+
+.deneb-welcome-message-box {
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.6) 0%, rgba(245, 243, 255, 0.6) 100%);
+  border: 1.5px dashed rgba(255, 101, 132, 0.4);
+  border-radius: 24px;
+  padding: 32px 30px;
+  position: relative;
+  margin-bottom: 32px;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(255, 101, 132, 0.08);
+}
+
+.deneb-welcome-quote-icon {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.deneb-welcome-text {
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-dark);
   margin: 0;
-  line-height: 1.2;
+  white-space: pre-line;
 }
 
-.deneb-ticket-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.deneb-ticket-item {
-  background: #fff8fa;
-  border-radius: 12px;
-  padding: 10px 14px;
-  border: 1px solid #ffe3ea;
-}
-
-.deneb-ticket-lbl {
-  font-family: var(--ff-fun);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #8b5cf6;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.deneb-ticket-val {
-  font-size: 13.5px;
-  color: #1e1b4b;
-  font-weight: 700;
-  display: block;
-}
-.deneb-ticket-val.highlight {
-  color: #d81b60;
-  font-size: 14px;
-}
-
-.deneb-ticket-venue-box {
-  background: #f0fdf4;
-  border-radius: 12px;
-  padding: 12px 14px;
-  border: 1px solid #bbf7d0;
-  margin-bottom: 16px;
-}
-
-.deneb-ticket-venue {
-  font-size: 14px;
-  font-weight: 700;
-  color: #065f46;
-  display: block;
-  margin-top: 2px;
-}
-
-.deneb-ticket-address {
-  font-size: 12px;
-  color: #047857;
-  display: block;
-  margin-top: 2px;
-  line-height: 1.45;
-}
-
-.deneb-ticket-actions {
+/* ── Sleek Unboxed Countdown ── */
+.deneb-countdown-wrapper {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.deneb-btn-maps {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 18px;
-  background: #0ea5e9;
-  color: white;
-  border-radius: 50px;
-  font-family: var(--ff-fun);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  transition: all 0.25s;
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
-}
-.deneb-btn-maps:hover {
-  background: #0284c7;
-  transform: translateY(-2px);
-}
-
-.deneb-btn-cal {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 18px;
-  background: #8b5cf6;
-  color: white;
-  border-radius: 50px;
-  font-family: var(--ff-fun);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  transition: all 0.25s;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
-}
-.deneb-btn-cal:hover {
-  background: #7c3aed;
-  transform: translateY(-2px);
-}
-
-/* ── Festival Wristband Dress Code ────────────────────── */
-.deneb-wristband-wrap {
-  margin: 12px 0 28px;
-  display: flex;
-  justify-content: center;
-}
-
-.deneb-wristband {
-  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 14px;
-  background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
-  border: 2px dashed #f59e0b;
-  border-radius: 50px;
-  padding: 12px 28px;
-  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.25);
 }
 
-.deneb-wristband-icon {
-  font-size: 26px;
-}
-
-.deneb-wristband-title {
+.deneb-countdown-caption {
   font-family: var(--ff-fun);
-  font-size: 9.5px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #b45309;
-  display: block;
+  color: var(--lavender);
 }
 
-.deneb-wristband-text {
-  font-size: 14px;
-  font-weight: 700;
-  color: #78350f;
-  display: block;
-}
-
-/* ── Countdown Pass ───────────────────────────────────── */
-.deneb-countdown-pass {
-  background: linear-gradient(135deg, #fff0f5 0%, #f5f3ff 100%);
-  border: 2px solid #fbcfe8;
-  border-radius: 20px;
-  padding: 24px 20px;
-  margin: 20px 0 30px;
-  text-align: center;
-}
-
-.deneb-pass-header {
-  margin-bottom: 16px;
-}
-
-.deneb-pass-badge {
-  font-family: var(--ff-fun);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: #ff477e;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.deneb-pass-title {
-  font-family: var(--ff-fun);
-  font-size: 15px;
-  font-weight: 700;
-  color: #1e1b4b;
-}
-
-.deneb-tokens-grid {
+.deneb-countdown-clean {
   display: flex;
   justify-content: center;
+}
+
+.deneb-countdown-digits {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.deneb-token-card {
-  flex: 1;
-  max-width: 90px;
-  background: white;
-  border-radius: 16px;
-  padding: 14px 6px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-  border-top: 4px solid var(--token-accent);
+.deneb-countdown-item-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.deneb-token-val {
+.deneb-countdown-colon {
+  font-family: var(--ff-fun);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--pink-hot);
+  opacity: 0.45;
+}
+
+.deneb-countdown-box {
+  min-width: 68px;
+  padding: 14px 10px 10px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 2px solid var(--accent-color, var(--pink-hot));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.deneb-countdown-box:hover {
+  transform: translateY(-3px);
+}
+
+.deneb-digit {
   font-family: var(--ff-fun);
   font-size: 32px;
-  font-weight: 700;
-  color: var(--token-accent);
-  display: block;
+  font-weight: 800;
+  color: var(--text-dark);
   line-height: 1;
 }
 
-.deneb-token-unit {
+.deneb-digit-unit {
   font-family: var(--ff-fun);
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #6b7280;
+  text-transform: uppercase;
+  color: var(--accent-color, var(--pink-hot));
   margin-top: 6px;
-  display: block;
 }
 
-/* ── Host Info ────────────────────────────────────────── */
-.deneb-host {
-  text-align: center;
-  margin: 20px 0;
-  padding: 20px;
-  background: #fdf2f8;
-  border-radius: 16px;
+/* ═══════════════════════════════════════════════════════════
+   SECTION 3: WAKTU & LOKASI PESTA (100vh)
+   ═══════════════════════════════════════════════════════════ */
+.deneb-events-section {
+  background: linear-gradient(180deg, #fdf6ff 0%, #ffffff 100%);
 }
-.deneb-host-label {
+
+.deneb-pass-card {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border: 2px solid rgba(255, 101, 132, 0.35);
+  border-radius: 28px;
+  padding: 34px 28px;
+  box-shadow:
+    0 16px 45px rgba(255, 71, 126, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+  position: relative;
+  text-align: center;
+}
+
+.deneb-pass-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1.5px dashed rgba(255, 101, 132, 0.3);
+}
+
+.deneb-vip-pill {
+  font-family: var(--ff-fun);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--pink-hot);
+  background: var(--pink-soft);
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+.deneb-vip-code {
   font-family: var(--ff-fun);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
+  color: var(--lavender);
+}
+
+.deneb-pass-datetime-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.deneb-datetime-col {
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--pink-soft);
+  border: 1px solid rgba(255, 101, 132, 0.2);
+}
+
+.deneb-datetime-label {
+  font-family: var(--ff-fun);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #ff477e;
+  color: var(--pink-hot);
   display: block;
   margin-bottom: 6px;
 }
-.deneb-host-name {
-  font-family: var(--ff-fun);
-  font-size: 18px;
-  font-weight: 700;
-  color: #1e1b4b;
-}
 
-/* ── RSVP ─────────────────────────────────────────────── */
-.deneb-rsvp-block {
-  text-align: center;
-  margin: 28px 0;
-}
-.deneb-rsvp-note {
+.deneb-datetime-val {
   font-family: var(--ff-fun);
   font-size: 15px;
   font-weight: 700;
-  color: #1e1b4b;
+  color: var(--text-dark);
+  line-height: 1.35;
+  display: block;
+}
+
+.deneb-pass-venue-block {
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--lavender-soft);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  margin-bottom: 20px;
+}
+
+.deneb-venue-label {
+  font-family: var(--ff-fun);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lavender);
   display: block;
   margin-bottom: 6px;
 }
-.deneb-deadline {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: #ff477e;
+
+.deneb-venue-name {
+  font-family: var(--ff-fun);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 4px;
 }
 
-.deneb-btn-rsvp {
+.deneb-venue-address {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.deneb-pass-dresscode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--yellow-soft);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.deneb-dresscode-icon {
+  font-size: 20px;
+}
+
+.deneb-dresscode-label {
+  font-family: var(--ff-fun);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--yellow-pop);
+  text-transform: uppercase;
+  display: block;
+}
+
+.deneb-dresscode-val {
+  font-family: var(--ff-fun);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.deneb-pass-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.deneb-btn-maps-clean,
+.deneb-btn-cal-clean {
+  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 42px;
-  background: linear-gradient(135deg, #ff477e 0%, #8b5cf6 100%);
-  color: white;
-  font-family: var(--ff-fun);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
+  padding: 12px 18px;
   border-radius: 50px;
-  box-shadow: 0 8px 24px rgba(255, 71, 126, 0.45);
-  transition: all 0.3s;
+  font-family: var(--ff-fun);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
-.deneb-btn-rsvp:hover {
+
+.deneb-btn-maps-clean {
+  background: linear-gradient(135deg, #ff477e 0%, #ff6584 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(255, 71, 126, 0.3);
+}
+
+.deneb-btn-maps-clean:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(255, 71, 126, 0.6);
+  box-shadow: 0 10px 24px rgba(255, 71, 126, 0.4);
+}
+
+.deneb-btn-cal-clean {
+  background: #ffffff;
+  color: var(--lavender);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+}
+
+.deneb-btn-cal-clean:hover {
+  background: var(--lavender-soft);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 4, 5, 6: RUNDOWN, GIFTS, GUESTBOOK (100vh)
+   ═══════════════════════════════════════════════════════════ */
+.deneb-rundown-section {
+  background: #ffffff;
+}
+
+.deneb-gifts-section {
+  background: linear-gradient(180deg, #f0fdf9 0%, #ffffff 100%);
+}
+
+.deneb-guestbook-section {
+  background: #ffffff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 7: RSVP & PENUTUP (100vh)
+   ═══════════════════════════════════════════════════════════ */
+.deneb-rsvp-section {
+  background: linear-gradient(180deg, #fff5f8 0%, #ffffff 100%);
+}
+
+.deneb-host-card {
+  padding: 16px 28px;
+  background: var(--pink-soft);
+  border: 1.5px solid rgba(255, 101, 132, 0.3);
+  border-radius: 50px;
+  margin-bottom: 24px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.deneb-host-label {
+  font-family: var(--ff-fun);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--pink-hot);
+  text-transform: uppercase;
+}
+
+.deneb-host-name {
+  font-family: var(--ff-fun);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.deneb-btn-rsvp-festival {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-family: var(--ff-fun);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow:
+    0 10px 28px rgba(16, 185, 129, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  margin-bottom: 34px;
+}
+
+.deneb-btn-rsvp-festival:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.45);
 }
 
 .deneb-footer {
-  text-align: center;
-  padding: 24px 0 16px;
-  border-top: 1px dashed rgba(255, 101, 132, 0.25);
+  margin-top: 10px;
 }
+
 .deneb-footer-brand {
   font-family: var(--ff-fun);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: #9ca3af;
-  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  opacity: 0.85;
 }
 
-.deneb-rainbow-bar-bottom {
-  height: 8px;
-  background: linear-gradient(90deg, #8b5cf6, #0ea5e9, #10b981, #f59e0b, #ff477e);
-  background-size: 200% 100%;
-  animation: deneb-rainbow-flow 3.5s linear infinite reverse;
-}
-
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (MOBILE ADAPTATION)
+   ═══════════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-  .deneb-page { border-radius: 16px; }
-  .deneb-hero { padding: 32px 20px 24px; }
-  .deneb-body { padding: 24px 18px 36px; }
-  .deneb-kid-name { font-size: 48px; }
-  .deneb-carnival-ticket { flex-direction: column; }
-  .deneb-ticket-stub { width: 100%; padding: 16px; }
-  .deneb-ticket-divider { width: 100%; height: 16px; }
-  .deneb-perforation { width: 100%; height: 0; border-left: none; border-top: 2px dashed #ff8fab; margin: 0; }
-  .punch-top { left: -12px; top: -4px; }
-  .punch-bottom { right: -12px; bottom: -4px; }
-  .deneb-ticket-grid { grid-template-columns: 1fr; }
-  .deneb-tokens-grid { gap: 6px; }
-  .deneb-token-val { font-size: 24px; }
+  .deneb-section {
+    padding: 56px 20px;
+  }
+  .deneb-hero-name {
+    font-size: 52px;
+  }
+  .deneb-section-title {
+    font-size: 28px;
+  }
+  .deneb-pass-datetime-grid {
+    grid-template-columns: 1fr;
+  }
+  .deneb-countdown-digits {
+    gap: 8px;
+  }
+  .deneb-countdown-item-group {
+    gap: 8px;
+  }
+  .deneb-countdown-box {
+    min-width: 58px;
+    padding: 10px 8px;
+  }
+  .deneb-digit {
+    font-size: 28px;
+  }
+  .deneb-btn-rsvp-festival {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOCKUP FRAME SCOPING FOR CATALOG
+   Ensures the phone mockup preview is an EXACT twin of the real mobile experience
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .deneb-root,
+.is-mockup-frame .deneb-page,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+}
+
+.is-mockup-frame .deneb-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.is-mockup-frame .deneb-page::before {
+  inset: 8px !important;
+  border-radius: 34px !important;
+}
+
+.is-mockup-frame .deneb-page::after {
+  inset: 12px !important;
+  border-radius: 30px !important;
+}
+
+.is-mockup-frame .deneb-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.is-mockup-frame .deneb-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 44px 22px 28px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: linear-gradient(180deg, #fff2f6 0%, #fef5f9 55%, #ffffff 100%) !important;
+}
+
+.is-mockup-frame .deneb-ribbon-garland {
+  position: relative !important;
+  z-index: 15 !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+  padding: 8px 0 10px !important;
+  background: linear-gradient(90deg, #ffd0db 0%, #ffcdd8 35%, #fde2cd 75%, #fcdab8 100%) !important;
+}
+
+.is-mockup-frame .deneb-corner--tl { top: 14px !important; left: 14px !important; }
+.is-mockup-frame .deneb-corner--tr { top: 14px !important; right: 14px !important; }
+.is-mockup-frame .deneb-corner--bl { bottom: 14px !important; left: 14px !important; }
+.is-mockup-frame .deneb-corner--br { bottom: 14px !important; right: 14px !important; }
+
+.is-mockup-frame .deneb-corner-flourish {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.is-mockup-frame .deneb-hero-balloons {
+  margin-bottom: 8px !important;
+}
+.is-mockup-frame .deneb-hero-balloons svg {
+  width: 90px !important;
+  height: auto !important;
+}
+
+.is-mockup-frame .deneb-festival-tag {
+  font-size: 8.5px !important;
+  letter-spacing: 0.25em !important;
+  padding: 3px 12px !important;
+  margin-bottom: 6px !important;
+}
+
+.is-mockup-frame .deneb-hero-eyebrow {
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+}
+
+.is-mockup-frame .deneb-hero-name {
+  font-size: 44px !important;
+  margin: 2px 0 8px !important;
+}
+
+.is-mockup-frame .deneb-hero-age-pill {
+  padding: 5px 16px !important;
+  margin-bottom: 12px !important;
+}
+.is-mockup-frame .deneb-age-text {
+  font-size: 12px !important;
+}
+.is-mockup-frame .deneb-age-num {
+  font-size: 16px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.is-mockup-frame .deneb-hero-date-badge {
+  font-size: 10px !important;
+  padding: 5px 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.is-mockup-frame .deneb-scroll-hint {
+  font-size: 8.5px !important;
+}
+
+.is-mockup-frame [class*="-page"] .deneb-fairytale-watermark,
+.is-mockup-frame [class*="-page"] .deneb-fairytale-watermark[style],
+.is-mockup-frame .deneb-page .deneb-fairytale-watermark,
+.is-mockup-frame .deneb-page .deneb-fairytale-watermark[style] {
+  width: 420px !important;
+  height: 420px !important;
+  opacity: 0.065 !important;
 }

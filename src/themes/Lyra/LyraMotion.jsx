@@ -25,7 +25,7 @@ export function LyraBloomReveal({
       style={style}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.85, ease: romanticEase, delay }}
       {...rest}
     >
@@ -47,7 +47,7 @@ export function LyraRomanticNames({
       style={style}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.95, ease: romanticEase, delay }}
     >
       {children}
@@ -81,7 +81,7 @@ export function LyraBreezeSprig({
         opacity: 1,
         x: 0,
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.85, ease: romanticEase, delay }}
     >
       {/* Calm subtle breeze sway */}
@@ -115,7 +115,7 @@ export function LyraPetalCard({
       style={style}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.8, ease: romanticEase, delay }}
       whileHover={{ y: -3, transition: { duration: 0.25 } }}
     >
@@ -137,7 +137,7 @@ export function LyraFlourishDivider({
       style={style}
       initial={{ opacity: 0, scaleX: 0.6 }}
       whileInView={{ opacity: 1, scaleX: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.8, ease: romanticEase, delay }}
     >
       {children}

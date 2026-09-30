@@ -1,36 +1,40 @@
 /* ═══════════════════════════════════════════════════════════
    THEME: ALDEBARAN
-   Category: Pengajian, Tahlilan, & Doa Bersama
-   Palette:  Warm Desert Sandstone Parchment × Sacred Lapis Lazuli × Moroccan Brass
-   Style:    Sacred Illuminated Islamic Naskah & Mihrab Arch Architecture
+   Category: Pengajian, Tahlilan, Khotmil Qur'an & Doa Bersama
+   Theme Style: Sacred Illuminated Islamic Manuscript & Moorish Mihrab Arch
+   Palette:  Warm Desert Sandstone Parchment × Sacred Royal Lapis Lazuli × Antique Brass Gold
+   100% Unique Architecture & Bespoke Islamic Ornaments
    ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 .aldebaran-root {
-  --bg-deep:       #0a192c;
-  --bg-lapis:      #102a45;
-  --sandstone:     #fcf8f0;
-  --sandstone-mid: #f5ede0;
-  --sandstone-deep:#e8dcbe;
-  --brass-gold:    #b88a2e;
-  --brass-light:   #dfb356;
-  --lapis-dark:    #0c233c;
-  --text-dark:     #1a2433;
-  --text-muted:    #4a5568;
+  --sandstone-bg:   #fcf8f0;
+  --sandstone-warm: #f6efe0;
+  --sandstone-card: #ffffff;
+  --sandstone-bord: #e2d2b5;
+  --lapis-pri:      #0c233c;
+  --lapis-deep:     #081728;
+  --lapis-light:    #16385c;
+  --brass-gold:     #b88a2e;
+  --brass-bright:   #ca8a04;
+  --brass-light:    #dfb356;
+  --gold-warm:      #eab308;
+  --text-dark:      #0f172a;
+  --text-body:      #1e293b;
+  --text-muted:     #475569;
 
-  --ff-title:  'Cinzel', serif;
+  --ff-title:  'Cinzel', Georgia, serif;
   --ff-arabic: 'Amiri', serif;
-  --ff-body:   'Outfit', sans-serif;
-}
+  --ff-body:   'Plus Jakarta Sans', sans-serif;
 
-.aldebaran-root {
   min-height: 100vh;
-  background-color: var(--bg-deep);
+  background-color: var(--lapis-deep);
+  /* Sacred celestial night sky background */
   background-image:
-    radial-gradient(circle at 50% 0%, rgba(184, 138, 46, 0.28) 0%, transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(16, 42, 69, 0.9) 0%, transparent 60%),
-    linear-gradient(180deg, #06101e 0%, #0a192c 100%);
+    radial-gradient(circle at 50% 0%, rgba(184, 138, 46, 0.22) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(12, 35, 60, 0.9) 0%, transparent 65%),
+    linear-gradient(180deg, #050f1a 0%, #0c233c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,395 +42,1081 @@
   position: relative;
   font-family: var(--ff-body);
   color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* ── Page: Illuminated Islamic Naskah ──────────────────── */
-.aldebaran-page {
-  position: relative;
-  z-index: 1;
+/* ── Container Wrapper (Mobile-first Luxury Width) ──────── */
+.aldebaran-container {
   width: 100%;
-  max-width: 680px;
-  margin: 32px auto;
-  background: var(--sandstone);
-  border-radius: 36px 36px 16px 16px;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 2px rgba(184, 138, 46, 0.45),
-    0 0 0 8px rgba(12, 35, 60, 0.4),
-    0 28px 80px rgba(0, 0, 0, 0.8);
-}
-
-/* ── Mihrab Arch Header ───────────────────────────────── */
-.aldebaran-header {
-  text-align: center;
-  padding: 56px 40px 36px;
-  background: linear-gradient(180deg, #f7efe2 0%, var(--sandstone) 100%);
-  border-bottom: 2px solid rgba(184, 138, 46, 0.3);
+  max-width: 520px;
+  margin: 0 auto;
   position: relative;
+  background: var(--sandstone-bg);
+  box-shadow:
+    0 0 0 1px rgba(184, 138, 46, 0.4),
+    0 0 0 6px rgba(12, 35, 60, 0.5),
+    0 28px 80px rgba(0, 0, 0, 0.7);
 }
 
-.aldebaran-badge {
+/* ── Section Standard Architecture (100vh) ─────────────── */
+.aldebaran-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 24px 44px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(184, 138, 46, 0.25);
+  background-color: var(--sandstone-bg);
+  /* Subtle Islamic star background pattern */
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(184, 138, 46, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(12, 35, 60, 0.05) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 6 L26 18 L38 20 L28 26 L30 38 L24 30 L18 38 L20 26 L10 20 L22 18 Z' stroke='%23b88a2e' stroke-width='0.7' stroke-opacity='0.08' fill='none'/%3E%3C/svg%3E");
+}
+
+.aldebaran-section-content {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* ── Section Headings & Tags ───────────────────────────── */
+.aldebaran-section-tag {
   display: inline-block;
-  padding: 6px 20px;
-  background: rgba(184, 138, 46, 0.1);
-  border: 1px solid var(--brass-gold);
-  border-radius: 99px;
-  color: var(--lapis-dark);
+  padding: 5px 18px;
+  background: var(--sandstone-warm);
+  border: 1.5px solid var(--brass-gold);
+  border-radius: 999px;
+  color: var(--lapis-pri);
   font-family: var(--ff-title);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.25em;
+  font-weight: 800;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.aldebaran-title {
+.aldebaran-section-title {
   font-family: var(--ff-title);
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--lapis-dark);
-  letter-spacing: 0.05em;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  letter-spacing: 0.02em;
+  margin: 0 0 6px 0;
   line-height: 1.25;
-  margin: 0 0 10px 0;
 }
 
-.aldebaran-honoree {
-  font-family: var(--ff-arabic);
-  font-size: 34px;
-  font-weight: 700;
-  color: #855f18;
-  display: block;
-  margin: 12px 0 4px 0;
-  line-height: 1.2;
-}
-
-.aldebaran-honoree-sub {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  display: block;
-}
-
-.aldebaran-body {
-  padding: 38px 44px 50px;
-}
-
-.aldebaran-bismillah {
-  font-family: var(--ff-arabic);
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--lapis-dark);
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-/* ── Illuminated Ayat Suci Box ────────────────────────── */
-.aldebaran-verse-box {
-  background: var(--sandstone-mid);
-  border: 1.5px solid rgba(184, 138, 46, 0.35);
-  border-radius: 16px;
-  padding: 24px 26px;
-  text-align: center;
-  margin-bottom: 34px;
-  box-shadow: inset 0 0 20px rgba(184, 138, 46, 0.06);
-}
-
-.aldebaran-verse-arabic {
-  font-family: var(--ff-arabic);
-  font-size: 22px;
-  line-height: 1.85;
-  color: var(--lapis-dark);
-  margin-bottom: 12px;
-}
-
-.aldebaran-verse-trans {
+.aldebaran-section-subtitle {
+  font-family: var(--ff-body);
   font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.65;
-  font-style: italic;
+  font-weight: 600;
+  color: var(--text-body);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 1: HERO / MIHRAB MAJELIS
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-hero-section {
+  background: radial-gradient(circle at 50% 15%, #ffffff 0%, var(--sandstone-warm) 60%, var(--sandstone-bg) 100%);
+  padding-top: 18px;
+}
+
+.aldebaran-mihrab-arch-wrapper {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto -8px;
+  display: flex;
+  justify-content: center;
+}
+
+.aldebaran-mihrab-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.aldebaran-hanging-lamp {
+  animation: qandilSwing 5s ease-in-out infinite alternate;
+  transform-origin: 220px 20px;
+}
+
+@keyframes qandilSwing {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+.aldebaran-badge-pill {
+  display: inline-block;
+  margin: 8px 0 8px;
+  padding: 5px 18px;
+  background: var(--sandstone-warm);
+  border: 1.5px solid var(--brass-gold);
+  border-radius: 999px;
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.aldebaran-main-title {
+  font-family: var(--ff-title);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+}
+
+/* Honoree Card */
+.aldebaran-honoree-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--brass-gold);
+  border-radius: 18px;
+  padding: 20px 18px 16px;
+  margin: 10px auto 14px;
+  box-shadow:
+    0 10px 30px rgba(12, 35, 60, 0.08),
+    inset 0 0 0 3px var(--sandstone-warm);
+}
+
+.aldebaran-honoree-name {
+  font-family: var(--ff-arabic);
+  font-size: 32px;
+  font-weight: 700;
+  color: #5c3807;
+  display: block;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 2px rgba(184, 138, 46, 0.2);
+}
+
+.aldebaran-honoree-memorial {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--lapis-pri);
+  display: block;
   margin-bottom: 10px;
 }
 
-.aldebaran-verse-ref {
-  font-family: var(--ff-title);
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--brass-gold);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.aldebaran-host-family-line {
+  border-top: 1px dashed var(--sandstone-bord);
+  padding-top: 8px;
+  font-size: 12.5px;
+  color: var(--text-body);
 }
 
-/* ── Agenda / Tertib Amaliyah ─────────────────────────── */
-.aldebaran-agenda {
-  margin-bottom: 36px;
-}
-.aldebaran-agenda-title {
-  text-align: center;
-  font-family: var(--ff-title);
-  font-size: 22px;
+.aldebaran-host-label {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 11.5px;
+  color: var(--lapis-pri);
   font-weight: 700;
-  color: var(--lapis-dark);
-  margin: 0 0 4px 0;
-}
-.aldebaran-agenda-sub {
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--brass-gold);
-  margin: 0 0 22px 0;
-  display: block;
 }
 
-.aldebaran-agenda-list {
+.aldebaran-host-name {
+  color: var(--lapis-pri);
+  font-weight: 800;
+}
+
+/* Scroll Prompt */
+.aldebaran-scroll-prompt {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
 }
 
-.aldebaran-agenda-item {
+.aldebaran-scroll-text {
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--lapis-pri);
+}
+
+.aldebaran-scroll-chevron {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--sandstone-warm);
+  border: 1.5px solid var(--lapis-pri);
+  color: var(--lapis-pri);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: chevronBob 2s ease-in-out infinite;
+}
+
+@keyframes chevronBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 2: AYAT SUCI & BISMILLAH
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-verse-section {
+  background: #ffffff;
+}
+
+/* Unwan Header */
+.aldebaran-unwan-container {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto 16px;
+}
+
+.aldebaran-unwan-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aldebaran-unwan-svg {
+  width: 100%;
+  height: auto;
+}
+
+.aldebaran-unwan-text-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  padding: 0 40px;
+}
+
+.aldebaran-unwan-sub {
+  font-family: var(--ff-title);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: #fef08a;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2px;
+}
+
+.aldebaran-unwan-arabic {
+  font-family: var(--ff-arabic);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.aldebaran-salam-lead {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin: 0 0 18px 0;
+}
+
+/* Mushaf Folio Card */
+.aldebaran-mushaf-folio-card {
+  background: var(--sandstone-warm);
+  border: 2px solid var(--brass-gold);
+  border-radius: 20px;
+  padding: 24px 20px 20px;
+  box-shadow:
+    0 12px 36px rgba(12, 35, 60, 0.08),
+    inset 0 0 24px rgba(184, 138, 46, 0.08);
+}
+
+.aldebaran-folio-inner-border {
+  border: 1.5px dashed var(--brass-gold);
+  border-radius: 14px;
+  padding: 18px 14px;
+  background: #ffffff;
+}
+
+.aldebaran-verse-arabic-text {
+  font-family: var(--ff-arabic);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.9;
+  color: var(--lapis-pri);
+  margin: 0 0 14px 0;
+  direction: rtl;
+  text-align: center;
+}
+
+.aldebaran-verse-trans-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.aldebaran-quote-mark {
+  font-family: var(--ff-title);
+  font-size: 38px;
+  color: var(--brass-light);
+  display: block;
+  line-height: 0.6;
+  margin-bottom: 4px;
+}
+
+.aldebaran-verse-translation {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-body);
+  font-style: italic;
+  margin: 0;
+}
+
+.aldebaran-verse-reference-pill {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 16px;
+  background: #ffffff;
+  border: 1.5px solid var(--brass-gold);
+  border-radius: 999px;
+  font-family: var(--ff-title);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  letter-spacing: 0.15em;
+  box-shadow: 0 2px 8px rgba(12, 35, 60, 0.06);
+}
+
+.aldebaran-verse-tasbih {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 3: AGENDA / TERTIB AMALIYAH
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-agenda-section {
+  background: var(--sandstone-bg);
+}
+
+.aldebaran-agenda-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.aldebaran-agenda-card {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 14px;
   background: #ffffff;
-  border: 1px solid rgba(184, 138, 46, 0.25);
-  border-radius: 12px;
-  padding: 16px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1.5px solid var(--sandstone-bord);
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(12, 35, 60, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.aldebaran-agenda-num {
-  width: 32px;
-  height: 32px;
+.aldebaran-agenda-card:hover {
+  border-color: var(--brass-gold);
+}
+
+.aldebaran-agenda-medallion {
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--brass-gold), var(--brass-light));
+  background: linear-gradient(135deg, var(--brass-bright) 0%, var(--brass-gold) 100%);
   color: #ffffff;
   font-family: var(--ff-title);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(184, 138, 46, 0.35);
+  box-shadow: 0 4px 10px rgba(184, 138, 46, 0.3);
+  margin-top: 2px;
 }
 
-.aldebaran-agenda-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--lapis-dark);
-  margin: 0 0 4px 0;
-}
-.aldebaran-agenda-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0;
+.aldebaran-agenda-text-block {
+  flex: 1;
 }
 
-/* ── Events ───────────────────────────────────────────── */
-.aldebaran-events {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 34px;
-}
-
-.aldebaran-event-card {
-  background: #ffffff;
-  border: 1.5px solid rgba(184, 138, 46, 0.3);
-  border-radius: 16px;
-  padding: 26px 28px;
-  text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.aldebaran-event-tag {
+.aldebaran-agenda-item-title {
   font-family: var(--ff-title);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--brass-gold);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.aldebaran-event-name {
-  font-family: var(--ff-title);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--lapis-dark);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.aldebaran-event-date {
   font-size: 15px;
   font-weight: 700;
-  color: #855f18;
-  display: block;
-  margin-bottom: 4px;
+  color: var(--lapis-pri);
+  margin: 0 0 3px 0;
+  line-height: 1.3;
 }
 
-.aldebaran-event-time {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.aldebaran-event-venue {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--lapis-dark);
-  display: block;
-}
-
-.aldebaran-event-address {
+.aldebaran-agenda-item-desc {
+  font-family: var(--ff-body);
   font-size: 12.5px;
-  color: var(--text-muted);
+  font-weight: 500;
+  color: var(--text-body);
+  margin: 0;
   line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 4: WAKTU, LOKASI KEDIAMAN & COUNTDOWN
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-events-section {
+  background: #ffffff;
+}
+
+.aldebaran-events-stack {
+  margin-bottom: 22px;
+}
+
+.aldebaran-majelis-pass-card {
+  background: var(--sandstone-warm);
+  border: 2px solid var(--brass-gold);
+  border-radius: 20px;
+  padding: 22px 20px;
+  box-shadow: 0 10px 30px rgba(12, 35, 60, 0.08);
+  position: relative;
+  text-align: center;
+}
+
+.aldebaran-pass-crown-tag {
+  display: inline-block;
+  padding: 3px 14px;
+  background: var(--lapis-pri);
+  color: #ffffff;
+  border-radius: 999px;
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.aldebaran-pass-title {
+  font-family: var(--ff-title);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  margin: 0 0 14px 0;
+  line-height: 1.25;
+}
+
+.aldebaran-pass-time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1px solid var(--sandstone-bord);
+  text-align: left;
+}
+
+.aldebaran-pti-label {
   display: block;
-  margin-top: 4px;
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #78350f;
+  letter-spacing: 0.12em;
+  margin-bottom: 2px;
+}
+
+.aldebaran-pti-val {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.aldebaran-pass-venue-block {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.aldebaran-venue-tag {
+  display: block;
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #78350f;
+  letter-spacing: 0.12em;
+  margin-bottom: 2px;
+}
+
+.aldebaran-venue-name {
+  font-family: var(--ff-title);
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.aldebaran-venue-address {
+  font-size: 12.5px;
+  color: var(--text-body);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.aldebaran-pass-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.aldebaran-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-family: var(--ff-title);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .aldebaran-btn-maps {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 9px 22px;
-  border: 1.5px solid var(--brass-gold);
-  border-radius: 50px;
-  color: var(--brass-gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: var(--sandstone-mid);
-  transition: all 0.25s;
-}
-.aldebaran-btn-maps:hover {
-  background: var(--brass-gold);
+  background: var(--lapis-pri);
   color: #ffffff;
+  box-shadow: 0 4px 12px rgba(12, 35, 60, 0.25);
 }
 
-/* ── Countdown ────────────────────────────────────────── */
-.aldebaran-countdown {
-  text-align: center;
-  padding: 26px 20px;
-  background: var(--sandstone-mid);
-  border: 1.5px solid rgba(184, 138, 46, 0.35);
-  border-radius: 16px;
-  margin-bottom: 34px;
+.aldebaran-btn-maps:hover {
+  background: var(--lapis-light);
+  transform: translateY(-2px);
+}
+
+.aldebaran-btn-cal {
+  background: #ffffff;
+  color: var(--lapis-pri);
+  border: 1.5px solid var(--lapis-pri);
+  font-weight: 800;
+}
+
+.aldebaran-btn-cal:hover {
+  background: var(--sandstone-warm);
+  transform: translateY(-2px);
+}
+
+/* ── Countdown Box ────────────────────────────────────── */
+.aldebaran-countdown-box {
+  background: var(--sandstone-warm);
+  border: 2px solid var(--brass-gold);
+  border-radius: 20px;
+  padding: 20px 16px 16px;
+  box-shadow: 0 10px 30px rgba(12, 35, 60, 0.08);
 }
 
 .aldebaran-countdown-label {
+  display: inline-block;
   font-family: var(--ff-title);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--lapis-dark);
-  display: block;
-  margin-bottom: 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--lapis-pri);
+  margin-bottom: 12px;
 }
 
 .aldebaran-countdown-digits {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .aldebaran-digit-block {
-  text-align: center;
-  min-width: 52px;
+  min-width: 58px;
   background: #ffffff;
-  padding: 10px 8px;
-  border-radius: 10px;
-  border: 1px solid rgba(184, 138, 46, 0.25);
+  border: 1.5px solid var(--sandstone-bord);
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 .aldebaran-digit {
   font-family: var(--ff-title);
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--lapis-dark);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lapis-pri);
   display: block;
   line-height: 1;
 }
 
 .aldebaran-digit-unit {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--brass-gold);
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--lapis-pri);
+  display: block;
   margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 5: GIFTS & GUESTBOOK
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-gifts-section,
+.aldebaran-guestbook-section {
+  background: var(--sandstone-bg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 5 & 6: GIFTS & GUESTBOOK (HIGH-CONTRAST PARCHMENT)
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-gifts-section,
+.aldebaran-guestbook-section {
+  background: var(--sandstone-bg);
+}
+
+.aldebaran-root .gift-title,
+.aldebaran-root .guestbook-title {
+  font-family: var(--ff-title) !important;
+  color: var(--lapis-pri) !important;
+  font-weight: 800 !important;
+  font-size: 24px !important;
+  letter-spacing: 0.02em !important;
+}
+
+.aldebaran-root .gift-subtitle,
+.aldebaran-root .guestbook-subtitle {
+  font-family: var(--ff-body) !important;
+  color: var(--text-body) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+}
+
+.aldebaran-root .gift-cards-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 440px !important;
+  margin: 0 auto !important;
+}
+
+.aldebaran-root .gift-card {
+  background: #ffffff !important;
+  border: 2px solid var(--brass-gold) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(12, 35, 60, 0.08) !important;
+  padding: 20px !important;
+  color: var(--text-dark) !important;
+}
+
+.aldebaran-root .gift-bank-name {
+  font-family: var(--ff-title) !important;
+  color: var(--lapis-pri) !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+.aldebaran-root .gift-badge {
+  background: var(--sandstone-warm) !important;
+  color: var(--lapis-pri) !important;
+  border: 1px solid var(--brass-gold) !important;
+  font-family: var(--ff-title) !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+}
+
+.aldebaran-root .gift-account-number {
+  font-family: var(--ff-title) !important;
+  color: #78350f !important;
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: none !important;
+  margin: 10px 0 4px !important;
+  display: block !important;
+}
+
+.aldebaran-root .gift-account-name {
+  color: var(--text-body) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+.aldebaran-root .gift-copy-btn {
+  background: #ffffff !important;
+  color: var(--lapis-pri) !important;
+  border: 1.5px solid var(--lapis-pri) !important;
+  font-family: var(--ff-title) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  border-radius: 999px !important;
+  padding: 8px 18px !important;
+  transition: all 0.25s ease !important;
+}
+
+.aldebaran-root .gift-copy-btn:hover {
+  background: var(--lapis-pri) !important;
+  color: #ffffff !important;
+}
+
+.aldebaran-root .gift-copy-btn.copied {
+  background: #15803d !important;
+  border-color: #15803d !important;
+  color: #ffffff !important;
+}
+
+.aldebaran-root .gift-physical-card {
+  background: #ffffff !important;
+  border: 2px solid var(--brass-gold) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(12, 35, 60, 0.08) !important;
+  padding: 20px !important;
+  margin-top: 14px !important;
+  text-align: center !important;
+}
+
+.aldebaran-root .gift-physical-title {
+  font-family: var(--ff-title) !important;
+  color: var(--lapis-pri) !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+}
+
+.aldebaran-root .gift-recipient,
+.aldebaran-root .gift-phone,
+.aldebaran-root .gift-address-text {
+  color: var(--text-body) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+/* Guestbook Form */
+.aldebaran-root .guestbook-form {
+  background: #ffffff !important;
+  border: 2px solid var(--brass-gold) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(12, 35, 60, 0.08) !important;
+  padding: 22px 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.aldebaran-root .guestbook-label {
+  font-family: var(--ff-title) !important;
+  color: var(--lapis-pri) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-align: left !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.aldebaran-root .guestbook-input,
+.aldebaran-root .guestbook-textarea {
+  background: var(--sandstone-warm) !important;
+  border: 1.5px solid var(--sandstone-bord) !important;
+  color: var(--text-dark) !important;
+  border-radius: 10px !important;
+  font-size: 13.5px !important;
+  padding: 10px 12px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.aldebaran-root .guestbook-input:focus,
+.aldebaran-root .guestbook-textarea:focus {
+  border-color: var(--brass-gold) !important;
+  box-shadow: 0 0 0 3px rgba(184, 138, 46, 0.2) !important;
+  background: #ffffff !important;
+  outline: none !important;
+}
+
+.aldebaran-root .guestbook-radio-btn {
+  background: var(--sandstone-warm) !important;
+  border: 1.5px solid var(--sandstone-bord) !important;
+  color: var(--text-body) !important;
+  font-weight: 700 !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+}
+
+.aldebaran-root .guestbook-radio-btn.active {
+  background: var(--lapis-pri) !important;
+  border-color: var(--lapis-pri) !important;
+  color: #ffffff !important;
+}
+
+.aldebaran-root .guestbook-submit-btn {
+  background: linear-gradient(135deg, var(--brass-bright) 0%, var(--brass-gold) 100%) !important;
+  color: #ffffff !important;
+  font-family: var(--ff-title) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  border-radius: 999px !important;
+  box-shadow: 0 6px 20px rgba(184, 138, 46, 0.35) !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  width: 100% !important;
+  cursor: pointer !important;
+}
+
+.aldebaran-root .guestbook-count {
+  color: var(--lapis-pri) !important;
+  font-family: var(--ff-title) !important;
+  font-weight: 800 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.15em !important;
+  margin-bottom: 14px !important;
+}
+
+.aldebaran-root .guestbook-item {
+  background: #ffffff !important;
+  border: 1.5px solid var(--sandstone-bord) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 14px rgba(12, 35, 60, 0.04) !important;
+  padding: 16px !important;
+  margin-bottom: 10px !important;
+}
+
+.aldebaran-root .guestbook-author-name {
+  font-family: var(--ff-title) !important;
+  color: var(--lapis-pri) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.aldebaran-root .guestbook-item-time {
+  color: #64748b !important;
+  font-size: 11px !important;
+}
+
+.aldebaran-root .guestbook-item-msg {
+  color: var(--text-body) !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 7: CLOSING & RSVP
+   ═══════════════════════════════════════════════════════════ */
+.aldebaran-closing-section {
+  background: radial-gradient(circle at 50% 90%, #ffffff 0%, var(--sandstone-warm) 80%);
+}
+
+.aldebaran-closing-cartouche {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--brass-gold);
+  border-radius: 22px;
+  padding: 28px 22px 22px;
+  box-shadow:
+    0 12px 36px rgba(12, 35, 60, 0.08),
+    inset 0 0 0 3px var(--sandstone-warm);
+  margin-bottom: 20px;
+}
+
+.aldebaran-closing-title {
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  margin: 0 0 10px 0;
+}
+
+.aldebaran-closing-lead {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin: 0 0 16px 0;
+}
+
+.aldebaran-closing-signature-block {
+  border-top: 1px dashed var(--sandstone-bord);
+  padding-top: 12px;
+}
+
+.aldebaran-closing-salam {
+  font-family: var(--ff-title);
+  font-size: 11px;
+  font-weight: 800;
+  color: #78350f;
+  display: block;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.aldebaran-closing-family {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--lapis-pri);
   display: block;
 }
 
-/* ── Closing & RSVP ───────────────────────────────────── */
-.aldebaran-closing {
-  text-align: center;
-  margin-bottom: 26px;
-}
-.aldebaran-closing p {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.8;
-  margin: 0;
+/* WhatsApp RSVP Button */
+.aldebaran-rsvp-wrap {
+  margin-bottom: 20px;
 }
 
-.aldebaran-btn-rsvp {
+.aldebaran-btn-rsvp-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 42px;
-  border-radius: 50px;
-  background: var(--lapis-dark);
+  width: 100%;
+  max-width: 370px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, var(--lapis-pri) 0%, var(--lapis-deep) 100%);
   color: #ffffff;
   font-family: var(--ff-title);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(12, 35, 60, 0.35);
-  transition: all 0.25s;
-}
-.aldebaran-btn-rsvp:hover {
-  background: #091728;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(12, 35, 60, 0.5);
-}
-
-.aldebaran-footer {
-  text-align: center;
-  padding: 24px;
-  border-top: 1px solid rgba(184, 138, 46, 0.25);
-  background: var(--sandstone-mid);
-}
-.aldebaran-footer-brand {
-  font-family: var(--ff-title);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brass-gold);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(12, 35, 60, 0.35);
+  border: 1px solid var(--brass-gold);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-@media (max-width: 600px) {
-  .aldebaran-page { margin: 12px; }
-  .aldebaran-body { padding: 28px 18px 36px; }
-  .aldebaran-title { font-size: 24px; }
-  .aldebaran-honoree { font-size: 28px; }
-  .aldebaran-countdown-digits { gap: 8px; }
-  .aldebaran-digit-block { min-width: 44px; }
-  .aldebaran-digit { font-size: 26px; }
+.aldebaran-btn-rsvp-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(12, 35, 60, 0.45);
+}
+
+.aldebaran-footer-credit {
+  margin-top: 8px;
+}
+
+.aldebaran-brand-text {
+  font-family: var(--ff-title);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--lapis-pri);
+  letter-spacing: 0.12em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CATALOG MOCKUP OVERRIDES (.is-mockup-frame)
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .aldebaran-root,
+.is-mockup-frame .aldebaran-container,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  background-color: var(--sandstone-bg) !important;
+  box-shadow: none !important;
+}
+
+.is-mockup-frame .aldebaran-section {
+  display: none !important;
+}
+
+.is-mockup-frame .aldebaran-girih-watermark {
+  display: none !important;
+}
+
+.is-mockup-frame .aldebaran-hero-section {
+  display: flex !important;
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 24px 16px 20px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: radial-gradient(circle at 50% 20%, #ffffff 0%, var(--sandstone-warm) 80%) !important;
+  border-bottom: none !important;
+}
+
+.is-mockup-frame .aldebaran-section-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 100% !important;
+}
+
+.is-mockup-frame .aldebaran-hero-section div,
+.is-mockup-frame .aldebaran-hero-section span,
+.is-mockup-frame .aldebaran-hero-section p,
+.is-mockup-frame .aldebaran-hero-section h1,
+.is-mockup-frame .aldebaran-hero-section h2,
+.is-mockup-frame .aldebaran-hero-section h3,
+.is-mockup-frame .aldebaran-hero-section svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .aldebaran-mihrab-arch-wrapper {
+  max-width: 270px !important;
+  margin-bottom: -18px !important;
+}
+
+.is-mockup-frame .aldebaran-badge-pill {
+  padding: 3px 12px !important;
+  font-size: 8.5px !important;
+  margin: 4px 0 6px !important;
+}
+
+.is-mockup-frame .aldebaran-main-title {
+  font-size: 20px !important;
+  margin-bottom: 4px !important;
+}
+
+.is-mockup-frame .aldebaran-honoree-card {
+  padding: 12px 10px 10px !important;
+  margin: 4px auto 8px !important;
+  max-width: 320px !important;
+}
+
+.is-mockup-frame .aldebaran-honoree-name {
+  font-size: 24px !important;
+  margin-bottom: 2px !important;
+}
+
+.is-mockup-frame .aldebaran-honoree-memorial {
+  font-size: 11.5px !important;
+  margin-bottom: 6px !important;
+}
+
+.is-mockup-frame .aldebaran-host-family-line {
+  font-size: 11px !important;
+  padding-top: 6px !important;
 }

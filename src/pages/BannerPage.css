@@ -1,0 +1,529 @@
+/* ═══════════════════════════════════════════════════════════
+   HERO SALES BANNER (1080x1080 px) — BRIGHT / CERAH STUDIO
+   Competitor-Inspired Symmetrical Stepped 5-Phone Hierarchy
+   Strictly POPPINS Typography · Arsy Studio Branding
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap');
+
+.banner-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cbd5e1;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.banner-canvas {
+  width: 1080px;
+  height: 1080px;
+  min-width: 1080px;
+  min-height: 1080px;
+  max-width: 1080px;
+  max-height: 1080px;
+  position: relative;
+  /* Clean, bright, warm pearl studio lighting */
+  background: radial-gradient(circle at 50% 20%, #ffffff 0%, #fbf9f6 40%, #f1ebe1 75%, #e4dcd0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
+  color: #0f172a;
+}
+
+/* Subtle luxury lighting aura behind center hero phone */
+.banner-canvas::before {
+  content: '';
+  position: absolute;
+  top: 290px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 780px;
+  height: 520px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(251, 191, 36, 0.35) 0%, rgba(245, 158, 11, 0.15) 35%, rgba(255, 255, 255, 0.8) 55%, transparent 72%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── BACKGROUND LUXURY SILHOUETTE ORNAMENTS ────────── */
+.banner-silhouette-bg {
+  position: absolute;
+  inset: 0;
+  width: 1080px;
+  height: 1080px;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.banner-silhouette-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── LUXURY CORNER ORNAMENTS & AMBIENT SPARKLES ── */
+.banner-luxury-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.banner-luxury-corner.corner-tl {
+  top: 25px;
+  left: 25px;
+}
+
+.banner-luxury-corner.corner-tr {
+  top: 25px;
+  right: 25px;
+}
+
+.ambient-diamond-sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
+}
+
+/* ── HEADER SECTION ─────────────────────────────────── */
+.banner-header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 38px 30px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Eyebrow Label with Luxury Hairlines */
+.banner-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.eyebrow-line {
+  width: 52px;
+  height: 1px;
+}
+
+.eyebrow-line.left {
+  background: linear-gradient(90deg, transparent, #d97706);
+}
+
+.eyebrow-line.right {
+  background: linear-gradient(90deg, #d97706, transparent);
+}
+
+.eyebrow-diamond {
+  color: #d97706;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.eyebrow-text {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.36em;
+  color: #b45309;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.banner-title {
+  margin: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.banner-title-top {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+  text-transform: uppercase;
+  line-height: 1.08;
+}
+
+.banner-title-gold {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 54px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #92400e 0%, #d97706 25%, #f59e0b 50%, #d97706 75%, #78350f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  line-height: 1.08;
+  filter: drop-shadow(0 4px 18px rgba(217, 119, 6, 0.25));
+}
+
+/* Pill Badge below headline */
+.banner-badge-wrapper {
+  margin-top: 4px;
+}
+
+.banner-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 34px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 50%, #fef3c7 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: 999px;
+  box-shadow:
+    0 4px 18px rgba(234, 88, 12, 0.12),
+    0 1px 2px rgba(234, 88, 12, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.badge-gem {
+  color: #ea580c;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.banner-badge-text {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  color: #ea580c;
+  text-transform: uppercase;
+}
+
+/* ── SHOWCASE MOCKUPS (5-PHONE STEPPED ROW) ─────────── */
+.banner-showcase {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+/* 5 Phones Stepped Container */
+.banner-phones-row {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 3;
+}
+
+/* Phone Item */
+.phone-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Titanium Phone Shell with Clean Bezels */
+.phone-shell {
+  border-radius: 38px;
+  background: #0f172a;
+  border: 3.5px solid #1e293b;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Inner Screen Viewport - DARK/MATCHING FALLBACK (NEVER WHITE!) */
+.phone-screen {
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  overflow: hidden;
+  background: #090d16; /* Dark background so NO white ever leaks at bottom! */
+}
+
+/* Theme-specific screen backdrops */
+.screen-bg-altair { background: #f7f7f7 !important; }
+.screen-bg-lyra   { background: #fce7f3 !important; }
+.screen-bg-vega   { background: #060f22 !important; }
+.screen-bg-spica  { background: #fcf5ee !important; }
+.screen-bg-sirius { background: #03281f !important; }
+
+/* Scaler container: Scaled viewport matching exact phone aspect ratio */
+.phone-screen-scaler {
+  width: 390px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+/* Ensure the invitation cover overlay fills 100% of the scaler and centers perfectly */
+.phone-screen-scaler .invitation-cover-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding: 16px !important;
+}
+
+/* Notch / Dynamic Island */
+.phone-island {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 66px;
+  height: 15px;
+  background: #000000;
+  border-radius: 12px;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.phone-camera {
+  position: absolute;
+  right: 8px;
+  top: 4.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #111e2e;
+}
+
+/* Home Indicator */
+.phone-home-bar {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 3.5px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  z-index: 100;
+}
+
+/* ── STEPPED HIERARCHY: CENTER LARGEST, SIDES STEPPED DOWN ── */
+
+/* 1. Phone 1: Far Left (Smallest, stepped down) */
+.phone-p1 {
+  z-index: 2;
+  margin-right: -36px;
+  transform: translateY(18px);
+}
+.phone-p1 .phone-shell {
+  width: 200px;
+  height: 405px;
+  border-color: #334155;
+  box-shadow: 0 20px 45px -8px rgba(15, 23, 42, 0.28);
+}
+.phone-p1 .phone-island {
+  width: 54px;
+  height: 13px;
+}
+
+/* 2. Phone 2: Mid Left (Medium) */
+.phone-p2 {
+  z-index: 5;
+  margin-right: -36px;
+  transform: translateY(-8px);
+}
+.phone-p2 .phone-shell {
+  width: 240px;
+  height: 485px;
+  border-color: #1e293b;
+  box-shadow: 0 28px 60px -10px rgba(15, 23, 42, 0.35);
+}
+.phone-p2 .phone-island {
+  width: 64px;
+  height: 15px;
+}
+
+/* 3. Phone 3: Center Hero (PALING BESAR, TALLEST, DOMINANT) */
+.phone-p3 {
+  z-index: 10;
+  transform: translateY(-30px);
+}
+.phone-p3 .phone-shell {
+  width: 280px;
+  height: 570px;
+  border-color: #0f172a;
+  border-width: 4.5px;
+  border-radius: 42px;
+  box-shadow:
+    0 40px 90px -15px rgba(15, 23, 42, 0.5),
+    0 18px 36px -8px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(245, 158, 11, 0.2);
+}
+.phone-p3 .phone-screen {
+  border-radius: 37px;
+}
+.phone-p3 .phone-island {
+  width: 76px;
+  height: 17px;
+  top: 10px;
+}
+
+/* 4. Phone 4: Mid Right (Medium) */
+.phone-p4 {
+  z-index: 5;
+  margin-left: -36px;
+  transform: translateY(-8px);
+}
+.phone-p4 .phone-shell {
+  width: 240px;
+  height: 485px;
+  border-color: #1e293b;
+  box-shadow: 0 28px 60px -10px rgba(15, 23, 42, 0.35);
+}
+.phone-p4 .phone-island {
+  width: 64px;
+  height: 15px;
+}
+
+/* 5. Phone 5: Far Right (Smallest, stepped down) */
+.phone-p5 {
+  z-index: 2;
+  margin-left: -36px;
+  transform: translateY(18px);
+}
+.phone-p5 .phone-shell {
+  width: 200px;
+  height: 405px;
+  border-color: #334155;
+  box-shadow: 0 20px 45px -8px rgba(15, 23, 42, 0.28);
+}
+.phone-p5 .phone-island {
+  width: 54px;
+  height: 13px;
+}
+
+/* Floor Shadow on the bright floor */
+.banner-floor-shadow {
+  width: 920px;
+  height: 35px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(15, 23, 42, 0.32) 0%, rgba(15, 23, 42, 0.15) 50%, transparent 80%);
+  filter: blur(10px);
+  margin-top: 10px;
+  z-index: 2;
+}
+
+/* ── FOOTER SECTION (Arsy Studio Luxury Brand Seal) ──────── */
+.banner-footer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.banner-brand-seal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.seal-rule {
+  width: 90px;
+  height: 1px;
+}
+
+.seal-rule.left {
+  background: linear-gradient(90deg, transparent, #cbd5e1 40%, #94a3b8 100%);
+}
+
+.seal-rule.right {
+  background: linear-gradient(90deg, #94a3b8 0%, #cbd5e1 60%, transparent 100%);
+}
+
+.seal-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.seal-diamond {
+  color: #d97706;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.banner-brand-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.44em;
+  color: #0f172a;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.banner-brand-tagline {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* Scoping for React Theme instances within banner phone screen */
+.phone-screen .is-mockup-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-screen [class*="-root"] {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.phone-screen [class*="-page"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.phone-screen [class*="-ornament-section"] {
+  overflow: visible !important;
+}
+
+.phone-screen [class*="-page"] [style*="opacity"] {
+  opacity: 1 !important;
+}

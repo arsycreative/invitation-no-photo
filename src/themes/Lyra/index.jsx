@@ -4,8 +4,8 @@ import {
   LyraRomanticNames,
   LyraBreezeSprig,
   LyraPetalCard,
-  LyraFlourishDivider,
 } from './LyraMotion'
+import { LyraWatermarkCrest, LyraSectionFlourish } from './LyraOrnaments'
 import { FloralSprigLeft, FloralSprigRight } from '../../components/Ornaments'
 import InvitationCover from '../../components/InvitationCover'
 import LoveStory from '../../components/LoveStory'
@@ -68,20 +68,6 @@ function FloralCorner({ className }) {
   )
 }
 
-function LyraDivider() {
-  return (
-    <div className="lyra-divider">
-      <div className="lyra-divider-line"/>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <circle cx="8" cy="8" r="4" fill="rgba(196,116,140,0.5)"/>
-        <circle cx="8" cy="8" r="2" fill="rgba(201,160,110,0.6)"/>
-        <path d="M8 0L8 3M8 13L8 16M0 8L3 8M13 8L16 8" stroke="rgba(196,116,140,0.3)" strokeWidth="1"/>
-      </svg>
-      <div className="lyra-divider-line right"/>
-    </div>
-  )
-}
-
 function LyraCountdown({ targetDate }) {
   const calc = () => {
     if (!targetDate) return { d: 0, h: 0, m: 0, s: 0 }
@@ -107,16 +93,22 @@ function LyraCountdown({ targetDate }) {
 
   const pad = (n) => String(Number.isFinite(n) ? n : 0).padStart(2, '0')
 
+  const units = [
+    { val: time.d, label: 'Hari' },
+    { val: time.h, label: 'Jam' },
+    { val: time.m, label: 'Menit' },
+    { val: time.s, label: 'Detik' },
+  ]
+
   return (
-    <div className="lyra-countdown">
-      <span className="lyra-countdown-label">Menghitung Hari Bahagia</span>
-      <div className="lyra-countdown-digits">
-        {[{val:time.d,unit:'Hari'},{val:time.h,unit:'Jam'},{val:time.m,unit:'Menit'},{val:time.s,unit:'Detik'}].map((item,i) => (
-          <div key={item.unit} style={{display:'flex',alignItems:'flex-start',gap:'4px'}}>
-            {i>0 && <span className="lyra-digit-sep">·</span>}
-            <div className="lyra-digit-block">
-              <span className="lyra-digit">{pad(item.val)}</span>
-              <span className="lyra-digit-unit">{item.unit}</span>
+    <div className="lyra-countdown-container">
+      <div className="lyra-countdown-grid">
+        {units.map((u, i) => (
+          <div key={u.label} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            {i > 0 && <span className="lyra-digit-colon">·</span>}
+            <div className="lyra-digit-cell">
+              <span className="lyra-digit-num">{pad(u.val)}</span>
+              <span className="lyra-digit-txt">{u.label}</span>
             </div>
           </div>
         ))}
@@ -140,13 +132,16 @@ export default function Lyra({ data = {} }) {
     digitalGifts = [],
     physicalAddress,
     wishes = [],
-    closingMessage,
-    rsvpLink,
-    brandName,
+    closingMessage = 'Kehadiran Bapak / Ibu / Saudara/i merupakan kebahagiaan yang tak ternilai bagi kami. Atas doa restu yang diberikan, kami ucapkan terima kasih yang sebesar-besarnya.',
+    rsvpLink = 'https://wa.me/628123456789',
+    brandName = 'Undangan Pernikahan Digital · Tema Lyra',
     guestName = 'Tamu Undangan',
+    initialOpen = false,
+    lockBodyScroll = true,
+    hideFloatingButton = false,
   } = data
 
-  const [isCoverOpen, setIsCoverOpen] = useState(false)
+  const [isCoverOpen, setIsCoverOpen] = useState(initialOpen)
 
   return (
     <div className="lyra-root">
@@ -161,214 +156,354 @@ export default function Lyra({ data = {} }) {
         coupleOrKidName={`${groomName} & ${brideName}`}
         date={resepsi.date || akad.date || '23 Maret 2026'}
         guestName={guestName}
+        lockBodyScroll={lockBodyScroll}
+        hideFloatingButton={hideFloatingButton}
       />
 
       {isCoverOpen && (
-        <div className="invitation-reveal-enter">
+        <div className="invitation-reveal-enter" style={{ width: '100%' }}>
+          <div className="lyra-canvas-pattern" />
           <BokehLayer />
           <FloatingPetals />
 
           <div className="lyra-page">
-        <div className="lyra-frame">
-          <div className="lyra-hero-bg"/>
-          <FloralCorner className="lyra-corner--tl"/>
-          <FloralCorner className="lyra-corner--tr"/>
-          <FloralCorner className="lyra-corner--bl"/>
-          <FloralCorner className="lyra-corner--br"/>
+            <div className="lyra-pattern-overlay" />
 
-          {/* ── Section 1: Header (Blooming Blossom) ── */}
-          <LyraBloomReveal delay={0.2}>
-            <header>
-              <span className="lyra-tag">Undangan Pernikahan</span>
-              <span className="lyra-script-title">Wedding Invitation</span>
-            </header>
-          </LyraBloomReveal>
+            {/* ════════════════════════════════════════════════
+                SECTION 1: HERO / SAMPUL DALAM UTAMA
+                ════════════════════════════════════════════════ */}
+            <section className="lyra-section lyra-hero-section">
+              <LyraWatermarkCrest size={460} opacity={0.065} />
+              <FloralCorner className="lyra-corner--tl"/>
+              <FloralCorner className="lyra-corner--tr"/>
+              <FloralCorner className="lyra-corner--bl"/>
+              <FloralCorner className="lyra-corner--br"/>
 
-          {/* ── Ayat Suci ── */}
-          {holyVerse && (
-            <LyraBloomReveal delay={0.3}>
-              <div className="holy-verse-box" style={{ background: 'rgba(255,255,255,0.3)', borderColor: 'rgba(196,116,140,0.2)' }}>
-                <p className="holy-verse-arabic" style={{ color: '#4a2530' }}>{holyVerse.arabic}</p>
-                <p className="holy-verse-trans" style={{ color: '#68404e' }}>"{holyVerse.translation}"</p>
-                <span className="holy-verse-ref" style={{ color: '#c4748c' }}>{holyVerse.ref}</span>
-              </div>
-            </LyraBloomReveal>
-          )}
+              <div className="lyra-section-content">
+                <div className="lyra-flank-container">
+                  <LyraBreezeSprig side="left" delay={0.2} style={{ left: '-36px', top: '24%' }} className="lyra-breeze-ornament">
+                    <FloralSprigLeft color="rgba(196,116,140,0.55)" accentColor="rgba(201,160,110,0.5)" size={105} />
+                  </LyraBreezeSprig>
+                  <LyraBreezeSprig side="right" delay={0.25} style={{ right: '-36px', top: '24%' }} className="lyra-breeze-ornament">
+                    <FloralSprigRight color="rgba(196,116,140,0.55)" accentColor="rgba(201,160,110,0.5)" size={105} />
+                  </LyraBreezeSprig>
 
-          <LyraFlourishDivider delay={0.35}><LyraDivider /></LyraFlourishDivider>
+                  <LyraBloomReveal delay={0.1}>
+                    <span className="lyra-tag">Undangan Pernikahan</span>
+                  </LyraBloomReveal>
 
-          {/* ── Section 2: Greeting + swaying breeze sprigs ── */}
-          <div className="lyra-ornament-section">
-            <LyraBreezeSprig side="left" delay={0.1}
-              style={{ left:'-55px', top:'-20px' }}>
-              <FloralSprigLeft color="rgba(196,116,140,0.45)" accentColor="rgba(201,160,110,0.4)" size={80} />
-            </LyraBreezeSprig>
-            <LyraBreezeSprig side="right" delay={0.2}
-              style={{ right:'-55px', top:'-20px' }}>
-              <FloralSprigRight color="rgba(196,116,140,0.45)" accentColor="rgba(201,160,110,0.4)" size={80} />
-            </LyraBreezeSprig>
+                  <LyraBloomReveal delay={0.18}>
+                    <span className="lyra-hero-eyebrow">The Wedding of</span>
+                  </LyraBloomReveal>
 
-            <LyraBloomReveal delay={0.1}>
-              <div className="lyra-greeting">
-                <p>Dengan memohon rahmat dan ridha Allah SWT,<br/>kami mengundang Bapak / Ibu / Saudara/i<br/>untuk turut hadir dalam pernikahan</p>
-              </div>
-            </LyraBloomReveal>
-          </div>
-
-          {/* ── Section 3: Names (Romantic Unfurl) ── */}
-          <div className="lyra-ornament-section">
-            <LyraBreezeSprig side="left" delay={0}
-              style={{ left:'-65px', top:'10px' }}>
-              <FloralSprigLeft color="rgba(196,116,140,0.6)" accentColor="rgba(201,160,110,0.5)" size={105} />
-            </LyraBreezeSprig>
-            <LyraBreezeSprig side="right" delay={0.1}
-              style={{ right:'-65px', top:'10px' }}>
-              <FloralSprigRight color="rgba(196,116,140,0.6)" accentColor="rgba(201,160,110,0.5)" size={105} />
-            </LyraBreezeSprig>
-
-            <LyraRomanticNames delay={0.15}>
-              <section className="lyra-names">
-                <span className="lyra-name-main">{groomName}</span>
-                <span className="lyra-name-full">{groomFullName}</span>
-                <span className="lyra-and">&amp;</span>
-                <span className="lyra-name-main">{brideName}</span>
-                <span className="lyra-name-full">{brideFullName}</span>
-              </section>
-            </LyraRomanticNames>
-          </div>
-
-          <LyraFlourishDivider><LyraDivider /></LyraFlourishDivider>
-
-          {/* ── Section 4: Family (Organic bloom) ── */}
-          <LyraBloomReveal delay={0.1}>
-            <div className="lyra-family">
-              <span className="lyra-family-intro">Putra &amp; Putri dari</span>
-              <span className="lyra-family-label">Putra dari</span>
-              <span className="lyra-family-name">{groomParents}</span>
-              <span className="lyra-family-label">Putri dari</span>
-              <span className="lyra-family-name" style={{marginBottom:0}}>{brideParents}</span>
-            </div>
-          </LyraBloomReveal>
-
-          {/* ── Section 5: Events (Drifting Petal Cards) ── */}
-          <div className="lyra-ornament-section">
-            <LyraBreezeSprig side="left" delay={0}
-              style={{ left:'-50px', top:'40px' }}>
-              <FloralSprigLeft color="rgba(196,116,140,0.35)" accentColor="rgba(201,160,110,0.3)" size={85} />
-            </LyraBreezeSprig>
-            <LyraBreezeSprig side="right" delay={0.1}
-              style={{ right:'-50px', top:'40px' }}>
-              <FloralSprigRight color="rgba(196,116,140,0.35)" accentColor="rgba(201,160,110,0.3)" size={85} />
-            </LyraBreezeSprig>
-
-            <section className="lyra-events">
-              {[{label:'✦ Akad Nikah', ev:akad},{label:'✦ Resepsi', ev:resepsi}].map(({label,ev}, idx) => (
-                <LyraPetalCard key={label} delay={idx * 0.14}>
-                  <article className="lyra-event-card">
-                    <span className="lyra-event-tag">{label}</span>
-                    <span className="lyra-event-name">{ev.name||label}</span>
-                    <span className="lyra-event-date">{ev.day}, {ev.date}</span>
-                    <span className="lyra-event-time">{ev.time}</span>
-                    <div className="lyra-event-sep"/>
-                    <span className="lyra-event-venue">{ev.venue}</span>
-                    <span className="lyra-event-address">{ev.address}</span>
-
-                    <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '12px' }}>
-                      {ev.mapsLink && (
-                        <a href={ev.mapsLink} target="_blank" rel="noopener noreferrer" className="lyra-btn-maps">
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                          Lihat Peta
-                        </a>
-                      )}
-                      {ev.calendarLink && (
-                        <a href={ev.calendarLink} target="_blank" rel="noopener noreferrer" className="lyra-btn-maps" style={{ background: '#c9a06e', color: '#fff' }}>
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-                          Simpan Kalender
-                        </a>
-                      )}
+                  <LyraRomanticNames delay={0.22}>
+                    <div className="lyra-hero-names">
+                      <span className="lyra-hero-name">{groomName}</span>
+                      <span className="lyra-hero-and">&amp;</span>
+                      <span className="lyra-hero-name">{brideName}</span>
                     </div>
-                  </article>
-                </LyraPetalCard>
-              ))}
+                  </LyraRomanticNames>
+
+                  <LyraBloomReveal delay={0.32}>
+                    <div className="lyra-hero-date-line">
+                      <span>{resepsi.date || akad.date || '23 Maret 2026'}</span>
+                      <span>·</span>
+                      <span>Bandung</span>
+                    </div>
+                  </LyraBloomReveal>
+
+                  <LyraBloomReveal delay={0.4}>
+                    <div className="lyra-scroll-hint">
+                      <span>Gulir ke Bawah</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
+                  </LyraBloomReveal>
+                </div>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 2: AYAT SUCI & KALIMAT SAMBUTAN
+                ════════════════════════════════════════════════ */}
+            <section className="lyra-section lyra-verse-section">
+              <LyraWatermarkCrest size={420} opacity={0.065} />
+              <div className="lyra-section-content">
+                <LyraSectionFlourish width={140} opacity={0.65} />
+                <div className="lyra-flank-container">
+                  <LyraBreezeSprig side="left" delay={0.15} style={{ left: '-32px', top: '15%' }} className="lyra-breeze-ornament">
+                    <FloralSprigLeft color="rgba(196,116,140,0.45)" accentColor="rgba(201,160,110,0.4)" size={90} />
+                  </LyraBreezeSprig>
+                  <LyraBreezeSprig side="right" delay={0.2} style={{ right: '-32px', top: '15%' }} className="lyra-breeze-ornament">
+                    <FloralSprigRight color="rgba(196,116,140,0.45)" accentColor="rgba(201,160,110,0.4)" size={90} />
+                  </LyraBreezeSprig>
+
+                  {holyVerse && (
+                    <LyraBloomReveal delay={0.1}>
+                      <div className="lyra-verse-card">
+                        <p className="lyra-verse-arabic">{holyVerse.arabic}</p>
+                        <p className="lyra-verse-trans">"{holyVerse.translation}"</p>
+                        <span className="lyra-verse-ref">{holyVerse.ref}</span>
+                      </div>
+                    </LyraBloomReveal>
+                  )}
+
+                  <LyraBloomReveal delay={0.25}>
+                    <p className="lyra-greeting-lead">
+                      Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak / Ibu / Saudara/i untuk turut hadir dan memberikan doa restu pada pernikahan kami:
+                    </p>
+                  </LyraBloomReveal>
+                </div>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 3: KEDUA MEMPELAI & KELUARGA
+                ════════════════════════════════════════════════ */}
+            <section className="lyra-section lyra-couple-section">
+              <LyraWatermarkCrest size={460} opacity={0.065} />
+              <div className="lyra-section-content">
+                <LyraBloomReveal delay={0.1}>
+                  <span className="lyra-section-kicker">Mempelai</span>
+                  <h2 className="lyra-section-heading">Kedua Mempelai</h2>
+                  <LyraSectionFlourish width={140} opacity={0.7} />
+                  <p className="lyra-section-lead">
+                    Dua insan yang dipersatukan dalam ikatan suci pernikahan
+                  </p>
+                </LyraBloomReveal>
+
+                <div className="lyra-flank-container">
+                  <LyraBreezeSprig side="left" delay={0.15} style={{ left: '-36px', top: '22%' }} className="lyra-breeze-ornament">
+                    <FloralSprigLeft color="rgba(196,116,140,0.55)" accentColor="rgba(201,160,110,0.45)" size={105} />
+                  </LyraBreezeSprig>
+                  <LyraBreezeSprig side="right" delay={0.2} style={{ right: '-36px', top: '22%' }} className="lyra-breeze-ornament">
+                    <FloralSprigRight color="rgba(196,116,140,0.55)" accentColor="rgba(201,160,110,0.45)" size={105} />
+                  </LyraBreezeSprig>
+
+                  <div className="lyra-couple-profile-wrap">
+                    <LyraBloomReveal delay={0.15}>
+                      <div className="lyra-profile-card">
+                        <span className="lyra-profile-name">{groomName}</span>
+                        <span className="lyra-profile-fullname">{groomFullName}</span>
+                        <p className="lyra-profile-parents">
+                          Putra dari <strong>{groomParents}</strong>
+                        </p>
+                      </div>
+                    </LyraBloomReveal>
+
+                    <div className="lyra-couple-divider" />
+
+                    <LyraBloomReveal delay={0.25}>
+                      <div className="lyra-profile-card">
+                        <span className="lyra-profile-name">{brideName}</span>
+                        <span className="lyra-profile-fullname">{brideFullName}</span>
+                        <p className="lyra-profile-parents">
+                          Putri dari <strong>{brideParents}</strong>
+                        </p>
+                      </div>
+                    </LyraBloomReveal>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 4: RANGKAIAN ACARA
+                ════════════════════════════════════════════════ */}
+            <section className="lyra-section lyra-events-section">
+              <LyraWatermarkCrest size={440} opacity={0.065} />
+              <div className="lyra-section-content">
+                <LyraBloomReveal delay={0.1}>
+                  <span className="lyra-section-kicker">Waktu &amp; Tempat</span>
+                  <h2 className="lyra-section-heading">Rangkaian Acara</h2>
+                  <LyraSectionFlourish width={140} opacity={0.7} />
+                  <p className="lyra-section-lead">
+                    Insya Allah rangkaian acara pernikahan kami akan diselenggarakan pada:
+                  </p>
+                </LyraBloomReveal>
+
+                <div className="lyra-flank-container">
+                  <LyraBreezeSprig side="left" delay={0.15} style={{ left: '-34px', top: '15%' }} className="lyra-breeze-ornament">
+                    <FloralSprigLeft color="rgba(196,116,140,0.4)" accentColor="rgba(201,160,110,0.35)" size={95} />
+                  </LyraBreezeSprig>
+                  <LyraBreezeSprig side="right" delay={0.2} style={{ right: '-34px', top: '15%' }} className="lyra-breeze-ornament">
+                    <FloralSprigRight color="rgba(196,116,140,0.4)" accentColor="rgba(201,160,110,0.35)" size={95} />
+                  </LyraBreezeSprig>
+
+                  <div className="lyra-events-grid">
+                    {[
+                      { label: 'Akad Nikah', ev: akad },
+                      { label: 'Walimatul Ursy', ev: resepsi },
+                    ].map(({ label, ev }, idx) => (
+                      <LyraPetalCard key={label} delay={idx * 0.15}>
+                        <article className="lyra-event-card">
+                          <h3 className="lyra-event-card-title">{ev.name || label}</h3>
+                          <span className="lyra-event-card-date">{ev.day ? `${ev.day}, ` : ''}{ev.date}</span>
+                          <span className="lyra-event-card-time">{ev.time}</span>
+
+                          <div className="lyra-event-venue-block">
+                            <span className="lyra-event-card-venue">{ev.venue}</span>
+                            <p className="lyra-event-card-addr">{ev.address}</p>
+                          </div>
+
+                          <div className="lyra-event-btn-row">
+                            {ev.mapsLink && (
+                              <a href={ev.mapsLink} target="_blank" rel="noopener noreferrer" className="lyra-btn-outline">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                  <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                Petunjuk Lokasi
+                              </a>
+                            )}
+                            {ev.calendarLink && (
+                              <a href={ev.calendarLink} target="_blank" rel="noopener noreferrer" className="lyra-btn-filled">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                                  <line x1="16" y1="2" x2="16" y2="6" />
+                                  <line x1="8" y1="2" x2="8" y2="6" />
+                                </svg>
+                                Simpan Kalender
+                              </a>
+                            )}
+                          </div>
+                        </article>
+                      </LyraPetalCard>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 5: COUNTDOWN MENUJU HARI BAHAGIA
+                ════════════════════════════════════════════════ */}
+            <section className="lyra-section lyra-countdown-section">
+              <LyraWatermarkCrest size={380} opacity={0.065} />
+              <div className="lyra-section-content">
+                <LyraBloomReveal delay={0.1}>
+                  <span className="lyra-section-kicker">Waktu Tersisa</span>
+                  <h2 className="lyra-section-heading">Menghitung Hari Bahagia</h2>
+                  <LyraSectionFlourish width={140} opacity={0.65} />
+                  <p className="lyra-section-lead">
+                    Menuju ikrar suci janji pernikahan kami
+                  </p>
+                </LyraBloomReveal>
+
+                <div className="lyra-flank-container">
+                  <LyraBreezeSprig side="left" delay={0.15} style={{ left: '-30px', top: '12%' }} className="lyra-breeze-ornament">
+                    <FloralSprigLeft color="rgba(196,116,140,0.45)" accentColor="rgba(201,160,110,0.4)" size={90} />
+                  </LyraBreezeSprig>
+                  <LyraBreezeSprig side="right" delay={0.2} style={{ right: '-30px', top: '12%' }} className="lyra-breeze-ornament">
+                    <FloralSprigRight color="rgba(196,116,140,0.45)" accentColor="rgba(201,160,110,0.4)" size={90} />
+                  </LyraBreezeSprig>
+
+                  <LyraBloomReveal delay={0.18}>
+                    <LyraCountdown targetDate={resepsi.isoDate || akad.isoDate} />
+                  </LyraBloomReveal>
+                </div>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 6: KISAH KASIH KAMI (LOVE STORY)
+                ════════════════════════════════════════════════ */}
+            {loveStory && loveStory.length > 0 && (
+              <section className="lyra-section lyra-story-section">
+                <LyraWatermarkCrest size={440} opacity={0.06} />
+                <div className="lyra-section-content">
+                  <LyraBloomReveal delay={0.1}>
+                    <div style={{ width: '100%' }}>
+                      <LoveStory
+                        stories={loveStory}
+                        title="Kisah Kasih Kami"
+                        subtitle="Perjalanan dua hati yang dipertemukan dengan cara yang indah"
+                      />
+                    </div>
+                  </LyraBloomReveal>
+                </div>
+              </section>
+            )}
+
+            {/* ════════════════════════════════════════════════
+                SECTION 7: TANDA KASIH & BUKU DOA
+                ════════════════════════════════════════════════ */}
+            {((digitalGifts && digitalGifts.length > 0) || physicalAddress || (wishes && wishes.length > 0)) && (
+              <section className="lyra-section lyra-gift-section">
+                <LyraWatermarkCrest size={420} opacity={0.06} />
+                <div className="lyra-section-content">
+                  {(digitalGifts && digitalGifts.length > 0 || physicalAddress) && (
+                    <LyraBloomReveal delay={0.1}>
+                      <div style={{ width: '100%', marginBottom: '36px' }}>
+                        <WeddingGift
+                          gifts={digitalGifts}
+                          physicalAddress={physicalAddress}
+                          title="Tanda Kasih"
+                          subtitle="Kehadiran Anda adalah kado terindah bagi kami. Namun bila hendak memberi tanda kasih, dapat melalui:"
+                        />
+                      </div>
+                    </LyraBloomReveal>
+                  )}
+
+                  {wishes && (
+                    <LyraBloomReveal delay={0.15}>
+                      <div style={{ width: '100%' }}>
+                        <GuestBook
+                          initialWishes={wishes}
+                          storageKey="wishes_lyra"
+                          title="Doa Restu &amp; Ucapan"
+                          subtitle="Tuliskan ucapan selamat dan doa tulus untuk kedua mempelai"
+                        />
+                      </div>
+                    </LyraBloomReveal>
+                  )}
+                </div>
+              </section>
+            )}
+
+            {/* ════════════════════════════════════════════════
+                SECTION 8: PENUTUP & RSVP WHATSAPP
+                ════════════════════════════════════════════════ */}
+            <section className="lyra-section lyra-closing-section">
+              <LyraWatermarkCrest size={440} opacity={0.065} />
+              <div className="lyra-section-content">
+                <div className="lyra-flank-container">
+                  <LyraBreezeSprig side="left" delay={0.15} style={{ left: '-34px', top: '15%' }} className="lyra-breeze-ornament">
+                    <FloralSprigLeft color="rgba(196,116,140,0.4)" accentColor="rgba(201,160,110,0.35)" size={95} />
+                  </LyraBreezeSprig>
+                  <LyraBreezeSprig side="right" delay={0.2} style={{ right: '-34px', top: '15%' }} className="lyra-breeze-ornament">
+                    <FloralSprigRight color="rgba(196,116,140,0.4)" accentColor="rgba(201,160,110,0.35)" size={95} />
+                  </LyraBreezeSprig>
+
+                  <LyraBloomReveal delay={0.1}>
+                    <LyraSectionFlourish width={140} opacity={0.7} />
+                    <p className="lyra-closing-note">{closingMessage}</p>
+                  </LyraBloomReveal>
+
+                  {rsvpLink && (
+                    <LyraBloomReveal delay={0.18}>
+                      <a href={rsvpLink} target="_blank" rel="noopener noreferrer" className="lyra-btn-rsvp-cta">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        Konfirmasi Kehadiran via WhatsApp
+                      </a>
+                    </LyraBloomReveal>
+                  )}
+
+                  <LyraBloomReveal delay={0.25}>
+                    <footer className="lyra-footer">
+                      <span className="lyra-footer-credits">{brandName || 'Farhan & Aulia Wedding · Tema Lyra'}</span>
+                    </footer>
+                  </LyraBloomReveal>
+                </div>
+              </div>
             </section>
           </div>
-
-          {/* ── Section 6: Countdown (Safe from NaN) ── */}
-          <LyraBloomReveal delay={0.1}>
-            <LyraCountdown targetDate={resepsi.isoDate || akad.isoDate}/>
-          </LyraBloomReveal>
-
-          <LyraFlourishDivider><LyraDivider /></LyraFlourishDivider>
-
-          {/* ── Section 7: Kisah Cinta ── */}
-          {loveStory.length > 0 && (
-            <LyraBloomReveal delay={0.1}>
-              <LoveStory
-                stories={loveStory}
-                title="Kisah Kasih Kami"
-                subtitle="Perjalanan dua hati yang dipertemukan dengan cara yang indah"
-              />
-            </LyraBloomReveal>
-          )}
-
-          {/* ── Section 8: Amplop Digital ── */}
-          {(digitalGifts.length > 0 || physicalAddress) && (
-            <LyraBloomReveal delay={0.1}>
-              <WeddingGift
-                gifts={digitalGifts}
-                physicalAddress={physicalAddress}
-                title="Tanda Kasih"
-                subtitle="Kehadiran Anda adalah kado terindah bagi kami. Namun bila hendak memberi tanda kasih, dapat melalui:"
-              />
-            </LyraBloomReveal>
-          )}
-
-          {/* ── Section 9: Buku Tamu & Doa Restu ── */}
-          <LyraBloomReveal delay={0.1}>
-            <GuestBook
-              initialWishes={wishes}
-              storageKey="wishes_lyra"
-              title="Doa Restu &amp; Ucapan"
-              subtitle="Tuliskan ucapan selamat dan doa tulus untuk kedua mempelai"
-            />
-          </LyraBloomReveal>
-
-          {/* ── Section 10: Closing + RSVP ── */}
-          <div className="lyra-ornament-section">
-            <LyraBreezeSprig side="left" delay={0}
-              style={{ left:'-45px', top:'-15px' }}>
-              <FloralSprigLeft color="rgba(196,116,140,0.25)" accentColor="rgba(201,160,110,0.25)" size={65} />
-            </LyraBreezeSprig>
-            <LyraBreezeSprig side="right" delay={0.1}
-              style={{ right:'-45px', top:'-15px' }}>
-              <FloralSprigRight color="rgba(196,116,140,0.25)" accentColor="rgba(201,160,110,0.25)" size={65} />
-            </LyraBreezeSprig>
-
-            <LyraBloomReveal delay={0.1}>
-              <div className="lyra-closing"><p>{closingMessage}</p></div>
-            </LyraBloomReveal>
-
-            {rsvpLink && (
-              <LyraBloomReveal delay={0.15}>
-                <div style={{textAlign:'center',marginTop:'24px'}}>
-                  <a href={rsvpLink} target="_blank" rel="noopener noreferrer" className="lyra-btn-rsvp">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    Konfirmasi Kehadiran via WhatsApp
-                  </a>
-                </div>
-              </LyraBloomReveal>
-            )}
-          </div>
-
-          <LyraBloomReveal delay={0.1}>
-            <footer className="lyra-footer">
-              <span className="lyra-footer-brand">{brandName||'✦ Undangan Digital · Tema Lyra'}</span>
-            </footer>
-          </LyraBloomReveal>
         </div>
-      </div>
-      </div>
-    )}
+      )}
     </div>
   )
 }

@@ -117,45 +117,86 @@ function SpicaEmblem() {
 function AntaresEmblem() {
   return (
     <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-      <circle cx="28" cy="28" r="24" stroke="#d88c9d" strokeWidth="1.5" strokeDasharray="3 3"/>
-      <path d="M21 16L21 28C21 32 24.5 35 28 35C31.5 35 35 32 35 28L35 16" stroke="#d88c9d" strokeWidth="2" strokeLinecap="round"/>
-      <line x1="28" y1="35" x2="28" y2="44" stroke="#d88c9d" strokeWidth="2"/>
-      <line x1="20" y1="44" x2="36" y2="44" stroke="#d88c9d" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M23 23Q28 26 33 23" stroke="#f7e8ec" strokeWidth="1.5"/>
+      <circle cx="28" cy="28" r="26" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1" />
+      <circle cx="28" cy="28" r="23" stroke="#b4863e" strokeWidth="1.2" strokeDasharray="2 3" opacity="0.85" />
+      <circle cx="28" cy="28" r="19" stroke="#0f172a" strokeWidth="0.8" opacity="0.6" />
+      <circle cx="28" cy="28" r="14" stroke="#b4863e" strokeWidth="1" strokeDasharray="3 2" opacity="0.75" />
+      <text x="28" y="31.5" textAnchor="middle" fill="#0f172a" fontFamily="'Playfair Display', Georgia, serif" fontSize="13" fontWeight="800">25</text>
+      <rect x="17" y="34.5" width="22" height="6.5" rx="3.25" fill="#0f172a" />
+      <text x="28" y="39" textAnchor="middle" fill="#f8fafc" fontFamily="'Montserrat', sans-serif" fontSize="4" fontWeight="800" letterSpacing="0.18em">SILVER</text>
+      <path d="M28 8.5 L29.5 11.5 L33 12 L30.5 14.3 L31.2 17.5 L28 15.7 L24.8 17.5 L25.5 14.3 L23 12 L26.5 11.5 Z" fill="#b4863e" />
     </svg>
   )
 }
 
 function CapellaEmblem() {
   return (
-    <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-      <polygon points="28,10 50,20 28,30 6,20" fill="rgba(212, 175, 55, 0.25)" stroke="#ffd966" strokeWidth="2"/>
-      <path d="M15 25V36C15 36 21 42 28 42C35 42 41 36 41 36V25" stroke="#d4af37" strokeWidth="2"/>
-      <path d="M46 22V38" stroke="#ffd966" strokeWidth="2"/>
-      <circle cx="46" cy="40" r="3" fill="#ffd966"/>
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="27" stroke="#ffd966" strokeWidth="1.2" strokeDasharray="2 3" />
+      <circle cx="30" cy="30" r="24" fill="#4a0e17" stroke="#d4af37" strokeWidth="1.5" />
+      {/* Laurel leaves */}
+      <path d="M14 31 C14 22 20 15 27 12 C24 16 22 22 23 28 Z" fill="#ffd966" opacity="0.8" />
+      <path d="M46 31 C46 22 40 15 33 12 C36 16 38 22 37 28 Z" fill="#ffd966" opacity="0.8" />
+      {/* Mortarboard cap */}
+      <polygon points="30,17 45,23 30,29 15,23" fill="#1c1917" stroke="#ffd966" strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M21 25.5 V31 C21 31 24.5 35 30 35 C35.5 35 39 31 39 31 V25.5" fill="#2a050c" stroke="#ffd966" strokeWidth="1.2" />
+      <path d="M30 23 C34 24 43 27 43 33" stroke="#ffd966" strokeWidth="1.2" strokeLinecap="round" />
+      <circle cx="43" cy="34" r="1.5" fill="#ffd966" />
+      <path d="M43 35.5 V39" stroke="#ffd966" strokeWidth="1.5" strokeLinecap="round" />
+      {/* Diploma scroll */}
+      <rect x="22" y="38" width="16" height="5" rx="1.5" fill="#fdfbf7" stroke="#ffd966" strokeWidth="0.8" />
+      <rect x="28.5" y="37" width="3" height="7" rx="1" fill="#781d2a" />
     </svg>
   )
 }
 
 function RigelEmblem() {
   return (
-    <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-      <circle cx="28" cy="28" r="23" stroke="#d95d39" strokeWidth="2" fill="#fff5ef"/>
-      <path d="M16 32C16 26 21 21 27 21C33 21 38 26 38 32C38 38 33 42 27 42C21 42 16 38 16 32Z" fill="#fde8e0" stroke="#d95d39" strokeWidth="1.5"/>
-      <path d="M27 21C27 16 31 12 36 12C39 12 41 14 42 17C42 20 39 23 36 23" stroke="#b84826" strokeWidth="2" strokeLinecap="round"/>
-      <circle cx="38" cy="15" r="1.5" fill="#2b2118"/>
-      <path d="M42 16L48 18L42 20" fill="#c28424"/>
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+      {/* Cloud Base */}
+      <path d="M8 44 C8 39 12 37 16 37 C17 32 22 29 27 31 C30 26 36 26 39 30 C43 29 48 31 49 35 C52 35 55 38 55 42 C55 46 51 48 47 48 H13 C10 48 8 46 8 44 Z" fill="#ffffff" opacity="0.9" />
+      {/* Balloon body */}
+      <path d="M30 8 C19 8 11 16 11 27 C11 35 18 40 23 44 C25 46 27 47 27 48 H33 C33 47 35 46 37 44 C42 40 49 35 49 27 C49 16 41 8 30 8 Z" fill="url(#coverRigelSkyGrad)" stroke="#ffffff" strokeWidth="1.5" />
+      {/* Center stripe */}
+      <path d="M30 8 C26 13 24 22 24 32 C24 39 27 45 28 48 H32 C33 45 36 39 36 32 C36 22 34 13 30 8 Z" fill="#fde047" stroke="#ffffff" strokeWidth="0.8" />
+      <polygon points="30,19 31.5,23.5 36,24 32.5,27.5 33.5,32 30,29.5 26.5,32 27.5,27.5 24,24 28.5,23.5" fill="#ffffff" />
+      {/* Ropes and basket */}
+      <line x1="26" y1="48" x2="24" y2="54" stroke="#ca8a04" strokeWidth="1" />
+      <line x1="34" y1="48" x2="36" y2="54" stroke="#ca8a04" strokeWidth="1" />
+      <rect x="23" y="53" width="14" height="6" rx="2" fill="#fed7aa" stroke="#ca8a04" strokeWidth="1" />
+      <defs>
+        <linearGradient id="coverRigelSkyGrad" x1="10" y1="10" x2="50" y2="45" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#7dd3fc" />
+          <stop offset="60%" stopColor="#0284c7" />
+          <stop offset="100%" stopColor="#0369a1" />
+        </linearGradient>
+      </defs>
     </svg>
   )
 }
 
 function AldebaranEmblem() {
   return (
-    <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-      <path d="M28 8C28 8 16 19 16 31C16 37.5 21.5 43 28 43C34.5 43 40 37.5 40 31C40 19 28 8 28 8Z" stroke="#ffd56b" strokeWidth="2" fill="rgba(201, 162, 77, 0.2)"/>
-      <line x1="28" y1="3" x2="28" y2="9" stroke="#ffd56b" strokeWidth="2" strokeLinecap="round"/>
-      <circle cx="28" cy="4" r="1.8" fill="#ffd56b"/>
-      <rect x="22" y="32" width="12" height="11" rx="6" stroke="#ffd56b" strokeWidth="1.5" fill="none"/>
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <defs>
+        <linearGradient id="aldCoverGold" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#fef08a" />
+          <stop offset="50%" stopColor="#eab308" />
+          <stop offset="100%" stopColor="#ca8a04" />
+        </linearGradient>
+      </defs>
+      {/* Moorish Arch Silhouette */}
+      <path d="M 12 52 V 32 C 12 18 22 8 30 8 C 38 8 48 18 48 32 V 52" stroke="url(#aldCoverGold)" strokeWidth="2" fill="rgba(184, 138, 46, 0.12)" />
+      {/* Inner Pointed Arch */}
+      <path d="M 18 52 V 34 C 18 24 24 16 30 14 C 36 16 42 24 42 34 V 52" stroke="url(#aldCoverGold)" strokeWidth="1.2" strokeDasharray="3 2" fill="none" />
+      {/* Arch Finial */}
+      <circle cx="30" cy="5" r="2.5" fill="#fef08a" />
+      {/* Hanging Mosque Lantern */}
+      <line x1="30" y1="14" x2="30" y2="26" stroke="#ca8a04" strokeWidth="1.2" />
+      <path d="M 27 26 C 25 30 26 36 30 38 C 34 36 35 30 33 26 Z" fill="url(#aldCoverGold)" />
+      <circle cx="30" cy="32" r="2" fill="#ffffff" />
+      {/* Base Foundation */}
+      <line x1="8" y1="52" x2="52" y2="52" stroke="url(#aldCoverGold)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }
@@ -288,6 +329,8 @@ export default function InvitationCover({
   coupleOrKidName = '',
   date = '',
   guestName = 'Tamu Undangan',
+  lockBodyScroll = true,
+  hideFloatingButton = false,
 }) {
   const normTheme = (theme || 'vega').toLowerCase()
   const cfg = THEME_CONFIGS[normTheme] || THEME_CONFIGS.vega
@@ -296,15 +339,17 @@ export default function InvitationCover({
   const guestNote = cfg.note
 
   useEffect(() => {
-    if (!isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
+    if (lockBodyScroll) {
+      if (!isOpen) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+      }
+      return () => {
+        document.body.style.overflow = ''
+      }
     }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
+  }, [isOpen, lockBodyScroll])
 
   const handleOpenClick = () => {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -316,14 +361,20 @@ export default function InvitationCover({
     onClose?.()
   }
 
+  const isInstant = hideFloatingButton || (typeof window !== 'undefined' && (
+    window.location.search.includes('catalog') ||
+    Boolean(navigator.webdriver) ||
+    window.location.search.includes('static')
+  ))
+
   return (
     <>
       <AnimatePresence>
         {!isOpen && (
           <motion.div
             className={`invitation-cover-overlay cover-overlay-${normTheme}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.5 } }}
+            initial={isInstant ? false : { opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: isInstant ? 0 : 0.4 } }}
             exit={cfg.exitAnim}
           >
             {/* Ambient Glow Aura */}
@@ -332,28 +383,28 @@ export default function InvitationCover({
             {/* Staggered Container Card */}
             <motion.div
               className={`cover-card-base cover-card-${normTheme}`}
-              initial={{ scale: 0.88, opacity: 0, y: 30 }}
+              initial={isInstant ? false : { scale: 0.92, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{
-                duration: 0.85,
+                duration: isInstant ? 0 : 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
               {/* 1. Theme Emblem (Draw & Soft Glow Pulse) */}
               <motion.div
                 style={{ display: 'flex', justifyContent: 'center', marginBottom: '18px' }}
-                initial={{ scale: 0.5, opacity: 0, rotate: -15 }}
+                initial={isInstant ? false : { scale: 0.6, opacity: 0, rotate: -10 }}
                 animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: isInstant ? 0 : 0.6, delay: isInstant ? 0 : 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
                 {cfg.emblem}
               </motion.div>
 
               {/* 2. Badge / Subtitle */}
               <motion.div
-                initial={{ opacity: 0, y: -10, letterSpacing: '0.35em' }}
+                initial={isInstant ? false : { opacity: 0, y: -8, letterSpacing: '0.3em' }}
                 animate={{ opacity: 1, y: 0, letterSpacing: '0.2em' }}
-                transition={{ duration: 0.7, delay: 0.3 }}
+                transition={{ duration: isInstant ? 0 : 0.5, delay: isInstant ? 0 : 0.1 }}
               >
                 <div className="cover-badge">
                   <span>{displayBadge}</span>
@@ -363,9 +414,9 @@ export default function InvitationCover({
               {/* 3. Main Title / Names */}
               <motion.h1
                 className="cover-names"
-                initial={{ opacity: 0, y: 15 }}
+                initial={isInstant ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: 0.42 }}
+                transition={{ duration: isInstant ? 0 : 0.55, delay: isInstant ? 0 : 0.16 }}
               >
                 {coupleOrKidName}
               </motion.h1>
@@ -374,9 +425,9 @@ export default function InvitationCover({
               {date && (
                 <motion.p
                   className="cover-date"
-                  initial={{ opacity: 0 }}
+                  initial={isInstant ? false : { opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.55 }}
+                  transition={{ duration: isInstant ? 0 : 0.45, delay: isInstant ? 0 : 0.22 }}
                 >
                   {date}
                 </motion.p>
@@ -385,9 +436,9 @@ export default function InvitationCover({
               {/* 5. Guest Information Box */}
               <motion.div
                 className="cover-guest-box"
-                initial={{ opacity: 0, y: 20 }}
+                initial={isInstant ? false : { opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.65 }}
+                transition={{ duration: isInstant ? 0 : 0.5, delay: isInstant ? 0 : 0.28 }}
               >
                 <span className="cover-guest-to">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
                 <span className="cover-guest-name">{guestName}</span>
@@ -396,9 +447,9 @@ export default function InvitationCover({
 
               {/* 6. CTA "Buka Undangan" Button with shimmer & breathing bounce */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={isInstant ? false : { opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.8 }}
+                transition={{ duration: isInstant ? 0 : 0.5, delay: isInstant ? 0 : 0.34 }}
               >
                 <motion.button
                   type="button"
@@ -427,7 +478,7 @@ export default function InvitationCover({
       </AnimatePresence>
 
       {/* Floating Re-Open / Cover Return Button */}
-      {isOpen && onClose && (
+      {isOpen && onClose && !hideFloatingButton && (
         <motion.button
           type="button"
           className="cover-reopen-float-btn"

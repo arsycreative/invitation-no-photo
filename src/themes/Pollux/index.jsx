@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react'
-import { PolluxReveal, PolluxCard } from './PolluxMotion'
+import {
+  PolluxReveal,
+  PolluxCrestMotion,
+  PolluxScaleIn,
+  PolluxCard,
+} from './PolluxMotion'
+import {
+  PolluxCrescentCrest,
+  PolluxBotanicalWatermark,
+  PolluxCornerFlourish,
+  PolluxDivider,
+  PolluxFloatingSparkles,
+} from './PolluxOrnaments'
 import InvitationCover from '../../components/InvitationCover'
 import WeddingGift from '../../components/WeddingGift'
 import GuestBook from '../../components/GuestBook'
@@ -31,26 +43,23 @@ function PolluxCountdown({ targetDate }) {
   const pad = (n) => String(Number.isFinite(n) ? n : 0).padStart(2, '0')
 
   return (
-    <div className="pollux-countdown">
-      <span className="pollux-countdown-label">Menuju Hari Tasyakuran Aqiqah</span>
-      <div className="pollux-countdown-digits">
-        {[{val: time.d, unit: 'Hari'}, {val: time.h, unit: 'Jam'}, {val: time.m, unit: 'Menit'}, {val: time.s, unit: 'Detik'}].map((item) => (
-          <div key={item.unit} className="pollux-digit-block">
-            <span className="pollux-digit">{pad(item.val)}</span>
-            <span className="pollux-digit-unit">{item.unit}</span>
+    <div className="pollux-countdown-wrap">
+      <span className="pollux-countdown-badge">✦ MENGHITUNG HARI ✦</span>
+      <h3 className="pollux-countdown-headline">Menuju Hari Tasyakuran Aqiqah</h3>
+      <div className="pollux-countdown-grid">
+        {[
+          { val: time.d, unit: 'Hari' },
+          { val: time.h, unit: 'Jam' },
+          { val: time.m, unit: 'Menit' },
+          { val: time.s, unit: 'Detik' },
+        ].map((item) => (
+          <div key={item.unit} className="pollux-countdown-capsule">
+            <span className="pollux-capsule-num">{pad(item.val)}</span>
+            <span className="pollux-capsule-lbl">{item.unit}</span>
           </div>
         ))}
       </div>
     </div>
-  )
-}
-
-function CrescentStar() {
-  return (
-    <svg width="44" height="44" viewBox="0 0 40 40" fill="none">
-      <path d="M22 6C13.1634 6 6 13.1634 6 22C6 30.8366 13.1634 38 22 38C26.4183 38 30.4183 36.2091 33.3137 33.3137C25.5 33 19 26.5 19 19C19 13.2 22.4 8.2 27.5 6.2C25.8 6.1 23.9 6 22 6Z" fill="#a4823e"/>
-      <polygon points="30,8 32,13 37,13 33,16 34.5,21 30,18 25.5,21 27,16 23,13 28,13" fill="#cbb074"/>
-    </svg>
   )
 }
 
@@ -87,7 +96,7 @@ export default function Pollux({ data = {} }) {
         venue: 'Kediaman Keluarga Mahendra',
         address: 'Jl. Taman Sari Indah No. 12, Sukajadi, Kota Bandung',
         mapsLink: 'https://maps.google.com',
-      }
+      },
     ],
     targetDate = '2026-12-21T09:30:00',
     digitalGifts = [],
@@ -97,13 +106,19 @@ export default function Pollux({ data = {} }) {
     rsvpLink = 'https://wa.me/628123456789',
     guestName = 'Tamu Undangan',
     brandName = '✦ Undangan Digital · Tema Pollux Aqiqah',
+    initialOpen = false,
+    lockBodyScroll = true,
+    hideFloatingButton = false,
   } = data
 
-  const [isCoverOpen, setIsCoverOpen] = useState(false)
+  const [isCoverOpen, setIsCoverOpen] = useState(initialOpen)
 
   return (
     <div className="pollux-root">
-      {/* ── Opening Cover ── */}
+      {/* ── Ambient Floating Sparkles ── */}
+      <PolluxFloatingSparkles />
+
+      {/* ── Opening Cover Modal ── */}
       <InvitationCover
         isOpen={isCoverOpen}
         onOpen={() => setIsCoverOpen(true)}
@@ -114,168 +129,356 @@ export default function Pollux({ data = {} }) {
         coupleOrKidName={babyName}
         date={events[0]?.date || '21 Juni 2026'}
         guestName={guestName}
+        lockBodyScroll={lockBodyScroll}
+        hideFloatingButton={hideFloatingButton}
       />
 
       {isCoverOpen && (
-        <div className="invitation-reveal-enter">
+        <div className="invitation-reveal-enter" style={{ width: '100%' }}>
           <div className="pollux-page">
-            {/* ── Header ── */}
-            <header className="pollux-header">
-          <PolluxReveal delay={0.1}>
-            <span className="pollux-tag">Tasyakuran Kelahiran &amp; Aqiqah</span>
-            <div className="pollux-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-            <h1 className="pollux-title">Alhamdulillah Telah Lahir</h1>
-          </PolluxReveal>
-        </header>
 
-        <div className="pollux-body">
-          {/* ── Kalam Ilahi / Hadits ── */}
-          {holyVerse && (
-            <PolluxReveal delay={0.15}>
-              <div className="holy-verse-box">
-                <p className="holy-verse-arabic">{holyVerse.arabic}</p>
-                <p className="holy-verse-trans">"{holyVerse.translation}"</p>
-                <span className="holy-verse-ref">{holyVerse.ref}</span>
-              </div>
-            </PolluxReveal>
-          )}
+            {/* ════════════════════════════════════════════════
+                SECTION 1: HERO / PROKLAMASI WALIMATUL AQIQAH (100vh)
+                ════════════════════════════════════════════════ */}
+            <section className="pollux-section pollux-hero-section">
+              <PolluxBotanicalWatermark size={500} opacity={0.06} />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
 
-          {/* ── Newborn Botanical Birth Passport & Certificate ── */}
-          <PolluxReveal delay={0.2}>
-            <div className="pollux-passport-card">
-              <div className="pollux-passport-header">
-                <span className="pollux-passport-stamp">★ OFFICIAL BIRTH RECORD ★</span>
-                <span className="pollux-passport-cert">SERTIFIKAT KELAHIRAN &amp; AQIQAH</span>
-              </div>
+              <div className="pollux-section-content">
+                <PolluxCrestMotion delay={0.15}>
+                  <PolluxCrescentCrest size={80} />
+                </PolluxCrestMotion>
 
-              <div className="pollux-baby-icon"><CrescentStar /></div>
-              <span className="pollux-baby-name">{babyName}</span>
-              <span className="pollux-baby-nick">Panggilan Kasih: "{nickName}"</span>
+                <PolluxReveal delay={0.25}>
+                  <div className="pollux-badge-capsule">✦ WALIMATUL AQIQAH ✦</div>
+                </PolluxReveal>
 
-              {meaning && (
-                <div className="pollux-baby-meaning-box">
-                  <span className="pollux-meaning-label">Makna Doa di Balik Nama:</span>
-                  <p className="pollux-meaning-text">"{meaning}"</p>
-                </div>
-              )}
+                <PolluxReveal delay={0.32}>
+                  <p className="pollux-hero-subtitle">Tasyakuran Kelahiran &amp; Aqiqah</p>
+                </PolluxReveal>
 
-              <p className="pollux-parents-credit">
-                Putri pertama dari pasangan bahagia:<br/>
-                <strong className="pollux-parents-highlight">{parents}</strong>
-              </p>
+                <PolluxReveal delay={0.38}>
+                  <PolluxDivider maxWidth={280} />
+                </PolluxReveal>
 
-              {/* 4-Quadrant Birth Registry Matrix */}
-              <div className="pollux-passport-grid">
-                <div className="pollux-grid-quad">
-                  <span className="pollux-quad-icon">🗓️</span>
-                  <span className="pollux-quad-lbl">TANGGAL LAHIR</span>
-                  <strong className="pollux-quad-val">{birthDate}</strong>
-                </div>
-                <div className="pollux-grid-quad">
-                  <span className="pollux-quad-icon">⚖️</span>
-                  <span className="pollux-quad-lbl">BERAT LAHIR</span>
-                  <strong className="pollux-quad-val">{weight}</strong>
-                </div>
-                <div className="pollux-grid-quad">
-                  <span className="pollux-quad-icon">📏</span>
-                  <span className="pollux-quad-lbl">PANJANG BADAN</span>
-                  <strong className="pollux-quad-val">{length}</strong>
-                </div>
-                <div className="pollux-grid-quad">
-                  <span className="pollux-quad-icon">🕊️</span>
-                  <span className="pollux-quad-lbl">STATUS AQIQAH</span>
-                  <strong className="pollux-quad-val">Walimatul Aqiqah</strong>
-                </div>
-              </div>
-            </div>
-          </PolluxReveal>
-
-          {/* ── Greeting ── */}
-          <PolluxReveal delay={0.1}>
-            <div className="pollux-closing" style={{ marginBottom: '28px' }}>
-              <p>Sebagai wujud rasa syukur atas amanah terindah yang Allah titipkan, kami mengundang Bapak / Ibu / Saudara/i untuk hadir pada acara syukuran aqiqah:</p>
-            </div>
-          </PolluxReveal>
-
-          {/* ── Events ── */}
-          <div className="pollux-events">
-            {events.map((ev, idx) => (
-              <PolluxCard key={ev.title} delay={idx * 0.12}>
-                <article className="pollux-event-card">
-                  <span className="pollux-event-tag">{ev.tag}</span>
-                  <span className="pollux-event-name">{ev.title}</span>
-                  <span className="pollux-event-date">{ev.date}</span>
-                  <span className="pollux-event-time">{ev.time}</span>
-                  <span className="pollux-event-venue">{ev.venue}</span>
-                  <span className="pollux-event-address">{ev.address}</span>
-                  <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '12px' }}>
-                    {ev.mapsLink && (
-                      <a href={ev.mapsLink} target="_blank" rel="noopener noreferrer" className="pollux-btn-maps">
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Lihat Lokasi
-                      </a>
-                    )}
-                    {ev.calendarLink && (
-                      <a href={ev.calendarLink} target="_blank" rel="noopener noreferrer" className="pollux-btn-maps" style={{ background: 'var(--gold)', color: '#ffffff' }}>
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-                        Simpan Kalender
-                      </a>
-                    )}
+                <PolluxReveal delay={0.44}>
+                  <div className="pollux-hero-baby-wrap">
+                    <span className="pollux-hero-lead-pill">Alhamdulillah Telah Lahir Putri Kami Tercinta</span>
+                    <h1 className="pollux-hero-baby-name">{babyName}</h1>
+                    <span className="pollux-hero-baby-callout">Panggilan Kasih: "{nickName}"</span>
                   </div>
-                </article>
-              </PolluxCard>
-            ))}
-          </div>
+                </PolluxReveal>
 
-          {/* ── Countdown ── */}
-          <PolluxReveal delay={0.1}>
-            <PolluxCountdown targetDate={targetDate} />
-          </PolluxReveal>
+                <PolluxReveal delay={0.52}>
+                  <div className="pollux-hero-parents-box">
+                    <span className="pollux-hero-parents-label">Putri pertama dari pasangan bahagia:</span>
+                    <p className="pollux-hero-parents-names">{parents}</p>
+                  </div>
+                </PolluxReveal>
 
-          {/* ── Digital Gift ── */}
-          {(digitalGifts.length > 0 || physicalAddress) && (
-            <PolluxReveal delay={0.1}>
-              <WeddingGift
-                gifts={digitalGifts}
-                physicalAddress={physicalAddress}
-                title="Tanda Kasih untuk Buah Hati"
-                subtitle="Doa restu Anda adalah karunia terindah bagi keluarga kami. Namun jika ingin memberikan kado kasih untuk si kecil, dapat melalui:"
-              />
-            </PolluxReveal>
-          )}
+                <PolluxReveal delay={0.6}>
+                  <div className="pollux-hero-date-badge">
+                    <span>{events[0]?.date || 'Ahad, 21 Juni 2026'}</span>
+                    <span className="pollux-dot-sep">✦</span>
+                    <span>Kota Bandung</span>
+                  </div>
+                </PolluxReveal>
 
-          {/* ── Guest Book ── */}
-          <PolluxReveal delay={0.1}>
-            <GuestBook
-              initialWishes={wishes}
-              storageKey="wishes_pollux"
-              title="Doa &amp; Harapan untuk Buah Hati"
-              subtitle="Sampaikan doa tulus agar kelak tumbuh menjadi anak yang sholehah, sehat, dan berbakti"
-            />
-          </PolluxReveal>
-
-          {/* ── Closing & RSVP ── */}
-          <PolluxReveal delay={0.1}>
-            <div className="pollux-closing">
-              <p>{closingMessage}</p>
-            </div>
-            {rsvpLink && (
-              <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                <a href={rsvpLink} target="_blank" rel="noopener noreferrer" className="pollux-btn-rsvp">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  Konfirmasi Kehadiran via WhatsApp
-                </a>
+                <PolluxReveal delay={0.68}>
+                  <div className="pollux-scroll-indicator">
+                    <span className="pollux-scroll-text">GULIR KE BAWAH</span>
+                    <span className="pollux-scroll-arrow">▾</span>
+                  </div>
+                </PolluxReveal>
               </div>
-            )}
-          </PolluxReveal>
-        </div>
+            </section>
 
-        <footer className="pollux-footer">
-          <span className="pollux-footer-brand">{brandName}</span>
-        </footer>
-      </div>
-      </div>
-    )}
+            {/* ════════════════════════════════════════════════
+                SECTION 2: MUKADDIMAH & HADITS WALIMATUL AQIQAH (100vh)
+                ════════════════════════════════════════════════ */}
+            <section className="pollux-section pollux-hadits-section">
+              <PolluxBotanicalWatermark size={500} opacity={0.05} />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
+
+              <div className="pollux-section-content">
+                <PolluxReveal delay={0.1}>
+                  <div className="pollux-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+                </PolluxReveal>
+
+                <PolluxReveal delay={0.18}>
+                  <div className="pollux-greeting-lead">
+                    <h3 className="pollux-salam-title">Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
+                    <p className="pollux-salam-text">
+                      Sebagai wujud rasa syukur atas amanah terindah yang Allah Subhanahu Wa Ta’ala titipkan ke dalam keluarga kami, kami memohon doa keberkahan untuk putri tercinta:
+                    </p>
+                  </div>
+                </PolluxReveal>
+
+                {holyVerse && (
+                  <PolluxScaleIn delay={0.25}>
+                    <div className="pollux-verse-illuminated">
+                      <div className="pollux-verse-header-bar">
+                        <span className="pollux-verse-header-star">✦</span>
+                        <span className="pollux-verse-card-tag">{holyVerse.ref || 'HR. ABU DAWUD & AT-TIRMIDZI'}</span>
+                        <span className="pollux-verse-header-star">✦</span>
+                      </div>
+                      <p className="pollux-verse-arabic">{holyVerse.arabic}</p>
+                      <PolluxDivider maxWidth={240} />
+                      <p className="pollux-verse-trans">"{holyVerse.translation}"</p>
+                    </div>
+                  </PolluxScaleIn>
+                )}
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 3: SERTIFIKAT KELAHIRAN & MAKNA DOA NAMA (100vh)
+                ════════════════════════════════════════════════ */}
+            <section className="pollux-section pollux-passport-section">
+              <PolluxBotanicalWatermark size={500} opacity={0.05} />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
+
+              <div className="pollux-section-content">
+                <PolluxReveal delay={0.1}>
+                  <div className="pollux-badge-capsule">✦ RECORD OF BLESSINGS ✦</div>
+                  <h2 className="pollux-section-title">Lembaran Keberkahan Kelahiran</h2>
+                </PolluxReveal>
+
+                <PolluxScaleIn delay={0.2}>
+                  <div className="pollux-passport-card">
+                    <div className="pollux-passport-header">
+                      <span className="pollux-passport-stamp">★ OFFICIAL BIRTH RECORD ★</span>
+                      <h3 className="pollux-passport-baby-name">{babyName}</h3>
+                      <span className="pollux-passport-nick">Panggilan Kasih: "{nickName}"</span>
+                    </div>
+
+                    {meaning && (
+                      <div className="pollux-baby-meaning-box">
+                        <span className="pollux-meaning-label">Makna Doa di Balik Nama:</span>
+                        <p className="pollux-meaning-text">"{meaning}"</p>
+                      </div>
+                    )}
+
+                    <div className="pollux-passport-grid">
+                      <div className="pollux-grid-quad">
+                        <span className="pollux-quad-icon">🗓️</span>
+                        <span className="pollux-quad-lbl">TANGGAL LAHIR</span>
+                        <strong className="pollux-quad-val">{birthDate}</strong>
+                      </div>
+                      <div className="pollux-grid-quad">
+                        <span className="pollux-quad-icon">⚖️</span>
+                        <span className="pollux-quad-lbl">BERAT LAHIR</span>
+                        <strong className="pollux-quad-val">{weight}</strong>
+                      </div>
+                      <div className="pollux-grid-quad">
+                        <span className="pollux-quad-icon">📏</span>
+                        <span className="pollux-quad-lbl">PANJANG BADAN</span>
+                        <strong className="pollux-quad-val">{length}</strong>
+                      </div>
+                      <div className="pollux-grid-quad">
+                        <span className="pollux-quad-icon">🕊️</span>
+                        <span className="pollux-quad-lbl">STATUS AQIQAH</span>
+                        <strong className="pollux-quad-val">Walimatul Aqiqah</strong>
+                      </div>
+                    </div>
+                  </div>
+                </PolluxScaleIn>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 4: WAKTU & TEMPAT SYUKURAN (100vh)
+                ════════════════════════════════════════════════ */}
+            <section className="pollux-section pollux-agenda-section">
+              <PolluxBotanicalWatermark size={500} opacity={0.05} />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
+
+              <div className="pollux-section-content">
+                <PolluxReveal delay={0.1}>
+                  <div className="pollux-badge-capsule">✦ AGENDA ACARA ✦</div>
+                  <h2 className="pollux-section-title">Waktu &amp; Tempat Syukuran</h2>
+                </PolluxReveal>
+
+                <div className="pollux-events-stack">
+                  {events.map((ev, idx) => (
+                    <PolluxCard key={ev.title} delay={idx * 0.12} className="pollux-event-card-wrapper">
+                      <article className="pollux-event-botanical-pass">
+                        <div className="pollux-event-pass-header">
+                          <span className="pollux-event-tag">{ev.tag}</span>
+                          <h3 className="pollux-event-title">{ev.title}</h3>
+                        </div>
+
+                        <div className="pollux-event-details">
+                          <div className="pollux-detail-item">
+                            <span className="pollux-detail-icon">🗓️</span>
+                            <span className="pollux-detail-text pollux-detail-highlight">{ev.date}</span>
+                          </div>
+                          <div className="pollux-detail-item">
+                            <span className="pollux-detail-icon">⏰</span>
+                            <span className="pollux-detail-text">{ev.time}</span>
+                          </div>
+                          <div className="pollux-detail-item">
+                            <span className="pollux-detail-icon">📍</span>
+                            <div className="pollux-detail-venue-stack">
+                              <span className="pollux-detail-venue">{ev.venue}</span>
+                              <span className="pollux-detail-address">{ev.address}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="pollux-event-pass-actions">
+                          {ev.mapsLink && (
+                            <a href={ev.mapsLink} target="_blank" rel="noopener noreferrer" className="pollux-btn-event-maps">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                              Lihat Lokasi
+                            </a>
+                          )}
+                          {ev.calendarLink && (
+                            <a href={ev.calendarLink} target="_blank" rel="noopener noreferrer" className="pollux-btn-event-cal">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                              Simpan Kalender
+                            </a>
+                          )}
+                        </div>
+                      </article>
+                    </PolluxCard>
+                  ))}
+                </div>
+
+                <PolluxReveal delay={0.28}>
+                  <PolluxCountdown targetDate={targetDate} />
+                </PolluxReveal>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 5: TANDA KASIH UNTUK BUAH HATI (100vh)
+                ════════════════════════════════════════════════ */}
+            {(digitalGifts.length > 0 || physicalAddress) && (
+              <section className="pollux-section pollux-gift-section">
+                <PolluxBotanicalWatermark size={500} opacity={0.05} />
+                <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+                <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+                <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+                <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
+
+                <div className="pollux-section-content">
+                  <PolluxReveal delay={0.1}>
+                    <div className="pollux-badge-capsule">✦ TANDA KASIH ✦</div>
+                    <h2 className="pollux-section-title">Kado Kasih untuk Buah Hati</h2>
+                  </PolluxReveal>
+
+                  <PolluxReveal delay={0.2} style={{ width: '100%' }}>
+                    <div className="pollux-gift-container">
+                      <WeddingGift
+                        gifts={digitalGifts}
+                        physicalAddress={physicalAddress}
+                        title=""
+                        subtitle="Doa restu Anda adalah karunia terindah bagi keluarga kami. Namun jika ingin memberikan tanda kasih untuk buah hati tercinta:"
+                      />
+                    </div>
+                  </PolluxReveal>
+                </div>
+              </section>
+            )}
+
+            {/* ════════════════════════════════════════════════
+                SECTION 6: BUKU DOA & HARAPAN UNTUK BUAH HATI (100vh)
+                ════════════════════════════════════════════════ */}
+            <section className="pollux-section pollux-wishes-section">
+              <PolluxBotanicalWatermark size={500} opacity={0.05} />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
+
+              <div className="pollux-section-content">
+                <PolluxReveal delay={0.1}>
+                  <div className="pollux-badge-capsule">✦ UNTAIAN DOA ✦</div>
+                  <h2 className="pollux-section-title">Doa &amp; Harapan Buah Hati</h2>
+                </PolluxReveal>
+
+                <PolluxReveal delay={0.2} style={{ width: '100%' }}>
+                  <div className="pollux-wishes-container">
+                    <GuestBook
+                      initialWishes={wishes}
+                      storageKey="wishes_pollux"
+                      title=""
+                      subtitle="Sampaikan doa tulus agar kelak tumbuh menjadi anak yang sholehah, sehat, dan berbakti kepada orang tua:"
+                    />
+                  </div>
+                </PolluxReveal>
+              </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+                SECTION 7: PENUTUP & KONFIRMASI KEHADIRAN (100vh)
+                ════════════════════════════════════════════════ */}
+            <section className="pollux-section pollux-closing-section">
+              <PolluxBotanicalWatermark size={500} opacity={0.06} />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--tr" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--bl" />
+              <PolluxCornerFlourish className="pollux-corner pollux-corner--br" />
+
+              <div className="pollux-section-content">
+                <PolluxCrestMotion delay={0.1}>
+                  <PolluxCrescentCrest size={64} />
+                </PolluxCrestMotion>
+
+                <PolluxReveal delay={0.18}>
+                  <div className="pollux-closing-lead">
+                    <p className="pollux-closing-msg">{closingMessage}</p>
+                    <p className="pollux-closing-salam">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+                  </div>
+                </PolluxReveal>
+
+                <PolluxReveal delay={0.26}>
+                  <PolluxDivider maxWidth={240} />
+                </PolluxReveal>
+
+                <PolluxReveal delay={0.32}>
+                  <div className="pollux-family-signature">
+                    <span className="pollux-signature-lead">Kami yang berbahagia,</span>
+                    <h4 className="pollux-signature-family">{parents}</h4>
+                    <span className="pollux-signature-kid">
+                      beserta putri tercinta <strong>{babyName}</strong>
+                    </span>
+                  </div>
+                </PolluxReveal>
+
+                {rsvpLink && (
+                  <PolluxReveal delay={0.4}>
+                    <div className="pollux-rsvp-wrap">
+                      <a href={rsvpLink} target="_blank" rel="noopener noreferrer" className="pollux-btn-rsvp-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        Konfirmasi Kehadiran via WhatsApp
+                      </a>
+                    </div>
+                  </PolluxReveal>
+                )}
+
+                <footer className="pollux-footer">
+                  <span className="pollux-footer-brand">{brandName}</span>
+                </footer>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -66,7 +66,7 @@ export const CLIENTS = {
       ],
       closingMessage: 'Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak / Ibu / Saudara/i berkenan hadir dan memberikan doa restu kepada kami.',
       rsvpLink: 'https://wa.me/628123456789',
-      brandName: '✦ Undangan Digital · Tema Vega',
+      brandName: 'Undangan Pernikahan Digital · Tema Vega',
     },
   },
 
@@ -128,7 +128,7 @@ export const CLIENTS = {
       ],
       closingMessage: 'Kehadiran Bapak / Ibu / Saudara/i merupakan kebahagiaan yang tak ternilai bagi kami. Atas doa restu yang diberikan, kami ucapkan terima kasih yang sebesar-besarnya.',
       rsvpLink: 'https://wa.me/628123456789',
-      brandName: '✦ Undangan Digital · Tema Lyra',
+      brandName: 'Undangan Pernikahan Digital · Tema Lyra',
     },
   },
 

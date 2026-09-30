@@ -128,19 +128,19 @@
   font-family: 'Montserrat', sans-serif;
 }
 .cover-card-vega .cover-guest-box {
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px dashed rgba(56, 189, 248, 0.4);
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px dashed rgba(255, 215, 120, 0.4);
   border-radius: 14px;
 }
 .cover-card-vega .cover-guest-name {
-  color: #ffffff;
+  color: #ffd778;
   font-family: 'Playfair Display', serif;
 }
 .cover-card-vega .cover-open-btn {
-  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #c9a84c 0%, #ffd778 50%, #c9a84c 100%);
+  color: #070f29;
   font-weight: 700;
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
 }
 
 
@@ -149,6 +149,17 @@
    ═══════════════════════════════════════════════════════════ */
 .cover-overlay-lyra {
   background: radial-gradient(circle at 50% 30%, #fdf0f4 0%, #fae2eb 60%, #eed0dc 100%);
+}
+.cover-overlay-lyra::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIiB2aWV3Qm94PSIwIDAgMTQwIDE0MCIgZmlsbD0ibm9uZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InBSb3NlR29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNjNDc0OGMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNjOWEwNmUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYTA1NTcwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KCiAgPCEtLSBEaWFtb25kIEdyaWQgTWVzaCAtLT4KICA8cGF0aCBkPSJNIDcwIDAgTCAxNDAgNzAgTCA3MCAxNDAgTCAwIDcwIFoiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjc1IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiIG9wYWNpdHk9IjAuNDUiLz4KICA8cGF0aCBkPSJNIDAgMCBMIDE0MCAxNDAgTSAxNDAgMCBMIDAgMTQwIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtZGFzaGFycmF5PSIzIDQiIG9wYWNpdHk9IjAuMyIvPgoKICA8IS0tIENlbnRlciBCb3RhbmljYWwgUm9zZXR0ZSAoNzAsIDcwKSAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MCwgNzApIj4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyOCIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyMSIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuNiIgc3Ryb2tlLWRhc2hhcnJheT0iMSAzIiBvcGFjaXR5PSIwLjY1Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iOSIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjMiIGZpbGw9IiNjOWEwNmUiLz4KCiAgICA8IS0tIDQgQ2FyZGluYWwgUGV0YWxzIC0tPgogICAgPHBhdGggZD0iTSAwIC05IEMgNSAtMTYgNyAtMjQgMCAtMzQgQyAtNyAtMjQgLTUgLTE2IDAgLTkgWiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjE4IiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPHBhdGggZD0iTSAwIC0xNCBDIDMgLTIwIDMgLTI2IDAgLTMwIEMgLTMgLTI2IC0zIC0yMCAwIC0xNCBaIiBmaWxsPSIjYzlhMDZlIiBmaWxsLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSItMzYiIHI9IjEuOCIgZmlsbD0iI2M5YTA2ZSIvPgoKICAgIDxwYXRoIGQ9Ik0gMCA5IEMgNSAxNiA3IDI0IDAgMzQgQyAtNyAyNCAtNSAxNiAwIDkgWiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjE4IiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPHBhdGggZD0iTSAwIDE0IEMgMyAyMCAzIDI2IDAgMzAgQyAtMyAyNiAtMyAyMCAwIDE0IFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIvPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjM2IiByPSIxLjgiIGZpbGw9IiNjOWEwNmUiLz4KCiAgICA8cGF0aCBkPSJNIC05IDAgQyAtMTYgNSAtMjQgNyAtMzQgMCBDIC0yNCAtNyAtMTYgLTUgLTkgMCBaIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuMTgiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8cGF0aCBkPSJNIC0xNCAwIEMgLTIwIDMgLTI2IDMgLTMwIDAgQyAtMjYgLTMgLTIwIC0zIC0xNCAwIFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIvPgogICAgPGNpcmNsZSBjeD0iLTM2IiBjeT0iMCIgcj0iMS44IiBmaWxsPSIjYzlhMDZlIi8+CgogICAgPHBhdGggZD0iTSA5IDAgQyAxNiA1IDI0IDcgMzQgMCBDIDI0IC03IDE2IC01IDkgMCBaIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuMTgiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8cGF0aCBkPSJNIDE0IDAgQyAyMCAzIDI2IDMgMzAgMCBDIDI2IC0zIDIwIC0zIDE0IDAgWiIgZmlsbD0iI2M5YTA2ZSIgZmlsbC1vcGFjaXR5PSIwLjI1Ii8+CiAgICA8Y2lyY2xlIGN4PSIzNiIgY3k9IjAiIHI9IjEuOCIgZmlsbD0iI2M5YTA2ZSIvPgoKICAgIDwhLS0gNCBEaWFnb25hbCBMZWF2ZXMgLS0+CiAgICA8cGF0aCBkPSJNIC02LjUgLTYuNSBDIC0xMyAtMTMgLTE2IC0xNyAtMjIgLTIyIEMgLTE3IC0xNiAtMTMgLTEzIC02LjUgLTYuNSBaIiBmaWxsPSIjYzlhMDZlIiBmaWxsLW9wYWNpdHk9IjAuMjgiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjkiLz4KICAgIDxwYXRoIGQ9Ik0gNi41IC02LjUgQyAxMyAtMTMgMTYgLTE3IDIyIC0yMiBDIDE3IC0xNiAxMyAtMTMgNi41IC02LjUgWiIgZmlsbD0iI2M5YTA2ZSIgZmlsbC1vcGFjaXR5PSIwLjI4IiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8cGF0aCBkPSJNIC02LjUgNi41IEMgLTEzIDEzIC0xNiAxNyAtMjIgMjIgQyAtMTcgMTYgLTEzIDEzIC02LjUgNi41IFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgogICAgPHBhdGggZD0iTSA2LjUgNi41IEMgMTMgMTMgMTYgMTcgMjIgMjIgQyAxNyAxNiAxMyAxMyA2LjUgNi41IFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgoKICAgIDwhLS0gQXJhYmVzcXVlIFZpbmVzIHdpdGggQnVkcyAtLT4KICAgIDxwYXRoIGQ9Ik0gMCAtMzQgUSAyMiAtNDQgMzggLTI4IFEgMjQgLTE0IDAgLTIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik0gMCAtMzQgUSAtMjIgLTQ0IC0zOCAtMjggUSAtMjQgLTE0IDAgLTIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik0gMCAzNCBRIDIyIDQ0IDM4IDI4IFEgMjQgMTQgMCAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNIDAgMzQgUSAtMjIgNDQgLTM4IDI4IFEgLTI0IDE0IDAgMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIwLjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPGNpcmNsZSBjeD0iMzQiIGN5PSItMjQiIHI9IjIuMiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KICAgIDxjaXJjbGUgY3g9Ii0zNCIgY3k9Ii0yNCIgcj0iMi4yIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgogICAgPGNpcmNsZSBjeD0iMzQiIGN5PSIyNCIgcj0iMi4yIiBmaWxsPSIjYzQ3NDhjIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgogICAgPGNpcmNsZSBjeD0iLTM0IiBjeT0iMjQiIHI9IjIuMiIgZmlsbD0iI2M0NzQ4YyIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KICA8L2c+CgogIDwhLS0gNCBDb3JuZXJzIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjIwIiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC43NSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNyIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMi41IiBmaWxsPSIjYzQ3NDhjIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBDIDkgNCAxNiAxNiAyMCAyMCBDIDE2IDE2IDQgOSAwIDAgWiIgZmlsbD0iI2M5YTA2ZSIgZmlsbC1vcGFjaXR5PSIwLjI1IiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8cGF0aCBkPSJNIDAgMjQgQyAxMCAyMiAyMiAxMCAyNCAwIiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC43NSIgZmlsbD0ibm9uZSIvPgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDAsMCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjIwIiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC43NSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNyIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMi41IiBmaWxsPSIjYzQ3NDhjIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBDIC05IDQgLTE2IDE2IC0yMCAyMCBDIC0xNiAxNiAtNCA5IDAgMCBaIiBmaWxsPSIjYzlhMDZlIiBmaWxsLW9wYWNpdHk9IjAuMjUiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjkiLz4KICAgIDxwYXRoIGQ9Ik0gMCAyNCBDIC0xMCAyMiAtMjIgMTAgLTI0IDAiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIwLjc1IiBmaWxsPSJub25lIi8+CiAgPC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMTQwKSI+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMjAiIHN0cm9rZT0iI2M5YTA2ZSIgc3Ryb2tlLXdpZHRoPSIwLjc1IiBzdHJva2UtZGFzaGFycmF5PSIyIDMiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI3IiBzdHJva2U9InVybCgjcFJvc2VHb2xkKSIgc3Ryb2tlLXdpZHRoPSIwLjkiLz4KICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjUiIGZpbGw9IiNjNDc0OGMiLz4KICAgIDxwYXRoIGQ9Ik0gMCAwIEMgOSAtNCAxNiAtMTYgMjAgLTIwIEMgMTYgLTE2IDQgLTkgMCAwIFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgogICAgPHBhdGggZD0iTSAwIC0yNCBDIDEwIC0yMiAyMiAtMTAgMjQgMCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuNzUiIGZpbGw9Im5vbmUiLz4KICA8L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQwLDE0MCkiPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjIwIiBzdHJva2U9IiNjOWEwNmUiIHN0cm9rZS13aWR0aD0iMC43NSIgc3Ryb2tlLWRhc2hhcnJheT0iMiAzIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNyIgc3Ryb2tlPSJ1cmwoI3BSb3NlR29sZCkiIHN0cm9rZS13aWR0aD0iMC45Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMi41IiBmaWxsPSIjYzQ3NDhjIi8+CiAgICA8cGF0aCBkPSJNIDAgMCBDIC05IC00IC0xNiAtMTYgLTIwIC0yMCBDIC0xNiAtMTYgLTQgLTkgMCAwIFoiIGZpbGw9IiNjOWEwNmUiIGZpbGwtb3BhY2l0eT0iMC4yNSIgc3Ryb2tlPSIjYzlhMDZlIiBzdHJva2Utd2lkdGg9IjAuOSIvPgogICAgPHBhdGggZD0iTSAwIC0yNCBDIC0xMCAtMjIgLTIyIC0xMCAtMjQgMCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuNzUiIGZpbGw9Im5vbmUiLz4KICA8L2c+CgogIDwhLS0gQm9yZGVyIENvbm5lY3RvcnMgLS0+CiAgPGc+CiAgICA8cGF0aCBkPSJNIDYyIDAgQyA2NiA2IDc0IDYgNzggMCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iNzAiIGN5PSIwIiByPSIyLjIiIGZpbGw9IiNjOWEwNmUiLz4KICAgIDxwYXRoIGQ9Ik0gNjIgMTQwIEMgNjYgMTQ2IDc0IDE0NiA3OCAxNDAiIHN0cm9rZT0iI2M0NzQ4YyIgc3Ryb2tlLXdpZHRoPSIwLjgiIGZpbGw9Im5vbmUiLz4KICAgIDxjaXJjbGUgY3g9IjcwIiBjeT0iMTQwIiByPSIyLjIiIGZpbGw9IiNjOWEwNmUiLz4KICAgIDxwYXRoIGQ9Ik0gMCA2MiBDIDYgNjYgNiA3NCAwIDc4IiBzdHJva2U9IiNjNDc0OGMiIHN0cm9rZS13aWR0aD0iMC44IiBmaWxsPSJub25lIi8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iNzAiIHI9IjIuMiIgZmlsbD0iI2M5YTA2ZSIvPgogICAgPHBhdGggZD0iTSAxNDAgNjIgQyAxNDYgNjYgMTQ2IDc0IDE0MCA3OCIgc3Ryb2tlPSIjYzQ3NDhjIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMTQwIiBjeT0iNzAiIHI9IjIuMiIgZmlsbD0iI2M5YTA2ZSIvPgogIDwvZz4KPC9zdmc+");
+  background-size: 140px 140px;
+  background-repeat: repeat;
+  opacity: 0.095;
+  mix-blend-mode: multiply;
 }
 .cover-overlay-lyra .cover-ambient-glow {
   background: radial-gradient(circle, rgba(196, 116, 140, 0.35) 0%, transparent 70%);
@@ -260,7 +271,10 @@
    4. DENEB — Pastel Party (Marshmallow Pink × Lilac Dream)
    ═══════════════════════════════════════════════════════════ */
 .cover-overlay-deneb {
-  background: radial-gradient(circle at 50% 30%, #fff2f6 0%, #f2ebfc 60%, #e6f6f3 100%);
+  background-color: #fff2f6;
+  background-image:
+    radial-gradient(circle at 50% 30%, #fff2f6 0%, #f2ebfc 60%, #e6f6f3 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ff6584' fill-opacity='0.055'%3E%3Cpath d='M40 10 L42 20 L52 22 L42 24 L40 34 L38 24 L28 22 L38 20 Z'/%3E%3Ccircle cx='40' cy='22' r='2'/%3E%3Ccircle cx='10' cy='60' r='2.5' fill='%23a855f7' fill-opacity='0.055'/%3E%3Ccircle cx='70' cy='60' r='2.5' fill='%230ea5e9' fill-opacity='0.055'/%3E%3Cpath d='M15 15 C10 10 5 15 10 20 Z' fill='%23ff6584' fill-opacity='0.04'/%3E%3Cpath d='M65 15 C70 10 75 15 70 20 Z' fill='%23ff6584' fill-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");
 }
 .cover-overlay-deneb .cover-ambient-glow {
   background: radial-gradient(circle, rgba(255, 143, 171, 0.35) 0%, transparent 70%);
@@ -272,6 +286,25 @@
   box-shadow:
     0 16px 45px rgba(255, 143, 171, 0.25),
     0 0 0 8px rgba(255, 240, 245, 0.85);
+  position: relative;
+}
+.cover-card-deneb::before {
+  content: '✦';
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  color: #ff8fab;
+  font-size: 13px;
+  opacity: 0.8;
+}
+.cover-card-deneb::after {
+  content: '✦';
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: #a855f7;
+  font-size: 13px;
+  opacity: 0.8;
 }
 .cover-card-deneb .cover-badge {
   background: #ffeef3;
@@ -281,10 +314,10 @@
   letter-spacing: 0.15em;
 }
 .cover-card-deneb .cover-names {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
-  font-size: 32px;
-  color: #7b4f8d;
+  font-family: 'Pacifico', cursive;
+  font-size: 38px;
+  color: #ff477e;
+  filter: drop-shadow(0 2px 8px rgba(255, 71, 126, 0.25));
 }
 .cover-card-deneb .cover-date {
   color: #557870;
@@ -311,7 +344,10 @@
    5. CASTOR — Royal Burgundy (Velvet Wine × Antique Gold)
    ═══════════════════════════════════════════════════════════ */
 .cover-overlay-castor {
-  background: radial-gradient(circle at 50% 20%, #3d0d19 0%, #1e050b 70%, #0d0104 100%);
+  background-color: #1a0308;
+  background-image:
+    radial-gradient(circle at 50% 20%, #3d0d19 0%, #1e050b 70%, #0d0104 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23c9a84c' fill-opacity='0.055'%3E%3Cpath d='M50 15 C54 28 64 34 76 34 C64 38 58 48 50 62 C42 48 36 38 24 34 C36 34 46 28 50 15 Z'/%3E%3Ccircle cx='50' cy='38' r='3'/%3E%3Ccircle cx='50' cy='12' r='2'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='100' cy='0' r='4'/%3E%3Ccircle cx='0' cy='100' r='4'/%3E%3Ccircle cx='100' cy='100' r='4'/%3E%3C/g%3E%3C/svg%3E");
 }
 .cover-overlay-castor .cover-ambient-glow {
   background: radial-gradient(circle, rgba(201, 168, 76, 0.4) 0%, transparent 70%);
@@ -323,6 +359,25 @@
   box-shadow:
     0 0 0 5px rgba(201, 168, 76, 0.25),
     0 24px 70px rgba(0, 0, 0, 0.85);
+  position: relative;
+}
+.cover-card-castor::before {
+  content: '✦';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: #ffd778;
+  font-size: 11px;
+  opacity: 0.8;
+}
+.cover-card-castor::after {
+  content: '✦';
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: #ffd778;
+  font-size: 11px;
+  opacity: 0.8;
 }
 .cover-card-castor .cover-badge {
   background: rgba(201, 168, 76, 0.18);
@@ -564,53 +619,74 @@
 
 
 /* ═══════════════════════════════════════════════════════════
-   10. ANTARES — Anniversary (Royal Amethyst × Orchid Rose)
+   10. ANTARES — Anniversary (Soft Cashmere × Champagne Gold)
    ═══════════════════════════════════════════════════════════ */
 .cover-overlay-antares {
-  background: radial-gradient(circle at 50% 25%, #3b0764 0%, #1a0333 70%, #0c011a 100%);
+  background: radial-gradient(circle at 50% 25%, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%);
 }
 .cover-overlay-antares .cover-ambient-glow {
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.45) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(180, 134, 62, 0.15) 0%, transparent 70%);
 }
 .cover-card-antares {
-  border-radius: 20px;
-  background: rgba(37, 8, 79, 0.95);
-  border: 1.5px solid #c084fc;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1.8px solid rgba(15, 23, 42, 0.22);
   box-shadow:
-    0 0 0 5px rgba(192, 132, 252, 0.3),
-    0 24px 70px rgba(0, 0, 0, 0.85);
+    0 18px 48px rgba(15, 23, 42, 0.08),
+    0 0 0 6px rgba(248, 250, 252, 0.95);
 }
 .cover-card-antares .cover-badge {
-  background: rgba(192, 132, 252, 0.18);
-  border: 1px solid #c084fc;
-  color: #f3e8ff;
-  font-weight: 700;
-  letter-spacing: 0.25em;
+  background: #0f172a;
+  border: 1px solid rgba(180, 134, 62, 0.6);
+  color: #f8fafc;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  padding: 5px 14px;
 }
 .cover-card-antares .cover-names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 46px;
-  color: #f3e8ff;
-  text-shadow: 0 2px 14px rgba(192, 132, 252, 0.4);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  color: #0b1120;
+  font-weight: 700;
+  line-height: 1.2;
 }
 .cover-card-antares .cover-date {
-  color: #e9d5ff;
-  font-weight: 600;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 13.5px;
 }
 .cover-card-antares .cover-guest-box {
-  background: rgba(192, 132, 252, 0.08);
-  border: 1px dashed rgba(192, 132, 252, 0.4);
+  background: #f8fafc;
+  border: 1.5px solid rgba(15, 23, 42, 0.18);
   border-radius: 14px;
+  padding: 12px 14px;
 }
-.cover-card-antares .cover-guest-to { color: #d8b4fe; }
-.cover-card-antares .cover-guest-name { color: #ffffff; font-family: 'Playfair Display', serif; }
-.cover-card-antares .cover-guest-note { color: #f3e8ff; }
+.cover-card-antares .cover-guest-to {
+  color: #475569;
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+}
+.cover-card-antares .cover-guest-name {
+  color: #0b1120;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.cover-card-antares .cover-guest-note {
+  color: #1e293b;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 .cover-card-antares .cover-open-btn {
-  background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1.2px solid rgba(180, 134, 62, 0.6);
   color: #ffffff;
   font-weight: 800;
-  letter-spacing: 0.2em;
-  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+  letter-spacing: 0.16em;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.3);
 }
 
 
@@ -673,7 +749,12 @@
    12. RIGEL — Baby Shower (Powder Sky Blue × Sunny Yellow)
    ═══════════════════════════════════════════════════════════ */
 .cover-overlay-rigel {
-  background: radial-gradient(circle at 50% 25%, #f0f9ff 0%, #e0f2fe 60%, #bae6fd 100%);
+  background-color: #e0f2fe;
+  background-image:
+    radial-gradient(circle at 50% 25%, rgba(240, 249, 255, 0.92) 0%, rgba(224, 242, 254, 0.94) 60%, rgba(186, 230, 253, 0.95) 100%),
+    var(--rigel-cute-pattern);
+  background-size: auto, 160px 160px;
+  background-repeat: no-repeat, repeat;
 }
 .cover-overlay-rigel .cover-ambient-glow {
   background: radial-gradient(circle, rgba(234, 179, 8, 0.35) 0%, transparent 70%);
@@ -751,23 +832,44 @@
   text-shadow: 0 2px 14px rgba(201, 162, 77, 0.4);
 }
 .cover-card-aldebaran .cover-date {
-  color: #d2e4f7;
-  font-weight: 600;
+  color: #fef08a;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 .cover-card-aldebaran .cover-guest-box {
-  background: rgba(201, 162, 77, 0.08);
-  border: 1px dashed rgba(201, 162, 77, 0.4);
-  border-radius: 12px;
+  background: rgba(201, 162, 77, 0.12);
+  border: 1px dashed rgba(254, 240, 138, 0.5);
+  border-radius: 14px;
+  padding: 16px 14px;
 }
-.cover-card-aldebaran .cover-guest-to { color: #a4c4e8; }
-.cover-card-aldebaran .cover-guest-name { color: #ffffff; font-family: 'Amiri', serif; font-size: 22px; }
-.cover-card-aldebaran .cover-guest-note { color: #bcd0e8; }
-.cover-card-aldebaran .cover-open-btn {
-  background: linear-gradient(135deg, #c9a24d 0%, #ffd56b 100%);
-  color: #05111e;
+.cover-card-aldebaran .cover-guest-to {
+  color: #fef08a;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.18em;
-  box-shadow: 0 8px 24px rgba(201, 162, 77, 0.35);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.cover-card-aldebaran .cover-guest-name {
+  color: #ffffff;
+  font-family: 'Amiri', serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+.cover-card-aldebaran .cover-guest-note {
+  color: #f8fafc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.cover-card-aldebaran .cover-open-btn {
+  background: linear-gradient(135deg, #dfb356 0%, #ffd56b 100%);
+  color: #081728;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  box-shadow: 0 8px 24px rgba(201, 162, 77, 0.45);
 }
 
 

@@ -1,6 +1,8 @@
 import { Suspense } from 'react'
 import { THEMES, DEFAULT_THEME } from './themes'
 import { CLIENTS, DEMO_CLIENT } from './clients'
+import CatalogPage from './pages/CatalogPage'
+import BannerPage from './pages/BannerPage'
 import './index.css'
 
 /* ── URL param helpers ────────────────────────────────── */
@@ -9,7 +11,10 @@ function getParams() {
   return {
     clientSlug: params.get('client'),
     themeKey:   params.get('theme'),
+    catalogKey: params.get('catalog'),
+    bannerKey:  params.get('banner'),
     guestName:  params.get('to') || params.get('u') || 'Tamu Undangan',
+    initialOpen: params.get('open') === 'true' || params.get('open') === '1',
   }
 }
 
@@ -40,12 +45,21 @@ function NotFound({ message }) {
    ──────────────────────────────────────────────────────────
    Routing logic (no library needed — just URL params):
 
+   • ?catalog=vega       → load 2-view catalog presentation
    • ?client=demo        → load client's theme + their data
    • ?theme=vega         → load theme with its specific demo data
    • (no params)         → load default demo
    ═══════════════════════════════════════════════════════════ */
 export default function App() {
-  const { clientSlug, themeKey, guestName } = getParams()
+  const { clientSlug, themeKey, catalogKey, bannerKey, guestName, initialOpen } = getParams()
+
+  if (bannerKey) {
+    return <BannerPage />
+  }
+
+  if (catalogKey) {
+    return <CatalogPage themeKey={catalogKey} />
+  }
 
   let themeEntry = null
   let clientData = null
@@ -83,6 +97,7 @@ export default function App() {
   const fullData = {
     ...clientData,
     guestName: clientData?.guestName || guestName || 'Tamu Undangan',
+    initialOpen: initialOpen || clientData?.initialOpen || false,
   }
 
   return (

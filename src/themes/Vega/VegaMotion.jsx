@@ -27,7 +27,7 @@ export function VegaReveal({
       style={style}
       initial={{ opacity: 0, y: distance }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration, ease: luxuryEase, delay }}
       {...rest}
     >
@@ -49,7 +49,7 @@ export function VegaNamesEntrance({
       style={style}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.95, ease: luxuryEase, delay }}
     >
       {children}
@@ -70,11 +70,11 @@ export function VegaFloatingOrnament({
 
   return (
     <motion.div
-      className={className}
+      className={`vega-floating-ornament vega-ornament-${side} ${className}`}
       style={{ pointerEvents: 'none', position: 'absolute', ...style }}
       initial={{ opacity: 0, x: xOffset }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '200px 0px 200px 0px', amount: 0 }}
       transition={{ duration: 0.9, ease: luxuryEase, delay }}
     >
       {/* Calm ambient float */}

@@ -1,383 +1,1032 @@
 /* ═══════════════════════════════════════════════════════════
    THEME: RIGEL
    Category: Baby Shower & Welcoming the Little One
-   Palette:  Warm Butter Cream × Soft Apricot × Honey Gold
-   Style:    Hangat, manis, ceria, estetik, berkelas & anggun
+   Theme Style: Whimsical Nursery Scrapbook, Swinging Baby Crib Mobile,
+                Floating Helium Balloons, Pastel Keepsake Badges.
+   Palette:  Powder Sky Blue × Cloud White × Buttercup Yellow × Soft Peach/Pink
+   100% Unique Architecture & Bespoke Ornaments
    ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sacramento&display=swap');
 
-.rigel-root {
-  --cream-bg:     #f0f9ff;
-  --cream-card:   #ffffff;
-  --apricot-dark: #0284c7;
-  --apricot-pri:  #0ea5e9;
-  --apricot-soft: #e0f2fe;
-  --honey-gold:   #eab308;
-  --text-dark:    #0f172a;
-  --text-body:    #334155;
-  --text-muted:   #64748b;
-
-  --ff-title:  'Fraunces', serif;
-  --ff-script: 'Sacramento', cursive;
-  --ff-body:   'Plus Jakarta Sans', sans-serif;
+:root {
+  /* Cute subtle baby nursery doodle pattern (sleeping cloud, smiling moon, rattle, pacifier, onesie, milk bottle, footprints, stars & hearts) */
+  --rigel-cute-pattern: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Cute Sleeping Cloud --%3E%3Cg opacity='0.08' stroke='%230284c7' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 36 C18 36 15 33 15 29 C15 26 17 24 20 24 C21 20 25 18 29 19 C31 16 36 16 38 19 C41 18 44 20 45 23 C47 24 49 26 49 29 C49 33 46 36 42 36 Z' fill='%2338bdf8' fill-opacity='0.3'/%3E%3Cpath d='M24 28 Q26 30 28 28'/%3E%3Cpath d='M34 28 Q36 30 38 28'/%3E%3C/g%3E%3C!-- Twinkle Stars --%3E%3Cg opacity='0.09' fill='%23eab308'%3E%3Cpolygon points='78,22 80,27 85,28 81,31 82,36 78,33 74,36 75,31 71,28 76,27'/%3E%3Ccircle cx='32' cy='46' r='1.2'/%3E%3Ccircle cx='60' cy='55' r='1.5'/%3E%3Ccircle cx='145' cy='28' r='1.2'/%3E%3C/g%3E%3C!-- Baby Milk Bottle --%3E%3Cg opacity='0.07' stroke='%230284c7' stroke-width='1.1' stroke-linecap='round'%3E%3Crect x='112' y='22' width='14' height='20' rx='3' fill='%23bae6fd' fill-opacity='0.25'/%3E%3Crect x='114' y='18' width='10' height='4' rx='1' fill='%2338bdf8' fill-opacity='0.4'/%3E%3Cpath d='M116 18 C116 15 122 15 122 18' fill='%23facc15' fill-opacity='0.4'/%3E%3Cline x1='115' y1='27' x2='120' y2='27'/%3E%3Cline x1='115' y1='31' x2='118' y2='31'/%3E%3Cline x1='115' y1='35' x2='120' y2='35'/%3E%3C/g%3E%3C!-- Smiling Crescent Moon --%3E%3Cg opacity='0.08' stroke='%23ca8a04' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M75 72 C62 72 52 82 52 95 C52 108 62 118 75 118 C68 112 64 104 64 95 C64 86 68 78 75 72 Z' fill='%23fef08a' fill-opacity='0.35'/%3E%3Cpath d='M58 95 Q60 97 62 95'/%3E%3C/g%3E%3C!-- Sweet Baby Onesie --%3E%3Cg opacity='0.07' stroke='%23f472b6' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 102 L14 109 L18 112 L19 108 L19 126 L23 128 L25 124 L27 128 L31 126 L31 108 L32 112 L36 109 L32 102 C29 105 21 105 18 102 Z' fill='%23fce7f3' fill-opacity='0.3'/%3E%3Ccircle cx='25' cy='112' r='1.2' fill='%23f472b6'/%3E%3C/g%3E%3C!-- Cute Baby Pacifier --%3E%3Cg opacity='0.07' stroke='%230284c7' stroke-width='1.1'%3E%3Ccircle cx='128' cy='95' r='5' fill='%23bae6fd' fill-opacity='0.3'/%3E%3Ccircle cx='128' cy='95' r='2' fill='%23ffffff'/%3E%3Cpath d='M128 100 C128 105 133 105 133 100' stroke-linecap='round'/%3E%3Cellipse cx='128' cy='89' rx='4' ry='2' fill='%23fef08a' fill-opacity='0.4'/%3E%3C/g%3E%3C!-- Tiny Hearts & Stars Floating --%3E%3Cg opacity='0.07' fill='%23f43f5e'%3E%3Cpath d='M98 52 C96 50 93 50 93 53 C93 56 98 59 98 59 C98 59 103 56 103 53 C103 50 100 50 98 52 Z'/%3E%3Cpath d='M138 138 C136 136 133 136 133 139 C133 142 138 145 138 145 C138 145 143 142 143 139 C143 136 140 136 138 138 Z'/%3E%3C/g%3E%3C!-- Baby Footprint --%3E%3Cg opacity='0.06' fill='%230284c7'%3E%3Cellipse cx='98' cy='135' rx='3.5' ry='5' transform='rotate(15 98 135)'/%3E%3Ccircle cx='96' cy='127' r='1.2'/%3E%3Ccircle cx='99' cy='126' r='1.1'/%3E%3Ccircle cx='102' cy='127' r='1'/%3E%3Ccircle cx='104' cy='129' r='0.8'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .rigel-root {
+  --sky-bg:        #f0f9ff;
+  --sky-subtle:    #e0f2fe;
+  --sky-border:    #bae6fd;
+  --sky-card:      #ffffff;
+  --cerulean-pri:  #0284c7;
+  --cerulean-deep: #0369a1;
+  --cerulean-dark: #0c4a6e;
+  --honey-gold:    #eab308;
+  --gold-deep:     #b45309;
+  --buttercup:     #fef08a;
+  --pink-pastel:   #f472b6;
+  --pink-soft:     #fce7f3;
+  --text-dark:     #0f172a;
+  --text-body:     #1e293b;
+  --text-muted:    #475569;
+
+  --ff-title:  'Fraunces', Georgia, serif;
+  --ff-script: 'Sacramento', cursive;
+  --ff-body:   'Plus Jakarta Sans', sans-serif;
+
   min-height: 100vh;
-  background-color: #f0f9ff;
+  background-color: var(--sky-bg);
+  /* Delightful subtle nursery cute pattern */
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(234, 179, 8, 0.15) 0%, transparent 45%),
-    linear-gradient(180deg, #f8fafc 0%, #f0f9ff 100%);
+    radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(234, 179, 8, 0.08) 0%, transparent 45%),
+    var(--rigel-cute-pattern);
+  background-size: auto, auto, 160px 160px;
+  background-repeat: no-repeat, no-repeat, repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
   position: relative;
-  color: var(--text-dark);
   font-family: var(--ff-body);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-.rigel-page {
-  position: relative;
-  z-index: 1;
+/* ── Container Wrapper (Mobile-first Luxury Width) ──────── */
+.rigel-container {
   width: 100%;
-  max-width: 680px;
+  max-width: 520px;
   margin: 0 auto;
+  position: relative;
   background: #ffffff;
   box-shadow:
-    0 0 0 2px rgba(217, 93, 57, 0.25),
-    0 0 0 6px rgba(253, 232, 224, 0.8),
-    0 24px 70px rgba(74, 60, 49, 0.15);
+    0 0 0 1px var(--sky-border),
+    0 24px 70px rgba(2, 132, 199, 0.1);
 }
 
-/* ── Header ────────────────────────────────────────────── */
-.rigel-header {
-  text-align: center;
-  padding: 48px 36px 36px;
-  background: linear-gradient(180deg, #fff9f5 0%, #fdf0e9 100%);
-  border-bottom: 2px solid var(--apricot-soft);
+/* ── Section Standard Architecture (100vh) ─────────────── */
+.rigel-section {
+  min-height: 100vh;
   position: relative;
-}
-
-.rigel-badge {
-  display: inline-block;
-  padding: 6px 20px;
-  border-radius: 99px;
-  background: #fff;
-  border: 1px solid var(--apricot-pri);
-  color: var(--apricot-dark);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(217, 93, 57, 0.12);
-}
-
-.rigel-title {
-  font-family: var(--ff-title);
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--text-dark);
-  line-height: 1.2;
-  margin: 0 0 8px 0;
-}
-
-.rigel-parents-names {
-  font-family: var(--ff-script);
-  font-size: 42px;
-  color: var(--apricot-dark);
-  display: block;
-  margin: 4px 0 8px 0;
-  line-height: 1.1;
-}
-
-.rigel-arrival-tag {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--honey-gold);
-  letter-spacing: 0.05em;
-  display: block;
-}
-
-.rigel-body {
-  padding: 38px 44px 50px;
-  background: #ffffff;
-}
-
-/* ── Baby Quote ────────────────────────────────────────── */
-.rigel-quote-box {
-  background: #fffaf7;
-  border: 1.5px dashed rgba(217, 93, 57, 0.35);
-  border-radius: 16px;
-  padding: 22px 26px;
-  text-align: center;
-  margin-bottom: 32px;
-}
-.rigel-quote-text {
-  font-family: var(--ff-title);
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--text-dark);
-  margin: 0 0 6px 0;
-}
-.rigel-quote-author {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--apricot-dark);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-/* ── Activities / Rundown ─────────────────────────────── */
-.rigel-activities {
-  margin-bottom: 32px;
-}
-.rigel-activities-title {
-  text-align: center;
-  font-family: var(--ff-title);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin: 0 0 6px 0;
-}
-.rigel-activities-sub {
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--apricot-dark);
-  margin: 0 0 20px 0;
-  display: block;
-}
-.rigel-activities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-}
-.rigel-activity-card {
-  background: #fff8f5;
-  border: 1px solid rgba(217, 93, 57, 0.2);
-  border-radius: 14px;
-  padding: 18px 20px;
-  text-align: center;
-}
-.rigel-activity-icon {
-  font-size: 24px;
-  margin-bottom: 8px;
-  display: block;
-}
-.rigel-activity-name {
-  font-family: var(--ff-title);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin: 0 0 4px 0;
-}
-.rigel-activity-desc {
-  font-size: 12.5px;
-  color: var(--text-body);
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* ── Events ───────────────────────────────────────────── */
-.rigel-events {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 34px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 24px 44px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 2px dashed rgba(56, 189, 248, 0.28);
+  background-color: #fbfdff;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(250, 204, 21, 0.05) 0%, transparent 45%),
+    var(--rigel-cute-pattern);
+  background-size: auto, auto, 160px 160px;
+  background-repeat: no-repeat, no-repeat, repeat;
 }
 
-.rigel-event-card {
-  background: #fffaf7;
-  border: 1.5px solid rgba(217, 93, 57, 0.25);
-  border-radius: 16px;
-  padding: 26px 28px;
+.rigel-section-content {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(217, 93, 57, 0.05);
 }
 
-.rigel-event-tag {
-  font-size: 9.5px;
+/* ── Section Headings & Tags ───────────────────────────── */
+.rigel-section-tag {
+  display: inline-block;
+  padding: 5px 18px;
+  background: #f0f9ff;
+  border: 1.5px solid var(--sky-border);
+  border-radius: 999px;
+  color: var(--cerulean-deep);
+  font-family: var(--ff-body);
+  font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--apricot-dark);
-  display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.rigel-event-name {
+.rigel-section-title {
   font-family: var(--ff-title);
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 27px;
+  font-weight: 800;
   color: var(--text-dark);
-  display: block;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.rigel-section-subtitle {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 1: HERO & NURSERY MOBILE
+   ═══════════════════════════════════════════════════════════ */
+.rigel-hero-section {
+  background-color: #fbfdff;
+  background-image:
+    radial-gradient(circle at 50% 12%, rgba(224, 242, 254, 0.75) 0%, transparent 65%),
+    var(--rigel-cute-pattern);
+  background-size: auto, 160px 160px;
+  background-repeat: no-repeat, repeat;
+  padding-top: 10px;
+}
+
+/* Hanging Nursery Mobile SVG */
+.rigel-top-mobile {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto -10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.rigel-nursery-mobile-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  animation: mobileGentleSway 6s ease-in-out infinite alternate;
+  transform-origin: 230px 0;
+}
+
+@keyframes mobileGentleSway {
+  0% {
+    transform: rotate(-1.5deg);
+  }
+  100% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.rigel-item-moon {
+  animation: itemBob1 4s ease-in-out infinite alternate;
+  transform-origin: 64px 43px;
+}
+
+.rigel-item-cloud {
+  animation: itemBob2 4.5s ease-in-out infinite alternate;
+  transform-origin: 150px 34px;
+}
+
+.rigel-item-onesie {
+  animation: itemBob1 5s ease-in-out infinite alternate;
+  transform-origin: 310px 34px;
+}
+
+.rigel-item-star {
+  animation: itemBob2 4.2s ease-in-out infinite alternate;
+  transform-origin: 396px 43px;
+}
+
+@keyframes itemBob1 {
+  0% { transform: translateY(0px) rotate(-1deg); }
+  100% { transform: translateY(3px) rotate(1deg); }
+}
+
+@keyframes itemBob2 {
+  0% { transform: translateY(2px) rotate(1deg); }
+  100% { transform: translateY(-1px) rotate(-1deg); }
+}
+
+/* Scrapbook Nursery Keepsake Plaque */
+.rigel-nursery-plaque {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--sky-border);
+  border-radius: 24px;
+  padding: 24px 20px 20px;
+  margin: 12px auto 14px;
+  box-shadow:
+    0 10px 30px rgba(2, 132, 199, 0.08),
+    inset 0 0 0 4px #f0f9ff;
+}
+
+.rigel-plaque-tape-tl {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+}
+
+.rigel-plaque-tape-tr {
+  position: absolute;
+  top: -9px;
+  right: 12px;
+}
+
+.rigel-hero-subtag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--cerulean-deep);
+  background: #e0f2fe;
+  padding: 3px 14px;
+  border-radius: 999px;
   margin-bottom: 8px;
 }
 
-.rigel-event-date {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--apricot-dark);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.rigel-event-time {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-body);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.rigel-event-venue {
-  font-size: 14.5px;
-  font-weight: 700;
+.rigel-hero-title {
+  font-family: var(--ff-title);
+  font-size: 32px;
+  font-weight: 800;
   color: var(--text-dark);
-  display: block;
+  line-height: 1.15;
+  margin: 0 0 10px 0;
 }
 
-.rigel-event-address {
-  font-size: 13px;
+.rigel-parents-callout {
+  padding: 10px 0;
+  border-top: 1px dashed var(--sky-border);
+  border-bottom: 1px dashed var(--sky-border);
+  margin: 8px 0 12px;
+}
+
+.rigel-parents-script {
+  font-family: var(--ff-script);
+  font-size: 46px;
+  color: var(--cerulean-pri);
+  display: block;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+.rigel-baby-tag-line {
+  font-family: var(--ff-body);
+  font-size: 12.5px;
+  font-weight: 600;
   color: var(--text-muted);
-  line-height: 1.5;
   display: block;
   margin-top: 4px;
 }
 
-.rigel-btn-maps {
+.rigel-due-date-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 9px 22px;
-  border: 1.5px solid var(--apricot-pri);
-  border-radius: 8px;
-  color: var(--apricot-dark);
-  font-size: 10.5px;
+  gap: 7px;
+  background: #fefce8;
+  border: 1.5px solid var(--honey-gold);
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ffffff;
-  transition: all 0.25s;
+  color: var(--gold-deep);
 }
-.rigel-btn-maps:hover {
-  background: var(--apricot-pri);
+
+.rigel-due-date-pill svg {
+  color: var(--honey-gold);
+}
+
+/* Scroll Prompt */
+.rigel-scroll-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.rigel-scroll-caption {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--cerulean-deep);
+}
+
+.rigel-scroll-bouncing-cloud {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  border: 1.5px solid var(--sky-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cloudBounce 2s ease-in-out infinite;
+}
+
+@keyframes cloudBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 2: STORYBOOK / QUOTE
+   ═══════════════════════════════════════════════════════════ */
+.rigel-quote-section {
+  background-color: #fbfdff;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(254, 249, 195, 0.45) 0%, transparent 65%),
+    var(--rigel-cute-pattern);
+  background-size: auto, 160px 160px;
+  background-repeat: no-repeat, repeat;
+}
+
+.rigel-storybook-page-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--sky-border);
+  border-radius: 20px;
+  padding: 34px 24px 22px;
+  margin-top: 28px;
+  box-shadow:
+    0 12px 36px rgba(2, 132, 199, 0.08),
+    inset 0 0 0 4px #fefce8;
+}
+
+.rigel-storybook-ribbon {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+}
+
+.rigel-book-tape-left {
+  position: absolute;
+  top: -8px;
+  left: 14px;
+}
+
+.rigel-book-inner {
+  position: relative;
+  padding: 6px 4px 10px;
+}
+
+.rigel-book-quote-ornament {
+  font-family: var(--ff-title);
+  font-size: 54px;
+  color: #bae6fd;
+  display: block;
+  line-height: 0.6;
+  margin-bottom: 6px;
+}
+
+.rigel-book-quote-text {
+  font-family: var(--ff-title);
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin: 0 0 12px 0;
+}
+
+.rigel-book-author {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cerulean-deep);
+  display: block;
+  letter-spacing: 0.04em;
+}
+
+/* Cloud Divider */
+.rigel-cloud-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.rigel-divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, var(--sky-border) 50%, transparent 100%);
+}
+
+.rigel-divider-cloud-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 3: ACTIVITIES / MILESTONE CARDS
+   ═══════════════════════════════════════════════════════════ */
+.rigel-activities-section {
+  background-color: #fafcff;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(244, 114, 182, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
+    var(--rigel-cute-pattern);
+  background-size: auto, auto, 160px 160px;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+.rigel-activities-staggered {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.rigel-activity-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  text-align: left;
+  border-width: 1.5px;
+  border-style: solid;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rigel-activity-card .rigel-activity-tape {
+  position: absolute;
+  top: -8px;
+  left: 16px;
+}
+
+.rigel-activities-staggered .rigel-activity-card:nth-child(1) {
+  transform: rotate(-0.8deg);
+}
+.rigel-activities-staggered .rigel-activity-card:nth-child(2) {
+  transform: rotate(0.8deg);
+}
+.rigel-activities-staggered .rigel-activity-card:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+.rigel-activities-staggered .rigel-activity-card:hover {
+  transform: translateY(-2px) rotate(0deg);
+}
+
+/* Theme variations for activity cards */
+.rigel-theme-sky {
+  background: #f0f9ff;
+  border-color: #7dd3fc;
+}
+
+.rigel-theme-sky .rigel-activity-badge-pill {
+  background: #0284c7;
   color: #ffffff;
 }
 
-/* ── Countdown ────────────────────────────────────────── */
-.rigel-countdown {
-  text-align: center;
-  padding: 26px 20px;
-  background: linear-gradient(135deg, #fff7f2, #ffede5);
-  border: 1.5px solid rgba(217, 93, 57, 0.3);
-  border-radius: 16px;
-  margin-bottom: 34px;
+.rigel-theme-buttercup {
+  background: #fefce8;
+  border-color: #fde047;
 }
 
-.rigel-countdown-label {
+.rigel-theme-buttercup .rigel-activity-badge-pill {
+  background: #ca8a04;
+  color: #ffffff;
+}
+
+.rigel-theme-pink {
+  background: #fdf2f8;
+  border-color: #f9a8d4;
+}
+
+.rigel-theme-pink .rigel-activity-badge-pill {
+  background: #db2777;
+  color: #ffffff;
+}
+
+.rigel-activity-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rigel-activity-badge-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--apricot-dark);
-  display: block;
+  letter-spacing: 0.12em;
+}
+
+.rigel-activity-icon-bubble {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.rigel-activity-heading {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.rigel-activity-summary {
+  font-family: var(--ff-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-body);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 4: PARTY PASS & FLOATING BALLOON COUNTDOWN
+   ═══════════════════════════════════════════════════════════ */
+.rigel-events-section {
+  background: #f0f9ff;
+}
+
+.rigel-party-pass-container {
+  margin-bottom: 22px;
+}
+
+.rigel-party-pass-ticket {
+  background: #ffffff;
+  border: 2px solid var(--sky-border);
+  border-radius: 20px;
+  padding: 22px 20px;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.rigel-ticket-header {
+  border-bottom: 1.5px dashed var(--sky-border);
+  padding-bottom: 12px;
   margin-bottom: 14px;
 }
 
-.rigel-countdown-digits {
+.rigel-ticket-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  background: #e0f2fe;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--cerulean-deep);
+  margin-bottom: 6px;
+}
+
+.rigel-ticket-title {
+  font-family: var(--ff-title);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.rigel-ticket-datetime-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.rigel-datetime-item {
+  text-align: left;
+}
+
+.rigel-dt-label {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--cerulean-deep);
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.rigel-dt-val {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.rigel-ticket-venue-block {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.rigel-venue-tag {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--cerulean-deep);
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.rigel-venue-name {
+  font-family: var(--ff-title);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.rigel-venue-addr {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.rigel-ticket-action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.rigel-ticket-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rigel-btn-sky {
+  background: var(--cerulean-pri);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.24);
+}
+
+.rigel-btn-sky:hover {
+  background: var(--cerulean-deep);
+  transform: translateY(-2px);
+}
+
+.rigel-btn-gold {
+  background: #fefce8;
+  color: var(--gold-deep);
+  border: 1.5px solid var(--honey-gold);
+}
+
+.rigel-btn-gold:hover {
+  background: #fef08a;
+  transform: translateY(-2px);
+}
+
+/* ── Floating Balloon Countdown ────────────────────────── */
+.rigel-balloon-countdown-card {
+  background: #ffffff;
+  border: 2px solid var(--sky-border);
+  border-radius: 22px;
+  padding: 18px 14px 14px;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08);
+}
+
+.rigel-countdown-label {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--cerulean-deep);
+  margin-bottom: 12px;
+}
+
+.rigel-balloon-cluster {
   display: flex;
   justify-content: center;
   gap: 12px;
 }
 
-.rigel-digit-block {
-  text-align: center;
-  min-width: 52px;
-  background: #ffffff;
-  padding: 10px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(217, 93, 57, 0.1);
+.rigel-balloon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: balloonFloat 4s ease-in-out infinite alternate;
 }
 
-.rigel-digit {
+.rigel-balloon-card:nth-child(1) { animation-delay: 0s; }
+.rigel-balloon-card:nth-child(2) { animation-delay: 0.8s; }
+.rigel-balloon-card:nth-child(3) { animation-delay: 1.6s; }
+.rigel-balloon-card:nth-child(4) { animation-delay: 2.4s; }
+
+@keyframes balloonFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-7px); }
+}
+
+.rigel-balloon-oval {
+  position: relative;
+  width: 68px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rigel-balloon-digit {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
   font-family: var(--ff-title);
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--apricot-dark);
-  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
   line-height: 1;
 }
 
-.rigel-digit-unit {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.rigel-balloon-string {
+  margin-top: -6px;
+  margin-bottom: 2px;
+}
+
+.rigel-balloon-unit-pill {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  border: 1px solid;
+  margin-top: -4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 5: GIFTS & GUESTBOOK
+   ═══════════════════════════════════════════════════════════ */
+.rigel-gifts-section,
+.rigel-guestbook-section {
+  background-color: #fafcff;
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(224, 242, 254, 0.4) 0%, transparent 60%),
+    var(--rigel-cute-pattern);
+  background-size: auto, 160px 160px;
+  background-repeat: no-repeat, repeat;
+}
+
+/* Ensure WeddingGift component inside Rigel matches theme */
+.rigel-root .wedding-gift-container {
+  background: #f0f9ff !important;
+  border: 2px solid var(--sky-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08) !important;
+}
+
+.rigel-root .wedding-gift-title {
+  font-family: var(--ff-title) !important;
+  color: var(--text-dark) !important;
+  font-weight: 800 !important;
+}
+
+.rigel-root .wedding-gift-subtitle {
+  color: var(--text-body) !important;
+}
+
+/* Ensure GuestBook component inside Rigel matches theme */
+.rigel-root .guest-book-container {
+  background: #f0f9ff !important;
+  border: 2px solid var(--sky-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08) !important;
+}
+
+.rigel-root .guest-book-title {
+  font-family: var(--ff-title) !important;
+  color: var(--text-dark) !important;
+  font-weight: 800 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 7: KEEPSAKE ENVELOPE CLOSING & RSVP
+   ═══════════════════════════════════════════════════════════ */
+.rigel-closing-section {
+  background-color: #fbfdff;
+  background-image:
+    radial-gradient(circle at 50% 88%, rgba(224, 242, 254, 0.8) 0%, transparent 65%),
+    var(--rigel-cute-pattern);
+  background-size: auto, 160px 160px;
+  background-repeat: no-repeat, repeat;
+}
+
+.rigel-keepsake-envelope {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--sky-border);
+  border-radius: 22px;
+  padding: 28px 22px 22px;
+  box-shadow:
+    0 12px 36px rgba(2, 132, 199, 0.08),
+    inset 0 0 0 4px #f0f9ff;
+  margin-bottom: 20px;
+}
+
+.rigel-envelope-stamp {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  width: 68px;
+  padding: 4px 6px;
+  background: #fefce8;
+  border: 1.5px dashed var(--honey-gold);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transform: rotate(3deg);
+}
+
+.rigel-stamp-label {
+  font-size: 6.5px;
+  font-weight: 800;
+  color: var(--gold-deep);
+  letter-spacing: 0.08em;
+}
+
+.rigel-stamp-heart {
+  font-size: 14px;
+  color: #f43f5e;
+  line-height: 1;
+}
+
+.rigel-stamp-sub {
+  font-size: 6px;
+  font-weight: 800;
+  color: var(--gold-deep);
+}
+
+.rigel-closing-headline {
+  font-family: var(--ff-title);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0 0 10px 0;
+}
+
+.rigel-closing-paragraph {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin: 0 0 16px 0;
+}
+
+.rigel-closing-parents-block {
+  border-top: 1px dashed var(--sky-border);
+  padding-top: 10px;
+}
+
+.rigel-signature-lead {
+  font-size: 11.5px;
   color: var(--text-muted);
-  margin-top: 4px;
   display: block;
 }
 
-/* ── Closing & RSVP ───────────────────────────────────── */
-.rigel-closing {
-  text-align: center;
-  margin-bottom: 26px;
-}
-.rigel-closing p {
-  font-size: 14px;
-  color: var(--text-body);
-  line-height: 1.8;
-  margin: 0;
+.rigel-closing-signature {
+  font-family: var(--ff-script);
+  font-size: 42px;
+  color: var(--cerulean-pri);
+  display: block;
+  line-height: 1.1;
+  margin-top: 2px;
 }
 
-.rigel-btn-rsvp {
+/* WhatsApp RSVP Button */
+.rigel-rsvp-action-wrap {
+  margin-bottom: 20px;
+}
+
+.rigel-btn-rsvp-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 15px 40px;
-  border-radius: 99px;
-  background: linear-gradient(135deg, var(--apricot-pri), #e76f51);
+  width: 100%;
+  max-width: 360px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(217, 93, 57, 0.35);
-  transition: all 0.25s;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.rigel-btn-rsvp:hover {
+
+.rigel-btn-rsvp-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(217, 93, 57, 0.5);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.42);
 }
 
-.rigel-footer {
-  text-align: center;
-  padding: 24px;
-  border-top: 1px solid var(--apricot-soft);
-  background: #fff9f5;
-}
-.rigel-footer-brand {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--apricot-dark);
+.rigel-bottom-credit {
+  margin-top: 8px;
 }
 
-@media (max-width: 600px) {
-  .rigel-body { padding: 30px 20px; }
-  .rigel-title { font-size: 28px; }
-  .rigel-parents-names { font-size: 34px; }
+.rigel-brand-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CATALOG MOCKUP OVERRIDES (.is-mockup-frame)
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .rigel-root,
+.is-mockup-frame .rigel-container,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.is-mockup-frame .rigel-section {
+  display: none !important;
+}
+
+.is-mockup-frame .rigel-hero-section {
+  display: flex !important;
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 24px 16px 20px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #fbfdff !important;
+  background-image:
+    radial-gradient(circle at 50% 20%, #e0f2fe 0%, transparent 70%),
+    var(--rigel-cute-pattern) !important;
+  background-size: auto, 150px 150px !important;
+  background-repeat: no-repeat, repeat !important;
+  border-bottom: none !important;
+}
+
+.is-mockup-frame .rigel-section-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 100% !important;
+}
+
+.is-mockup-frame .rigel-hero-section div,
+.is-mockup-frame .rigel-hero-section span,
+.is-mockup-frame .rigel-hero-section p,
+.is-mockup-frame .rigel-hero-section h1,
+.is-mockup-frame .rigel-hero-section h2,
+.is-mockup-frame .rigel-hero-section h3,
+.is-mockup-frame .rigel-hero-section svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .rigel-top-mobile {
+  max-width: 320px !important;
+  margin-bottom: -10px !important;
+}
+
+.is-mockup-frame .rigel-nursery-plaque {
+  padding: 16px 14px 14px !important;
+  margin: 6px auto 10px !important;
+  max-width: 330px !important;
+}
+
+.is-mockup-frame .rigel-hero-title {
+  font-size: 26px !important;
+  margin-bottom: 6px !important;
+}
+
+.is-mockup-frame .rigel-parents-script {
+  font-size: 38px !important;
+}
+
+.is-mockup-frame .rigel-due-date-pill {
+  padding: 4px 12px !important;
+  font-size: 10.5px !important;
 }

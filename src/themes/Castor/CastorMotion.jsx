@@ -10,6 +10,7 @@ import { motion } from 'framer-motion'
  */
 
 const royalEase = [0.22, 1, 0.36, 1]
+const standardViewport = { once: true, margin: '200px 0px 200px 0px', amount: 0 }
 
 /** Stately regal scroll reveal */
 export function CastorCurtainReveal({
@@ -24,9 +25,9 @@ export function CastorCurtainReveal({
     <motion.div
       className={className}
       style={style}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration, ease: royalEase, delay }}
       {...rest}
     >
@@ -48,7 +49,7 @@ export function CastorWaxSealStamp({
       style={style}
       initial={{ opacity: 0, scale: 0.95, y: -8 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.8, ease: royalEase, delay }}
     >
       {children}
@@ -76,13 +77,13 @@ export function CastorBaroqueOrnament({
       }}
       initial={{
         opacity: 0,
-        x: isLeft ? -18 : 18,
+        x: isLeft ? -16 : 16,
       }}
       whileInView={{
         opacity: 1,
         x: 0,
       }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.85, ease: royalEase, delay }}
     >
       {/* Calm subtle shimmer */}
@@ -113,9 +114,9 @@ export function CastorImperialNames({
     <motion.div
       className={className}
       style={style}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.95, ease: royalEase, delay }}
     >
       {children}
@@ -136,7 +137,7 @@ export function CastorMonarchDivider({
       style={style}
       initial={{ opacity: 0, scaleX: 0.6 }}
       whileInView={{ opacity: 1, scaleX: 1 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.8, ease: royalEase, delay }}
     >
       {children}
@@ -155,9 +156,9 @@ export function CastorDecreeCard({
     <motion.div
       className={className}
       style={style}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={standardViewport}
       transition={{ duration: 0.8, ease: royalEase, delay }}
       whileHover={{ y: -3, transition: { duration: 0.25 } }}
     >

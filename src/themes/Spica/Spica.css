@@ -5,7 +5,7 @@
    Style:    Romantic Mediterranean Arches & Dual-Heart Proposal
    ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
 
 .spica-root {
   --terracotta-dark:   #7c2d12;
@@ -13,19 +13,20 @@
   --terracotta-warm:   #c2410c;
   --terracotta-bright: #ea580c;
   --peach-soft:        #ffedd5;
-  --peach-cream:       #fff7ed;
+  --peach-cream:       #fcf7f0;
+  --peach-light:       #fefaf6;
   --copper-gold:       #d97706;
+  --copper-light:      #f59e0b;
   --text-dark:         #431407;
   --text-mid:          #7c2d12;
   --text-soft:         #9a3412;
+  --text-muted:        #b45309;
 
   --ff-title:  'Cinzel', serif;
-  --ff-serif:  'Cormorant Garamond', serif;
-  --ff-script: 'Italianno', cursive;
+  --ff-serif:  'Playfair Display', Georgia, serif;
+  --ff-script: 'Cormorant Garamond', Georgia, serif;
   --ff-body:   'Montserrat', sans-serif;
-}
 
-.spica-root {
   min-height: 100vh;
   background-color: #270d05;
   background-image:
@@ -38,359 +39,633 @@
   overflow-x: hidden;
   position: relative;
   font-family: var(--ff-body);
+  color: var(--text-dark);
 }
 
+/* ── Page Container ───────────────────────────────────── */
 .spica-page {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 680px;
-  margin: 28px auto;
-  background: var(--peach-cream);
-  border-radius: 36px 36px 20px 20px;
-  overflow: hidden;
+  max-width: 580px;
+  margin: 0 auto;
+  background-color: var(--peach-cream);
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(234, 88, 12, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(194, 65, 12, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 0% 80%, rgba(194, 65, 12, 0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c2410c' stroke-width='0.7' stroke-opacity='0.08'%3E%3Cpath d='M30 5 C38 5 44 11 44 19 V35 H16 V19 C16 11 22 5 30 5 Z'/%3E%3Ccircle cx='30' cy='46' r='4'/%3E%3Cpath d='M5 30 Q18 38 30 30 Q18 22 5 30 Z'/%3E%3Cpath d='M55 30 Q42 38 30 30 Q42 22 55 30 Z'/%3E%3C/g%3E%3C/svg%3E");
   box-shadow:
-    0 0 0 2px rgba(234, 88, 12, 0.4),
-    0 0 0 8px rgba(124, 45, 18, 0.25),
-    0 24px 80px rgba(0, 0, 0, 0.7);
+    0 0 0 1px rgba(217, 119, 6, 0.35),
+    0 0 0 4px rgba(42, 14, 6, 0.8),
+    0 0 0 5px rgba(217, 119, 6, 0.25),
+    0 24px 80px rgba(0, 0, 0, 0.65);
 }
 
-/* ── Arch Header ──────────────────────────────────────── */
-.spica-header {
+/* ── Fullscreen Section Layout ────────────────────────── */
+.spica-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 56px 36px 36px;
-  background: linear-gradient(180deg, #ffedd5 0%, var(--peach-cream) 100%);
-  border-bottom: 2px solid rgba(234, 88, 12, 0.25);
-  border-radius: 36px 36px 0 0;
+  padding: 68px 24px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(194, 65, 12, 0.2);
 }
 
-.spica-tag {
+.spica-section-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Corner Flourishes ────────────────────────────────── */
+.spica-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+.spica-corner--tl {
+  top: 18px;
+  left: 18px;
+}
+.spica-corner--tr {
+  top: 18px;
+  right: 18px;
+  transform: scaleX(-1);
+}
+.spica-corner--bl {
+  bottom: 18px;
+  left: 18px;
+  transform: scaleY(-1);
+}
+.spica-corner--br {
+  bottom: 18px;
+  right: 18px;
+  transform: scale(-1);
+}
+
+/* ── Section Header Badges & Headings ─────────────────── */
+.spica-section-badge {
+  display: inline-block;
   font-family: var(--ff-title);
   font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--terracotta-warm);
-  display: block;
-  margin-bottom: 12px;
+  background: rgba(254, 243, 199, 0.65);
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 
-.spica-title {
+.spica-section-heading {
+  font-family: var(--ff-serif);
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--terracotta-dark);
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   1. HERO SECTION
+   ═══════════════════════════════════════════════════════════ */
+.spica-tag {
+  font-family: var(--ff-title);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--terracotta-warm);
+  margin-top: 14px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.spica-title-sub {
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.spica-couple-hero {
   font-family: var(--ff-serif);
   font-size: 38px;
   font-weight: 700;
   color: var(--terracotta-dark);
   line-height: 1.15;
-  margin: 0 0 16px;
+  margin: 8px 0 12px;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 10px rgba(124, 45, 18, 0.12);
 }
 
-.spica-rings-icon {
-  margin-top: 10px;
+.spica-names-subtitle {
+  font-family: var(--ff-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin: 0 0 22px;
 }
 
-.spica-body {
-  padding: 36px 44px 48px;
+.spica-hero-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(217, 119, 6, 0.32);
+  box-shadow: 0 4px 16px rgba(124, 45, 18, 0.08);
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-mid);
+  margin-bottom: 28px;
+}
+
+.spica-meta-bullet {
+  color: var(--copper-gold);
+  font-size: 10px;
+}
+
+.spica-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--terracotta-warm);
+  opacity: 0.85;
+  animation: spicaBounce 2.4s infinite ease-in-out;
+}
+
+@keyframes spicaBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes spicaGlint {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.2); }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   DUAL INTERLOCKING MEDITERRANEAN ARCH CARDS
+   2. QUOTE SECTION
    ═══════════════════════════════════════════════════════════ */
+.spica-quote-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(194, 65, 12, 0.25);
+  border-radius: 24px;
+  padding: 38px 28px;
+  box-shadow:
+    0 12px 36px rgba(124, 45, 18, 0.08),
+    0 0 0 5px rgba(254, 243, 199, 0.45);
+  position: relative;
+}
+
+.spica-quote-mark {
+  font-family: var(--ff-serif);
+  font-size: 60px;
+  line-height: 30px;
+  color: var(--terracotta-warm);
+  opacity: 0.35;
+  margin-bottom: 12px;
+}
+
+.spica-quote-text {
+  font-family: var(--ff-script);
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.spica-quote-author {
+  font-family: var(--ff-title);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--terracotta-warm);
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   3. PROFIL CALON MEMPELAI (DUAL ARCH CARDS)
+   ═══════════════════════════════════════════════════════════ */
+.spica-couple-intro {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  max-width: 420px;
+  margin: 0 auto 28px;
+}
+
 .spica-arches-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
-  margin: 24px 0 36px;
-  position: relative;
+  width: 100%;
 }
 
 .spica-arch-card {
   flex: 1;
-  background: #ffffff;
-  border: 1.5px solid rgba(234, 88, 12, 0.35);
-  padding: 34px 20px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
+  border: 1.8px solid rgba(194, 65, 12, 0.3);
+  border-radius: 120px 120px 20px 20px;
+  padding: 34px 16px 24px;
+  box-shadow: 0 10px 28px rgba(124, 45, 18, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(124, 45, 18, 0.08);
   position: relative;
-}
-
-.spica-arch-groom {
-  border-radius: 120px 120px 16px 16px;
-  border-top: 4px solid var(--terracotta-warm);
-}
-
-.spica-arch-bride {
-  border-radius: 120px 120px 16px 16px;
-  border-top: 4px solid var(--copper-gold);
 }
 
 .spica-arch-role {
   font-family: var(--ff-title);
   font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   color: var(--terracotta-warm);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.spica-arch-connector {
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-}
-.spica-arch-ring {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--peach-soft), #ffffff);
-  border: 2px solid var(--terracotta-warm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+  background: rgba(254, 243, 199, 0.7);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
 }
 
 .spica-person-name {
   font-family: var(--ff-script);
-  font-size: 44px;
+  font-size: 34px;
+  font-weight: 700;
+  font-style: italic;
   color: var(--terracotta-dark);
-  display: block;
-  line-height: 1;
-  margin-bottom: 4px;
+  margin: 0 0 4px;
+  line-height: 1.1;
 }
 
 .spica-person-full {
-  font-family: var(--ff-serif);
-  font-size: 14.5px;
+  font-size: 12.5px;
   font-weight: 700;
-  color: var(--terracotta-warm);
-  display: block;
+  color: var(--text-mid);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.spica-arch-line {
+  width: 40px;
+  height: 1.5px;
+  background: rgba(194, 65, 12, 0.3);
   margin-bottom: 10px;
 }
 
 .spica-person-parents {
-  font-size: 11.5px;
-  color: var(--text-mid);
+  font-size: 11px;
   line-height: 1.5;
-  display: block;
-  border-top: 1px dashed rgba(234, 88, 12, 0.2);
-  padding-top: 8px;
+  color: var(--text-soft);
 }
 
-/* ── Events ───────────────────────────────────────────── */
-.spica-events {
+.spica-person-parents strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.spica-arch-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spica-arch-ring {
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  border: 1.5px solid rgba(217, 119, 6, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(124, 45, 18, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   4. COUNTDOWN & EVENTS
+   ═══════════════════════════════════════════════════════════ */
+.spica-countdown-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 34px;
-}
-
-.spica-event-card {
-  background: #ffffff;
-  border: 1.5px solid rgba(234, 88, 12, 0.25);
-  border-radius: 28px 28px 16px 16px;
-  padding: 28px;
-  text-align: center;
-  box-shadow: 0 4px 16px rgba(124, 45, 18, 0.05);
-  position: relative;
-}
-
-.spica-event-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 30%; right: 30%;
-  height: 3px;
-  background: var(--terracotta-warm);
-  border-radius: 0 0 4px 4px;
-}
-
-.spica-event-tag {
-  font-family: var(--ff-title);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--terracotta-warm);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.spica-event-name {
-  font-family: var(--ff-serif);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--terracotta-dark);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.spica-event-date {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--terracotta-warm);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.spica-event-time {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--copper-gold);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.spica-event-venue {
-  font-family: var(--ff-serif);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-dark);
-  display: block;
-}
-
-.spica-event-address {
-  font-size: 12.5px;
-  color: var(--text-mid);
-  line-height: 1.5;
-  display: block;
-  margin-top: 4px;
-}
-
-.spica-btn-maps {
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 9px 22px;
-  border: 1.5px solid var(--terracotta-warm);
-  border-radius: 50px;
-  color: var(--terracotta-warm);
-  font-family: var(--ff-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: rgba(234, 88, 12, 0.06);
-  transition: all 0.25s;
-}
-.spica-btn-maps:hover {
-  background: var(--terracotta-warm);
-  color: #ffffff;
-}
-
-/* ── Countdown ────────────────────────────────────────── */
-.spica-countdown {
-  text-align: center;
-  padding: 26px 20px;
-  background: #ffedd5;
-  border: 1.5px solid rgba(234, 88, 12, 0.35);
-  border-radius: 20px;
-  margin-bottom: 34px;
+  gap: 12px;
 }
 
 .spica-countdown-label {
   font-family: var(--ff-title);
   font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--terracotta-dark);
-  display: block;
-  margin-bottom: 14px;
+  color: var(--terracotta-warm);
 }
 
 .spica-countdown-digits {
   display: flex;
+  gap: 10px;
   justify-content: center;
-  gap: 12px;
 }
 
 .spica-digit-block {
-  text-align: center;
-  min-width: 52px;
+  min-width: 64px;
+  padding: 10px 6px;
   background: #ffffff;
-  padding: 10px 8px;
-  border-radius: 12px;
-  border: 1px solid rgba(234, 88, 12, 0.25);
+  border: 1.5px solid rgba(194, 65, 12, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(124, 45, 18, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .spica-digit {
-  font-family: var(--ff-title);
-  font-size: 34px;
+  font-family: var(--ff-serif);
+  font-size: 24px;
   font-weight: 700;
   color: var(--terracotta-dark);
-  display: block;
   line-height: 1;
 }
 
 .spica-digit-unit {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-size: 9.5px;
+  font-weight: 600;
   text-transform: uppercase;
-  color: var(--terracotta-warm);
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
   margin-top: 4px;
-  display: block;
 }
 
-/* ── Closing & RSVP ───────────────────────────────────── */
-.spica-closing {
-  text-align: center;
-  margin-bottom: 26px;
+.spica-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
 }
-.spica-closing p {
-  font-size: 14.5px;
+
+.spica-event-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(194, 65, 12, 0.22);
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: 0 8px 24px rgba(124, 45, 18, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.spica-event-tag {
+  font-family: var(--ff-title);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--terracotta-warm);
+  background: rgba(254, 243, 199, 0.7);
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.spica-event-name {
+  font-family: var(--ff-serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--terracotta-dark);
+  margin: 0 0 8px;
+}
+
+.spica-event-time-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.spica-event-dot {
+  color: var(--copper-gold);
+}
+
+.spica-event-venue {
+  font-weight: 700;
+  font-size: 13px;
   color: var(--text-mid);
-  line-height: 1.8;
-  margin: 0;
+  margin-bottom: 4px;
+}
+
+.spica-event-address {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-soft);
+  margin: 0 0 16px;
+  max-width: 380px;
+}
+
+.spica-event-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.spica-btn-maps,
+.spica-btn-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.spica-btn-maps {
+  background: #ffffff;
+  border: 1.5px solid var(--terracotta-warm);
+  color: var(--terracotta-warm);
+}
+.spica-btn-maps:hover {
+  background: var(--terracotta-warm);
+  color: #ffffff;
+}
+
+.spica-btn-calendar {
+  background: var(--terracotta-warm);
+  border: 1.5px solid var(--terracotta-warm);
+  color: #ffffff;
+}
+.spica-btn-calendar:hover {
+  background: var(--terracotta-dark);
+  border-color: var(--terracotta-dark);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   5. CLOSING & RSVP
+   ═══════════════════════════════════════════════════════════ */
+.spica-closing-text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-mid);
+  max-width: 420px;
+  margin: 18px auto 24px;
 }
 
 .spica-btn-rsvp {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  padding: 16px 42px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, var(--terracotta-warm) 0%, var(--terracotta-dark) 100%);
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 26px;
+  border-radius: 999px;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(194, 65, 12, 0.35);
-  transition: all 0.25s;
+  box-shadow: 0 8px 24px rgba(194, 65, 12, 0.35);
+  transition: all 0.25s ease;
+  margin-bottom: 24px;
 }
 .spica-btn-rsvp:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(194, 65, 12, 0.5);
+  box-shadow: 0 12px 28px rgba(194, 65, 12, 0.45);
 }
 
-.spica-footer {
-  text-align: center;
-  padding: 24px;
-  border-top: 1px solid rgba(234, 88, 12, 0.2);
-  background: #ffedd5;
+.spica-signature-label {
+  font-size: 12px;
+  color: var(--text-soft);
+  display: block;
+  margin-bottom: 6px;
 }
-.spica-footer-brand {
-  font-family: var(--ff-title);
-  font-size: 9.5px;
+
+.spica-signature-names {
+  font-family: var(--ff-serif);
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--terracotta-warm);
+  color: var(--terracotta-dark);
+  margin: 0 0 6px;
 }
 
-@media (max-width: 600px) {
-  .spica-page { margin: 12px; }
-  .spica-body { padding: 26px 18px 36px; }
-  .spica-arches-container { flex-direction: column; gap: 16px; }
-  .spica-arch-card { width: 100%; border-radius: 90px 90px 16px 16px; }
-  .spica-arch-connector { margin: -10px 0; }
-  .spica-countdown-digits { gap: 8px; }
-  .spica-digit-block { min-width: 44px; }
-  .spica-digit { font-size: 26px; }
+.spica-signature-family {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-soft);
+  display: block;
 }
+
+.spica-brand-footer {
+  margin-top: 36px;
+  font-family: var(--ff-title);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--terracotta-warm);
+  opacity: 0.75;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOCKUP FRAME ADAPTATIONS (CATALOG VIEW)
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame .spica-root,
+.is-mockup-frame .spica-page,
+.is-mockup-frame .invitation-reveal-enter {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  padding: 0 !important;
+  background-color: var(--peach-cream) !important;
+  box-shadow: none !important;
+}
+
+.is-mockup-frame .spica-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.is-mockup-frame .spica-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  padding: 38px 18px 24px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 247, 237, 0.6) 100%) !important;
+  border-bottom: none !important;
+}
+
+.is-mockup-frame .spica-section-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 100% !important;
+}
+
+.is-mockup-frame .spica-hero-section div,
+.is-mockup-frame .spica-hero-section span,
+.is-mockup-frame .spica-hero-section p,
+.is-mockup-frame .spica-hero-section h1,
+.is-mockup-frame .spica-hero-section h2,
+.is-mockup-frame .spica-hero-section h3,
+.is-mockup-frame .spica-hero-section svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.is-mockup-frame .spica-hero-section .spica-terracotta-watermark {
+  opacity: 0.08 !important;
+}
+
+.is-mockup-frame .spica-couple-hero {
+  font-size: 32px !important;
+  margin: 6px 0 8px !important;
+  line-height: 1.15 !important;
+}
+
+.is-mockup-frame .spica-hero-meta-pill {
+  padding: 6px 14px !important;
+  font-size: 11px !important;
+  margin-bottom: 16px !important;
+}
+
+.is-mockup-frame .spica-scroll-indicator {
+  font-size: 8.5px !important;
+}
+
+

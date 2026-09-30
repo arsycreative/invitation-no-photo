@@ -116,14 +116,14 @@ export const THEMES = {
   },
 
   // ── 10. Antares ──────────────────────────────────────────
-  // Royal Amethyst Purple × Orchid Rose — Silver Jubilee XXV Milestone Roadmap (Anniversary)
+  // Soft Cashmere Ivory × Champagne Gold — Silver Jubilee Anniversary
   antares: {
     name: 'Antares',
-    label: 'Antares — Silver Jubilee XXV Anniversary',
+    label: 'Antares — Soft Cashmere Anniversary',
     type: 'anniversary',
     component: lazy(() => import('./Antares')),
-    description: 'Ungu kecubung mulia berpadu perak anggrek. Menampilkan linimasa perjalanan rumah tangga perak XXV dan lambang cinta abadi.',
-    palette: ['#170433', '#2e1065', '#c084fc'],
+    description: 'Nuansa soft cashmere berpadu champagne gold yang anggun, lapang setinggi layar, dan menenangkan. Linimasa cinta dan perayaan syukur pernikahan.',
+    palette: ['#fbf9f6', '#292524', '#a07855'],
   },
 
   // ── 11. Capella ──────────────────────────────────────────
