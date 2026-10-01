@@ -78,13 +78,11 @@ function AmbientSparkle({ style, size = 16, opacity = 0.6 }) {
 
 /* ── Event Pillar Component (Badge + Live Phone Mockup + Details Card) ── */
 function EventPillar({
-  badgeIcon,
   badgeLabel,
   themeKey,
   clientKey,
   eventName,
-  eventSub,
-  eventDesc,
+  points = [],
   themeTag,
 }) {
   const ThemeComponent = THEMES[themeKey]?.component
@@ -103,7 +101,6 @@ function EventPillar({
     <div className="slide4-pillar">
       {/* Top Category Badge */}
       <div className="slide4-pillar-badge">
-        <span className="slide4-badge-icon">{badgeIcon}</span>
         <span className="slide4-badge-text">{badgeLabel}</span>
       </div>
 
@@ -132,8 +129,11 @@ function EventPillar({
       {/* Bottom Event Details Card */}
       <div className="slide4-pillar-card">
         <h4 className="slide4-card-event-name">{eventName}</h4>
-        <div className="slide4-card-event-sub">{eventSub}</div>
-        <p className="slide4-card-event-desc">{eventDesc}</p>
+        <div className="slide4-card-points">
+          {points.map((pt, idx) => (
+            <div key={idx}>- {pt}</div>
+          ))}
+        </div>
         <span className="slide4-card-theme-tag">{themeTag}</span>
       </div>
     </div>
@@ -174,7 +174,7 @@ export default function BannerSlide4() {
             Satu Solusi Mewah untuk <span className="slide4-title-accent">Berbagai Momen</span>
           </h1>
           <p className="slide4-subtitle">
-            Bukan hanya untuk pernikahan, kami menyediakan tema yang disesuaikan secara khusus untuk berbagai perayaan dan momen penting kehidupan Anda.
+            Koleksi desain tematik eksklusif yang disesuaikan khusus untuk setiap momen penting kehidupan Anda.
           </p>
         </div>
 
@@ -183,49 +183,41 @@ export default function BannerSlide4() {
 
           {/* 1. Pernikahan & Walimah */}
           <EventPillar
-            badgeIcon="💍"
-            badgeLabel="Pernikahan"
+            badgeLabel="PERNIKAHAN"
             themeKey="vega"
             clientKey="demo"
             eventName="Pernikahan & Walimah"
-            eventSub="Akad & Resepsi"
-            eventDesc="Desain khidmat, sakral, dan megah untuk momen ikatan suci seumur hidup."
+            points={['Akad Nikah & Resepsi', 'Desain Sakral & Megah']}
             themeTag="Vega · Lyra · Castor"
           />
 
           {/* 2. Lamaran & Pertunangan */}
           <EventPillar
-            badgeIcon="💐"
-            badgeLabel="Lamaran"
+            badgeLabel="LAMARAN"
             themeKey="spica"
             clientKey="demo-spica"
             eventName="Lamaran & Tunangan"
-            eventSub="The Engagement"
-            eventDesc="Nuansa hangat, intim, dan romantis untuk pertemuan keluarga besar."
+            points={['The Engagement Day', 'Nuansa Hangat & Intim']}
             themeTag="Spica · Sirius"
           />
 
           {/* 3. Wisuda & Kelulusan */}
           <EventPillar
-            badgeIcon="🎓"
-            badgeLabel="Wisuda"
+            badgeLabel="WISUDA"
             themeKey="capella"
             clientKey="demo-capella"
             eventName="Wisuda & Kelulusan"
-            eventSub="Graduation Day"
-            eventDesc="Format piagam diploma akademis prestisius merayakan pencapaian gelar."
+            points={['Graduation Celebration', 'Format Piagam Akademik']}
             themeTag="Capella"
           />
 
           {/* 4. Doa Bersama & Tasyakuran */}
           <EventPillar
-            badgeIcon="🕌"
-            badgeLabel="Doa & Syukuran"
+            badgeLabel="DOA & SYUKURAN"
             themeKey="aldebaran"
             clientKey="demo-aldebaran"
             eventName="Doa & Tasyakuran"
-            eventSub="Pengajian & Tahlil"
-            eventDesc="Nuansa islami penuh khidmat untuk majelis tahlil, doa bersama, & aqiqah."
+            points={['Pengajian, Tahlil & Aqiqah', 'Khidmat & Bernuansa Islami']}
             themeTag="Aldebaran · Rigel"
           />
 
@@ -234,23 +226,16 @@ export default function BannerSlide4() {
         {/* ── BOTTOM HIGHLIGHT RIBBON ── */}
         <div className="slide4-bottom-ribbon">
           <div className="slide4-ribbon-item">
-            <span className="slide4-ribbon-icon">✦</span>
-            <span>13+ Pilihan Tema Spesifik</span>
+            <span>- 13+ Pilihan Tema Spesifik</span>
           </div>
-          <span className="slide4-ribbon-dot">●</span>
           <div className="slide4-ribbon-item">
-            <span className="slide4-ribbon-icon">✦</span>
-            <span>Bebas Kustomisasi Teks &amp; Doa</span>
+            <span>- Bebas Kustomisasi Teks &amp; Doa</span>
           </div>
-          <span className="slide4-ribbon-dot">●</span>
           <div className="slide4-ribbon-item">
-            <span className="slide4-ribbon-icon">✦</span>
-            <span>Masa Aktif Panjang</span>
+            <span>- Masa Aktif Panjang</span>
           </div>
-          <span className="slide4-ribbon-dot">●</span>
           <div className="slide4-ribbon-item">
-            <span className="slide4-ribbon-icon">✦</span>
-            <span>Bebas Sebar Nama Tamu Sepuasnya</span>
+            <span>- Bebas Sebar Nama Tamu</span>
           </div>
         </div>
 

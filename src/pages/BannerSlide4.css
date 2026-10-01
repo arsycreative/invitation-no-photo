@@ -257,60 +257,114 @@
 /* Scaler container inside phone */
 .slide4-phone-scaler {
   width: 390px;
+  height: 790px;
   position: absolute;
   top: 0;
   left: 0;
   transform: scale(0.5795);
   transform-origin: top left;
   pointer-events: none;
+  overflow: hidden;
 }
 
-/* Specific theme viewport fills inside mockup */
-.screen-bg-aldebaran {
-  background: #fcf8f0 !important;
-}
-
-.is-mockup-frame .aldebaran-root {
-  min-height: 100% !important;
+/* ═══════════════════════════════════════════════════════════
+   AUTHENTIC HERO-ONLY SCOPING FOR MOCKUPS
+   Ensures mockups match 100% the true live theme hero screens
+   ═══════════════════════════════════════════════════════════ */
+.is-mockup-frame {
   height: 100% !important;
-  background: #fcf8f0 !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
 }
 
-.is-mockup-frame .aldebaran-container {
-  min-height: 100% !important;
+.is-mockup-frame section:not(:first-of-type),
+.is-mockup-frame section:nth-of-type(n+2) {
+  display: none !important;
+}
+
+.is-mockup-frame [class*="-root"] {
   height: 100% !important;
-  background: #fcf8f0 !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.is-mockup-frame [class*="-page"],
+.is-mockup-frame [class*="-container"] {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
   box-shadow: none !important;
 }
 
-.is-mockup-frame .aldebaran-section {
-  min-height: 100% !important;
+.is-mockup-frame [class*="-hero-section"],
+.is-mockup-frame section:first-of-type {
   height: 100% !important;
-}
-
-.is-mockup-frame .aldebaran-hero-section {
   min-height: 100% !important;
-  height: 100% !important;
-  padding: 30px 16px 20px !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
+  box-sizing: border-box !important;
+  padding-top: 36px !important;
+  padding-bottom: 24px !important;
+}
+
+/* Screen background themes */
+.screen-bg-vega      { background: #060f22 !important; }
+.screen-bg-spica     { background: #fcf7f2 !important; }
+.screen-bg-capella   { background: #ffffff !important; }
+.screen-bg-aldebaran { background: #fcf8f0 !important; }
+
+.is-mockup-frame .aldebaran-root,
+.is-mockup-frame .aldebaran-container,
+.is-mockup-frame .aldebaran-hero-section {
   background: #fcf8f0 !important;
+}
+
+.is-mockup-frame .spica-root,
+.is-mockup-frame .spica-container,
+.is-mockup-frame .spica-hero-section {
+  background: #fcf7f2 !important;
+}
+
+.is-mockup-frame .capella-root,
+.is-mockup-frame .capella-page,
+.is-mockup-frame .capella-hero-section {
+  background: #ffffff !important;
+}
+
+.is-mockup-frame .capella-page::before,
+.is-mockup-frame .capella-page::after {
+  display: none !important;
+}
+
+.is-mockup-frame .capella-diploma-border {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.is-mockup-frame .capella-wax-seal {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
 }
 
 /* ── Pillar Bottom Details Card ───────────────────────── */
 .slide4-pillar-card {
   width: 234px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.42);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.2px solid rgba(212, 175, 55, 0.5);
   border-radius: 14px;
-  padding: 12px 14px;
+  padding: 12px 10px;
   box-sizing: border-box;
   box-shadow:
-    0 8px 20px rgba(180, 140, 60, 0.08),
+    0 8px 20px rgba(180, 140, 60, 0.1),
     0 2px 6px rgba(0, 0, 0, 0.04);
   text-align: center;
   display: flex;
@@ -320,43 +374,37 @@
 
 .slide4-card-event-name {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 14.5px;
+  font-size: 15.5px;
   font-weight: 700;
   color: #1c1917;
-  margin: 0 0 3px 0;
+  margin: 0 0 6px 0;
   line-height: 1.2;
 }
 
-.slide4-card-event-sub {
+.slide4-card-points {
   font-family: 'Montserrat', sans-serif;
-  font-size: 9.5px;
-  font-weight: 600;
-  color: #92400e;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.slide4-card-event-desc {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  color: #57534e;
-  line-height: 1.4;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #44403c;
+  line-height: 1.45;
   margin: 0 0 8px 0;
+  text-align: left;
+  width: 100%;
+  padding-left: 8px;
+  box-sizing: border-box;
 }
 
 .slide4-card-theme-tag {
   display: inline-block;
-  padding: 3px 8px;
-  background: rgba(212, 175, 55, 0.12);
-  border: 0.8px solid rgba(212, 175, 55, 0.45);
-  border-radius: 12px;
+  padding: 4px 10px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 14px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 8.5px;
-  font-weight: 600;
+  font-size: 9.5px;
+  font-weight: 700;
   color: #78350f;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 /* ── Bottom Feature Ribbon Pill ───────────────────────── */
