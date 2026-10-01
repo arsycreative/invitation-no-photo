@@ -8,6 +8,7 @@ import BannerSlide3 from './pages/BannerSlide3'
 import BannerSlide4 from './pages/BannerSlide4'
 import BannerSlide5 from './pages/BannerSlide5'
 import BannerSlide6 from './pages/BannerSlide6'
+import BannerSlide7 from './pages/BannerSlide7'
 import './index.css'
 
 /* ── URL param helpers ────────────────────────────────── */
@@ -61,6 +62,10 @@ function NotFound({ message }) {
    ═══════════════════════════════════════════════════════════ */
 export default function App() {
   const { clientSlug, themeKey, catalogKey, bannerKey, guestName, initialOpen } = getParams()
+
+  if (bannerKey === '7' || bannerKey === 'slide7') {
+    return <BannerSlide7 />
+  }
 
   if (bannerKey === '6' || bannerKey === 'slide6') {
     return <BannerSlide6 />
