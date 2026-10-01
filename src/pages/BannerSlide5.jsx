@@ -76,29 +76,10 @@ function AmbientSparkle({ style, size = 16, opacity = 0.6 }) {
   )
 }
 
-/* ── Delicate Step Connector Arrow ── */
-function StepConnector() {
-  return (
-    <div className="slide5-step-connector">
-      <svg width="44" height="14" viewBox="0 0 44 14" fill="none">
-        <path d="M 6 7 L 36 7 M 30 3 L 36 7 L 30 11" stroke="#d4af37" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </div>
-  )
-}
-
-/* ── Step Phone Pillar Component ── */
-function OrderStepPillar({
-  stepNumber,
-  themeKey,
-  clientKey,
-  screenBadge,
-  stepTitle,
-  stepDesc,
-}) {
-  const ThemeComponent = THEMES[themeKey]?.component
+export default function BannerSlide5() {
+  const ThemeComponent = THEMES['vega']?.component
   const clientData = useMemo(() => {
-    const raw = CLIENTS[clientKey]?.data || {}
+    const raw = CLIENTS['demo']?.data || {}
     return {
       ...raw,
       guestName: 'Tamu Undangan',
@@ -106,53 +87,8 @@ function OrderStepPillar({
       lockBodyScroll: false,
       hideFloatingButton: true,
     }
-  }, [clientKey])
+  }, [])
 
-  return (
-    <div className="slide5-pillar">
-      {/* Top Step Number Badge */}
-      <div className="slide5-pillar-badge">
-        <span className="slide5-badge-text">LANGKAH {stepNumber}</span>
-      </div>
-
-      {/* Upright Phone Shell */}
-      <div className="slide5-phone-shell">
-        <div className="slide5-phone-island">
-          <span className="slide5-phone-camera" />
-        </div>
-
-        <div className={`slide5-phone-screen screen-bg-${themeKey}`}>
-          <div className="is-mockup-frame">
-            <div className="slide5-phone-scaler">
-              {ThemeComponent && (
-                <Suspense fallback={null}>
-                  <ThemeComponent data={clientData} />
-                </Suspense>
-              )}
-            </div>
-          </div>
-
-          {/* Floating On-Screen Status Tag */}
-          <div className="slide5-screen-tag-pill">
-            <span>{screenBadge}</span>
-          </div>
-
-          <div className="slide5-phone-sheen" />
-        </div>
-
-        <div className="slide5-phone-home" />
-      </div>
-
-      {/* Bottom Step Title & Description */}
-      <div className="slide5-pillar-label">
-        <h3 className="slide5-pillar-title">{stepTitle}</h3>
-        <p className="slide5-pillar-desc">{stepDesc}</p>
-      </div>
-    </div>
-  )
-}
-
-export default function BannerSlide5() {
   return (
     <div className="slide5-wrapper">
       <div className="slide5-canvas">
@@ -169,7 +105,7 @@ export default function BannerSlide5() {
         {/* Top-Left Arsy Studio Luxury Brand Seal */}
         <TopLeftBrandSeal />
 
-        {/* Delicate Ambient Gold Diamond Sparkles */}
+        {/* Ambient Gold Diamond Sparkles */}
         <AmbientSparkle style={{ top: '44px', left: '125px' }} size={16} opacity={0.7} />
         <AmbientSparkle style={{ top: '60px', right: '65px' }} size={18} opacity={0.7} />
         <AmbientSparkle style={{ top: '150px', left: '42px' }} size={12} opacity={0.45} />
@@ -186,48 +122,98 @@ export default function BannerSlide5() {
             Cara Pemesanan <span className="slide5-title-accent">3 Langkah Praktis</span>
           </h1>
           <p className="slide5-subtitle">
-            Undangan digital mewah siap dibagikan ke seluruh tamu hanya dalam 3 langkah mudah.
+            Undangan digital mewah siap disebar dengan proses cepat dan dibimbing sampai rapi.
           </p>
         </div>
 
-        {/* ── 3 STEP PHONE PILLARS GRID ── */}
-        <div className="slide5-pillars-grid">
+        {/* ── MAIN CONTENT: LEFT STEPS + RIGHT GRAND MOCKUP ── */}
+        <div className="slide5-main-stage">
 
-          {/* LANGKAH 01: Pilih Desain Tema */}
-          <OrderStepPillar
-            stepNumber="01"
-            themeKey="spica"
-            clientKey="demo-spica"
-            screenBadge="✦ 13+ DESAIN MEWAH ✦"
-            stepTitle="Pilih Desain Tema"
-            stepDesc="Pilih 1 dari 13+ katalog desain favorit yang sesuai acara Anda"
-          />
+          {/* LEFT COLUMN: 3 STEPS VERTICAL + SERVICE GUARANTEE */}
+          <div className="slide5-left-column">
+            
+            {/* Step 01 */}
+            <div className="slide5-step-card">
+              <div className="slide5-step-badge">01</div>
+              <div className="slide5-step-body">
+                <h3 className="slide5-step-title">Pilih Desain Tema</h3>
+                <p className="slide5-step-desc">
+                  Pilih dari 13+ katalog desain mewah yang tersedia sesuai tema acara Anda.
+                </p>
+              </div>
+            </div>
 
-          {/* Connector 1 -> 2 */}
-          <StepConnector />
+            {/* Step 02 */}
+            <div className="slide5-step-card">
+              <div className="slide5-step-badge">02</div>
+              <div className="slide5-step-body">
+                <h3 className="slide5-step-title">Kirim Data Acara</h3>
+                <p className="slide5-step-desc">
+                  Cukup isi formulir data simpel, teks &amp; susunan acara dibantu sampai rapi.
+                </p>
+              </div>
+            </div>
 
-          {/* LANGKAH 02: Kirim Data Acara */}
-          <OrderStepPillar
-            stepNumber="02"
-            themeKey="vega"
-            clientKey="demo"
-            screenBadge="✦ FORMAT DATA SIMPEL ✦"
-            stepTitle="Kirim Data Acara"
-            stepDesc="Cukup isi formulir data, teks &amp; susunan acara dibantu sampai rapi"
-          />
+            {/* Step 03 */}
+            <div className="slide5-step-card">
+              <div className="slide5-step-badge">03</div>
+              <div className="slide5-step-body">
+                <h3 className="slide5-step-title">Undangan Siap Disebar</h3>
+                <p className="slide5-step-desc">
+                  Link resmi langsung aktif dan bebas disebar ke seluruh tamu undangan.
+                </p>
+              </div>
+            </div>
 
-          {/* Connector 2 -> 3 */}
-          <StepConnector />
+            {/* Priority Service Assistance Box */}
+            <div className="slide5-assurance-box">
+              <div className="slide5-assurance-tag">✦ LAYANAN PRIORITAS &amp; RAMAH ✦</div>
+              <div className="slide5-assurance-list">
+                <div className="slide5-assurance-item">- Format data simpel &amp; panduan instan</div>
+                <div className="slide5-assurance-item">- Dibantu penataan teks &amp; doa sampai rapi</div>
+                <div className="slide5-assurance-item">- Fast respon &amp; siap konsultasi gratis</div>
+              </div>
+            </div>
 
-          {/* LANGKAH 03: Undangan Siap Disebar */}
-          <OrderStepPillar
-            stepNumber="03"
-            themeKey="castor"
-            clientKey="demo-castor"
-            screenBadge="✦ LINK AKTIF &amp; SIAP SEBAR ✦"
-            stepTitle="Undangan Siap Disebar"
-            stepDesc="Link resmi langsung aktif, bebas sebar ke seluruh tamu undangan"
-          />
+          </div>
+
+          {/* RIGHT COLUMN: SINGLE GRAND PHONE MOCKUP */}
+          <div className="slide5-right-column">
+            
+            {/* Top Mockup Header Pill */}
+            <div className="slide5-mockup-badge">
+              <span className="slide5-mockup-badge-text">✦ CONTOH HASIL UNDANGAN SIAP DISEBAR ✦</span>
+            </div>
+
+            {/* Grand Smartphone Mockup Shell */}
+            <div className="slide5-phone-shell">
+              <div className="slide5-phone-island">
+                <span className="slide5-phone-camera" />
+              </div>
+
+              <div className="slide5-phone-screen screen-bg-vega">
+                <div className="is-mockup-frame">
+                  <div className="slide5-phone-scaler">
+                    {ThemeComponent && (
+                      <Suspense fallback={null}>
+                        <ThemeComponent data={clientData} />
+                      </Suspense>
+                    )}
+                  </div>
+                </div>
+
+                {/* Floating On-Screen Ready Tag */}
+                <div className="slide5-screen-tag-pill">
+                  <span>✦ STATUS: AKTIF &amp; SIAP DISEBAR ✦</span>
+                </div>
+
+                <div className="slide5-phone-sheen" />
+              </div>
+
+              <div className="slide5-phone-home" />
+            </div>
+
+          </div>
 
         </div>
 
@@ -240,10 +226,7 @@ export default function BannerSlide5() {
             <span>- Bebas Revisi Sampai Selesai</span>
           </div>
           <div className="slide5-ribbon-item">
-            <span>- Tanpa Batas Jumlah Tamu</span>
-          </div>
-          <div className="slide5-ribbon-item">
-            <span>- Link Aktif Selamanya</span>
+            <span>- Bebas Sebar Tanpa Batas Tamu</span>
           </div>
         </div>
 
