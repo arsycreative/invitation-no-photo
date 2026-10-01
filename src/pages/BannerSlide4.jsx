@@ -76,13 +76,12 @@ function AmbientSparkle({ style, size = 16, opacity = 0.6 }) {
   )
 }
 
-/* ── Event Pillar Component (Badge + Live Phone Mockup + Details Card) ── */
+/* ── Event Pillar Component (Badge + Live Phone Mockup + Clean Label) ── */
 function EventPillar({
   badgeLabel,
   themeKey,
   clientKey,
   eventName,
-  points = [],
   themeTag,
 }) {
   const ThemeComponent = THEMES[themeKey]?.component
@@ -104,7 +103,7 @@ function EventPillar({
         <span className="slide4-badge-text">{badgeLabel}</span>
       </div>
 
-      {/* Upright Phone Mockup */}
+      {/* Grand Upright Phone Mockup */}
       <div className="slide4-phone-shell">
         <div className="slide4-phone-island">
           <span className="slide4-phone-camera" />
@@ -126,15 +125,10 @@ function EventPillar({
         <div className="slide4-phone-home" />
       </div>
 
-      {/* Bottom Event Details Card */}
-      <div className="slide4-pillar-card">
-        <h4 className="slide4-card-event-name">{eventName}</h4>
-        <div className="slide4-card-points">
-          {points.map((pt, idx) => (
-            <div key={idx}>- {pt}</div>
-          ))}
-        </div>
-        <span className="slide4-card-theme-tag">{themeTag}</span>
+      {/* Clean, Bold Bottom Label (No tiny descriptions) */}
+      <div className="slide4-pillar-label">
+        <h3 className="slide4-pillar-name">{eventName}</h3>
+        <span className="slide4-pillar-tag">{themeTag}</span>
       </div>
     </div>
   )
@@ -186,9 +180,8 @@ export default function BannerSlide4() {
             badgeLabel="PERNIKAHAN"
             themeKey="vega"
             clientKey="demo"
-            eventName="Pernikahan & Walimah"
-            points={['Akad Nikah & Resepsi', 'Desain Sakral & Megah']}
-            themeTag="Vega · Lyra · Castor"
+            eventName="Akad & Resepsi"
+            themeTag="Tema Vega · Lyra"
           />
 
           {/* 2. Lamaran & Pertunangan */}
@@ -196,9 +189,8 @@ export default function BannerSlide4() {
             badgeLabel="LAMARAN"
             themeKey="spica"
             clientKey="demo-spica"
-            eventName="Lamaran & Tunangan"
-            points={['The Engagement Day', 'Nuansa Hangat & Intim']}
-            themeTag="Spica · Sirius"
+            eventName="Pertunangan"
+            themeTag="Tema Spica · Sirius"
           />
 
           {/* 3. Wisuda & Kelulusan */}
@@ -206,9 +198,8 @@ export default function BannerSlide4() {
             badgeLabel="WISUDA"
             themeKey="capella"
             clientKey="demo-capella"
-            eventName="Wisuda & Kelulusan"
-            points={['Graduation Celebration', 'Format Piagam Akademik']}
-            themeTag="Capella"
+            eventName="Wisuda Sarjana"
+            themeTag="Tema Capella"
           />
 
           {/* 4. Doa Bersama & Tasyakuran */}
@@ -216,9 +207,8 @@ export default function BannerSlide4() {
             badgeLabel="DOA & SYUKURAN"
             themeKey="aldebaran"
             clientKey="demo-aldebaran"
-            eventName="Doa & Tasyakuran"
-            points={['Pengajian, Tahlil & Aqiqah', 'Khidmat & Bernuansa Islami']}
-            themeTag="Aldebaran · Rigel"
+            eventName="Pengajian & Tahlil"
+            themeTag="Tema Aldebaran · Rigel"
           />
 
         </div>
