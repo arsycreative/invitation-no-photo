@@ -89,17 +89,17 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 16px;
+  padding: 6px 18px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(212, 175, 55, 0.55);
   border-radius: 30px;
   box-shadow: 0 4px 14px rgba(212, 175, 55, 0.15);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .slide5-eyebrow-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -110,11 +110,11 @@
 
 .slide5-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.18;
   color: #1c1917;
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }
 
@@ -126,18 +126,18 @@
 
 .slide5-subtitle {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #57534e;
-  max-width: 680px;
+  font-size: 16.5px;
+  font-weight: 500;
+  color: #44403c;
+  max-width: 850px;
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* ── Main Stage (Left Steps + Right Grand Mockup) ─────── */
 .slide5-main-stage {
   position: absolute;
-  top: 184px;
+  top: 198px;
   left: 55px;
   right: 55px;
   display: flex;
@@ -148,10 +148,10 @@
 
 /* ── LEFT COLUMN: 3 Steps Stacked Vertically ──────────── */
 .slide5-left-column {
-  width: 530px;
+  width: 535px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 /* Step Card */
@@ -172,14 +172,14 @@
 }
 
 .slide5-step-badge {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
   border-radius: 50%;
   background: linear-gradient(135deg, #fef08a 0%, #d4af37 60%, #b45309 100%);
   color: #1a1612;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -196,7 +196,7 @@
 
 .slide5-step-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #1c1917;
   margin: 0 0 5px 0;
@@ -205,11 +205,11 @@
 
 .slide5-step-desc {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 500;
-  color: #44403c;
+  color: #38342f;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Service Assurance Box */
@@ -219,7 +219,7 @@
   -webkit-backdrop-filter: blur(8px);
   border: 1.2px solid rgba(212, 175, 55, 0.4);
   border-radius: 16px;
-  padding: 14px 22px;
+  padding: 16px 24px;
   box-sizing: border-box;
   box-shadow: 0 6px 16px rgba(180, 140, 60, 0.06);
   display: flex;
@@ -230,9 +230,9 @@
 
 .slide5-assurance-tag {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   color: #854d0e;
   text-transform: uppercase;
 }
@@ -245,10 +245,10 @@
 
 .slide5-assurance-item {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 600;
   color: #1c1917;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 /* ── RIGHT COLUMN: Single Grand Phone Mockup ──────────── */
@@ -263,20 +263,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 18px;
+  padding: 6px 16px;
   background: rgba(255, 255, 255, 0.96);
   border: 1.2px solid rgba(212, 175, 55, 0.55);
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(180, 140, 60, 0.12);
   margin-bottom: 12px;
   z-index: 25;
+  white-space: nowrap;
 }
 
 .slide5-mockup-badge-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #1e1b18;
 }
@@ -375,10 +376,10 @@
   -webkit-backdrop-filter: blur(8px);
   border: 1.2px solid rgba(212, 175, 55, 0.7);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 20px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 10.5px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #fef08a;
   letter-spacing: 0.1em;
@@ -440,11 +441,11 @@
 /* ── Bottom Feature Ribbon Pill ───────────────────────── */
 .slide5-bottom-ribbon {
   position: absolute;
-  bottom: 60px;
+  bottom: 58px;
   left: 50%;
   transform: translateX(-50%);
   width: 970px;
-  padding: 12px 28px;
+  padding: 13px 32px;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -465,7 +466,7 @@
   align-items: center;
   gap: 8px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: #1e1b18;
   letter-spacing: 0.01em;
