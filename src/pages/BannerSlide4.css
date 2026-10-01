@@ -1,0 +1,421 @@
+/* ═══════════════════════════════════════════════════════════
+   SLIDE 4: MULTI-EVENT SHOWCASE (1080x1080 px)
+   Theme: Studio Luxury Cream × Clean Gold Hairlines × 4 Event Pillars
+   Cakupan Berbagai Acara: Pernikahan, Lamaran, Wisuda, Doa & Syukuran
+   ═══════════════════════════════════════════════════════════ */
+
+.slide4-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.slide4-canvas {
+  width: 1080px;
+  height: 1080px;
+  min-width: 1080px;
+  min-height: 1080px;
+  max-width: 1080px;
+  max-height: 1080px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 36%, #ffffff 0%, #faf6ef 55%, #f2eae0 100%);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Delicate Gold Outer Frame ────────────────────────── */
+.slide4-gold-frame {
+  position: absolute;
+  inset: 24px;
+  border: 1.2px solid rgba(212, 175, 55, 0.65);
+  pointer-events: none;
+  border-radius: 4px;
+  z-index: 30;
+}
+
+/* Corner Brackets */
+.slide4-corner-bracket {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 32;
+}
+.slide4-corner-bracket.corner-tl { top: 20px; left: 20px; }
+.slide4-corner-bracket.corner-tr { top: 20px; right: 20px; transform: scaleX(-1); }
+.slide4-corner-bracket.corner-bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.slide4-corner-bracket.corner-br { bottom: 20px; right: 20px; transform: scale(-1); }
+
+/* Top-Left Brand Seal */
+.slide4-brand-seal {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  z-index: 40;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
+}
+
+/* Ambient Sparkle */
+.slide4-ambient-sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 25;
+  filter: drop-shadow(0 0 6px rgba(254, 240, 138, 0.65));
+}
+
+/* ── Top Header Section ───────────────────────────────── */
+.slide4-header {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 35;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.slide4-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.15);
+  margin-bottom: 8px;
+}
+
+.slide4-eyebrow-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #b45309 0%, #d4af37 50%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slide4-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1c1917;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.slide4-title-accent {
+  background: linear-gradient(135deg, #9a3412 0%, #d4af37 60%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slide4-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #57534e;
+  max-width: 680px;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ── 4 Event Pillars Grid ─────────────────────────────── */
+.slide4-pillars-grid {
+  position: absolute;
+  top: 172px;
+  left: 42px;
+  right: 42px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 20;
+}
+
+/* Single Pillar Column */
+.slide4-pillar {
+  width: 234px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Pillar Top Category Badge */
+.slide4-pillar-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(180, 140, 60, 0.12);
+  margin-bottom: 12px;
+  z-index: 25;
+}
+
+.slide4-badge-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.slide4-badge-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1e1b18;
+}
+
+/* ── Smartphone Mockup Shell ──────────────────────────── */
+.slide4-phone-shell {
+  width: 226px;
+  height: 460px;
+  border-radius: 34px;
+  background: #090e18;
+  border: 3.2px solid #162032;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.22),
+    0 8px 18px rgba(0, 0, 0, 0.12);
+  margin-bottom: 14px;
+}
+
+/* Inner Phone Screen Viewport */
+.slide4-phone-screen {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #060f22;
+}
+
+/* Dynamic Island */
+.slide4-phone-island {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 13px;
+  background: #000000;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.slide4-phone-camera {
+  position: absolute;
+  right: 6px;
+  top: 3.5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #111e2e;
+}
+
+/* Glass Sheen */
+.slide4-phone-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 60%);
+  pointer-events: none;
+  z-index: 90;
+}
+
+/* Home Indicator Bar */
+.slide4-phone-home {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 2px;
+  z-index: 100;
+}
+
+/* Scaler container inside phone */
+.slide4-phone-scaler {
+  width: 390px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.5795);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+/* Specific theme viewport fills inside mockup */
+.screen-bg-aldebaran {
+  background: #fcf8f0 !important;
+}
+
+.is-mockup-frame .aldebaran-root {
+  min-height: 100% !important;
+  height: 100% !important;
+  background: #fcf8f0 !important;
+}
+
+.is-mockup-frame .aldebaran-container {
+  min-height: 100% !important;
+  height: 100% !important;
+  background: #fcf8f0 !important;
+  box-shadow: none !important;
+}
+
+.is-mockup-frame .aldebaran-section {
+  min-height: 100% !important;
+  height: 100% !important;
+}
+
+.is-mockup-frame .aldebaran-hero-section {
+  min-height: 100% !important;
+  height: 100% !important;
+  padding: 30px 16px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: #fcf8f0 !important;
+}
+
+/* ── Pillar Bottom Details Card ───────────────────────── */
+.slide4-pillar-card {
+  width: 234px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  box-shadow:
+    0 8px 20px rgba(180, 140, 60, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide4-card-event-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1c1917;
+  margin: 0 0 3px 0;
+  line-height: 1.2;
+}
+
+.slide4-card-event-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #92400e;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.slide4-card-event-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #57534e;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.slide4-card-theme-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 0.8px solid rgba(212, 175, 55, 0.45);
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #78350f;
+  letter-spacing: 0.03em;
+}
+
+/* ── Bottom Feature Ribbon Pill ───────────────────────── */
+.slide4-bottom-ribbon {
+  position: absolute;
+  bottom: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 960px;
+  padding: 9px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 40px;
+  box-shadow:
+    0 8px 24px rgba(180, 140, 60, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 35;
+  box-sizing: border-box;
+}
+
+.slide4-ribbon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1e1b18;
+}
+
+.slide4-ribbon-icon {
+  color: #d4af37;
+  font-size: 13px;
+}
+
+.slide4-ribbon-dot {
+  color: #d4af37;
+  opacity: 0.6;
+  font-size: 9px;
+}
+
+/* ── Bottom Signature Tag ─────────────────────────────── */
+.slide4-signature-tag {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #854d0e;
+  text-transform: uppercase;
+  z-index: 35;
+  opacity: 0.85;
+}

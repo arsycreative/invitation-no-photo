@@ -5,6 +5,7 @@ import CatalogPage from './pages/CatalogPage'
 import BannerPage from './pages/BannerPage'
 import BannerSlide2 from './pages/BannerSlide2'
 import BannerSlide3 from './pages/BannerSlide3'
+import BannerSlide4 from './pages/BannerSlide4'
 import './index.css'
 
 /* ── URL param helpers ────────────────────────────────── */
@@ -50,6 +51,7 @@ function NotFound({ message }) {
    • ?banner=1           → load Slide 1 Hero Banner
    • ?banner=2           → load Slide 2 Diagonal Showcase
    • ?banner=3           → load Slide 3 Feature Showcase
+   • ?banner=4           → load Slide 4 Multi-Event Showcase
    • ?catalog=vega       → load 2-view catalog presentation
    • ?client=demo        → load client's theme + their data
    • ?theme=vega         → load theme with its specific demo data
@@ -57,6 +59,10 @@ function NotFound({ message }) {
    ═══════════════════════════════════════════════════════════ */
 export default function App() {
   const { clientSlug, themeKey, catalogKey, bannerKey, guestName, initialOpen } = getParams()
+
+  if (bannerKey === '4' || bannerKey === 'slide4') {
+    return <BannerSlide4 />
+  }
 
   if (bannerKey === '3' || bannerKey === 'slide3') {
     return <BannerSlide3 />
