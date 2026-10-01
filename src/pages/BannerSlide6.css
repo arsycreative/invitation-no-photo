@@ -1,0 +1,297 @@
+/* ═══════════════════════════════════════════════════════════
+   SLIDE 6: FAQ / PERTANYAAN YANG SERING DIAJUKAN (1080x1080 px)
+   Theme: Studio Luxury Cream × Clean Gold Hairlines × 2-Column Grid
+   ═══════════════════════════════════════════════════════════ */
+
+.slide6-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.slide6-canvas {
+  width: 1080px;
+  height: 1080px;
+  min-width: 1080px;
+  min-height: 1080px;
+  max-width: 1080px;
+  max-height: 1080px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 36%, #ffffff 0%, #faf6ef 55%, #f2eae0 100%);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Delicate Gold Outer Frame ────────────────────────── */
+.slide6-gold-frame {
+  position: absolute;
+  inset: 24px;
+  border: 1.2px solid rgba(212, 175, 55, 0.65);
+  pointer-events: none;
+  border-radius: 4px;
+  z-index: 30;
+}
+
+/* Corner Brackets */
+.slide6-corner-bracket {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 32;
+}
+.slide6-corner-bracket.corner-tl { top: 20px; left: 20px; }
+.slide6-corner-bracket.corner-tr { top: 20px; right: 20px; transform: scaleX(-1); }
+.slide6-corner-bracket.corner-bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.slide6-corner-bracket.corner-br { bottom: 20px; right: 20px; transform: scale(-1); }
+
+/* Top-Left Brand Seal */
+.slide6-brand-seal {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  z-index: 40;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
+}
+
+/* Ambient Sparkle */
+.slide6-ambient-sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 25;
+  filter: drop-shadow(0 0 6px rgba(254, 240, 138, 0.65));
+}
+
+/* ── Top Header Section ───────────────────────────────── */
+.slide6-header {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 35;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.slide6-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.15);
+  margin-bottom: 8px;
+}
+
+.slide6-eyebrow-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #b45309 0%, #d4af37 50%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slide6-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.18;
+  color: #1c1917;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.slide6-title-accent {
+  background: linear-gradient(135deg, #9a3412 0%, #d4af37 60%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slide6-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #44403c;
+  max-width: 820px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── 2-Column FAQ Grid ────────────────────────────────── */
+.slide6-faq-grid {
+  position: absolute;
+  top: 184px;
+  left: 52px;
+  right: 52px;
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  z-index: 20;
+}
+
+/* Single FAQ Column */
+.slide6-faq-col {
+  width: 477px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* Single FAQ Card */
+.slide6-faq-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.2px solid rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  padding: 13px 18px;
+  box-sizing: border-box;
+  box-shadow:
+    0 6px 16px rgba(180, 140, 60, 0.07),
+    0 2px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Special Consultation Card */
+.slide6-faq-card.is-special-card {
+  background: linear-gradient(135deg, rgba(254, 240, 138, 0.25) 0%, rgba(212, 175, 55, 0.18) 100%), rgba(255, 255, 255, 0.96);
+  border: 1.4px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+}
+
+.slide6-special-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #854d0e;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+/* Question Row */
+.slide6-card-q-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.slide6-q-badge {
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 60%, #b45309 100%);
+  color: #1a1612;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  border-radius: 6px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
+}
+
+.slide6-q-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1c1917;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Answer Row */
+.slide6-card-a-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.slide6-a-badge {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #854d0e;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 6px;
+  padding: 1.5px 7px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.slide6-a-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #38342f;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Bottom Feature Ribbon Pill ───────────────────────── */
+.slide6-bottom-ribbon {
+  position: absolute;
+  bottom: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 976px;
+  padding: 13px 32px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.2px solid rgba(212, 175, 55, 0.55);
+  border-radius: 40px;
+  box-shadow:
+    0 8px 24px rgba(180, 140, 60, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 35;
+  box-sizing: border-box;
+}
+
+.slide6-ribbon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e1b18;
+  letter-spacing: 0.01em;
+}
+
+/* ── Bottom Signature Tag ─────────────────────────────── */
+.slide6-signature-tag {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #854d0e;
+  text-transform: uppercase;
+  z-index: 35;
+  opacity: 0.85;
+}
